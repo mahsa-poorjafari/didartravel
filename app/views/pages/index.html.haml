@@ -1,0 +1,18 @@
+%h1 صفحات متنی
+- if is_admin?
+  = link_to 'صفحه جدید', new_page_path, :class => "btn btn-success"
+.col-xs-12
+  - @pages.each do |page|
+    .col-xs-4
+      %h2= page.title
+      %p
+        = link_to 'مشاهده', page, :class => "btn btn-warning"
+        \|
+        = link_to 'ویرایش', edit_page_path(page), :class => "btn btn-info"
+        -#
+          \|
+          = link_to 'حذف', page, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+  
+
+
+

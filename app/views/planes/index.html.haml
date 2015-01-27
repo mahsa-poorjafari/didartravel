@@ -1,0 +1,19 @@
+.margin3 
+  %h1 لیست شرکت های هواپیمایی
+  - if is_admin?
+    = link_to 'افزودن شرکت هواپیمایی', new_plane_path, :class => "btn btn-success"
+  .col-xs-12
+    - @planes.each do |plane|
+      .col-xs-4
+        %p= image_tag plane.logo(:small)      
+        %p= plane.title      
+        %p= plane.text              
+        %p
+          - if is_admin?
+            = link_to 'مشاهده', plane, :class => "btn btn-warning"
+            = link_to 'ویرایش', edit_plane_path(plane), :class => "btn btn-info"
+            = link_to 'حذف', plane, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+
+
+
+

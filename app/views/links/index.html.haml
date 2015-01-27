@@ -1,0 +1,24 @@
+%h1 لیست پیوندهای مرتبط
+-if is_admin?
+  = link_to 'افزودن پیوند جدید', new_link_path, :class => "btn btn-success"
+%table.table
+  %tr
+    %th ردیف
+    %th عنوان    
+    %th وب سایت    
+    %th
+    %th
+
+  - @links.each_with_index do |link, i|
+    %tr
+      %td= (i+1)
+      %td= link.title      
+      %td= link_to link.web_site, url_with_protocol(link.web_site) 
+      %td= image_tag link.image(:small)
+      %td
+        -if is_admin?
+          = link_to 'مشاهده', link, :class => "btn btn-warning"
+          = link_to 'ویرایش', edit_link_path(link), :class => "btn btn-info"
+          = link_to 'حذف', link, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :class => "btn btn-danger"
+
+

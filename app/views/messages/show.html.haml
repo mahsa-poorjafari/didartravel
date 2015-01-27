@@ -1,0 +1,19 @@
+.margin3
+  .col-xs-7
+  .well.col-xs-5{:class => I18n.locale}
+    %p
+      %b نام کاربر:
+      = @message.user_name
+    %p
+      %b ایمیل کاربر:
+      = @message.email
+    %p
+      %b تلفن تماس:
+      = @message.phone
+    %p
+      %b متن
+      = @message.text
+    %p
+      %b تاریخ
+      = JalaliDate.new(@message.created_at).strftime("%A %e %b %Y")
+      

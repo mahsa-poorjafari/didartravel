@@ -1,0 +1,13 @@
+.margin3
+  %h1.title-tours{:class => I18n.locale}=  @sight.title  
+  - if is_admin?
+    = link_to 'ویرایش', edit_sight_path(@sight), :class => "btn btn-info" 
+  .tour-details
+    .col-xs-12.sight-des{:class => I18n.locale}=raw @sight.text        
+    .col-xs-12       
+      = render 'shared/items_images_sliders', :model => @sight
+    
+      
+  
+  
+ 

@@ -1,0 +1,97 @@
+= form_for @locationtour ||= Locationtour.new do |location|
+  - if @locationtour.errors.any?
+    #error_explanation      
+      %ul
+        - @locationtour.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    - if @tour.present?
+      = location.hidden_field :tour_id, :value => @tour.id
+  .col-xs-12
+    .upload-pic  
+      .col-xs-6 
+        -#
+          -if @locationtour.hotels.collect(&:city_id).present?
+            %b= 'اطلاعات مکانی هتل'            
+            - @locationtour.hotels.each_with_index do |hotel, i|                        
+              %p= (i+1).to_s + '-'+ hotel.city.country.title + ',' +  hotel.city.title   + ',' + hotel.title       
+        
+        %ul#list_hotels{:style => "list-type:circle"}      
+        .well
+          %h3{:class => I18n.locale}= 'نحوه حذف کردن هتل'
+          %p= '۱- ابتدا هتلی که می خواهید به این ردیف اضافه کنید انتخاب کنید'
+          %p= '۲- دکمه ثبت را بزنید.'
+          %p= '۳- سپس از کشوی قسمت حذف هتل، تنها هتل و یا هتلهایی که می خواهید در لیست بمانند را مجددا انتخاب کنید.'
+          %p= '۴- دکمه ثبت را بزنید.'
+          %p= '۵- برای مشاهده تور مربوط کافیست روی اسم تور در بالای فرم کلیک کنید.'
+      .col-xs-6 
+          
+        .col-xs-12
+          = select_tag :country_list, options_for_select(Country.all.collect{ |u| [u.title_fa, u.id] }), :'data-remote' => 'true', :'data-url' => url_for(:controller => 'locationtours', :action => 'dynamic_city', format: 'js'), prompt: "کشور مربوط را انتخاب کنید.", :class => " form-control "
+          
+          #loading{:style => "display:none"}= image_tag 'ajax-loader.gif'        
+          .form-group
+            #location-tour-city-label= location.label "شهر مورد نظر را با کلیک انتخاب کنید", :class => "control-label location-city-label"         
+            
+            = location.hidden_field :city_id , :class => "form-control location-city-id"     
+            %b#location-tour-city 
+          .form-group#location-hotel-list
+            = location.label "هتل را انتخاب کنید", :class => "control-label"
+            = select_tag :hotel_list, options_for_select({}), prompt: "هتل را انتخاب کنید", :class => " form-control ", :id => "locationtour_hotel_id"
+            %span.btn.btn-warning#add_hotel= 'Add Hotel' 
+            - if @locationtour.hotel_ids.present?
+            
+              = hidden_field_tag :h, ' '  , :multiple => true, :value => @locationtour.hotel_ids.join(',') + ','
+              %p
+                %h2{:class => I18n.locale}= 'حذف هتل'
+                .alert.alert-info{:style => "font-size:18px"}= 'هتلی که می خواهید در لیست بماند را انتخاب کنید'
+                = select_tag :h, options_for_select(@locationtour.hotel_ids.collect{ |u| [Hotel.find(u).title_fa, u] }), :multiple => "multiple", :id => "example-multiple-selected"
+              
+              -#
+                - @locationtour.hotel_ids.each_with_index do |hotel, i|
+                - @hotelname = Hotel.find(hotel)
+                %p
+                  %span{:class => I18n.locale}= @hotelname.title
+                  %span.hotel-locate= link_to (image_tag 'delete.png') , '#', :id =>  @hotelname.id
+            - else
+              = hidden_field_tag :h
+            
+      .col-xs-12  
+        .form-group
+          %i.alert.alert-warning{:style => "font-family: 'open_sansregular';"}= 'فیلد برای وارد کردن هتل های با عنوان تعداد ستاره'          
+          %b.alert.alert-danger{:style => "font-family: 'open_sansregular';"}= 'اگر این فیلد را پر می کنید، کادرهای بالای شهر و هتل ها را پر نکنید'          
+          .clear-float
+          .col-xs-6.pull-right
+            = location.text_field :custom_hotel , :class => " form-control" , :placeholder => "نام موردنظر خود را وارد کنید."
+      .clear-float
+      .col-xs-6.pull-right
+        .form-group
+          = location.label "قیمت دوتخته", :class => "control-label" 
+          = location.text_field :price_two_bed , :class => " form-control" 
+        .form-group
+          = location.label "قیمت یک تخته", :class => "control-label" 
+          = location.text_field :price_one_bed , :class => " form-control" 
+        .form-group
+          = location.label "قیمت سه تخته", :class => "control-label" 
+          = location.text_field :price_three_bed , :class => " form-control" 
+      .col-xs-6
+        .form-group
+          = location.label "کودک با تخت", :class => "control-label" 
+          = location.text_field :price_kid_and_bed , :class => " form-control" 
+        .form-group
+          = location.label "کودک بدون تخت", :class => "control-label" 
+          = location.text_field :price_kid_without_bed , :class => " form-control" 
+        .form-group
+          = location.label "توضیحات تکمیلی", :class => "control-label" 
+          = location.text_field :description , :class => " form-control" 
+  .form-group
+    = location.submit 'ثبت', :class => "btn btn-primary"
+:javascript
+  $('#add_hotel').click(function(){    
+    w = $('#locationtour_hotel_id').val();
+    $('#h').val(function( index, value ) {
+      return value + w +",";
+    }); 
+    $('#list_hotels').append('<li>' + $('#locationtour_hotel_id option:selected').text() + '</li>');    
+  });
+  $('#example-multiple-selected').multiselect();

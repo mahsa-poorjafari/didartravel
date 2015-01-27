@@ -1,0 +1,23 @@
+.margin3
+  .col-xs-7
+  .well.col-xs-5{:class => I18n.locale}
+
+    %p
+      %b ایمیل فرستنده:
+      = @send_link.sender_email
+    %p
+      %b ایمیل گیرنده:
+      = @send_link.receiver_email
+    %p
+      %b لینک ارسالی:
+      = @send_link.current_link
+    %p
+      %b متن:
+      = @send_link.text
+    %p
+      %b موضوع:
+      = @send_link.subject
+    %p
+      %b تاریخ
+      = JalaliDate.new(@send_link.created_at).strftime("%A %e %b %Y")
+      

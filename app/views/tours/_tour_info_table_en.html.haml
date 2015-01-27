@@ -1,0 +1,93 @@
+- if @tour.locationtours.present?
+  %h3{:class => I18n.locale, :style => "text-align:center"}= t('hotel')
+  .col-xs-12.firts-row{:class => I18n.locale}
+    
+    .col-xs-2.th= t('location.hotel-name')  
+    .col-xs-2.th= t('location.two_bed')
+    .col-xs-2.th= t('location.one_bed')
+    .col-xs-2.th= t('location.three_bed')
+    .col-xs-2.th= t('location.kid_and_bed')
+    .col-xs-2.th= t('location.kid_no_bed')
+    
+  - @tour.locationtours.each_with_index do |location, i|
+    .col-xs-12.other-rows{:class => cycle("odd", "even") + " " + I18n.locale.to_s }
+      -if location.hotels.collect(&:title_fa).present?
+        .col-xs-2.td       
+          - location.hotels.each do |hotel|
+            %p{:style => "text-align:center"}
+              - if hotel.title.present?
+                %b{:id => 'hotel-' + hotel.id.to_s}= link_to hotel.title, hotel_url(hotel.title)        
+                - if hotel.class_hotel.present?
+                  %p{:style => "text-align:center"}  
+                    %span=image_tag 'Star.png'
+                    %span.en= hotel.class_hotel.title  
+      - if location.custom_hotel.present?
+        .col-xs-2.td
+          %p{:style => "text-align:center"}
+            %b=  location.custom_hotel     
+      
+        
+      .col-xs-2.td= location.price_two_bed
+      .col-xs-2.td= location.price_one_bed
+      .col-xs-2.td= location.price_three_bed
+      .col-xs-2.td= location.price_kid_and_bed
+      .col-xs-2.td= location.price_kid_without_bed
+    - if location.description.present?  
+      .col-xs-12.other-rows
+        .col-xs-2.locat-des.th=  t('location.description')        
+        .col-xs-8.td= location.description
+    - if is_admin?
+      .col-xs-12.other-rows
+        =link_to 'ویرایش', edit_locationtour_path(location, :tour_id => @tour.id), :class => "btn btn-info", :title => "شرکت_خدمات_مسافرتی_هوایی_جهانگردی_رادان_سیر"
+        = link_to 'حذف', location, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+      
+      
+.tour-description.clear-float
+  .title_row
+    %h4{:class => I18n.locale}= t('tour.description')
+  .full-width.tr
+    - if tour.source.present?
+      .col-xs-3.th= t('tour.source')
+      .col-xs-9.td= tour.source
+    .clear-float
+    
+  .full-width.tr
+    - if tour.travel_type.present?
+      .col-xs-3.th= t('tour.travel_type')
+      .col-xs-9.td= tour.travel_type
+    
+  .full-width.tr
+    .col-xs-3.th= t('tour.date')
+    .col-xs-9.td 
+      = render "/tours/show_persian_date", :tour => tour
+    
+  - if tour.itinerary.present?
+    .full-width.tr
+      .col-xs-3.th= t('tour.itinerary')
+      .col-xs-9.td= raw tour.itinerary
+    
+  - if tour.documents.present?
+    .full-width.tr
+      .col-xs-3.th= t('tour.documents')
+      .col-xs-9.td
+        .col-xs-10= raw tour.documents
+        .col-xs-2= image_tag 'madarek.jpg'
+  -#  
+    - if @tour.info.present?
+      .col-xs-12.tr
+        .col-xs-3.th= t('tour.get-file')
+        .col-xs-9.td
+          = link_to @tour.info.url, :target => "blank" do
+            %i= 'دریافت فایل '
+        
+  .clear-float
+- if tour.description.present?
+  .tour-description.margin-bottom5.clear-float
+    .title_row.full-width
+      %h4{:class => I18n.locale}= t('tour.about-tour')
+    .full-width
+      = raw tour.description
+.clear-float
+
+
+

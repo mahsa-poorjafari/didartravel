@@ -1,0 +1,11 @@
+.margin3  
+  .col-xs-7
+  .well.col-xs-5{:class => I18n.locale}    
+    %p= image_tag @plane.logo(:small)
+    %b= @plane.title    
+    %p    
+      = @plane.text    
+
+    = link_to 'ویرایش', edit_plane_path(@plane), :class => "btn btn-info" 
+       
+    

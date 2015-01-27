@@ -1,0 +1,46 @@
+%h4.contact{:class => I18n.locale}= t('msg.contact-title')
+= form_for @message ||= Message.new do |f|
+  - if @message.errors.any?
+    #error_explanation
+      %ul
+        - @message.errors.each do |attr, msg|
+          %li= msg
+  -if flash[:msgsend]        
+    .alert.alert-success= flash[:msgsend]
+      
+  .col-xs-12
+    .form-group
+      
+      = f.text_field :user_name, :placeholder => t('msg.contact-name') , :id => "contact-name", :style => "width:100%", :title => "آژانس هواپیمایی رادان سیر"   , :class => "form-msg form-control"
+    
+    .form-group  
+      
+      = f.text_field :phone, :placeholder => t('msg.contact-phone'), :id => "contact-phone", :style => "width:100%", :title => "آژانس هواپیمایی رادان سیر", :class => "form-msg form-control"
+    
+    .form-group
+      
+      = f.text_area :text, :placeholder => t('msg.contact-msg'), :id => "contact-text", :style => "resize: none; width:100%", rows: 4, :title => "آژانس هواپیمایی رادان سیر"    , :class => "form-control form-msg"
+    
+    .form-group
+      
+      = f.text_field :email, :placeholder => t('msg.contact-email'), :id => "contact-email", :style => "width:100%", :title => "آژانس هواپیمایی رادان سیر", :class => "form-msg form-control"      
+    .col-xs-12 
+      .form-group.col-xs-6{:class => I18n.locale}
+        = button_tag t('msg.contact-reset'), :type => 'reset', :title => "آژانس هواپیمایی رادان سیر", :id => "contact-reset"  , :class => "btn btn-danger  I18n.locale"
+      .form-group.col-xs-6{:class => I18n.locale}
+        = f.submit t('msg.contact-btn'), :title => "آژانس هواپیمایی رادان سیر", :id => "contact-submit", :class => "btn btn-danger  I18n.locale"
+        
+        
+
+
+:javascript 
+  $(function() { 
+    $(':submit#contact-submit').click(function(e) {
+      $(':text#contact-name,:text#contact-phone, :text#contact-email, textarea#contact-text').each(function() {
+        if ($(this).val().length == 0) {
+          $(this).css('border', '2px solid red');
+          e.preventDefault();
+        }
+      });
+    });
+  });

@@ -1,0 +1,43 @@
+/* ==================================================
+Font-Face Icons
+================================================== */
+@font-face {
+    font-family: 'open_sansregular';
+    src: asset_url('BYekan.eot');
+    src: asset_url('BYekan.eot?#iefix') format('embedded-opentype'),
+         asset_url('BYekan.woff') format('woff'),
+         asset_url('BYekan.ttf') format('truetype'),
+         asset_url('BYekan.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'leaguegothic-condensed-regular-webfont';
+  src: url(font_path('leaguegothic-regular-webfont.eot'));
+  src: url(font_path('leaguegothic-regular-webfont.eot?#iefix')) format('embedded-opentype'),
+       url(font_path('leaguegothic-regular-webfont.woff')) format('woff'),
+       url(font_path('leaguegothic-regular-webfont.ttf')) format('truetype'),
+       url(font_path('leaguegothic-regular-webfont.svg#MTCORSVA')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'khodkar';
+  src: url(font_path('khodkar.eot'));
+  src: url(font_path('khodkar.eot?#iefix')) format('embedded-opentype'),
+       url(font_path('khodkar.woff')) format('woff'),
+       url(font_path('khodkar.ttf')) format('truetype'),
+       url(font_path('khodkar.svg#khodkar')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'arabswell';
+  src: url(font_path('arabswell.eot'));
+  src: url(font_path('arabswell.eot?#iefix')) format('embedded-opentype'),
+       url(font_path('arabswell.woff')) format('woff'),
+       url(font_path('arabswell.ttf')) format('truetype'),
+       url(font_path('arabswell.svg#arabswell')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

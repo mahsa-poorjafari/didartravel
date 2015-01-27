@@ -1,0 +1,18 @@
+.margin3
+  
+  - if notice.present?
+    .alert.alert-success= notice
+  
+
+  %p
+    %b نام کاربری
+    = @user.user_name
+  %p
+    %b ایمیل
+    = @user.email
+  %p
+    %b نقش کاربری
+    - if @user.role_id.present?
+      = @user.role.title
+
+  = link_to 'ویرایش', edit_user_path(@user), :class => "btn btn-info" 

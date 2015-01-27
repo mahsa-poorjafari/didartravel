@@ -1,0 +1,31 @@
+.margin3.fa 
+  -if flash[:EditDone]        
+    .alert.alert-success= flash[:EditDone]    
+    
+  %table.table
+    %tr
+      
+      %th= t('location.hotel-name')
+      %th= t('location.hotel-star')
+      %th= t('location.two_bed')
+      %th= t('location.one_bed')
+      %th= t('location.kid_and_bed')
+      %th= t('location.kid_no_bed')
+      %th= t('location.description')
+      %th= 'عملیات'  
+    %tr{:class => I18n.locale}
+      
+      -if @locationtour.hotels.collect(&:title_fa).present?
+        %td
+          - @locationtour.hotels.each do |hotel|
+            %span= hotel.title_fa + ','                  
+        %td
+          - if @locationtour.hotels.first.class_hotel.present?
+            = @locationtour.hotels.first.class_hotel.title
+          
+      %td= @locationtour.price_two_bed
+      %td= @locationtour.price_one_bed
+      %td= @locationtour.price_kid_and_bed
+      %td= @locationtour.price_kid_without_bed
+      %td= @locationtour.description
+  

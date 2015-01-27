@@ -1,0 +1,9 @@
+.margin3
+  %h1 ویرایش پکیج تور
+  - if is_admin?
+    = link_to 'مشاهده', @tour, :class => "btn btn-warning"       
+  .clear-float
+  = render 'form'
+  
+   
+  

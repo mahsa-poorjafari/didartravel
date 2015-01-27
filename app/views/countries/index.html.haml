@@ -1,0 +1,61 @@
+.margin3
+  -if is_admin?
+    = link_to 'معرفی کشور', new_country_path, :class => "btn btn-success", :title => "آژانس_هواپیمایی_رادان_سیر"
+  .col-xs-12.margin-bottom5
+    .title-tour-line.col-xs-10
+    %p.col-xs-3.set-center.title-tour{:class => I18n.locale}=  t('country')
+  
+  .country-tabs
+    - if I18n.locale == :en  
+      %ul.nav.nav-tabs.pull-left#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
+        = render 'countries/country_title_tap'  
+      .tab-content.col-xs-12.pull-left
+        = render 'countries/country_details'
+    - else
+      %ul.nav.nav-tabs.pull-right#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
+        = render 'countries/country_title_tap'    
+      .tab-content.col-xs-12.pull-right
+        = render 'countries/country_details'
+      
+  .keywords.full-width
+    %p= t('Keywords.title')
+    %ul.tag-cloud.full-width{:class => I18n.locale}
+      %li.tag-cloud
+        = link_to t('radantravel'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.a'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.b'), '/'              
+      %li.tag-cloud
+        = link_to t('Keywords.s'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.w'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.c'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.d'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.f'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.g'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.h'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.l'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.m'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.n'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.e'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.p'), '/'   
+:javascript
+  
+  
+  
+  $(function () {
+    $('.tab-content .tab-pane:first').addClass('active');
+    $('#CountryTab a:first').tab('show')
+  });
+ 

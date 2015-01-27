@@ -1,0 +1,80 @@
+.margin3    
+  -if is_admin?
+    = link_to 'معرفی جاذبه دیدنی جدید', new_sight_path, :class => "btn btn-success", :title => "آژانس_هواپیمایی_رادان_سیر"  
+  - @iran = Country.find_by_title_fa('ایران')    
+  .country-tabs.sight-tabs{:class => I18n.locale}
+    .col-xs-12
+      .title-tour-line.col-xs-10
+      %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('local-sights')
+    - if I18n.locale == :en      
+      %ul.nav.nav-tabs.pull-left#SightsTab.col-xs-12{:role => "tablist", :class => I18n.locale }
+        = render 'sights/sight_title_tap'   
+      .tab-content.col-xs-12.pull-left{:style=>'background-color:transparent; box-shadow:none'}        
+        - @iran.cities.each do |all_city|
+          = render 'sights/sight_details', :all_city => all_city
+    - else       
+      %ul.nav.nav-tabs.pull-right#SightsTab.col-xs-12{:role => "tablist", :class => I18n.locale }        
+        = render 'sights/sight_title_tap'    
+      .tab-content.col-xs-12.pull-right{:style=>'background-color:transparent; box-shadow:none'}
+        - City.all.each do |all_city|
+          = render 'sights/sight_details', :all_city => all_city   
+
+  .col-xs-12
+    .title-tour-line.col-xs-10
+    %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('iran-tours')
+  .col-xs-12{:style => "margin-top:40px"}
+    
+    - if @iran.tours.present?
+      - @iran.tours.each do |tour|
+        .tours-index
+          = link_to tour, :class => "tour-box", :title => "آژانس_هواپیمایی_رادان_سیر" do
+            %h5.tour-title.en{:id => 'iran-tour-'+tour.id.to_s, :class => I18n.locale}= tour.title
+            - if tour.photos.present?
+              .tour-sample-image= image_tag tour.photos.first.image(:medium), :id => "tour-sample-image-" + tour.photos.first.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+            .clear-float
+          .tour-date
+            - if I18n.locale == :fa
+              = render "/tours/show_persian_date", :tour => tour
+            - else  
+              = render "/tours/show_english_date", :tour => tour      
+          -if is_admin?
+            .admin-btn-tour
+              = link_to 'ویرایش ', edit_tour_path(tour), :class => "btn btn-info", :title => "آژانس_هواپیمایی_رادان_سیر"
+              = link_to 'مشاهده جزئیات', tour, :class => "btn btn-warning"       , :title => "آژانس_هواپیمایی_رادان_سیر"
+              = link_to 'حذف ', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger", :title => "آژانس_هواپیمایی_رادان_سیر"
+  .keywords.full-width
+    %p= t('Keywords.title')
+    %ul.tag-cloud.full-width{:class => I18n.locale}
+      %li.tag-cloud
+        = link_to t('radantravel'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.b'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.f'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.g'), '/' 
+      %li.tag-cloud
+        = link_to t('Keywords.h'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.l'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.m'), Sight
+      %li.tag-cloud
+        = link_to t('Keywords.n'), Sight
+      %li.tag-cloud
+        = link_to t('iran-visa'), Sight
+      %li.tag-cloud
+        = link_to t('tour-to-iran'), Sight
+      %li.tag-cloud
+        = link_to t('iran-sights'), Sight
+      %li.tag-cloud
+        = link_to t('iran-hole'), Sight
+      %li.tag-cloud
+        = link_to t('investment-in-iran'), Sight
+
+  
+:javascript   
+  $('.country-tabs .tab-content .tab-pane:first').addClass('active');
+  $(function () {
+    $('#SightsTab a:first').tab('show')
+  });

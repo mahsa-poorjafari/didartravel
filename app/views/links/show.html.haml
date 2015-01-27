@@ -1,0 +1,15 @@
+.margin3  
+  %p#notice= notice
+
+  %p
+    %b عنوان لینک
+    = @link.title
+
+  %p
+    %b وب سایت
+    =link_to @link.web_site, url_with_protocol(@link.web_site)  
+  %div
+    = image_tag @link.image(:medium)
+  - if is_admin?
+    = link_to 'ویرایش', edit_link_path(@link), :class => "btn btn-info" 
+

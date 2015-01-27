@@ -1,0 +1,29 @@
+.col-xs-2
+.col-xs-8.main-icon{:class => I18n.locale}
+  .col-xs-3.icon-box
+    
+    %p
+      =link_to  tours_moment_tours_path, :title => "آژانس_هواپیمایی_رادان_سیر"  do
+        = image_tag 'package.png'    
+        %p= t('imp-package')
+    -#
+      %p.icon-des یک متن خلاصه و یا توضیحات خلاصه قرار میگیرد.
+  .col-xs-3.icon-box    
+    %p
+      = link_to   Sight, :title => "آژانس_هواپیمایی_رادان_سیر" do
+        = image_tag 'visit.png'
+        %p= t('sight')
+  .col-xs-3.icon-box
+    = link_to   Visa, :title => "آژانس_هواپیمایی_رادان_سیر" do
+      = image_tag 'visa.png'
+      %p= t('visa')
+    
+    
+    
+  .col-xs-3.icon-box
+    
+    %p
+      = link_to   Hotel,  :title => "آژانس_هواپیمایی_رادان_سیر"  do
+        = image_tag 'hotel.png'
+        %p= t('hotel')
+.col-xs-2
