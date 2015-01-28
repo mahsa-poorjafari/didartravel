@@ -15,4 +15,6 @@
 /test/models/.keep
 /test/test_helper.rb
 /vendor/assets/javascripts/.keep
+/log/
+/tmp/
 /vendor/assets/stylesheets/.keep
