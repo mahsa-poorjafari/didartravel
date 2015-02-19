@@ -3,12 +3,12 @@
 %html
   %head
     %title 
-      = t("radantravel") + (' Travel| سفر, بلیت, ایران, ویزا, visa, آژانس, آژانس هواپیمایی| iran travel| travle agency| ticket| visit iran| iran sights') 
-    = stylesheet_link_tag    'application', media: 'all'      
-    = javascript_include_tag 'application'   
+      = t("didartravel") + (' Travel| سفر, بلیت, ایران, ویزا, visa, آژانس, آژانس هواپیمایی| iran travel| travle agency| ticket| visit iran| iran sights') 
+    = stylesheet_link_tag    'application', media: 'all'  
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     %meta{:charset => "utf-8"}    
-    %meta{:name => "keywords", :content =>   "شرکت خدمات مسافرت هوایی و جهانگردی رادان سیر, تور لحظه ای ، تور لحظه آخری, آژانس هواپیمایی رادان سیر, هتلهای ایران, ویزا,دریافت ویزا,بازدید از ایران, Iran sight, visit Iran, Iran hotels, ایران, هتلهای ایران"}. 
+    %meta{:name => "keywords", :content =>   "آژانس هواپیمایی دیدار, دیدار, سفر, مسافرت, ویزا,  تورهای لحظه ای, تورهای خارجی"}
     %meta{:name => "robots", :content => "NoIndex,follow"}
     %meta{:name => "googlebot", :content => "noarchive"}
     %meta{:name => "slurp", :content => "NoIndex,follow"}
@@ -19,29 +19,38 @@
     %meta{:content => "8ana4hAqdsH47iRKOF8mRJ50NCHxxcp9G58sWpS4w_g", :name => "google-site-verification"}/
     = yield(:refresh_meta) if content_for?(:refresh_meta)
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "آژانس هواپیمایی رادان سیر"
-    
+
   %body
     .main{:class => I18n.locale}
+      .main-menu.col-xs-12
+        .col-xs-10{:class => I18n.locale}
+          .menu_item{:class => I18n.locale}
+            .col-xs-3.logo-img{:class => I18n.locale}
+              = image_tag 'menu_logo.png'
+            .col-xs-9
+              = render 'shared/menu_bar'
+        .col-xs-2{:class => I18n.locale}
+          .flag_bar
+            = link_to (image_tag 'flag/en_sm.png'), locale: :en
+            = link_to (image_tag 'flag/ir_sm.png'), locale: :fa
+            = link_to (image_tag 'flag/ar_sm.png'), locale: :ar
+        -#
+          .col-xs-5
+            = render 'shared/top_site_en'
+          .col-xs-7
+            = render 'shared/menu_bar'
       - if @page_slides.present?
         = render "slides/slider", :slides => @page_slides
       - elsif @other_slides.present?
         = render "slides/slider", :slides => @other_slides
       - else
         = render "slides/slider", :slides => Slide.all      
-      .logo.col-xs-12
-        .col-xs-5
-          = render 'shared/top_site_en'
-        .col-xs-7
-          = render 'shared/menu_bar'
-      .flag_bar
-        = link_to (image_tag 'flag/en_sm.png'), locale: :en, :title => "Travel Agency Radan Travel"
-        = link_to (image_tag 'flag/ir_sm.png'), locale: :fa, :title => "آژانس_هواپیمایی_رادان_سیر"
-        = link_to (image_tag 'flag/ar_sm.png'), locale: :ar, :title => "وكالة سفر رادان"  
-              
-      = render 'shared/reservation_search_tour'
-      - if current_page?('/') 
-        = render 'shared/four_main_icon'
-      - elsif current_page?(Sight) 
+      
+     
+      -#
+        - if current_page?('/') 
+          = render 'shared/four_main_icon'
+      - if current_page?(Sight) 
         = render 'sights/five_sight_icon'
       - if params[:controller] == 'hotels'
         = render 'shared/multi_slider_hotel'
@@ -58,7 +67,7 @@
             %p= t('Keywords.title')
             %ul.tag-cloud.full-width{:class => I18n.locale}
               %li.tag-cloud
-                = link_to t('radantravel'), '/' 
+                = link_to t('didartravel'), '/' 
               %li.tag-cloud
                 = link_to t('Keywords.a'), '/' 
               %li.tag-cloud
@@ -89,6 +98,10 @@
                 = link_to t('Keywords.p'), '/' 
               
       .footer.col-xs-12 
+        .col-xs-1
+        .footer-contact-box.col-xs-10
+        .col-xs-1
+        .clear-float
         .contact-box.col-xs-3.pull-right       
           .contact-form.pull-right{:class => I18n.locale}
             = render 'shared/msg_form' 
@@ -139,7 +152,7 @@
                   = image_tag link.image(:small), :title => "آژانس هواپیمایی رادان سیر", :alt => "آژانس هواپیمایی رادان سیر"
                   %p
                     %b{:class => I18n.locale}= link.title
-      .copyright.col-xs-12= t('copyright')
+        .copyright.col-xs-12= t('copyright')
         
     .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog.modal-sm
@@ -155,7 +168,7 @@
     .show-social      
       .col-xs-12.set-center{:style => "left:0;position: absolute; top:5%; padding-left:4%"}
         .social-icon
-          = link_to url_with_protocol('www.facebook.com/pages/Radan-Seir/1560811980802648'), :target => "_blank" do
+          = link_to '#', :target => "_blank" do
             .col-xs-4{:style => "padding:0"}= image_tag 'f.png', :title => "آژانس_هواپیمایی_رادان_سیر", :alt=> "آژانس_هواپیمایی_رادان_سیر"
             %span.col-xs-7{:class => I18n.locale, :style => "padding:0; text-align:left"}= t('facebook')
         .social-icon.clear-float
@@ -168,14 +181,24 @@
           = image_tag 't.png', :title => "آژانس هواپیمایی رادان سیر", :alt => "آژانس هواپیمایی رادان سیر"
           %span{:class => I18n.locale}= t('twitter')
            
-  - if is_admin?
-    .admin-menu
-      = render 'shared/admin_menu'
-  
-  = link_to '#top', :id => "go-top-page", :class => "anchorLink", :title => "آژانس هواپیمایی رادان سیر" do
-    = image_tag 'gotop.png', :title => "بازگشت به بالای صفحه", :alt => "آژانس هواپیمایی رادان سیر - بازگشت به بالای صفحه"
+    - if is_admin?
+      .admin-menu
+        = render 'shared/admin_menu'
     
+    = link_to '#top', :id => "go-top-page", :class => "anchorLink", :title => "آژانس هواپیمایی رادان سیر" do
+      = image_tag 'gotop.png', :title => "بازگشت به بالای صفحه", :alt => "آژانس هواپیمایی رادان سیر - بازگشت به بالای صفحه"
+       
+  - unless current_page?('/') 
+    
+    :javascript
+      $(document).ready(function() {
+        $('html, body').animate({ scrollTop: 600 }, 'slow'); 
+      });
   :javascript  
+    $('.carousel').carousel();
+    $('#carousel .carousel-inner :first').addClass('active');   
+
+
     $('.carousel[data-type="multi"] .item').each(function(){
       var next = $(this).next();
       if (!next.length) {
@@ -197,20 +220,6 @@
     
     $('a#go-top-page').smoothScroll();
     
-    $(document).ready(function() {
-      $('html, body').animate({ scrollTop: 600 }, 'slow'); 
-    });
     
-    $(document).ready(function() {
-      $('#search-tour .tour-search-box').click(function(){
-        $('#search-tour').toggleClass('show-tour-search-box');
-        $('#reserv').removeClass('show-reservation-box');
-        
-      });
-      $('#reserv .reserv-box').click(function(){
-        $('#reserv').toggleClass('show-reservation-box');
-        $('#search-tour').removeClass('show-tour-search-box');
-      });
-    });
     
-  
+   

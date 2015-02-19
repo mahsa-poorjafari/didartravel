@@ -1,3 +1,8 @@
+/public/
+/spec/
+
+
+
 /config/database.yml
 /log/.keep
 /public/404.html

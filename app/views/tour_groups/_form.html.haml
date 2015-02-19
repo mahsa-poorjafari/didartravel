@@ -1,0 +1,26 @@
+= form_for @tour_group do |f|
+  - if @tour_group.errors.any?
+    #error_explanation      
+      %ul
+        - @tour_group.errors.each do |attr, msg|
+          %li= msg
+  .col-xs-6.pull-right
+    
+    .form-group          
+      = f.label 'عنوان فارسی', :class => "control-label"
+      = f.text_field :title_fa, :class => "form-control"
+    .form-group
+      = f.label 'عنوان انگلیسی', :class => "control-label"
+      = f.text_field :title_en, :class => "form-control"
+    .form-group
+      = f.label 'عنوان عربی', :class => "control-label"
+      = f.text_field :title_ar, :class => "form-control"
+    .form-group
+      = f.label 'الویت نمایش گروه', :class => "control-label"
+      - if @tour_group.present?
+        %p= 'با انتساب یک عدد بین صفر تا ' + TourGroup.count.to_s + ' اولیت نمایش گروه را مشخص کنید.'
+        %i= 'اولیت با عدد کوچکتر است.'
+      = f.text_field :set_order, :class => "form-control" 
+    
+    .form-group
+      = f.submit 'ثبت', :class => "btn btn-primary"

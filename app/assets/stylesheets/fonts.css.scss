@@ -22,6 +22,16 @@ Font-Face Icons
   font-style: normal;
 }
 @font-face {
+  font-family: 'ASpiritOfDohaMedium';
+  
+  src: 
+       
+      url(font_path('ASpiritOfDohaMedium.ttf')) format('truetype');
+       
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'khodkar';
   src: url(font_path('khodkar.eot'));
   src: url(font_path('khodkar.eot?#iefix')) format('embedded-opentype'),

@@ -1,12 +1,33 @@
 #slider1_container
-  #wrapper
-    - if slides.count > 1
-      #zoom-slider  
-        - slides.each do |slide|
+  #carousel.carousel.slide.carousel-fade{"data-ride" => "carousel"}
+    %ol.carousel-indicators
+      - if slides.count > 1
+        - slides.each_with_index do |slide, i|
+          %li.active{"data-slide-to" => i+1, "data-target" => "#carousel"}
+      
+    / Carousel items
+    .carousel-inner
+      - slides.each do |slide|
+        .item
           = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
-    - else
-      .col-xs-12.one-slide{:style => "padding:0; position: initial;"}
-        - slides.each do |slide|
-          = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
-
+    / Carousel nav
+    = link_to '›', "#carousel", :class => "carousel-control left", "data-slide" => "prev"
+    = link_to '‹', "#carousel", :class => "carousel-control right", "data-slide" => "next"
+    
+  -#
+    #wrapper
+      - if slides.count > 1
+        #zoom-slider  
+          - slides.each do |slide|
+            = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
+      - else
+        .col-xs-12.one-slide{:style => "padding:0; position: initial;"}
+          - slides.each do |slide|
+            = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
+.col-xs-12.bottom-slider
+  
  
+:javascript 
+  $('.carousel').carousel();
+  $('#carousel .carousel-inner :first').addClass('active');   
+

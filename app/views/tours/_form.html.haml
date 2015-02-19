@@ -23,7 +23,7 @@
           = f.label 'تور را به یکی از دسته های زیر انتساب دهید', :class => "control-label"
           - if @tour.continent_category_id.present?
             %b{:style => "font-size:20px"}= @tour.continent_category.title_fa
-          = f.select :continent_category_id, options_for_select(ContinentCategory.all.offset(5).collect{ |u| [u.title_fa, u.id] }, :selected => @tour.continent_category_id), prompt: "دسته موردنظر را انتخاب کنید.", :class => "form-control"  
+          = f.select :continent_category_id, options_for_select(TourGroup.all.collect{ |u| [u.title_fa, u.id] }, :selected => @tour.continent_category_id), prompt: "دسته موردنظر را انتخاب کنید.", :class => "form-control"  
       .col-xs-6
         .form-group
           = f.label 'تور را به یک کشور انتساب دهید', :class => "control-label"

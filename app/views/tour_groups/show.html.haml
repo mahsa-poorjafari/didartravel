@@ -1,0 +1,16 @@
+.margin3.fa
+  %h1 گروه تور
+  - if notice
+    .alert.alert-success= notice
+  
+
+  %h2  
+    = @tour_group.title_fa
+
+  %p
+    %b الویت
+    = @tour_group.set_order
+  -if is_admin?
+    = link_to 'تعریف گروه جدید برای تورها', new_tour_group_path, :class => "btn btn-success"  
+    = link_to 'ویرایش', edit_tour_group_path(@tour_group), :class => "btn btn-info"
+

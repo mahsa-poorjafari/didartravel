@@ -1,0 +1,28 @@
+.margin3 
+  %h1 لیست گروه تورها
+  -if is_admin?
+    = link_to 'تعریف گروه جدید برای تورها', new_tour_group_path, :class => "btn btn-success"
+       
+  %table.table
+    %tr
+      %th ردیف
+      %th عنوان گروه       
+      %th الویت
+      %th
+
+    - @tour_groups.each_with_index do |continent_category, i|
+      %tr
+        %td= (i+1)
+        %td= continent_category.title      
+        %td= continent_category.set_order
+        %td
+          = link_to 'مشاهده', continent_category, :class => "btn btn-warning"
+          = link_to 'ویرایش', edit_tour_group_path(continent_category), :class => "btn btn-info"
+          = link_to 'حذف', continent_category, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+
+
+  
+
+
+
+

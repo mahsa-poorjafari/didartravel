@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125094714) do
+ActiveRecord::Schema.define(version: 20150219095829) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -333,6 +333,15 @@ ActiveRecord::Schema.define(version: 20150125094714) do
     t.datetime "updated_at"
     t.boolean  "confirm_comment", default: false
     t.string   "user_email"
+  end
+
+  create_table "tour_groups", force: true do |t|
+    t.string   "title_fa"
+    t.string   "title_en"
+    t.string   "title_ar"
+    t.integer  "set_order",  default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tours", force: true do |t|
