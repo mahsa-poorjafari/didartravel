@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception  
   before_filter :set_locale, :online_info
   before_filter :load_slides
+  before_filter :authenticate
   include ApplicationHelper
  
   protected
@@ -12,6 +13,11 @@ class ApplicationController < ActionController::Base
     end
     def default_url_options
       { :locale => I18n.locale }
+    end
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "didar" && password == "travel"
+      end
     end
   private
     def set_locale     
