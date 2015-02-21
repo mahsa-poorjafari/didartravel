@@ -34,6 +34,7 @@ body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .admin-menu {position:absolute; top:180px;height: 37px;
   overflow: hidden;
   left:0; width:220px;
+  z-index:20;
   font-family: 'open_sansregular'; 
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
     transition: all 1s;    
@@ -49,7 +50,7 @@ p, span {color:#000}
   padding-left: 4%;
 }
 .main {width:100%; position:relative;}
-.main-menu {background:#6a1010; position:relative; top:0;
+.main-menu {background:#571010; position:relative; top:0;
   -webkit-box-shadow: 0px 7px 35px 0px rgba(138,0,0,1);
   -moz-box-shadow: 0px 7px 35px 0px rgba(138,0,0,1);
   box-shadow: 0px 7px 35px 0px rgba(138,0,0,1);
@@ -162,7 +163,7 @@ p, span {color:#000}
 
 .bottom-slider {
   position:relative; width:100%; height:80px;
-  background-color:#6A1010;
+  background-color:#571010;
   -webkit-box-shadow: 0px -7px 35px 0px rgba(138,0,0,1);
   -moz-box-shadow: 0px -7px 35px 0px rgba(138,0,0,1);
   box-shadow: 0px -7px 35px 0px rgba(138,0,0,1);
@@ -173,15 +174,49 @@ p, span {color:#000}
 
 
 .footer {
+  height:800px;
   background-image: url(image-path('footer-bg.jpg')); 
   background-size: 100% 100%;
   background-position: center;
   position:relative; right:0; left:0;  
   }
+.footer .footer-boxes {position: absolute;
+width: 100%;
+height: 100%;
+right: 0;
+left: 0;}
+.footer .footer-rectangle-box {top:15%; color:#fff}
+.footer .footer-rectangle-box .contact-box{margin-top:5%; }
+.footer .footer-rectangle-box .contact-box.fa ,.footer .footer-rectangle-box .contact-box.ar{float:left}
+.footer .footer-rectangle-box .contact-box.en{float:right}
+.footer .footer-rectangle-box .contact-box .contact{text-align:center; margin-bottom:20px}
 .footer .footer-contact-box {
   background-image: url(image-path('main-menu.png'));
   position:relative; height:300px;
   top:100px;
   }
+
+.footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#fff}
+.footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#fff}
+.footer  .contact-info.en p { color:#fff}
 .yield {position:relative}
-.anchorLink {position:fixed; bottom:0;}
+.anchorLink {position:fixed; bottom:0; left:0; z-index:10}
+.form-control:focus {border-color:#CC1A1A}
+.form-control {background-color:transparent; border:1px solid #BFBFBF}
+.footer .google-map-box {border:1px solid #BFBFBF; width:100%; height:250px}
+.footer .footer-bottom {position: absolute;
+bottom: 0;}
+.footer-menu ul{list-style:none}
+.footer-menu ul li{list-style:none}
+.footer-menu ul a li {color:#fff; text-align:center}
+.footer-menu ul li:hover {color:#7B1515}
+.footer .copyright {color:#fff; text-align:center; margin-bottom:2%}
+.footer .title-footer-form {background:#fff; padding:0; margin:0; color:#000000; width:60%;
+  right: 20%;
+left: 20%;
+
+top: 0;
+}
+.footer .newsletter { top:30px;}
+.footer .customer-clube {top:60px;}
+.footer .sitevisit p b, .footer .sitevisit p{color:#fff}

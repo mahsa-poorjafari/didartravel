@@ -1,0 +1,44 @@
+.col-xs-12.footer-boxes{:class => I18n.locale}
+  .col-xs-1
+  .col-xs-10.footer-rectangle-box{:class => I18n.locale} 
+    .col-xs-6.contact-box{:class => I18n.locale}
+      = render 'shared/msg_form' 
+    .col-xs-6.contact-info{:class => I18n.locale}
+      - @contact = Page.find_by_title_en('Contact us')
+      %p= raw @contact.text
+      .google-map-box
+        %iframe{:height => "100%", :src => "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kZSqNSdorgp4&z=13", :width => "100%"}
+  .col-xs-1
+  .clear-float  
+  .col-xs-12.footer-bottom
+    .col-xs-4.sitevisit
+      %h4.title-footer-form.contact{:class => I18n.locale}= t('sitevisit.statistics')          
+      .col-xs-11{:style => "margin-left:2%; margin-top:5%"}  
+        %p{:class => I18n.locale}
+          %b= t('sitevisit.total-views')
+          =  Visit.all.count
+        %p{:class => I18n.locale}
+          %b= t('sitevisit.visits-today')
+          =  @online_day
+        %p{:class => I18n.locale}
+          %b= t('sitevisit.online-number')
+          = @online_now    
+      
+    .col-xs-4
+      = render 'shared/footer_menu'
+      
+    .col-xs-4
+      .col-xs-12 
+        %h4.title-footer-form.clear-float{:class => I18n.locale}= t('subscribe_to_newsletter')
+        = render 'shared/newsletter_subscribe'
+      .col-xs-12
+        %h4.title-footer-form.clear-float{:class => I18n.locale}= t('customer_clube')
+        = render 'shared/customer_clube'
+    .copyright.col-xs-12= t('copyright')
+    
+      
+    
+  
+    
+  
+  

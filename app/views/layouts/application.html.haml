@@ -98,62 +98,9 @@
                 = link_to t('Keywords.p'), '/' 
               
       .footer.col-xs-12 
-        .col-xs-1
-        .footer-contact-box.col-xs-10
-        .col-xs-1
-        .clear-float
-        .contact-box.col-xs-3.pull-right       
-          .contact-form.pull-right{:class => I18n.locale}
-            = render 'shared/msg_form' 
-        .col-xs-3.pull-right
-          %h4.contact{:class => I18n.locale}= t('contact-info')          
-          .contact-info
-            - if @contact.present?
-              %div{:class => I18n.locale, :style => "height:100px", :title => "آژانس هواپیمایی رادان سیر"}
-                =raw @contact.text
-          .clear-float
-          %h4.contact{:class => I18n.locale, :style => "margin-top:50px;"}= t('sitevisit.statistics')          
-          .col-xs-11{:style => "margin-left:2%; margin-top:5%"}  
-            %p{:class => I18n.locale}
-              %b= t('sitevisit.total-views')
-              =  Visit.all.count
-            %p{:class => I18n.locale}
-              %b= t('sitevisit.visits-today')
-              =  @online_day
-            %p{:class => I18n.locale}
-              %b= t('sitevisit.online-number')
-              = @online_now    
-        -#
-          .col-xs-3.set-center{:style => "left:10%; right:10%; position: absolute;"}
-            = render 'shared/footer_menu'
-          .col-xs-3
-            %h4{:class => I18n.locale}=  t('request-tour.request-tour-form')
-            - if flash[:SendCustomTour].present?
-              .alert.alert-success{:style => "position: absolute;z-index: 10;width: 90%;"}= flash[:SendCustomTour]
-            = render 'custom_tours/form'
-        .col-xs-3.pull-right
-          %h4.contact{:class => I18n.locale}= t('links')          
-          .col-xs-12
-            = render 'shared/footer_menu'
+        = render 'shared/footer'
+        
           
-        .col-xs-3.pull-left
-          .col-xs-12 
-            %h4.clear-float{:class => I18n.locale}= t('subscribe_to_newsletter')
-            = render 'shared/newsletter_subscribe'
-          .col-xs-12{:style => "margin-top:10%;"} 
-            %h4.clear-float{:class => I18n.locale}= t('customer_clube')
-            = render 'shared/customer_clube'
-        
-        -#  
-          .col-xs-12.set-center
-            .show-colleague{:class => I18n.locale} 
-              - Link.all.each do |link|
-                = link_to url_with_protocol(link.web_site), :target => "_blank", :class => "col-xs-2 colleague-box", :title => "آژانس_هواپیمایی_رادان_سیر" do    
-                  = image_tag link.image(:small), :title => "آژانس هواپیمایی رادان سیر", :alt => "آژانس هواپیمایی رادان سیر"
-                  %p
-                    %b{:class => I18n.locale}= link.title
-        .copyright.col-xs-12= t('copyright')
-        
     .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog.modal-sm
         .modal-content
