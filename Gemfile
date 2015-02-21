@@ -15,7 +15,7 @@ gem 'friendly_id'
 gem "nested_form"
 gem 'ahoy_matey'
 gem 'activeuuid', '>= 0.5.0'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", "~> 4.2"
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'ckeditor'
 gem 'devise'
