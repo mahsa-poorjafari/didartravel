@@ -7,6 +7,8 @@ default: &default
 
 development:
   <<: *default
+  username: root
+  password: nima10080
   database: didar_travel_development
   
 

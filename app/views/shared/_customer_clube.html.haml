@@ -1,7 +1,7 @@
 .customer-clube.clear-float
   = form_tag search_customers_path, :method => "post", id: "search-tour" do 
     .col-xs-3{:style => "text-align:center", :class => I18n.locale}
-      = submit_tag t('search_customer'), :name => "customer-submit", :id => "customer-submit" , :class => "btn btn-danger I18n.locale", :title => "آژانس_هواپیمایی_رادان_سیر"
+      = submit_tag t('search_customer'), :name => "customer-submit", :id => "customer-submit" , :class => "form-submit I18n.locale", :title => "آژانس_هواپیمایی_رادان_سیر"
     .col-xs-8.form-group
       = text_field_tag :name, params[:name] , :placeholder => t('customer_name'), :class => "form-msg form-control", :id => "customer-name", :title => "آژانس_هواپیمایی_رادان_سیر"
     
