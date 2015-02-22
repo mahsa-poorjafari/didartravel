@@ -1,6 +1,7 @@
 .col-xs-12
-  .title-tour-line.col-xs-10
-  %p.title-tour.col-xs-3.set-center{:class => I18n.locale}= t('tour.tours')
+  .col-xs-5
+  %p.title-tour.col-xs-2.set-center{:class => I18n.locale}= t('tour.tours')
+  .col-xs-5
 - @half_count = (tours.count) / 2
 .col-xs-12{:style => "padding:0"}
   

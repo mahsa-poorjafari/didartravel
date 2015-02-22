@@ -12,6 +12,16 @@ Font-Face Icons
     font-style: normal;
 }
 @font-face {
+    font-family: 'Bhoma';
+    src: asset_url('Bhoma.eot');
+    src: asset_url('Bhoma.eot?#iefix') format('embedded-opentype'),
+         
+         asset_url('Bhoma.ttf') format('truetype');
+         
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
   font-family: 'leaguegothic-condensed-regular-webfont';
   src: url(font_path('leaguegothic-regular-webfont.eot'));
   src: url(font_path('leaguegothic-regular-webfont.eot?#iefix')) format('embedded-opentype'),

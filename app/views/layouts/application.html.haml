@@ -25,13 +25,15 @@
       .main-menu.col-xs-12
         
         .top-of-menu.col-xs-12
+          .col-xs-7.pull-right
+            %p.site-title{:class => I18n.locale}= t("didartravel")
           .col-xs-2{:class => I18n.locale}
             .flag_bar
-              = link_to (image_tag 'flag/en_sm.png'), locale: :en
-              = link_to (image_tag 'flag/ir_sm.png'), locale: :fa
-              = link_to (image_tag 'flag/ar_sm.png'), locale: :ar
-          .col-xs-7
-          .col-xs-3{:class => I18n.locale}
+              = link_to (image_tag 'flag/en_sm.png'), '#'
+              = link_to (image_tag 'flag/ir_sm.png'), '#'
+              = link_to (image_tag 'flag/ar_sm.png'), '#'
+          
+          .col-xs-2{:class => I18n.locale}
             #search
               = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
                 .search_on_google
@@ -43,6 +45,7 @@
           
         .col-xs-12.logo-center{:class => I18n.locale}
           = render 'shared/menu_bar'
+        
         .bottom-of-menu.col-xs-12
           
         
@@ -52,6 +55,7 @@
         = render "slides/slider", :slides => @other_slides
       - else
         = render "slides/slider", :slides => Slide.all      
+      
       .col-xs-12.bottom-slider
         -#
           = render 'shared/weather'
