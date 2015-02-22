@@ -23,29 +23,38 @@
   %body
     .main{:class => I18n.locale}
       .main-menu.col-xs-12
-        .col-xs-10{:class => I18n.locale}
-          .menu_item{:class => I18n.locale}
-            .col-xs-3.logo-img{:class => I18n.locale}
-              = image_tag 'menu_logo.png'
-            .col-xs-9
-              = render 'shared/menu_bar'
-        .col-xs-2{:class => I18n.locale}
-          .flag_bar
-            = link_to (image_tag 'flag/en_sm.png'), locale: :en
-            = link_to (image_tag 'flag/ir_sm.png'), locale: :fa
-            = link_to (image_tag 'flag/ar_sm.png'), locale: :ar
-        -#
-          .col-xs-5
-            = render 'shared/top_site_en'
+        
+        .top-of-menu.col-xs-12
+          .col-xs-2{:class => I18n.locale}
+            .flag_bar
+              = link_to (image_tag 'flag/en_sm.png'), locale: :en
+              = link_to (image_tag 'flag/ir_sm.png'), locale: :fa
+              = link_to (image_tag 'flag/ar_sm.png'), locale: :ar
           .col-xs-7
-            = render 'shared/menu_bar'
+          .col-xs-3{:class => I18n.locale}
+            #search
+              = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
+                .search_on_google
+                  .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
+                  .google-submit
+                    =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
+
+
+          
+        .col-xs-12.logo-center{:class => I18n.locale}
+          = render 'shared/menu_bar'
+        .bottom-of-menu.col-xs-12
+          
+        
       - if @page_slides.present?
         = render "slides/slider", :slides => @page_slides
       - elsif @other_slides.present?
         = render "slides/slider", :slides => @other_slides
       - else
         = render "slides/slider", :slides => Slide.all      
-      
+      .col-xs-12.bottom-slider
+        -#
+          = render 'shared/weather'
      
       -#
         - if current_page?('/') 
