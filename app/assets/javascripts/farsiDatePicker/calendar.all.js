@@ -1039,7 +1039,7 @@ function equinoxe_a_paris(year)
     equAPP = equJD + equationOfTime(equJED);
 
     /*  Finally, we must correct for the constant difference between
-        the Greenwich meridian and that of Paris, 2\B020'15" to the
+        the Greenwich meridian and that of Paris, 2°20'15" to the
         East.  */
 
     dtParis = (2 + (20 / 60.0) + (15 / (60 * 60.0))) / 360;
@@ -1068,7 +1068,7 @@ function paris_equinoxe_jd(year)
                                 given Julian day falls.  Returns an
                                 array of two elements:
 
-                                    [0]  Ann\E9e de la R\E9volution
+                                    [0]  Année de la Révolution
                                     [1]  Julian day number containing
                                          equinox for this year.
 */

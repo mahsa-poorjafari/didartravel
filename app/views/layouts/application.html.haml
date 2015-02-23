@@ -109,7 +109,14 @@
                 = link_to t('Keywords.e'), '/' 
               %li.tag-cloud
                 = link_to t('Keywords.p'), '/' 
-              
+      .col-xs-12.cal-weather
+        .col-xs-6
+          .scrollable.vertical
+            #test.items
+            .navi
+        .col-xs-6.calendar
+          #datepicker7.col-xs-6
+          
       .footer.col-xs-12 
         = render 'shared/footer'
         
@@ -179,7 +186,20 @@
     $('#package-tour2 :first').addClass('active');
     
     $('a#go-top-page').smoothScroll();
+    $('#datepicker7').datepicker();      
     
-    
+    $(document).ready(function () {
+
+      $('#test').weatherfeed(['IRXX0008','IRXX0018','IRXX0016','IRXX0003','IRXX0015']).ajaxStop(function() {
+
+
+        $("div.scrollable").scrollable({ 
+                vertical: true,  
+                size: 1
+        }).circular().navigator().autoscroll({
+          interval: 3000
+        });
+      });
+    });
     
    

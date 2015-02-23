@@ -23,6 +23,14 @@
 //= require md5
 //= require bootstrap
 //= require bootstrap-multiselect
+
+//= require farsiDatePicker/calendar
+//= require farsiDatePicker/jquery.ui.core
+//= require farsiDatePicker/jquery.ui.datepicker
+//= require farsiDatePicker/jquery.ui.datepicker-cc-fa
+//= require farsiDatePicker/jquery.ui.widget
+//= require farsiDatePicker/zextension
+
 //= require lightbox-2.6.min
 //= require jquery.mixitup
 //= require jquery.eachStep.min
@@ -31,6 +39,7 @@
 //= require jquery.easing.1.3
 //= require jquery.fitvids
 //= require jquery.bxslider
+//= require jquery.zweatherfeed.min
 
 
 

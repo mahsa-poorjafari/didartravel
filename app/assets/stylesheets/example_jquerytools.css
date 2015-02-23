@@ -1,0 +1,90 @@
+﻿@charset "UTF-8";
+/*
+ * AftWeatherFeed with jQuery Tools
+ *
+ * Version: 1.0.1
+ * (c) Copyright 2012, ilia , iranenaz@gmail.com
+ *
+ */
+
+
+.weatherFeed
+{
+	font-family: Tahoma, Helvetica, sans-serif;
+	font-size: 90%;
+	margin: 2em 3em;
+	width: 280px;
+	color: #ccc;
+}
+.weatherFeed a { color: #888; }
+.weatherFeed a:hover
+{
+	color: #eee;
+	text-decoration: none;
+}
+.weatherItem
+{
+	padding: 0.8em;
+	text-align: right;
+}
+.weatherCity {
+	text-transform: uppercase;
+	color: #F90;
+  height:40px;
+}
+.weatherTemp
+{
+	font-size: 3.8em;
+	font-weight: bold;
+	color: #eee;
+  height:55px;
+}
+.weatherDesc, .weatherCity { font-weight: bold ;font-size: 1.8em; }
+.weatherDesc { margin-bottom: 0.4em; color: #eee; }
+.weatherRange, .weatherWind { font-size: 1em; direction:rtl; font-family: 'open_sansregular'; color:#fff}
+.weatherLink
+{
+	margin-top: -6px;  
+	text-align: left;
+	font-size: 0.8em;
+  direction:rtl; font-family: 'open_sansregular'; 
+}
+
+.vertical
+{  
+	position:relative;
+	overflow:hidden;	
+	height: 160px;	 
+	width: 280px;
+	border: 4px solid #5D1111;
+	-moz-border-radius: 20px;
+	background: url('bg.png') repeat-x;
+}
+
+.items
+{
+	position:absolute;
+	height:20000em;	
+	margin: 0px;
+  right:0; left:0;
+}
+.items div.weatherItem { height: 160px; }
+
+.navi
+{
+	width:288px;
+	height:20px;
+}
+.navi a
+{
+	width:8px;
+	height:8px;
+	float:left;
+	margin:3px;
+	background: url('navigator.png') 0 0 no-repeat;
+	display:block;
+	font-size:1px;
+}
+.navi a:hover { background-position:0 -8px; }
+.navi a.active { background-position:0 -16px; }
+

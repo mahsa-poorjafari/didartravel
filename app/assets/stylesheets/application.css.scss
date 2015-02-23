@@ -42,6 +42,7 @@ body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .admin-menu-title {text-align:center; color:#000000}
 .admin-menu-title:hover {cursor:pointer}
 p, span {color:#000}
+.calendar p, span {color:#fff}
 .admin-menu:hover {height:500px}
 .admin-menu ul li:hover a {font-size:16px;}
 .admi-menu-title {padding:1%; color:#000000}
@@ -324,3 +325,21 @@ top: 0;
   }
 .slider4 .slide .item-package img {height:100%; width:100%}
 .slider4 .slide .more-info {position:absolute; bottom:0; width:100%; text-align:left;}
+.cal-weather {position:relative; height:230px; padding:1%;
+  background-image: url(image-path('mashhad_al_rezaـhoorein.jpg'));
+  background-repeat:no-repeat; 
+  background-attachment: fixed;
+  background-position: center;
+  background-size:cover;
+  
+  }
+.cal-weather::before {  
+  padding:0;
+  opacity:.4;
+  content: '';
+  position:absolute; width:100%; height:100%;
+  top:0; right:0; left:0; bottom:0;
+  background-image: url(image-path('outlets.png'));
+  background-repeat:repeat; 
+  
+  }
