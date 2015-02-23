@@ -294,11 +294,13 @@ top: 0;
   float:right;
   color:#fff
   }
-.title-tour {text-align:center; color:#620808; font-size:2em;
+.title-tour {text-align:center; color:#620808; font-size:1.5em;
   background-image: url(image-path('title-site.png'));
   background-repeat:no-repeat;  
+  background-position:center;  
   height:100px;
   padding-top:2%;
+  padding-right:4%;
   }
 
 
@@ -342,4 +344,26 @@ top: 0;
   background-image: url(image-path('outlets.png'));
   background-repeat:repeat; 
   
+  }
+.tours-index {width:20%; position:relative; height:250px; background:#fff; 
+  border-top:2px solid #6F8FAD; border-radius:5px;
+  float:left;
+  margin:1%;
+  -webkit-box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
+  }
+.tours-index .tour-box {height:250px; width:100%}
+.tours-index .tour-box .tour-title{position:absolute;
+  width:100%; height:40px; padding:2%; text-align:center;
+  top:0; right:0; left:0;
+  }
+.tours-index .tour-box .tour-sample-image {position: absolute; top:40px; right:0; left:0; height:150px;
+  width:100%; overflow:hidden;
+  }
+.tours-index .tour-box .tour-sample-image img {height:100%; width:100%;}
+.country-title-tab {color:#000000}
+.tours-index .tour-date {position:absolute; bottom:0; width:100%; right:0; left:0;}
+.tours-index .admin-btn-tour {position:absolute; bottom:0; width:100%; right:0; left:0;
+  z-index:20;
   }

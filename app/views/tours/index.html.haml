@@ -30,10 +30,8 @@
     - Country.all.each do |country|
       - unless country.title_fa == 'ایران'
         - if country.tours.present?
-          - @country_tour = country.tours.last
-    
-          
-          .tours-index{ "data-my-order" => @country_tour.id, :style => "width:23%"}        
+          - @country_tour = country.tours.last           
+          .tours-index{ "data-my-order" => @country_tour.id}
             - if @country_tour.coming_soon?
               .coming_soon= image_tag 'coming.png'
             = link_to @country_tour, :class => "tour-box" do 
