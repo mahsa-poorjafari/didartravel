@@ -26,9 +26,11 @@
 //= require lightbox-2.6.min
 //= require jquery.mixitup
 //= require jquery.eachStep.min
-//= require zoomSlider
 //= require jquery.smooth-scroll
-//= require js-image-slider
 //= require prettify
+//= require jquery.easing.1.3
+//= require jquery.fitvids
+//= require jquery.bxslider
+
 
 
