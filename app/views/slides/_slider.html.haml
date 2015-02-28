@@ -9,7 +9,7 @@
     .carousel-inner
       - slides.each do |slide|
         .item
-          = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
+          = image_tag slide.image(:slide_size), :id => "slide-"+ slide.id.to_s
     / Carousel nav
     = link_to  "#carousel", :class => "carousel-control left", "data-slide" => "prev" do
       = image_tag 'next-icon.png'
@@ -22,11 +22,11 @@
       - if slides.count > 1
         #zoom-slider  
           - slides.each do |slide|
-            = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
+            = image_tag slide.image(:slide_size), :id => "slide-"+ slide.id.to_s
       - else
         .col-xs-12.one-slide{:style => "padding:0; position: initial;"}
           - slides.each do |slide|
-            = image_tag slide.image(:slide_size), :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر", :id => "slide-"+ slide.id.to_s
+            = image_tag slide.image(:slide_size), :id => "slide-"+ slide.id.to_s
 
   
  

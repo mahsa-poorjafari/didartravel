@@ -18,7 +18,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %meta{:content => "8ana4hAqdsH47iRKOF8mRJ50NCHxxcp9G58sWpS4w_g", :name => "google-site-verification"}/
     = yield(:refresh_meta) if content_for?(:refresh_meta)
-    = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "آژانس هواپیمایی رادان سیر"
+    = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png'
 
   %body
     .main{:class => I18n.locale}
@@ -71,9 +71,9 @@
         = render 'shared/multi_slider_visit_iran'
       - else
         = render 'shared/multi_slider_search_tour', :tours => Tour.all
-      = link_to '', '#', :name => "#top", :id => "page-top", :title => "آژانس هواپیمایی رادان سیر"
+      = link_to '', '#', :name => "#top", :id => "page-top"
       .yield.clear-float{:class => I18n.locale}
-        = link_to '', '#', :name => "yield", :id => "yieldAnchor", :title => "آژانس هواپیمایی رادان سیر"
+        = link_to '', '#', :name => "yield", :id => "yieldAnchor"
         = yield
         - if current_page?('/') 
           .keywords
@@ -136,24 +136,24 @@
       .col-xs-12.set-center{:style => "left:0;position: absolute; top:5%; padding-left:4%"}
         .social-icon
           = link_to '#', :target => "_blank" do
-            .col-xs-4{:style => "padding:0"}= image_tag 'f.png', :title => "آژانس_هواپیمایی_رادان_سیر", :alt=> "آژانس_هواپیمایی_رادان_سیر"
+            .col-xs-4{:style => "padding:0"}= image_tag 'f.png'
             %span.col-xs-7{:class => I18n.locale, :style => "padding:0; text-align:left"}= t('facebook')
         .social-icon.clear-float
-          = image_tag 'l.png', :title => "آژانس هواپیمایی رادان سیر", :alt => "آژانس هواپیمایی رادان سیر"
+          = image_tag 'l.png'
           %span{:class => I18n.locale}= t('linkedin')
         .social-icon
-          = image_tag 'g.png', :title => "آژانس هواپیمایی رادان سیر", :alt => "آژانس هواپیمایی رادان سیر"
+          = image_tag 'g.png'
           %span{:class => I18n.locale}= t('googleplus')
         .social-icon
-          = image_tag 't.png', :title => "آژانس هواپیمایی رادان سیر", :alt => "آژانس هواپیمایی رادان سیر"
+          = image_tag 't.png'
           %span{:class => I18n.locale}= t('twitter')
            
     - if is_admin?
       .admin-menu
         = render 'shared/admin_menu'
     
-    = link_to '#top', :id => "go-top-page", :class => "anchorLink", :title => "آژانس هواپیمایی رادان سیر" do
-      = image_tag 'gotop.png', :title => "بازگشت به بالای صفحه", :alt => "آژانس هواپیمایی رادان سیر - بازگشت به بالای صفحه"
+    = link_to '#top', :id => "go-top-page", :class => "anchorLink"do
+      = image_tag 'gotop.png', :title => "بازگشت به بالای صفحه"
        
   - unless current_page?('/') 
     
