@@ -2,7 +2,7 @@
   .col-xs-7
     .title-tour.set-center{:class => I18n.locale}= t('tour.tours')
     - @half_count = (tours.count) / 2
-    .col-xs-12{:style => "padding:0; height:300px; overflow:hidden"}
+    .col-xs-12{:style => "padding:0; height:280px; overflow:hidden"}
       .slider4
         - Country.all.each do |country|
           - unless country.title_fa == 'ایران'
