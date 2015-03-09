@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   belongs_to :role
   def is_admin?
     #self.roles.collect(&:title).include?("Admin")
-    self.role_id = 1
-    
+    self.role_id = 1    
   end
+  
 end

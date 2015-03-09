@@ -1,0 +1,99 @@
+.col-xs-12.middle-box
+  .col-xs-7
+    .title-tour.set-center{:class => I18n.locale}= t('tour.tours')
+    - @half_count = (tours.count) / 2
+    .col-xs-12{:style => "padding:0"}
+      .slider4
+        - Country.all.each do |country|
+          - unless country.title_fa == 'ایران'
+            - if country.tours.present?
+              - @first_tour = country.tours.first            
+              .slide
+                %p.tour-title{:class => I18n.locale}= @first_tour.title
+                - if @first_tour.photos.present?
+                  = link_to (image_tag @first_tour.photos.first.image(:medium), :class => "img-responsive"), @first_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+                
+                = render "/tours/show_persian_date", :tour => @first_tour
+                
+                .more-info
+                  = link_to  @first_tour do 
+                    = t('more-info')
+                    = image_tag 'seemore.png', :title => 'آژانس_هواپیمایی_دیدار', :alt => t('more-info')
+                -if is_admin?
+                  .admin-btn-tour
+                    = link_to 'ویرایش تور', edit_tour_path(@first_tour), :class => "btn btn-info"
+                    = link_to 'مشاهده تور', @first_tour, :class => "btn btn-warning"                   
+                    = link_to 'حذف تور', @first_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+    .col-xs-12{:style => "padding:0"}
+      .slider4
+        - Country.all.each do |country|
+          - if country.title_fa == 'ایران'
+            - if country.tours.present?
+              - @first_tour = country.tours.first            
+              .slide
+                %p.tour-title{:class => I18n.locale}= @first_tour.title
+                - if @first_tour.photos.present?
+                  = link_to (image_tag @first_tour.photos.first.image(:medium), :class => "img-responsive"), @first_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+                
+                = render "/tours/show_persian_date", :tour => @first_tour
+                
+                .more-info= link_to t('more-info'), @first_tour
+    .col-xs-12
+      .plane-company
+        %marquee{:onmouseout => "this.start();", :onmouseover => "this.stop();"}
+          - Plane.all.each do |plane|
+            .plane-logo= image_tag plane.logo(:icon)
+  .col-xs-5
+    .title-tour.set-center{:class => I18n.locale}= t('news')
+    %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
+      
+      
+    .col-xs-12.cal-weather
+      .col-xs-6
+        .scrollable.vertical
+          #test.items
+          .navi
+      .col-xs-6.calendar
+        #datepicker7
+    .col-xs-12{:class => I18n.locale}
+      #search
+        = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
+          .search_on_google
+            .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
+            .google-submit
+              =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
+
+    .col-xs-12 
+      %h4.title-certificate.clear-float{:class => I18n.locale}= t('national-certificate')
+    .col-xs-12 
+      = render 'shared/newsletter_subscribe'
+      
+      
+    
+  -#
+    .multi-slider-package.col-xs-12    
+      .col-md-12.col-md-offset-3{:style => "height:100%;"}
+        #myCarousel1.carousel.slide{"data-interval" => "3000", "data-ride" => "carousel", "data-type" => "multi"}
+          .carousel-inner#package-tour1 
+            - Country.all.each do |country|
+              - unless country.title_fa == 'ایران'
+                - if country.tours.present?
+                  - @first_tour = country.tours.first
+                  .item
+                    .col-xs-4.col-sm-4.col-xs-12.tour-item{:id => @first_tour.id.to_s}
+                      .tour-hover                    
+                        %p.tour-title{:class => I18n.locale}= @first_tour.title
+                        - if I18n.locale == :fa
+                          = render "/tours/show_persian_date", :tour => @first_tour
+                        - else  
+                          = render "/tours/show_english_date", :tour => @first_tour
+                      - if @first_tour.photos.present?
+                        = link_to (image_tag @first_tour.photos.first.image(:medium), :class => "img-responsive"), @first_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_رادان_سیر"
+                      .more-info= t('more-info')
+                      
+                      
+           
+        = link_to  "#myCarousel1" , :class => "left carousel-control", "data-slide" => "prev", :title => "آژانس_هواپیمایی_رادان_سیر"  do  
+          = image_tag 'prev.png'
+        = link_to  "#myCarousel1", :class => "right carousel-control", "data-slide" => "next", :title => "آژانس_هواپیمایی_رادان_سیر"  do           
+          = image_tag 'next.png'

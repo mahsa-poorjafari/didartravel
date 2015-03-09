@@ -1,5 +1,7 @@
 fa:  
   didartravel: 'شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی دیدار'
+  didartravel-part1: 'شرکت خدمات مسافرت هوایی،'
+  didartravel-part2: 'جهانگردی و زیارتی دیدار'
   contact-us: 'ارتباط با ما '
   about-us: 'درباره ما'
   phone: '۰۵۱-۳۲۲۱۱۱۴۴ (۲۰ خط)'
@@ -15,6 +17,8 @@ fa:
   visa: 'ویزا'
   local-hotels: 'هتلهای داخلی'
   foreign-hotels: 'هتلهای خارجی'
+  local-tour: 'تورهای داخلی'
+  foreign-tour: 'تورهای خارجی'
   iran-tours: 'پکیج های تور ایران'
   imp-package: 'پکیج های لحظه ای'
   not-found: 'موردی یافت نشد'
@@ -208,3 +212,5 @@ fa:
   visa-more-info: 'سایر اطلاعات '
   visa-request: 'درخواست ها برای ویزا'
   pdf-files: 'فایلهای pdf'
+  news: 'اخبار و تازه ها'
+  national-certificate: 'صدور گواهینامه بین المللی'

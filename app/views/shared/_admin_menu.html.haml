@@ -1,6 +1,8 @@
-%h5.admin-menu-title
+.admin-menu-title
   - if current_user.present?
-    = current_user.email
+    %p
+      %b= 'منوی مدیریت سایت'
+      = current_user.email
   - @unread_tour_comment = TourComment.where(confirm_comment: 0).count
   - @unread_msg = Message.where(visited: 0).count
   - @unread_visa_form = VisaForm.where(admin_visited: 0).count
@@ -8,7 +10,7 @@
   - @notifications = @unread_tour_comment + @unread_msg + @unread_custom_link + @unread_visa_form
   %span.unread= @notifications
 %ul{:class => I18n.locale}  
-  %li= link_to 'گواهینامه بین المللی', InvestmentInIran
+  %li= link_to 'گواهینامه بین المللی', InvestmentInIran  
   %li= link_to 'تعریف گروه ویزا', VisaType
   %li= link_to 'معرفی ویزای جدید', Visa
   %li
@@ -26,6 +28,7 @@
   %li= link_to 'معرفی نقاط دیدنی', sights_path
   %li= link_to 'پیوندهای مرتبط', links_path
   %li= link_to 'افزودن شرکت هواپیمایی', Plane
+  %li= link_to 'افزودن جوایز و گواهینامه ها', Certificate
   %li= link_to 'مدیریت اسلایدر', Slide
   %li    
     = link_to 'مشاهده نظرات کاربران', TourComment

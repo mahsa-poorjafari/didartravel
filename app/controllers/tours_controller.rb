@@ -91,6 +91,8 @@ class ToursController < ApplicationController
   # POST /tours.json
   def create
     @tour = Tour.new(tour_params)   
+    p '--------Date from-------'
+    p @tour.validate_date_from
     if @tour.save      
       render :show  
          
@@ -101,6 +103,8 @@ class ToursController < ApplicationController
   # PATCH/PUT /tours/1
   # PATCH/PUT /tours/1.json
   def update
+    p '--------Date from-------'
+    p @tour.validate_date_from
     respond_to do |format|
       if @tour.update(tour_params)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }

@@ -1,0 +1,7 @@
+.margin3  
+  %h1{:class => I18n.locale}= @certificate.title
+  %p#notice= notice
+  = image_tag @certificate.image(:medium)
+  - if is_admin?
+    = link_to 'ویرایش', edit_certificate_path(@certificate), :class => "btn btn-info"
+

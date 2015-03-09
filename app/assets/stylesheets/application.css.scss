@@ -53,11 +53,11 @@ p, span {color:#000}
 .main {width:100%; position:relative;}
 .main-menu { position:relative; top:0;
   
-  right:0; left:0; width:100%; height:160px; overflow:hidden;
+  right:0; left:0; width:100%; height:160px; 
   padding:0; z-index:4;
 }
 .main-menu  .top-of-menu {position:absolute; 
-  top:0; width:100%; height:45px;  z-index:20;    
+  top:0; width:100%; height:80px;  z-index:20;    
   padding:1%;
   background: #440102; /* Old browsers */
   background: -moz-linear-gradient(top,  #440102 0%, #560001 100%); /* FF3.6+ */
@@ -70,8 +70,9 @@ p, span {color:#000}
 
   }
 .main-menu  .top-of-menu p.site-title {text-align:center; color:#fff}
-.main-menu  .top-of-menu p.site-title.fa {font-size: 1.5em; font-family: 'Bhoma'; text-align:right}
+.main-menu  .top-of-menu p.site-title.fa {font-size: 2em; font-family: 'Bhoma'; text-align:right}
 .main-menu .bottom-of-menu {
+  display:none;
   position:absolute; bottom:0;
   width:100%; height:10px;  z-index:20;   
   background: #440102; /* Old browsers */
@@ -88,16 +89,16 @@ p, span {color:#000}
 
 .main-menu .flag_bar a{margin:2%;}
 .main-menu .flag_bar {text-align:center}
-.main-menu .logo-center.fa,.main-menu .logo-center.ar  {position:absolute; top:45px; width:100%; height:115px}
+.main-menu .logo-center.fa,.main-menu .logo-center.ar  {position:absolute; top:45px; width:100%; height:112px}
 
 .show-social {
-  display:none;
+  display:block;
   position:absolute;
-  top:100px;
+  top:160px;
   right:0; width:35px;
   overflow:hidden;
-  background:#1A1A1A;
-  opacity:.6;
+  background:#550000;
+  opacity:.8;
   height:140px; 
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
   transition: all 1s; 
@@ -117,52 +118,52 @@ p, span {color:#000}
 .menu_item.fa, .menu_item.ar {right:-5px;}
 .menu_item .logo-img.fa {float:right}
 .menu_item .logo-img {position:absolute; top:0; right:0}
-.menu_bar {position:absolute;  width:100%; height:100%; left:0;}
-.menu_bar .menu-side {position:relative; height:60%; margin-top:3%;}
-
-.menu_bar .logo-side {
-  margin-top: -3%;
-  border-radius: 50%;
-  background: #fff;
-  z-index: 50;
-  padding: 2%;
-  height:150px;
+.menu_bar {position:absolute;  width:100%; height:100%; left:0; top:33px;
+  background-image: url(image-path('menu-bg.png'));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   }
-.menu_bar .logo-side a {text-align:center}
+.menu_bar .menu-side {position:relative; height:60%; margin-top:2%; z-index:200;}
+.logo-side {
+  top: -48px;    
+  z-index: 50;  
+  height:210px;
+  background-image: url(image-path('didar_travel.png'));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  }
+.logo-side a {text-align:center}
 .menu_bar ul#main-menu {
-  list-style:none; width:100%;   
+  list-style:none; width:85%;   
   height:100%; 
   position: relative;
   padding: 0;
   }
 .menu_bar ul#main-menu li{position:relative;
-  width:25%; float:right;
+  width:30%; float:right;
   height:100%; overflow:hidden;  
   color:#811717;
-  font-size:15px;
-  
+  font-size:15px;  
   background-position: 50% 0;  
   }
-.menu_bar ul#main-menu li.item-menu a {
-  padding-top:13%;
+.menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
+.menu_bar ul#main-menu li.item-menu a {  
   width:100%; height:100%;
   position:absolute;
   text-align:center;  
-  color:#510D0D; font-size:1.2em;
+  color:#510D0D; font-size:1.5em;
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
   transition: all 1s; }
-.menu_bar ul#main-menu li.item-menu:hover {background-image: url(image-path('arrow-up.png'));
-  background-repeat: no-repeat;
-  background-position: 50% 100%;  
-  border-radius:9px;  
-}
+
 .menu_bar ul#main-menu li.item-menu:hover a{color:#FF0000; }
 
 #slider1_container {
   position: relative;
   width: 100%;
-  height: 400px;
-  top: 0;
+  height: 500px;
+  top: -80px;
   right: 0;
   left: 0;
   clear:both
@@ -198,6 +199,7 @@ p, span {color:#000}
 
   .carousel-control {
     z-index: 2;
+    padding-top:230px;
   }
 }
 
@@ -206,16 +208,10 @@ p, span {color:#000}
 
 
 .bottom-slider {
-  position:relative; width:100%; height:10px;
-  background: #440102; /* Old browsers */
-  background: -moz-linear-gradient(top,  #440102 0%, #560001 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#440102), color-stop(100%,#560001)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #440102 0%,#560001 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #440102 0%,#560001 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #440102 0%,#560001 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #440102 0%,#560001 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#440102', endColorstr='#560001',GradientType=0 ); /* IE6-9 */
   
+  position:relative; width:100%; height:5px;
+  margin-top:-80px;
+  background:#440102;
   }
 .carousel-control.left, .carousel-control.right {background-image:none}
 .carousel-control.left, .carousel-control.right {background-image:none}
@@ -223,7 +219,7 @@ p, span {color:#000}
 
 
 .footer {
-  height:800px;
+  height:900px;
   background-image: url(image-path('footer-bg.jpg')); 
   background-size: 100% 100%;
   background-position: center;
@@ -234,7 +230,7 @@ width: 100%;
 height: 100%;
 right: 0;
 left: 0;}
-.footer .footer-rectangle-box {top:15%; color:#fff}
+.footer .footer-rectangle-box {top:10%; color:#fff}
 .footer .footer-rectangle-box .contact-box{margin-top:5%; }
 .footer .footer-rectangle-box .contact-box.fa ,.footer .footer-rectangle-box .contact-box.ar{float:left}
 .footer .footer-rectangle-box .contact-box.en{float:right}
@@ -244,7 +240,13 @@ left: 0;}
   position:relative; height:300px;
   top:100px;
   }
-
+.footer .footer-boxes .footer-certificate {position: absolute;
+  right:0; left:0;
+  bottom: 16%;
+  height: 172px;
+  
+    }
+.footer .footer-boxes .footer-certificate  .certificate-box {text-align:center}
 .footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#fff}
 .footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#fff}
 .footer  .contact-info.en p { color:#fff}
@@ -252,8 +254,9 @@ left: 0;}
 .anchorLink {position:fixed; bottom:0; left:0; z-index:10}
 .form-control:focus {border-color:#CC1A1A}
 .form-control {background-color:transparent; border:1px solid #BFBFBF}
-.footer .google-map-box {border:1px solid #BFBFBF; width:100%; height:250px}
+.footer .google-map-box {border:1px solid #BFBFBF; width:100%; height:300px}
 .footer .footer-bottom {position: absolute;
+  height:120px; overflow:hidden;
 bottom: 0;}
 .footer-menu ul{list-style:none}
 .footer-menu ul li{list-style:none}
@@ -298,18 +301,17 @@ top: 0;
   background-image: url(image-path('title-site.png'));
   background-repeat:no-repeat;  
   background-position:center;  
-  height:100px;
+  height:70px;
   padding-top:2%;
   padding-right:4%;
   }
+.title-tour p{color:#620808; font-size:1.5em;}
 
-
-.slider4 {position:relative; width:95%; 
+.slider4 {position:relative; width:100%; 
   height:270px; margin-bottom:5px;  
-  margin-right:2.5%;
-  margin-left:2.5%;
+ 
     }
-.slider4 .slide {position:relative; width:19%; height:100%; float:left; margin:.5%;
+.slider4 .slide {position:relative; width:32%; height:100%; float:left; margin:.5%;
   background:#fff;
   border-top:2px solid #6F8FAD;
   border-radius:5px;
@@ -327,22 +329,15 @@ top: 0;
   }
 .slider4 .slide .item-package img {height:100%; width:100%}
 .slider4 .slide .more-info {position:absolute; bottom:0; width:100%; text-align:left;}
-.cal-weather {position:relative; height:230px; padding:1%;
-  background-image: url(image-path('mashhad_al_rezaـhoorein.jpg'));
-  background-repeat:no-repeat; 
-  background-attachment: fixed;
-  background-position: center;
-  background-size:cover;
-  
-  }
+.cal-weather {position:relative; height:230px; margin-top:5%; padding:0;  }
+.cal-weather .col-xs-6{ padding:0;  }
 .cal-weather::before {  
   padding:0;
   opacity:.4;
   content: '';
   position:absolute; width:100%; height:100%;
   top:0; right:0; left:0; bottom:0;
-  background-image: url(image-path('outlets.png'));
-  background-repeat:repeat; 
+  
   
   }
 .tours-index {width:20%; position:relative; height:250px; background:#fff; 
@@ -364,7 +359,23 @@ top: 0;
 .tours-index .tour-box .tour-sample-image img {height:100%; width:100%;}
 .country-title-tab {color:#000000}
 .tours-index .tour-date {position:absolute; bottom:0; width:100%; right:0; left:0;}
-.tours-index .admin-btn-tour {position:absolute; bottom:0; width:100%; right:0; left:0;
+.admin-btn-tour {position:absolute; top:15%; width:100%; right:0; left:0;
   z-index:20;
   }
+.admin-btn-tour a {font-size:12px}
 .carousel-inner>.item {height:100%}
+.middle-box {  
+  margin-top:-75px;
+  background-image: url(image-path('sprinkles.png'));
+  background-repeat:repeat;  
+  }
+.middle-box .news {    
+  border:4px solid #600000;
+  position:relative;  
+  width:100%; height:300px; overflow:hidden;
+  }
+.plane-company {
+  background:#fff; border-radius:9px;
+  }
+.plane-company .plane-logo{width:100px; height:100px; float:right;}
+.title-certificate {}

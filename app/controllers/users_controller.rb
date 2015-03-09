@@ -27,8 +27,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.role_id = 2
+    
     respond_to do |format|
       if @user.save
+        p '--------'
+        p @user.role_id
         format.html { redirect_to @user, notice: 'کاربر جدید اضافه شد.' }
         format.json { render :show, status: :created, location: @user }
       else

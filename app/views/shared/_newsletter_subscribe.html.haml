@@ -1,4 +1,4 @@
-.newsletter.clear-float
+.newsletter
   = form_for @customer ||= Customer.new, id: "newsletter_form" do |f| 
     - if  @customer.present? && @customer.errors.any?      
       .alert.alert-danger{:role => "alert"}
@@ -11,9 +11,11 @@
     - if flash[:Ecustomer].present?
       .alert.alert-danger
         = flash[:Ncustomer]
+    .col-xs-4.pull-right    
+      %h4.title-footer-form{:class => I18n.locale}= t('subscribe_to_newsletter')
     .col-xs-3{:style => "text-align:center", :class => I18n.locale}
       = f.submit t('newsletter_set') , :id => "newsletter-submit" , :class => "form-submit"
-    .col-xs-8.form-group
+    .col-xs-5.form-group
       = f.text_field :email, :placeholder => t('newsletter_email'),   :id => "newsletter_email", :class => " form-msg form-control"
     
 :javascript 

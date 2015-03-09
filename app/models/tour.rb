@@ -3,8 +3,7 @@ class Tour < ActiveRecord::Base
   before_validation { self.decription_image.destroy if @delete_image }
   extend FriendlyId  
   friendly_id :title_fa
-  extend PersianNumbers
-  
+  extend PersianNumbers  
   persian_dates :validate_date_from, :validate_date_until
   #belongs_to :hotel
   belongs_to :plane

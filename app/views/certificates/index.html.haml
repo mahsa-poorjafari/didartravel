@@ -1,0 +1,24 @@
+.margin3  
+  %h1{:class => I18n.locale} لیست تندیس و جوایز
+  -if is_admin?
+    = link_to 'تعریف تندیس جدید', new_certificate_path, :class => "btn btn-success"
+
+
+  %table.table.city
+    %tr
+      %th ردیف
+      %th عنوان
+      %th تصویر
+      %th عملیات
+
+    - @certificates.each_with_index do |certificate, i|
+      %tr
+        %td= (i+1)
+        %td= certificate.title        
+        %td
+          - if is_admin?
+            = link_to 'مشاهده', certificate, :class => "btn btn-warning"
+            = link_to 'ویرایش', edit_certificate_path(certificate), :class => "btn btn-info"
+            = link_to 'حذف', certificate, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+
+ 

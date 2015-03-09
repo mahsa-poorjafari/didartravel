@@ -4,7 +4,9 @@
     .col-xs-4#editor
       = link_to 'to pdf with pdfkit', to_pdf_tour_show_path(:tour_id => @tour )
     
-    
+  %h2 تاریخ روز
+  %p= @tour.validate_date_from
+  
   .col-xs-4 
     - if I18n.locale == :fa
       = render "/tours/show_persian_date", :tour => @tour

@@ -29,22 +29,24 @@
       .main-menu.col-xs-12
         
         .top-of-menu.col-xs-12
-          .col-xs-7.pull-right
-            %p.site-title{:class => I18n.locale}= t("didartravel")
-          .col-xs-2{:class => I18n.locale}
+          .col-xs-4.pull-right
+            - if I18n.locale == :fa
+              .col-xs-12.pull-right{:style => "padding:0"}
+                %p.site-title{:class => I18n.locale}= t("didartravel-part1")
+              .clear-float
+              .col-xs-6.pull-left{:style => "padding:0"}
+                %p.site-title{:class => I18n.locale}= t("didartravel-part2")              
+            - else
+              %p.site-title{:class => I18n.locale}= t("didartravel")
+          .col-xs-4.pull-right
+            .col-xs-12.menu-side.logo-side
+          .col-xs-4{:class => I18n.locale}
             .flag_bar
               = link_to (image_tag 'flag/en_sm.png'), '#'
               = link_to (image_tag 'flag/ir_sm.png'), '#'
               = link_to (image_tag 'flag/ar_sm.png'), '#'
           
-          .col-xs-3{:class => I18n.locale}
-            #search
-              = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
-                .search_on_google
-                  .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
-                  .google-submit
-                    =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
-
+          
 
           
         .col-xs-12.logo-center{:class => I18n.locale}
@@ -64,17 +66,17 @@
         -#
           = render 'shared/weather'
      
-      -#
-        - if current_page?('/') 
-          = render 'shared/four_main_icon'
+      
+      - if current_page?('/') 
+        = render 'shared/multislider_news_weather', :tours => Tour.all
+        
       - if current_page?(Sight) 
         = render 'sights/five_sight_icon'
       - if params[:controller] == 'hotels'
         = render 'shared/multi_slider_hotel'
       - elsif params[:controller] == 'sights'
         = render 'shared/multi_slider_visit_iran'
-      - else
-        = render 'shared/multi_slider_search_tour', :tours => Tour.all
+      
       = link_to '', '#', :name => "#top", :id => "page-top"
       .yield.clear-float{:class => I18n.locale}
         = link_to '', '#', :name => "yield", :id => "yieldAnchor"
@@ -113,13 +115,7 @@
                 = link_to t('Keywords.e'), '/' 
               %li.tag-cloud
                 = link_to t('Keywords.p'), '/' 
-      .col-xs-12.cal-weather
-        .col-xs-6
-          .scrollable.vertical
-            #test.items
-            .navi
-        .col-xs-6.calendar
-          #datepicker7.col-xs-7
+      
           
       .footer.col-xs-12 
         = render 'shared/footer'

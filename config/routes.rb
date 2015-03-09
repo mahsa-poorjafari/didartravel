@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :certificates
+
   resources :tour_groups
 
   mount Ckeditor::Engine => '/ckeditor'
