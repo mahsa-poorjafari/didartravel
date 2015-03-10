@@ -124,7 +124,7 @@ p, span {color:#000}
   background-position: center;
   background-size: cover;
   }
-.menu_bar .menu-side {position:relative; height:60%; margin-top:2%; z-index:200;}
+.menu_bar .menu-side {position:relative; height:60%;  z-index:200;}
 .logo-side {
   top: -48px;    
   z-index: 50;  
@@ -134,6 +134,7 @@ p, span {color:#000}
   background-position: center;
   background-size: cover;
   }
+.menu_bar .menu-side.right-side {margin-right:5px}
 .logo-side a {text-align:center}
 .menu_bar ul#main-menu {
   list-style:none; width:85%;   
@@ -148,12 +149,37 @@ p, span {color:#000}
   font-size:15px;  
   background-position: 50% 0;  
   }
+.menu_bar ul#main-menu li.item-menu .icon{
+  background-image: url(image-path('menu-icons.png'));
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 50%;
+  height: 45px;  
+  right: 20%;
+  left: 20%;
+  top: 0;
+  -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
+  transition: all .5s; 
+  }
+.menu_bar ul#main-menu li.item-menu .icon#home{background-position: 100% 30%; }
+.menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 30%; }
+.menu_bar ul#main-menu li.item-menu .icon#hotels{background-position: 57% 95%;}
+.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 111% 95%;}
+.menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 95%;}
+.menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 35%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 0;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 -5%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 65%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 111% 65%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 0 68%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% -2%;}
 .menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
 .menu_bar ul#main-menu li.item-menu a {  
+  padding-top:50px;
   width:100%; height:100%;
   position:absolute;
   text-align:center;  
-  color:#510D0D; font-size:1.5em;
+  color:#510D0D; font-size:1.2em;
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
   transition: all 1s; }
 
@@ -305,14 +331,17 @@ top: 0;
   padding-top:2%;
   padding-right:4%;
   }
+#news .title-tour {background-image: url(image-path('news-line.png'));}
 .title-tour p{color:#620808; font-size:1.5em;}
 
 .slider4 {position:relative; width:100%; 
   height:270px; margin-bottom:5px;  
- 
-    }
-.slider4 .slide {position:relative; width:32%; height:100%; float:left; margin:.5%;
+  padding-left: 5%;    }
+.slider4 .slide {position:relative; width:30%; height:100%; float:left; margin:.5%;
   background:#fff;
+  background-image: url(image-path('logo-bg.png'));
+  background-repeat:no-repeat;  
+  background-position: 100% 85%;
   border-top:2px solid #6F8FAD;
   border-radius:5px;
   -webkit-box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
@@ -327,8 +356,25 @@ top: 0;
 .slider4 .slide .item-package {position:absolute; top:40px; 
   right:0; left:0; height:150px; overflow:hidden;
   }
+
 .slider4 .slide .item-package img {height:100%; width:100%}
-.slider4 .slide .more-info {position:absolute; bottom:0; width:100%; text-align:left;}
+.slider4 .slide .more-info {position:absolute; bottom:0; width:100%; text-align:left; height:30px}
+.slider4 .slide .more-info:hover a .see-more-arrow{background-position: 100% 0;}
+.slider4 .slide .more-info a .see-more-arrow{
+  position:absolute; left:0; height:40px; width:20px;
+  background-image: url(image-path('arrow-bg.png'));
+  background-repeat:no-repeat;  
+  background-position: 0 0;
+  -webkit-transition: all .2s; /* For Safari 3.1 to 6.0 */
+    transition: all .2s; 
+  }
+.slider4 .slide .more-info a i{
+    position: absolute;
+    right: 45%;
+    width: 100px;
+    height: 40px;
+    left: 20%;
+  }
 .cal-weather {position:relative; height:230px; margin-top:5%; padding:0;  }
 .cal-weather .col-xs-6{ padding:0;  }
 .cal-weather::before {  
@@ -379,3 +425,4 @@ top: 0;
   }
 .plane-company .plane-logo{width:100px; height:100px; float:right;}
 .title-certificate {}
+.plane-company .plane-logo:hover a img{opacity:.6}

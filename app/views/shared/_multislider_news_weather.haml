@@ -17,8 +17,8 @@
                 
                 .more-info
                   = link_to  @first_tour do 
-                    = t('more-info')
-                    = image_tag 'seemore.png', :title => 'آژانس_هواپیمایی_دیدار', :alt => t('more-info')
+                    %i= t('more-info')
+                    %span.see-more-arrow
                 -if is_admin?
                   .admin-btn-tour
                     = link_to 'ویرایش تور', edit_tour_path(@first_tour), :class => "btn btn-info"
@@ -37,13 +37,18 @@
                 
                 = render "/tours/show_persian_date", :tour => @first_tour
                 
-                .more-info= link_to t('more-info'), @first_tour
+                .more-info
+                  = link_to  @first_tour do 
+                    %i= t('more-info')
+                    %span.see-more-arrow
     .col-xs-12
       .plane-company
         %marquee{:onmouseout => "this.start();", :onmouseover => "this.stop();"}
           - Plane.all.each do |plane|
-            .plane-logo= image_tag plane.logo(:icon)
-  .col-xs-5
+            .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
+              = link_to plane do
+                = image_tag plane.logo(:icon)
+  .col-xs-5#news
     .title-tour.set-center{:class => I18n.locale}= t('news')
     %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
       

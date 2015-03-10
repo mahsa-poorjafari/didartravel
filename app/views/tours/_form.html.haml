@@ -27,7 +27,7 @@
       .col-xs-6
         .form-group
           = f.label 'تور را به یک کشور انتساب دهید', :class => "control-label"
-          = f.select :country_id, options_for_select(Country.all.collect{ |u| [u.title_fa, u.id]} , :selected => @tour.country_id), prompt: "کشور را انتخاب کنید.", :class => "form-control"  
+          = f.select :country_id, options_for_select(Country.order('title_fa').collect{ |u| [u.title_fa, u.id]} , :selected => @tour.country_id), prompt: "کشور را انتخاب کنید.", :class => "form-control"  
     .col-xs-12
       .col-xs-4
         .form-group

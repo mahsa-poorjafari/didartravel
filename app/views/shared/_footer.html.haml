@@ -13,7 +13,7 @@
   
   .col-xs-12.footer-certificate
     - Certificate.all.each do |certificate|
-      .certificate-box.col-xs-2
+      .certificate-box.col-xs-2{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
         = image_tag certificate.image(:small)
         %p= certificate.title
   
