@@ -4,6 +4,7 @@
     - @half_count = (tours.count) / 2
     .col-xs-12{:style => "padding:0; height:280px; overflow:hidden"}
       .slider4
+        %b.foreign-tour-title= t('foreign-tour')
         - Country.all.each do |country|
           - unless country.title_fa == 'ایران'
             - if country.tours.present?
@@ -26,6 +27,7 @@
                     = link_to 'حذف تور', @first_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
     .col-xs-12{:style => "padding:0"}
       .slider4
+        %b.foreign-tour-title= t('local-tour')
         - Country.all.each do |country|
           - if country.title_fa == 'ایران' && country.tours.present?            
             - country.tours.each do |iran_tour|
