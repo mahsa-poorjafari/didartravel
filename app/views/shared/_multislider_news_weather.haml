@@ -29,18 +29,23 @@
         - Country.all.each do |country|
           - if country.title_fa == 'ایران'
             - if country.tours.present?
-              - @first_tour = country.tours.first            
+              - country.tours.each do |iran-tour|
               .slide
-                %p.tour-title{:class => I18n.locale}= @first_tour.title
+                %p.tour-title{:class => I18n.locale}= iran-tour.title
                 - if @first_tour.photos.present?
-                  = link_to (image_tag @first_tour.photos.first.image(:medium), :class => "img-responsive"), @first_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
-                
-                = render "/tours/show_persian_date", :tour => @first_tour
+                  = link_to (image_tag iran-tour.photos.first.image(:medium), :class => "img-responsive"), iran-tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+              
+                = render "/tours/show_persian_date", :tour => iran-tour
                 
                 .more-info
-                  = link_to  @first_tour do 
+                  = link_to  iran-tour do 
                     %i= t('more-info')
                     %span.see-more-arrow
+                -if is_admin?
+                  .admin-btn-tour
+                    = link_to 'ویرایش تور', edit_tour_path(iran-tour), :class => "btn btn-info"
+                    = link_to 'مشاهده تور', iran-tour, :class => "btn btn-warning"                   
+                    = link_to 'حذف تور', iran-tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
     .col-xs-12
       .plane-company
         %marquee{:onmouseout => "this.start();", :onmouseover => "this.stop();"}
