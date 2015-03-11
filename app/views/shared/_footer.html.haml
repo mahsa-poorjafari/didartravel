@@ -12,8 +12,10 @@
   .clear-float  
   
   .footer-certificate
-    - Certificate.all.each do |certificate|
-      .certificate-box.col-xs-1{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
+    - @certificates = Certificate.all
+    -@width_size = 100 / @certificates.count
+    - @certificates.each do |certificate|
+      .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:"+@width_size.to_s+"%"}
         = image_tag certificate.image(:small)
         %p= certificate.title
   
