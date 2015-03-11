@@ -27,25 +27,24 @@
     .col-xs-12{:style => "padding:0"}
       .slider4
         - Country.all.each do |country|
-          - if country.title_fa == 'ایران'
-            - if country.tours.present?
-              - country.tours.each do |iran-tour|
+          - if country.title_fa == 'ایران' && country.tours.present?            
+            - country.tours.each do |iran_tour|
               .slide
-                %p.tour-title{:class => I18n.locale}= iran-tour.title
-                - if @first_tour.photos.present?
-                  = link_to (image_tag iran-tour.photos.first.image(:medium), :class => "img-responsive"), iran-tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+                %p.tour-title{:class => I18n.locale}= iran_tour.title
+                - if iran_tour.photos.present?
+                  = link_to (image_tag iran_tour.photos.first.image(:medium), :class => "img-responsive"), iran_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+            
+                = render "/tours/show_persian_date", :tour => iran_tour
               
-                = render "/tours/show_persian_date", :tour => iran-tour
-                
                 .more-info
-                  = link_to  iran-tour do 
+                  = link_to  iran_tour do 
                     %i= t('more-info')
                     %span.see-more-arrow
                 -if is_admin?
                   .admin-btn-tour
-                    = link_to 'ویرایش تور', edit_tour_path(iran-tour), :class => "btn btn-info"
-                    = link_to 'مشاهده تور', iran-tour, :class => "btn btn-warning"                   
-                    = link_to 'حذف تور', iran-tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+                    = link_to 'ویرایش تور', edit_tour_path(iran_tour), :class => "btn btn-info"
+                    = link_to 'مشاهده تور', iran_tour, :class => "btn btn-warning"                   
+                    = link_to 'حذف تور', iran_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
     .col-xs-12
       .plane-company
         %marquee{:onmouseout => "this.start();", :onmouseover => "this.stop();"}
