@@ -1,5 +1,5 @@
 .margin3  
-  %h1.page-title#news_and_vent{:class => I18n.locale}= t('news_and_vents')
+  %h1.page-title#news_and_vent{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
   -if is_admin?
     = link_to 'افزودن خبر جدید', new_news_and_vent_path, :class => "btn btn-success"
     = link_to 'ویرایش این خبر', edit_news_and_vent_path(@news_and_vent), :class => "btn btn-info"

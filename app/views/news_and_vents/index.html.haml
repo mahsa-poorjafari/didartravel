@@ -11,16 +11,16 @@
         %th عملیات
 
 
-  - @news_and_vents.each_with_index do |news_and_vent, i|
-    %tr
-      %td= (i+1)
-      %td
-        = link_to news_and_vent.title,news_and_vent
-      %td= news_and_vent.source
-      - if is_admin?
-        %td        
-          = link_to 'مشاهده', news_and_vent, :class => "btn btn-warning"
-          = link_to 'ویرایش', edit_news_and_vent_path(news_and_vent), :class => "btn btn-info"
-          = link_to 'حذف', news_and_vent, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+    - @news_and_vents.each_with_index do |news_and_vent, i|
+      %tr
+        %td= (i+1)
+        %td
+          = link_to news_and_vent.title,news_and_vent
+        %td= news_and_vent.source
+        - if is_admin?
+          %td        
+            = link_to 'مشاهده', news_and_vent, :class => "btn btn-warning"
+            = link_to 'ویرایش', edit_news_and_vent_path(news_and_vent), :class => "btn btn-info"
+            = link_to 'حذف', news_and_vent, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
 
