@@ -273,7 +273,14 @@ left: 0;}
   height: 172px;
   
     }
-.footer .footer-boxes .footer-certificate  .certificate-box {text-align:center; float:left;}
+.footer .footer-boxes .footer-certificate  .certificate-box {text-align:center; float:left;
+  position: relative;
+  height: 150px;
+  }
+.footer .footer-boxes .footer-certificate  .certificate-box img {position: absolute;
+left: 0;
+right: 0;
+bottom: 0;}
 .footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#fff}
 .footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#fff}
 .footer  .contact-info.en p { color:#fff}
