@@ -1,0 +1,2 @@
+module NewsAndVentsHelper
+end

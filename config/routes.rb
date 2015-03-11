@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :news_and_vents
+
   resources :certificates
 
   resources :tour_groups

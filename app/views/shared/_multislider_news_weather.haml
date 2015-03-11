@@ -49,8 +49,13 @@
               = link_to plane do
                 = image_tag plane.logo(:icon)
   .col-xs-5#news
-    .title-tour.set-center{:class => I18n.locale}= t('news')
-    %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
+    .title-tour.set-center{:class => I18n.locale}= t('news_and_vents')
+    -#
+      %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
+    .col-xs-12.news
+      %ul.news_and_vents{:class => I18n.locale}
+        - NewsAndVent.order('created_at').each do |news|
+          %li.news-item{:class => I18n.locale}= link_to news.title, news
       
       
     .col-xs-12.cal-weather

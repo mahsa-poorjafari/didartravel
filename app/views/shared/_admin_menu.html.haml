@@ -1,7 +1,7 @@
 .admin-menu-title
   - if current_user.present?
     %p
-      %b= 'منوی مدیریت سایت'
+      %b.fa= 'منوی مدیریت سایت'
       = current_user.email
   - @unread_tour_comment = TourComment.where(confirm_comment: 0).count
   - @unread_msg = Message.where(visited: 0).count
@@ -10,6 +10,7 @@
   - @notifications = @unread_tour_comment + @unread_msg + @unread_custom_link + @unread_visa_form
   %span.unread= @notifications
 %ul{:class => I18n.locale}  
+  %li= link_to 'ثبت اخبار و تازه ها', NewsAndVent
   %li= link_to 'گواهینامه بین المللی', InvestmentInIran  
   %li= link_to 'تعریف گروه ویزا', VisaType
   %li= link_to 'معرفی ویزای جدید', Visa

@@ -1,0 +1,13 @@
+.margin3  
+  %h1.page-title#news_and_vent{:class => I18n.locale}= t('news_and_vents')
+  -if is_admin?
+    = link_to 'افزودن خبر جدید', new_news_and_vent_path, :class => "btn btn-success"
+    = link_to 'ویرایش این خبر', edit_news_and_vent_path(@news_and_vent), :class => "btn btn-info"
+  - if notice
+    .alert.alert-success= notice
+  .col-xs-12.show-news-and-event{:class => I18n.locale}
+    .col-xs-12    
+      %h2.news-title        
+        = @news_and_vent.title
+    .col-xs-8.news-text= raw @news_and_vent.text
+    .col-xs-4.news-img= image_tag @news_and_vent.image(:medium)

@@ -126,13 +126,13 @@ p, span {color:#000}
   }
 .menu_bar .menu-side {position:relative; height:60%;  z-index:200;}
 .logo-side {
-  top: -48px;    
+  top: -43px;    
   z-index: 50;  
   height:210px;
   background-image: url(image-path('didar_travel.png'));
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size:120%;
   }
 .menu_bar .menu-side.right-side {margin-right:5px}
 .logo-side a {text-align:center}
@@ -161,18 +161,18 @@ p, span {color:#000}
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
   transition: all .5s; 
   }
-.menu_bar ul#main-menu li.item-menu .icon#home{background-position: 100% 30%; }
-.menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 30%; }
-.menu_bar ul#main-menu li.item-menu .icon#hotels{background-position: 57% 95%;}
-.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 111% 95%;}
-.menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 95%;}
+.menu_bar ul#main-menu li.item-menu .icon#home{background-position: 100% 35%; }
+.menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 33%; }
+.menu_bar ul#main-menu li.item-menu .icon#hotels{background-position: 57% 100%;}
+.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 100% 100%;}
+.menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 10% 100%;}
 .menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 35%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 0;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 -5%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 65%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 111% 65%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 0 68%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% -2%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 7%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 3%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 73%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 100% 75%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 10% 75%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% 4%;}
 .menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
 .menu_bar ul#main-menu li.item-menu a {  
   padding-top:50px;
@@ -276,13 +276,13 @@ left: 0;}
 .footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#fff}
 .footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#fff}
 .footer  .contact-info.en p { color:#fff}
-.yield {position:relative}
+.yield {position:relative; margin-top:-75px;}
 .anchorLink {position:fixed; bottom:0; left:0; z-index:10}
 .form-control:focus {border-color:#CC1A1A}
 .form-control {background-color:transparent; border:1px solid #BFBFBF}
 .footer .google-map-box {border:1px solid #BFBFBF; width:100%; height:300px}
 .footer .footer-bottom {position: absolute;
-  height:120px; overflow:hidden;
+  height:130px; overflow:hidden;
 bottom: 0;}
 .footer-menu ul{list-style:none}
 .footer-menu ul li{list-style:none}
@@ -302,8 +302,9 @@ top: 0;
   background-repeat:no-repeat;
   border:none;  
   background-color:transparent;
+  background-position: 50% 0;
   color:#fff;
-  padding-top: 45%;
+  padding-top: 40px;
   width:60px;
   text-align:center;
   }
@@ -311,8 +312,9 @@ top: 0;
   background-repeat:no-repeat;
   border:none;  
   background-color:transparent;
+  background-position: 50% 0;
   color:#fff;
-  padding-top: 60%;
+  padding-top: 40px;
   margin-top: -17%;
   width:60px;
   }
@@ -370,7 +372,7 @@ top: 0;
   }
 .slider4 .slide .more-info a i{
     position: absolute;
-    right: 45%;
+    right: 5%;
     width: 100px;
     height: 40px;
     left: 20%;
@@ -426,3 +428,23 @@ top: 0;
 .plane-company .plane-logo{width:100px; height:100px; float:right;}
 .title-certificate {}
 .plane-company .plane-logo:hover a img{opacity:.6}
+.show-news-and-event {margin-bottom:5%}
+
+.show-news-and-event.fa .news-title, .show-news-and-event.ar .news-title {text-align:right}
+.show-news-and-event.en .news-title{text-align:left}
+.show-news-and-event .news-text {margin-top:5%}
+.show-news-and-event.fa .news-text, .show-news-and-event.ar .news-text {float:right; border-right:solid 4px #530707}
+.show-news-and-event.fa .news-text p, .show-news-and-event.ar .news-text p {text-align:justify; direction:rtl;}
+.show-news-and-event.fa .news-text p {direction:rtl; font-family: 'open_sansregular';}
+.show-news-and-event.ar .news-text p {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
+h1.page-title#news_and_vent {
+  background-image: url(image-path('news-line.png'));
+  background-repeat:no-repeat;  
+  background-position:50% 100%;
+  height:85px;
+  color:#530707;
+  text-align:center;
+  }
+    
+ul.news_and_vents {list-style:square; padding:5%}
+ul.news_and_vents li.news-item{font-size:1.2em}
