@@ -65,14 +65,18 @@
       
       
     .col-xs-12.cal-weather
-      .col-xs-6
+      .col-xs-6.pull-right
         .scrollable.vertical
           #test.items
           .navi
-      .col-xs-6.calendar
-        #datepicker7
+      .col-xs-6#time-zone
+        .col-xs-12.calendar
+          #datepicker7
+        .col-xs-12
+          .col-xs-6= image_tag 'watch.png'
+          .col-xs-6= image_tag 'watch.png'
     
-    .col-xs-12{:class => I18n.locale}
+    
       -#
         #search
           = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
@@ -80,13 +84,6 @@
               .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
               .google-submit
                 =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
-      
-      .col-xs-4= image_tag 'watch.png'
-      .col-xs-4= image_tag 'watch.png'
-      .col-xs-4= image_tag 'watch.png'
-      
-
-    
   -#
     .multi-slider-package.col-xs-12    
       .col-md-12.col-md-offset-3{:style => "height:100%;"}
