@@ -71,19 +71,21 @@
           .navi
       .col-xs-6.calendar
         #datepicker7
-    .col-xs-12{:class => I18n.locale}
-      #search
-        = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
-          .search_on_google
-            .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
-            .google-submit
-              =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
-
-    .col-xs-12 
-      %h4.title-certificate.clear-float{:class => I18n.locale}= t('national-certificate')
     
+    .col-xs-12{:class => I18n.locale}
+      -#
+        #search
+          = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
+            .search_on_google
+              .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
+              .google-submit
+                =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
       
+      .col-xs-4= image_tag 'watch.png'
+      .col-xs-4= image_tag 'watch.png'
+      .col-xs-4= image_tag 'watch.png'
       
+
     
   -#
     .multi-slider-package.col-xs-12    

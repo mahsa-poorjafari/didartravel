@@ -63,8 +63,7 @@
         = render "slides/slider", :slides => Slide.all      
       
       .col-xs-12.bottom-slider
-        -#
-          = render 'shared/weather'
+        
      
       
       - if current_page?('/') 
@@ -81,6 +80,7 @@
       .yield.clear-float{:class => I18n.locale}
         = link_to '', '#', :name => "yield", :id => "yieldAnchor"
         = yield
+        
         - if current_page?('/') 
           .keywords
             %p= t('Keywords.title')
@@ -116,10 +116,11 @@
               %li.tag-cloud
                 = link_to t('Keywords.p'), '/' 
       
-          
+         
       .footer.col-xs-12 
         = render 'shared/footer'
-        
+      .national-certificate
+        %h4.title-certificate.clear-float{:class => I18n.locale}= t('national-certificate')   
           
     .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog.modal-sm
