@@ -1,14 +1,19 @@
 .footer-menu
   %ul.set-center{:class => I18n.locale}
+    
+    
+       
+    = link_to  '#', "data-toggle" => "modal", "data-target" => ".bs-example-modal-sm", :title => "آژانس_هواپیمایی_دیدار" do
+      %li= t('send-mail')
+    = link_to tours_moment_tours_path, :title => "آژانس_هواپیمایی دیدار" do
+      %li=t('imp-package')
     = link_to :controller => "/static", :action => :index, :class => ('active' if current_page?('/')), :title => "آژانس_هواپیمایی_دیدار" do
-      %li.home=   t('home')  
+      %li.home=   t('home')
+    
     = link_to  tours_path, :class => ('active' if current_page?(Tour)), :title => "آژانس_هواپیمایی_دیدار" do
       %li.tour= t('foreign-tour')
-      
+    
     = link_to Sight , :class => ('active' if current_page?(Sight)), :title => "آژانس_هواپیمایی_دیدار" do
       %li.sight=  t('local-tour')
-    
     = link_to  Hotel, :class => ('active' if current_page?(Hotel)), :title => "آژانس_هواپیمایی_دیدار" do
-      %li= t('hotel')    
-    
-
+      %li= t('hotel')   

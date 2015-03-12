@@ -164,15 +164,15 @@ p, span {color:#000}
 .menu_bar ul#main-menu li.item-menu .icon#home{background-position: 100% 35%; }
 .menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 33%; }
 .menu_bar ul#main-menu li.item-menu .icon#hotels{background-position: 57% 100%;}
-.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 100% 100%;}
-.menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 10% 100%;}
-.menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 35%;}
+.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 111% 98%;}
+.menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 100%;}
+.menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 27%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 7%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 3%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 73%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 100% 75%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 10% 75%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% 4%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 111% 70%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 0 75%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% 0;}
 .menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
 .menu_bar ul#main-menu li.item-menu a {  
   padding-top:50px;
@@ -245,8 +245,8 @@ p, span {color:#000}
 
 
 .footer {
-  height:900px;
-  background-image: url(image-path('footer-bg.jpg')); 
+  height:1500px;
+  background-image: url(image-path('footer-backg.jpg')); 
   background-size: 100% 100%;
   background-position: center;
   position:relative; right:0; left:0;  
@@ -269,13 +269,17 @@ left: 0;}
 .footer .footer-boxes .footer-certificate {position: absolute;
   width:80%;
   right:10%; left:10%;
-  bottom: 16%;
+  top: 50%;
   height: 172px;
   
     }
 .footer .footer-boxes .footer-certificate  .certificate-box {text-align:center; float:left;
   position: relative;
   height: 150px;
+  background-image: url(image-path('bgshaodw.png'));
+  background-repeat:no-repeat;
+  background-position:100%;
+  
   }
 .footer .footer-boxes .footer-certificate  .certificate-box img {position: absolute;
 left: 0;
@@ -290,13 +294,16 @@ bottom: 0;}
 .form-control {background-color:transparent; border:1px solid #BFBFBF}
 .footer .google-map-box {border:1px solid #BFBFBF; width:100%; height:300px}
 .footer .footer-bottom {position: absolute;
-  height:130px; overflow:hidden;
+  height:270px; overflow:hidden;
 bottom: 0;}
+.footer .footer-bottom #newsletter {margin-bottom:5%}
 .footer-menu ul{list-style:none}
 .footer-menu ul li{list-style:none}
-.footer-menu ul a li {color:#fff; text-align:center}
+.footer-menu ul a li {color:#fff; text-align:center; font-size:1.2em; line-height:2em}
+.footer-menu#related-links ul.fa a li, .footer-menu#related-links ul.ar a li {color:#fff; text-align:right}
+.footer-menu#related-links ul.en a li {color:#fff; text-align:left}
 .footer-menu ul li:hover {color:#7B1515}
-.footer .copyright {color:#fff; text-align:center; margin-bottom:2%}
+.footer .copyright {color:#fff; text-align:center; margin-bottom:2%; margin-top:2%}
 .footer .title-footer-form {background:#fff; padding:0; margin:0; color:#000000; width:60%;
   right: 20%;
 left: 20%;

@@ -21,33 +21,29 @@
   
   .col-xs-12.footer-bottom
     .col-xs-4.sitevisit
-      %h4.title-footer-form.contact{:class => I18n.locale}= t('sitevisit.statistics')          
-      .col-xs-11
-        %p{:class => I18n.locale}
-          %b= t('sitevisit.total-views')
-          =  Visit.all.count
-        %p{:class => I18n.locale}
-          %b= t('sitevisit.visits-today')
-          =  @online_day
-        %p{:class => I18n.locale}
-          %b= t('sitevisit.online-number')
-          = @online_now    
+      .col-xs-12#newsletter
+        %h4.title-footer-form.contact{:class => I18n.locale}= t('subscribe_to_newsletter')
+        = render 'shared/newsletter_subscribe'
+      .clear-float
+      .col-xs-12
+        %h4.title-footer-form.contact{:class => I18n.locale}= t('sitevisit.statistics')          
+        .col-xs-11
+          %p{:class => I18n.locale}
+            %b= t('sitevisit.total-views')
+            =  Visit.all.count
+          %p{:class => I18n.locale}
+            %b= t('sitevisit.visits-today')
+            =  @online_day
+          %p{:class => I18n.locale}
+            %b= t('sitevisit.online-number')
+            = @online_now    
       
     .col-xs-4
       = render 'shared/footer_menu'
     
     .col-xs-4
-      .footer-menu
-        %ul.set-center{:class => I18n.locale}
-          = link_to  '#', "data-toggle" => "modal", "data-target" => ".bs-example-modal-sm", :title => "آژانس_هواپیمایی_دیدار" do
-            %li= t('send-mail')
-          = link_to tours_moment_tours_path, :title => "آژانس_هواپیمایی دیدار" do
-            %li=t('imp-package')
-          = link_to :controller => "/static", :action => :index, :class => ('active' if current_page?('/')), :title => "آژانس_هواپیمایی_دیدار" do
-            %li.home=   t('home')   
-      -#
-        .col-xs-12 
-          = render 'shared/newsletter_subscribe'
+      %h4.title-footer-form.contact{:class => I18n.locale}= t('related-links')
+      = render 'shared/related_links'
       
     .copyright.col-xs-12= t('copyright')
     

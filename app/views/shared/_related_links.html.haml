@@ -1,0 +1,7 @@
+.footer-menu#related-links
+  %ul.set-center{:class => I18n.locale}
+    - Link.all.each do |link|
+      = link_to  url_with_protocol(link.web_site), :title => "آژانس_هواپیمایی_دیدار" do
+        %li.tour= link.title
+      
+    
