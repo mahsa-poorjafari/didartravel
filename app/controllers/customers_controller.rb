@@ -39,12 +39,22 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
+    p '--------------'
+    p @customer.email
+    @emailexist = Customer.where(email: @customer.email)  
     if @customer.save
       UserMailer.customer_register_done.deliver
       flash[:Ncustomer] = 'کاربر گرامی شما عضو خبرنامه شدید.'
     else
-      flash[:Ecustomer] = 'کاربر گرامی ایمیل را صحیح وارد کنید.'
-    end
+      if @emailexist
+        p '---------------------------------'
+        p 'emailexist'
+        flash[:emailexist] = 'کاربر گرامی ایمیل شما قبلا در سیستم ثبت شده است.
+          - This Email Has Already Exist'
+      else
+        flash[:Ecustomer] = 'کاربر گرامی ایمیل را صحیح وارد کنید.'
+      end
+    end      
     redirect_to :back
   end
 

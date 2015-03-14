@@ -1,3 +1,7 @@
-%h1= ('radantravel')
+%h1= t('didartravel')
 %h2= @subject
 %p= @text
+%p
+  %b
+  تاریخ ارسال
+  %p= JalaliDate.new(Date.today)

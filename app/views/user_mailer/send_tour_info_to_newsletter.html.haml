@@ -1,6 +1,6 @@
-%h1= ('radantravel')
+%h1= t('didartravel')
 
-%p= @tour.title
+%h2= @tour.title
 - if @tour.validate_date_from.present? && @tour.validate_date_until.present?
   %p= JalaliDate.new(@tour.validate_date_from).strftime("%A %e %b %Y") + 'تا' + JalaliDate.new(@tour.validate_date_until).strftime("%A %e %b %Y")
 - elsif @tour.validate_date_from.present?
@@ -11,4 +11,4 @@
   %p= JalaliDate.new(@tour.validate_date_until).strftime("%A %e %b %Y")          
 
 %h3= t('visitsite')
-= link_to 'radantravel.com', 'radantravel.com'
+%p http://didartravel.ir/

@@ -301,7 +301,7 @@ bottom: 0;}
 .footer  .contact-info.en p { color:#fff}
 .yield {position:relative; margin-top:-75px;}
 .anchorLink {position:fixed; bottom:0; left:0; z-index:10}
-.form-control:focus {border-color:#CC1A1A}
+.footer .form-control:focus {border-color:#CC1A1A; color:#fff}
 .form-control {background-color:transparent; border:1px solid #BFBFBF}
 .footer .google-map-box {border:1px solid #BFBFBF; width:100%; height:300px}
 .footer .footer-bottom {position: absolute;
@@ -516,3 +516,5 @@ line-height: 2em;}
   border-radius:5px;
   }
 .national-certificate:hover {cursor:pointer}
+
+.contact-form .form-control {color:#fff}

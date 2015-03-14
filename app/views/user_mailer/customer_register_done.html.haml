@@ -1,3 +1,8 @@
-%h1= t('radantravel')
+%h1= t('didartravel')
 %h2= t('send-customer-email')
 %h4= t('thanks')
+%p http://didartravel.ir/
+%p
+  %b
+  تاریخ ارسال
+  %p= JalaliDate.new(@customer.created_at)
