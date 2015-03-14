@@ -73,7 +73,7 @@
       %marquee{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "alternate"}
         - Plane.all.each do |plane|
           .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-            = link_to url_with_protocol(plane.web_site), :target => "_blank" do
+            = link_to '#', :target => "_blank" do
               = image_tag plane.logo(:icon)  
     
       -#
