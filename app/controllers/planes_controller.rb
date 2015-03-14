@@ -69,6 +69,6 @@ class PlanesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plane_params
-      params.require(:plane).permit(:title_fa, :title_en, :title_ar, :text_fa, :text_en, :text_ar, :logo)
+      params.require(:plane).permit(:title_fa, :title_en, :title_ar, :text_fa, :text_en, :text_ar, :logo, :web_site)
     end
 end

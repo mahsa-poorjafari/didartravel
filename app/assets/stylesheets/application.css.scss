@@ -88,7 +88,9 @@ p, span {color:#000}
 
 
 .main-menu .flag_bar a{margin:2%;}
+.main-menu .flag_bar a:hover img{margin-top:-10px;}
 .main-menu .flag_bar {text-align:center}
+
 .main-menu .logo-center.fa,.main-menu .logo-center.ar  {position:absolute; top:45px; width:100%; height:112px}
 
 .show-social {
@@ -285,11 +287,7 @@ left: 0;}
 .footer .footer-boxes .footer-certificate  .certificate-box {text-align:center; float:left;
   position: relative;
   height: 150px;
-  background-image: url(image-path('bgshaodw.png'));
-  background-repeat:no-repeat;
-  background-position:100%;
-  background-position: 100% 246%;
-  background-size: 75%
+  
   
   }
 .footer .footer-boxes .footer-certificate  .certificate-box img {position: absolute;
@@ -364,7 +362,7 @@ top: 0;
 
 .slider4 {position:relative; width:100%; 
   height:270px; margin-bottom:5px;  
-  padding-left: 5%;    }
+  }
 .slider4 .slide {position:relative; width:30%; height:100%; float:left; margin:.5%;
   background:#fff;
   background-image: url(image-path('logo-bg.png'));
@@ -418,7 +416,7 @@ top: 0;
     height: 40px;
     left: 20%;
   }
-.cal-weather {position:relative; height:230px; margin-top:5%; padding:0;  }
+.cal-weather {position:relative;  margin-top:5%; padding:0;  }
 .cal-weather .col-xs-6{ padding:0;  }
 .cal-weather::before {  
   padding:0;
@@ -454,6 +452,8 @@ top: 0;
 .admin-btn-tour a {font-size:12px}
 .carousel-inner>.item {height:100%}
 .middle-box {  
+  margin-left:0;
+  margin-right:0;
   margin-top:-75px;
   background-image: url(image-path('sprinkles.png'));
   background-repeat:repeat;  
@@ -518,3 +518,4 @@ line-height: 2em;}
 .national-certificate:hover {cursor:pointer}
 
 .contact-form .form-control {color:#fff}
+.contact-form.fa .col-xs-6, .contact-form.ar .col-xs-6{float:right}

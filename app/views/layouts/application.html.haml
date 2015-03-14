@@ -42,9 +42,9 @@
             .col-xs-12.menu-side.logo-side
           .col-xs-4{:class => I18n.locale}
             .flag_bar
-              = link_to (image_tag 'flag/en_sm.png'), '#'
-              = link_to (image_tag 'flag/ir_sm.png'), '#'
-              = link_to (image_tag 'flag/ar_sm.png'), '#'
+              = link_to (image_tag 'flag/en_sm.png'), '#', {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'English'}
+              = link_to (image_tag 'flag/ir_sm.png'), '#',{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'فارسی'}
+              = link_to (image_tag 'flag/ar_sm.png'), '#', {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'العربية'}
           
           
 

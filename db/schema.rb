@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311060727) do
+ActiveRecord::Schema.define(version: 20150314090343) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -310,6 +310,7 @@ ActiveRecord::Schema.define(version: 20150311060727) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "web_site"
   end
 
   create_table "roles", force: true do |t|
