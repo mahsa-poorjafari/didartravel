@@ -34,9 +34,7 @@
             = link_to t('foreign-hotels')
           
         
-    .col-xs-4.pull-left.menu-side    
-      
-      
+    .col-xs-4.pull-left.menu-side 
       %li.item-menu{:class => ('active' if current_page?(Country))}
         .icon#country
         = link_to  t('tour-country'),Country 
@@ -48,18 +46,19 @@
           - VisaType.order("title_fa asc").each do |visatype|
             %li{:class => I18n.locale}
               = link_to visatype.title, visatype
-            
-      - Page.all.each do |page|  
-        - if page.title_fa == 'درباره ما'
-          %li.item-menu.about-didar{:class => ('active' if current_page?(Page))} 
-            .icon{:id => 'page'+ page.id.to_s}
-            = link_to  page.title, page 
-            %ul.sub-menu.about-us          
-              %li{:class => I18n.locale}
-                = link_to t('didar-boigraphy')
-              %li{:class => I18n.locale}
-                = link_to t('contact-us')
-              %li{:class => I18n.locale}
-                = link_to t('hire-form')
+              
+      - @about_us = Page.find_by_title_fa('درباره ما')
+      - @contact_us = Page.find_by_title_fa('تماس با ما')
+      - if @about_us.present?
+        %li.item-menu.about-didar{:class => ('active' if current_page?(@about_us))} 
+          .icon{:id => 'page'+ @about_us.id.to_s}
+          = link_to  @about_us.title, @about_us
+          %ul.sub-menu.about-us          
+            %li{:class => I18n.locale}
+              = link_to t('didar-boigraphy'), @about_us
+            %li{:class => I18n.locale}
+              = link_to t('contact-us'), @contact_us
+            %li{:class => I18n.locale}
+              = link_to t('hire-form')
               
         
