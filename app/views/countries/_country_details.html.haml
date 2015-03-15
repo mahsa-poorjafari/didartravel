@@ -19,9 +19,8 @@
             
         .margin-bottom5{:class => I18n.locale}
           = raw country.text  
-      .col-xs-12.margin-bottom5
-        .title-line.col-xs-10
-        %p.col-xs-2.set-center.title{:class => I18n.locale}= t('city')      
+      .col-xs-12.margin-bottom5        
+        %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('city')      
         .country-cities-list.margin-bottom5          
           %ul{:style => "list-style:disc; margin-top:5%;", :title => "آژانس_هواپیمایی_رادان_سیر"}
             - country.cities.each do |city| 
@@ -32,7 +31,7 @@
     
       .col-xs-12.margin-bottom5
         .title-line.col-xs-10
-        %p.col-xs-2.set-center.title{:class => I18n.locale}= t('sights')            
+        %p.col-xs-12.set-center.title.sub-title{:class => I18n.locale}= t('sights')            
         .col-xs-12.margin-bottom5  
           - if country.cities.present?
             - country.cities.each do |city|

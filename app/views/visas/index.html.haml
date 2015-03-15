@@ -1,7 +1,8 @@
 .margin3  
-  %h1{:class => I18n.locale} لیست گروه ویزاها
+  %p.col-xs-12.set-center.title-tour#title-visa{:class => I18n.locale}= t('visa')
   -if is_admin?
     = link_to 'تعریف ویزا جدید', new_visa_path, :class => "btn btn-success"
+  .clear-float
   - if I18n.locale == :en
     .col-xs-2.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     
       .continent{:class => ('active' if current_page?(Visa))+ ' '+ I18n.locale.to_s}
@@ -24,6 +25,7 @@
           .continent.tour-group
             %span.location= image_tag 'arrow-bullet-right.png'
             %h4.fa.country-title-tab= vistatype.title
+  
   .show-tours.col-xs-10.set-center#Container
     - VisaType.all.each do |visatype|
       

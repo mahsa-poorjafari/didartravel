@@ -1,6 +1,8 @@
 .margin3  
+  %p.col-xs-12.set-center.title-tour#title-tours{:class => I18n.locale}= t('tour.tours')
   -if is_admin?
     = link_to 'معرفی تور جدید', new_tour_path, :class => "btn btn-success"
+  .clear-float
   - if I18n.locale == :en
     .col-xs-2.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     
       .continent{:class => ('active' if current_page?(Tour))+ ' '+ I18n.locale.to_s}

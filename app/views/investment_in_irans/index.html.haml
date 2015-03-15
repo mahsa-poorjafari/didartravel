@@ -1,9 +1,9 @@
 .margin3.margin-bottom
   -if is_admin?
-    = link_to 'معرفی آیتم جدید در سرمایه گذاری در ایران', new_investment_in_iran_path, :class => "btn btn-success"
+    = link_to 'معرفی آیتم جدید', new_investment_in_iran_path, :class => "btn btn-success"
   .col-xs-12.margin-bottom
     .title-tour-line.col-xs-10
-    %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('investment-in-iran')
+    %p.col-xs-12.set-center.title-tour#title-certificate{:class => I18n.locale}= t('national-certificate')
     
   .show-tours.col-xs-12.set-center
     - @investment_in_irans.each do |investment_in_iran|

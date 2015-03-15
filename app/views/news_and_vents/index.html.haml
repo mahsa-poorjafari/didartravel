@@ -1,7 +1,10 @@
 .margin3  
-  %h1{:class => I18n.locale}= t('news_and_vents')
+  
   -if is_admin?
     = link_to 'افزودن خبر', new_news_and_vent_path, :class => "btn btn-success"
+  .col-xs-12.margin-bottom#news
+    .title-tour-line.col-xs-10
+    %p.col-xs-12.set-center.title-tour#title-news{:class => I18n.locale}= t('news_and_vents')
   %table.table.city
     %tr
       %th ردیف

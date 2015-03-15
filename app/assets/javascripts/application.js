@@ -45,4 +45,13 @@
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
+
+
+
+$(document).ready(function() {
+  $('li[role=presentation]').click(function() {
+    $('html, body').animate({ scrollTop: 1000 }, 'slow'); 
+  })
+});
+

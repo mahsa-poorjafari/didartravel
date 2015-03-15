@@ -4,7 +4,7 @@
   - @iran = Country.find_by_title_fa('ایران')    
   .country-tabs.sight-tabs{:class => I18n.locale}
     .col-xs-12      
-      %p.title-tour{:class => I18n.locale}= t('local-sights')
+      %p.title-tour#local-sights{:class => I18n.locale}= t('local-sights')
     - if I18n.locale == :en      
       %ul.nav.nav-tabs.pull-left#SightsTab.col-xs-12{:role => "tablist", :class => I18n.locale }
         = render 'sights/sight_title_tap'   
@@ -19,7 +19,8 @@
           = render 'sights/sight_details', :all_city => all_city   
 
   .col-xs-12    
-    %p.title-tour{:class => I18n.locale}= t('iran-tours')
+    %p.title-tour#local-tour{:class => I18n.locale}= t('iran-tours')
+    
   .col-xs-12{:style => "margin-top:40px"}
     
     - if @iran.tours.present?

@@ -155,7 +155,7 @@ p, span {color:#000}
   }
 .menu_bar ul#main-menu li{position:relative;
   width:30%; float:right;
-  height:100%; overflow:hidden;  
+  height:100%; 
   color:#811717;
   font-size:15px;  
   background-position: 50% 0;  
@@ -173,18 +173,46 @@ p, span {color:#000}
   transition: all .5s; 
   }
 .menu_bar ul#main-menu li.item-menu .icon#home{background-position: 100% 35%; }
+.menu_bar ul#main-menu li.item-menu .icon#country{background-position: 50% 35%; }
 .menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 33%; }
 .menu_bar ul#main-menu li.item-menu .icon#hotels{background-position: 57% 100%;}
 .menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 111% 98%;}
 .menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 100%;}
 .menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 27%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 7%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#country,.menu_bar ul#main-menu li.item-menu.active .icon#country{background-position: 50% 0%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 3%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 73%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 111% 70%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 0 75%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% 0;}
 .menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
+.menu_bar ul#main-menu li.item-menu ul.sub-menu{
+  list-style:none;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  height: 0;
+  font-family: 'Bhoma'; 
+  background-image: url(image-path('sub-menu.png'));
+  background-repeat:repeat;
+  top:75px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
+  transition: all .5s; 
+  overflow:hidden;  
+  }
+.menu_bar ul#main-menu li.item-menu:hover ul.sub-menu {height:80px; padding-top:10px;}
+.menu_bar ul#main-menu li.item-menu.about-didar:hover ul.sub-menu {height:90px; padding-top:5px; margin-top:-5px}
+.menu_bar ul#main-menu li.item-menu ul.sub-menu li {width:100%; clear:both; height:30px;
+  -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
+  transition: all .5s; 
+  background:transparent;
+  }
+.menu_bar ul#main-menu li.item-menu ul.sub-menu li:hover {background:#A52A2A; color:#fff}
+.menu_bar ul#main-menu li.item-menu ul.sub-menu li:hover a{ color:#fff}
+.menu_bar ul#main-menu li.item-menu ul.sub-menu li a{padding:0}
 .menu_bar ul#main-menu li.item-menu a {  
   padding-top:50px;
   width:100%; height:100%;
@@ -359,7 +387,20 @@ top: 0;
   }
 #news .title-tour {background-image: url(image-path('news-line.png'));}
 .title-tour p{color:#620808; font-size:1.5em;}
-
+#title-visa.title-tour {background-image: url(image-path('visa-line.png'));}
+.title-tour#title-tours {background-image: url(image-path('tours-line.png'));}
+.title-tour#title-certificate {background-image: url(image-path('driving licence.png')); 
+  background-position: 55% 100%;
+  height:85px}
+.title-tour#local-sights {background-image: url(image-path('visitiran.png')); 
+  background-position: 50% 100%;
+  height:85px}
+.title-tour#local-tour {background-image: url(image-path('visitworld.png')); 
+  background-position: 50% 100%;
+  height:85px}
+.title-tour#visa-form {background-image: url(image-path('visa-line.png')); 
+  background-position: 55% 100%;
+  height:85px}
 .slider4 {position:relative; width:100%; 
   height:270px; margin-bottom:5px;  
   }
@@ -484,7 +525,7 @@ top:-23%;
 background:#fff; border-radius:50%;}
 .plane-company .all-plane-icon img {width:100%}
 .plane-company .plane-logo{width:100px; height:100px; float:right;}
-.title-certificate {}
+
 .plane-company .plane-logo:hover a img{opacity:.6}
 .show-news-and-event {margin-bottom:5%}
 
@@ -532,3 +573,13 @@ line-height: 2em;}
 
 .contact-form .form-control {color:#fff}
 .contact-form.fa .col-xs-6, .contact-form.ar .col-xs-6{float:right}
+#title-countries {background-image: url(image-path('earth-line.png'));
+  background-repeat:no-repeat;  
+  background-position:50% 100%; height: 85px;}
+.sub-title {
+  color:#7C0707; 
+  font-size:1.5em;
+  text-align:center;
+  border-bottom: 3px dashed #7C0707;
+  padding:2%
+  }

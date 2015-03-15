@@ -1,5 +1,5 @@
 .margin3  
-  %h1{:class => I18n.locale} لیست گروه ویزاها
+  %p.col-xs-12.set-center.title-tour#title-visa{:class => I18n.locale}= t('visa-group')
   -if is_admin?
     = link_to 'تعریف گروه ویزا جدید', new_visa_type_path, :class => "btn btn-success"
 

@@ -15,6 +15,7 @@ fa:
   sight: 'بازدید از ایران'
   hotel: 'هتل ها'
   visa: 'ویزا'
+  visa-group: 'گروه ویزاها'
   local-hotels: 'هتلهای داخلی'
   foreign-hotels: 'هتلهای خارجی'
   local-tour: 'تورهای داخلی'
@@ -40,7 +41,7 @@ fa:
   agent: 'ورود آژانس'
   user: 'ورود مسافر'
   more-info: 'مشاهده جزئیات'
-  tour-country: 'کشور'
+  tour-country: 'کشورها'
   tour-city: 'شهر'
   tour-from: 'تاریخ رفت از'
   tour-until: 'تاریخ رفت تا'
@@ -216,3 +217,6 @@ fa:
   national-certificate: 'صدور گواهینامه بین المللی'
   news_and_vents: 'اخبار و تازه ها'
   related-links: 'لینکهای مرتبط'
+  hire-form: 'فرم استخدام'
+  didar-boigraphy: 'معرفی دیدار'
+  
