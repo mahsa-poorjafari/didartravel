@@ -6,14 +6,14 @@
     - Hotel.all.each do |hotel|
       - if hotel.city.country_id == @country_id  
         .tours-index.mix{:class => "iran-city-" + hotel.city.id.to_s, "data-my-order" => hotel.id}
-          = link_to hotel, :class => "tour-box", :title => "آژانس_هواپیمایی_رادان_سیر" do
+          = link_to hotel, :class => "tour-box", :title => "آژانس_هواپیمایی_دیدار" do
             %h5.tour-title{:id => "hotel-"+hotel.id.to_s, :class => I18n.locale}= hotel.title          
             - if hotel.photos.present?
               .hover.panel{:id => "item-"+ (i+1).to_s}
                 .front
-                  .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+                  .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس_هواپیمایی_دیدار"
                 .back
-                  .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+                  .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس_هواپیمایی_دیدار"
             .clear-float 
             .some-info 
               %p
@@ -23,9 +23,9 @@
               %p= hotel.city.country.title + ' , ' + hotel.city.title
           -if is_admin?
             .admin-btn-tour
-              = link_to 'مشاهده', hotel, :class => "btn btn-warning"   , :title => "آژانس_هواپیمایی_رادان_سیر"    
-              = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info", :title => "آژانس_هواپیمایی_رادان_سیر"
-              = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :title => "آژانس_هواپیمایی_رادان_سیر"
+              = link_to 'مشاهده', hotel, :class => "btn btn-warning"   , :title => "آژانس_هواپیمایی_دیدار"    
+              = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info", :title => "آژانس_هواپیمایی_دیدار"
+              = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :title => "آژانس_هواپیمایی_دیدار"
   
   
     
