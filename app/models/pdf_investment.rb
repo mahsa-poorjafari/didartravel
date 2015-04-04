@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class PdfInvestment < ActiveRecord::Base
-  belongs_to :investment_in_iran, touch: true
+  belongs_to :investment_in_iran
   
   has_attached_file :pdf_file,
                     :url  => "/assets/circulars/:id/:style/:basename.:extension",

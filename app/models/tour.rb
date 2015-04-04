@@ -6,9 +6,9 @@ class Tour < ActiveRecord::Base
   extend PersianNumbers  
   persian_dates :validate_date_from, :validate_date_until
   #belongs_to :hotel
-  belongs_to :plane, touch: true
-  belongs_to :continent_category, touch: true
-  belongs_to :country, touch: true
+  belongs_to :plane
+  belongs_to :continent_category
+  belongs_to :country
   has_many :slides
   has_many :photos, dependent: :destroy
   has_many :locationtours
