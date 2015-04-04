@@ -1,0 +1,28 @@
+.margin3.margin-bottom5
+  .title-top
+    .title-box= @country_title.first.title
+  .clear-float
+  .show-tours.col-xs-12.set-center#Container{:style => "margin-top:5%"}
+    - @show_related_tours.all.each do |tour|
+      .tours-index{ "data-my-order" => @country_id}
+        - if tour.coming_soon?
+          .coming_soon= image_tag 'coming.png'
+        = link_to tour, :class => "tour-box" do 
+          %h5.tour-title{:class => I18n.locale}= tour.title
+          - if tour.photos.present?
+            .tour-sample-image{:class => ('set-coming-soon' if tour.coming_soon?)}= image_tag tour.photos.first.image(:medium), :id => "tour-sample-image-" + tour.photos.first.id.to_s
+          .clear-float
+        .tour-date
+          - if I18n.locale == :fa
+            = render "/tours/show_persian_date", :tour => tour
+          - else  
+            = render "/tours/show_english_date", :tour => tour
+        -if is_admin?
+          .admin-btn-tour
+            = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
+            = link_to 'مشاهده جزئیات', tour, :class => "btn btn-warning"                   
+            = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+            = link_to 'ارسال به اعضا خبرنامه', sendtonewsletter_tour_path(tour), :class => "btn btn-default"       
+            - @send_tour = @send_tour.to_i            
+            - if @send_tour.present? && @send_tour == tour.id
+              .alert.alert-success='اطلاعات این تور برای اعضا خبرنامه ارسال شد.'  

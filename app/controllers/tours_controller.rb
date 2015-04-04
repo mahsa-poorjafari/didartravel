@@ -31,6 +31,8 @@ class ToursController < ApplicationController
   def html_with_table
   end
   def show
+    @related_tours = Tour.where( country_id: @tour.country.id)    
+    
     respond_to do |format|
       format.html
       format.pdf do
@@ -44,7 +46,15 @@ class ToursController < ApplicationController
       end
     end
   end
-  
+  def related_tours
+    @country_id = params[:call_tours]
+    @country_title = Country.where( id: @country_id)    
+    @show_related_tours =  Tour.where( country_id: @country_id)
+  end
+  def related_hotels
+    @country_id = params[:call_hotels]
+    @country_title = Country.find(@country_id)    
+  end
   def sendtonewsletter    
     UserMailer.send_tour_info_to_newsletter(@tour).deliver 
     p '-------------'

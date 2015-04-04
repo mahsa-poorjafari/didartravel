@@ -22,6 +22,7 @@ class HotelsController < ApplicationController
   def dynamic_hotel
   end
   # GET /hotels/new
+  
   def new
     @hotel = Hotel.new
   end

@@ -44,7 +44,8 @@
       
 .tour-description.clear-float
   .title_row
-    %h4{:class => I18n.locale}= t('tour.description')
+    .title-box{:class => I18n.locale}= t('tour.description')
+    .title-line
   .full-width.tr
     - if tour.source.present?
       .col-xs-3.th= t('tour.source')

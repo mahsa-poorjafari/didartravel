@@ -19,7 +19,8 @@
 .clear-float {clear:both}
 .full-width {clear:both; width:100%}
 .set-center {margin-right:auto; margin-left:auto}
-.margin3 {margin:3%}
+.margin3 {margin:3%;   
+  }
 .margin-top5 {margin-top:5%;}
 .margin-bottom {margin-bottom:10%}
 .margin-bottom5 {margin-bottom:5%}
@@ -325,7 +326,7 @@ bottom: 0;}
 .footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#fff}
 .footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#fff}
 .footer  .contact-info.en p { color:#fff}
-.yield {position:relative; margin-top:-75px;}
+.yield {position:relative; margin-top:-75px;  width:100%;   }
 .anchorLink {position:fixed; bottom:0; left:0; z-index:10}
 .footer .form-control:focus {border-color:#CC1A1A; color:#fff}
 .form-control {background-color:transparent; border:1px solid #BFBFBF}
@@ -612,6 +613,37 @@ line-height: 2em;}
   font-size:1.5em;
   text-align:center;
   border-bottom: 3px dashed #7C0707;
-  padding:2%
+  padding:2%;
   }
 .country-tabs ul#CountryTab.fa li, .country-tabs ul#CountryTab.ar li{float:right}
+.title-top {position:absolute; width: 90%;
+  right: 5%;
+  left: 5%;
+  }
+.title-top .title-box{width:100%; height:50px;   
+  border-bottom: 4px #A52A2A solid;
+  color:#A52A2A;
+  font-size:2em;
+  font-weight:bold; 
+  padding:2%;
+}
+.title_row .title-box{width:100%; height:50px;   
+  border-bottom: 4px #1A1A1A solid;
+  color:#1A1A1A;
+  font-size:1.5em;
+  font-weight:bold; 
+  padding:2%;
+}
+.tour-source {background:#F6F660; color:#000; width:500px; height:50px;}
+.tour-description .tr .th {color:#790A0A;}
+.related-box {position:relative;  
+  
+  }
+.related-box .related-tours {
+  border-radius:9px; 
+  background:#E6E6FA;
+  height:70px;
+  text-align:center;
+  margin:1%;
+  }
+.related-box .fa .related-tours, .related-box .ar .related-tours {float:right;}

@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       collection do
         get :dynamic_city
         get :dynamic_hotel
+        
       end
     end
 
@@ -50,6 +51,8 @@ Rails.application.routes.draw do
       collection do
         post :search 
         get :tours_moment
+        get :related_tours
+        get :related_hotels
       end
       member do
         get :sendtonewsletter
