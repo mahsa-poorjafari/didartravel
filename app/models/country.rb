@@ -9,7 +9,7 @@ class Country < ActiveRecord::Base
   has_many :cities, dependent: :destroy
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
-  belongs_to :continent_category
+  belongs_to :continent_category, touch: true
   has_many :tours
   def title
     if I18n.locale == :ar

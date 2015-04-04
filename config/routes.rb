@@ -40,7 +40,11 @@ Rails.application.routes.draw do
         get :dynamic_city
       end
     end
-    resources :countries
+    resources :countries do
+      collection do
+        get   :time_zone_clocks
+      end
+    end
 
     resources :tours do
       collection do

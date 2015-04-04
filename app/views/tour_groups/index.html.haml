@@ -11,7 +11,7 @@
       %th
 
     - @tour_groups.each_with_index do |continent_category, i|
-      %tr
+      %tr{:id => "continent_category_id_" + continent_category.id.to_s}
         %td= (i+1)
         %td= continent_category.title      
         %td= continent_category.set_order

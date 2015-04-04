@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  belongs_to :role
+  belongs_to :role, touch: true
   def is_admin?
     #self.roles.collect(&:title).include?("Admin")
     self.role_id = 1    

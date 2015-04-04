@@ -40,6 +40,7 @@
 //= require jquery.fitvids
 //= require jquery.bxslider
 //= require jquery.zweatherfeed.min
+//= require clock
 
 
 
@@ -49,4 +50,20 @@ $(function () {
 
 
 
+$(function () {
+  var ck = jQuery('.clock');
+  var loading = jQuery('.loading');
 
+  jQuery('.demo').on('click', function(){
+    $this = $(this);
+    $this.addClass('selected').siblings('.demo').removeClass('selected');
+
+    var selected = $this.data('val');
+
+    ck.removeClass('clock').hide();
+    ck = $('.'+selected).addClass('clock').show();
+
+    clock.init();
+    
+  });
+});

@@ -7,7 +7,7 @@
           - unless country.title_fa == 'ایران'
             - if country.tours.present?
               - @first_tour = country.tours.first            
-              .slide
+              .slide{:id => "tours_id_" + @first_tour.id.to_s}
                 %p.tour-title{:class => I18n.locale}= @first_tour.title
                 - if @first_tour.photos.present?
                   = link_to (image_tag @first_tour.photos.first.image(:medium), :class => "img-responsive"), @first_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
@@ -64,9 +64,15 @@
       .col-xs-6#time-zone
         .col-xs-12.calendar
           #datepicker7
-        .col-xs-12
-          .col-xs-6= image_tag 'watch.png'
-          .col-xs-6= image_tag 'watch.png'
+        .col-xs-12.time-zone
+          .title-time-zone= link_to 'مشاهده اختلاف ساعت سایر کشورها', time_zone_clocks_countries_path, :target => "_blank"          
+          .col-xs-12
+            .container
+              .clock.two                
+                = image_tag 'clock/clock4.png', :class => "bg"
+                = image_tag 'clock/clock4-hour.png', :class => "hour"
+                = image_tag 'clock/clock4-min.png', :class => "min"
+                = image_tag 'clock/clock4-sec.png', :class => "sec"
   
   .col-xs-12.clear-float
     .plane-company

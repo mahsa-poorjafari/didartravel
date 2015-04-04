@@ -3,7 +3,7 @@ class Sight < ActiveRecord::Base
   extend FriendlyId  
   friendly_id :title_fa
   has_many :photos
-  belongs_to :city
+  belongs_to :city, touch: true
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
   has_many :slides
   def title

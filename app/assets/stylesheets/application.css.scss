@@ -457,7 +457,7 @@ top: 0;
     height: 40px;
     left: 20%;
   }
-.cal-weather {position:relative;  margin-top:5%; padding:0;  }
+.cal-weather {position:relative;  margin-top:3%; padding:0;  }
 .cal-weather .col-xs-6{ padding:0;  }
 .cal-weather::before {  
   padding:0;
@@ -569,8 +569,39 @@ line-height: 2em;}
   width:200px; text-align:center;
   border-radius:5px;
   }
+.title-time-zone {
+  -webkit-transition: all .4s; /* For Safari 3.1 to 6.0 */
+    transition: all .4s; 
+  -webkit-box-shadow: 7px 8px 33px 0px rgba(255,255,255,1);
+  -moz-box-shadow: 7px 8px 33px 0px rgba(255,255,255,1);
+  box-shadow: 7px 8px 33px 0px rgba(255,255,255,1);
+  
+  background: #fceabb; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 31%, #f8b500 85%, #fbdf93 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fceabb), color-stop(31%,#fccd4d), color-stop(85%,#f8b500), color-stop(100%,#fbdf93)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 31%,#f8b500 85%,#fbdf93 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fceabb 0%,#fccd4d 31%,#f8b500 85%,#fbdf93 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fceabb 0%,#fccd4d 31%,#f8b500 85%,#fbdf93 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 31%,#f8b500 85%,#fbdf93 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+  text-align:center;
+  border-radius:5px;padding-top: 2%;
+  height:30px; font-size:1.2em;
+  margin-top:3%;
+}
 .national-certificate:hover {cursor:pointer}
+ .title-time-zone:hover {cursor:pointer;
+  background: #cc0000; /* Old browsers */
+  background: -moz-linear-gradient(top,  #cc0000 0%, #cc0000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cc0000), color-stop(100%,#cc0000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #cc0000 0%,#cc0000 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #cc0000 0%,#cc0000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#cc0000',GradientType=0 ); /* IE6-9 */
 
+ }
+.title-time-zone a:hover {color:#fff}
 .contact-form .form-control {color:#fff}
 .contact-form.fa .col-xs-6, .contact-form.ar .col-xs-6{float:right}
 #title-countries {background-image: url(image-path('earth-line.png'));
