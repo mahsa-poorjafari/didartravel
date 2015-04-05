@@ -1,0 +1,85 @@
+%h1 Listing employments
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Father name
+    %th Father job
+    %th Birthdate
+    %th Id code
+    %th Source place
+    %th Marriage status
+    %th Education
+    %th Address
+    %th Phonenumber
+    %th Mobile
+    %th Ex job start date
+    %th Ex job ended date
+    %th Ex job carrer
+    %th Ex job address
+    %th Ex job phone
+    %th Left ex job reason
+    %th Any course
+    %th Your en level
+    %th Tender task
+    %th Choose job reason
+    %th Your abilities
+    %th Salary amount
+    %th First reagent fullname
+    %th Fg job
+    %th Fg phone
+    %th Fg address
+    %th Second reagent fullname
+    %th Sg job
+    %th Sg phone
+    %th Sg address
+    %th Full time
+    %th Put guaranty
+    %th
+    %th
+    %th
+
+  - @employments.each do |employment|
+    %tr
+      %td= employment.first_name
+      %td= employment.last_name
+      %td= employment.father_name
+      %td= employment.father_job
+      %td= employment.birthdate
+      %td= employment.id_code
+      %td= employment.source_place
+      %td= employment.marriage_status
+      %td= employment.education
+      %td= employment.address
+      %td= employment.phonenumber
+      %td= employment.mobile
+      %td= employment.ex_job_start_date
+      %td= employment.ex_job_ended_date
+      %td= employment.ex_job_carrer
+      %td= employment.ex_job_address
+      %td= employment.ex_job_phone
+      %td= employment.left_ex_job_reason
+      %td= employment.any_course
+      %td= employment.your_En_level
+      %td= employment.tender_task
+      %td= employment.choose_job_reason
+      %td= employment.Your_abilities
+      %td= employment.salary_amount
+      %td= employment.first_reagent_fullname
+      %td= employment.fg_job
+      %td= employment.fg_phone
+      %td= employment.fg_address
+      %td= employment.Second_reagent_fullname
+      %td= employment.sg_job
+      %td= employment.sg_phone
+      %td= employment.sg_address
+      %td= employment.full_time
+      %td= employment.put_guaranty
+      %td= link_to 'Show', employment
+      %td= link_to 'Edit', edit_employment_path(employment)
+      %td= link_to 'Destroy', employment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Employment', new_employment_path

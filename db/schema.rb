@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314090343) do
+ActiveRecord::Schema.define(version: 20150405065728) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -122,6 +122,46 @@ ActiveRecord::Schema.define(version: 20150314090343) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "employments", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "father_name"
+    t.string   "father_job"
+    t.date     "birthdate"
+    t.string   "id_code"
+    t.string   "source_place"
+    t.boolean  "marriage_status"
+    t.text     "education"
+    t.text     "address"
+    t.string   "phonenumber"
+    t.string   "mobile"
+    t.date     "ex_job_start_date"
+    t.date     "ex_job_ended_date"
+    t.string   "ex_job_carrer"
+    t.text     "ex_job_address"
+    t.string   "ex_job_phone"
+    t.text     "left_ex_job_reason"
+    t.text     "any_course"
+    t.integer  "your_En_level"
+    t.string   "tender_task"
+    t.text     "choose_job_reason"
+    t.text     "Your_abilities"
+    t.string   "salary_amount"
+    t.string   "first_reagent_fullname"
+    t.string   "fg_job"
+    t.string   "fg_phone"
+    t.text     "fg_address"
+    t.string   "Second_reagent_fullname"
+    t.string   "sg_job"
+    t.string   "sg_phone"
+    t.text     "sg_address"
+    t.boolean  "full_time"
+    t.boolean  "put_guaranty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
   end
 
   create_table "hotels", force: true do |t|

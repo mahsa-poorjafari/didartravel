@@ -1,0 +1,135 @@
+= form_for @employment do |f|
+  - if @employment.errors.any?
+    #error_explanation      
+      %ul
+        - @employment.full_messages.each do |attr, msg|
+          %li= msg
+  .col-xs-12
+    .col-xs-12.alert.alert-warning
+      .col-xs-4.pull-right
+        .title-box-employment     اطلاعات شخصی      
+        .form-group.clear-float
+          .fit-label-height= f.label 'نام:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :first_name      , :class => "form-control "      
+        .form-group.clear-float
+          .fit-label-height= f.label 'نام خانوادگی:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :last_name, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'فرزند:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :father_name, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'شغل پدر:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :father_job, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'تاریخ تولد:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :birthdate, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'شماره شناسنامه:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :id_code, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'محل صدور:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :source_place, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'وضعیت تاهل:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.check_box :marriage_status, :class => "form-control "
+      .col-xs-4.pull-right
+        .title-box-employment اطلاعات تماس      
+        .form-group.clear-float
+          .fit-label-height= f.label 'پست الکترونیکی', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :email, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'تلفن تماس ثابت', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :phonenumber, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'تلفن همراه', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :mobile, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'آدرس محل سکونت', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_area :address, :class => "form-control "
+          
+      .col-xs-4.pull-right
+        .title-box-employment سوابق شغلی و تحصیلی
+        .form-group.clear-float
+          .fit-label-height= f.label 'میزان تحصیلات، رشته تحصیلی', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_area :education, :class => "form-control "
+        %p.clear-float{:class => I18n.locale}  در صورت اشتغال به كار قبلي:
+        .form-group.clear-float
+          .fit-label-height= f.label 'از تاریخ', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :ex_job_start_date, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'تا تاریخ', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :ex_job_ended_date, :class => "form-control "
+        .form-group.clear-float
+          = f.label 'مسئوليت خود را در شغل قبلي ذكر نماييد:', :class => "control-label"
+          = f.text_field :ex_job_carrer, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'آدرس محل كار:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_area :ex_job_address, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'تلفن محل کار:', :class => "control-label col-xs-4 pull-right"
+          .col-xs-8= f.text_field :ex_job_phone, :class => "form-control "
+        .form-group.clear-float
+          .fit-label-height= f.label 'علت ترك كار قبل:', :class => "control-label col-xs-4 pull-right"
+          = f.text_area :left_ex_job_reason, :class => "form-control "
+        .form-group.clear-float
+          = f.label 'در صورت گذراندن دوره هاي تخصصي با داشتن مدرك ذكر فرمائيد:', :class => "control-label"
+          = f.text_area :any_course, :class => "form-control "
+        .form-group.clear-float
+          = f.label 'ميزان آشنايي به زبان انگليسي', :class => "control-label col-xs-4 pull-right"
+          %i ( در صورت آشنايي با ساير زبانها ذكر شود)
+          = f.select :your_En_level, options_for_select([["عالی",1],["خوب",2], ["متوسط",3], ["ضعیف",4]], :selected =>@employment.your_En_level), prompt: "یک مورد را انتخاب کنید"
+    .col-xs-12.alert.alert-success
+      .col-xs-12.pull-right
+        .form-group.clear-float
+          %p{:class => I18n.locale} با توجه به شناختي كه از تواناييهاي خود داريد فكر مي كنيد در كدام قسمت فعاليتهاي شركت موفق تر خواهيد بود؟  
+          = f.text_field :tender_task, :class => "form-control "
+      .col-xs-4.pull-right
+        .form-group.clear-float
+          = f.label 'علت انتخاب اين شغل را توضيح دهيد:', :class => "control-label"
+          = f.text_area :choose_job_reason, :class => "form-control "
+      .col-xs-4.pull-right
+        .form-group.clear-float
+          = f.label 'توانايي هاي خود را در ارتباط با اين شغل توضيح دهيد:', :class => "control-label"
+          = f.text_area :Your_abilities, :class => "form-control "
+      .col-xs-4.pull-right
+        .form-group.clear-float
+          = f.label 'ميزان حقوق درخواستي:', :class => "control-label"
+          = f.text_field :salary_amount, :class => "form-control "
+      .col-xs-6.pull-right
+        %p{:class => I18n.locale}  آيا مي توانيد به صورت تمام وقت (صبح و عصر)در محل كار حاضر شويد:
+        .form-group.clear-float
+          = f.check_box :full_time
+      .col-xs-6.pull-right
+        %p{:class => I18n.locale} براي سپردن ضمانت جهت حسن انجام كار مشكلي نداريد؟
+        .form-group.clear-float          
+          = f.check_box :put_guaranty
+    .col-xs-12.well
+      %h4{:class => I18n.locale} دو نفر معرف با ذكر مشخصات در جدول زير وارد نمائيد:
+      %table.table#employment-reagen-table
+        %thead
+          %tr
+            %th ردیف
+            %th نام و نام خانوادگي
+            %th شغل
+            %th  شماره تماس
+            %th آدرس
+        %tbody
+          %tr
+            %td ۱
+            %td= f.text_field :first_reagent_fullname , :class => "form-control "
+            %td= f.text_field :fg_job            , :class => "form-control "
+            %td= f.text_field :fg_phone, :class => "form-control "
+            %td= f.text_area :fg_address, :class => "form-control "
+          %tr
+            %td ۲
+            %td= f.text_field :Second_reagent_fullname , :class => "form-control "
+            %td= f.text_field :sg_job , :class => "form-control "
+            %td= f.text_field :sg_phone , :class => "form-control "
+            %td= f.text_area :sg_address , :class => "form-control "
+      
+
+    .col-xs-12.alert.alert-info
+      %h4{:class => I18n.locale} لازم به ذكر است كه اين فرم جهت دوره آزمايشي پر شده و در صورت موافقت طرفين جهت ادامه كار فرم قرارداد جديد منعقد خواهد شد. كارفرما ميتواند قبل از اتمام دوره آزمايشي نسبت به ادامه كار كارآموز در دفتر تصميم گيري كند.
+      .form-group.clear-float
+        = f.submit 'دخیره فرم',  :class => "btn btn-primary col-xs-4 pull-left"
+        .clear-float

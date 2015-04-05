@@ -32,9 +32,9 @@ body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .fa input, .fa select, .fa textarea, .fa label, .admin-menu ul.fa  {direction:rtl; font-family: 'open_sansregular';}
 .ar, p.ar {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
 .en, p.en, span.en, h1.en, h2.en, h3.en, h4.en {direction:ltr; font-family:Arial}
-.admin-menu {position:absolute; top:180px;height: 37px;
+.admin-menu {position:absolute; top:45px;height: 37px;
   overflow: hidden;
-  left:0; width:220px;
+  left:0; width:230px;
   z-index:20;
   font-family: 'open_sansregular'; 
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
@@ -627,6 +627,22 @@ line-height: 2em;}
   font-weight:bold; 
   padding:2%;
 }
+.title-box-employment {width:100%; height:50px;   
+  border-bottom: 4px #1A1A1A solid;
+  color:#1A1A1A;
+  font-size:1.5em;
+  font-weight:bold; 
+  padding:2%;
+  margin-bottom:5%;
+  }
+.new-employment .title-box {width:100%; height:50px;   
+  border-bottom: 4px #A52A2A solid;
+  color:#A52A2A;
+  font-size:2em;
+  font-weight:bold; 
+  padding:2%;
+  
+  }
 .title_row .title-box{width:100%; height:50px;   
   border-bottom: 4px #1A1A1A solid;
   color:#1A1A1A;
@@ -647,3 +663,5 @@ line-height: 2em;}
   margin:1%;
   }
 .related-box .fa .related-tours, .related-box .ar .related-tours {float:right;}
+.fit-label-height label{height:36px;}
+table#employment-reagen-table tr th {text-align:right}

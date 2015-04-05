@@ -1,0 +1,108 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @employment.first_name
+%p
+  %b Last name:
+  = @employment.last_name
+%p
+  %b Father name:
+  = @employment.father_name
+%p
+  %b Father job:
+  = @employment.father_job
+%p
+  %b Birthdate:
+  = @employment.birthdate
+%p
+  %b Id code:
+  = @employment.id_code
+%p
+  %b Source place:
+  = @employment.source_place
+%p
+  %b Marriage status:
+  = @employment.marriage_status
+%p
+  %b Education:
+  = @employment.education
+%p
+  %b Address:
+  = @employment.address
+%p
+  %b Phonenumber:
+  = @employment.phonenumber
+%p
+  %b Mobile:
+  = @employment.mobile
+%p
+  %b Ex job start date:
+  = @employment.ex_job_start_date
+%p
+  %b Ex job ended date:
+  = @employment.ex_job_ended_date
+%p
+  %b Ex job carrer:
+  = @employment.ex_job_carrer
+%p
+  %b Ex job address:
+  = @employment.ex_job_address
+%p
+  %b Ex job phone:
+  = @employment.ex_job_phone
+%p
+  %b Left ex job reason:
+  = @employment.left_ex_job_reason
+%p
+  %b Any course:
+  = @employment.any_course
+%p
+  %b Your en level:
+  = @employment.your_En_level
+%p
+  %b Tender task:
+  = @employment.tender_task
+%p
+  %b Choose job reason:
+  = @employment.choose_job_reason
+%p
+  %b Your abilities:
+  = @employment.Your_abilities
+%p
+  %b Salary amount:
+  = @employment.salary_amount
+%p
+  %b First reagent fullname:
+  = @employment.first_reagent_fullname
+%p
+  %b Fg job:
+  = @employment.fg_job
+%p
+  %b Fg phone:
+  = @employment.fg_phone
+%p
+  %b Fg address:
+  = @employment.fg_address
+%p
+  %b Second reagent fullname:
+  = @employment.Second_reagent_fullname
+%p
+  %b Sg job:
+  = @employment.sg_job
+%p
+  %b Sg phone:
+  = @employment.sg_phone
+%p
+  %b Sg address:
+  = @employment.sg_address
+%p
+  %b Full time:
+  = @employment.full_time
+%p
+  %b Put guaranty:
+  = @employment.put_guaranty
+
+= link_to 'Edit', edit_employment_path(@employment)
+\|
+= link_to 'Back', employments_path

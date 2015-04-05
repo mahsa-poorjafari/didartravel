@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :employments
+
   resources :news_and_vents
 
   resources :certificates
