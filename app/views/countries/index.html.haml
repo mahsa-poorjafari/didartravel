@@ -4,8 +4,11 @@
   .col-xs-12.margin-bottom5
     .title-tour-line.col-xs-10
     %p.col-xs-12.set-center.title-tour#title-countries{:class => I18n.locale}=  t('country')
-  
-  .country-tabs
+  .col-xs-12.continent-group
+    - @continent.each do |continent|
+      .title_row.col-xs-3{:class => I18n.locale}
+        .title-box{:class => I18n.locale}= continent.title
+  .country-tabs.country-bg
     - if I18n.locale == :en  
       %ul.nav.nav-tabs.pull-left#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
         = render 'countries/country_title_tap'  
@@ -13,6 +16,7 @@
         .tab-content.col-xs-12.pull-left
           = render 'countries/country_details'
     - else
+      
       %ul.nav.nav-tabs.pull-right#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
         = render 'countries/country_title_tap'    
       -#

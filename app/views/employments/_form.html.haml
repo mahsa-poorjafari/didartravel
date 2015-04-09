@@ -31,7 +31,13 @@
           .col-xs-8= f.text_field :source_place, :class => "form-control "
         .form-group.clear-float
           .fit-label-height= f.label 'وضعیت تاهل:', :class => "control-label col-xs-4 pull-right"
-          .col-xs-8= f.check_box :marriage_status, :class => "form-control "
+          .col-xs-8 
+            = f.radio_button :marriage_status, 0
+            %b مجرد 
+            
+            = f.radio_button :marriage_status, 1
+            %b متاهل
+          
       .col-xs-4.pull-right
         .title-box-employment اطلاعات تماس      
         .form-group.clear-float
@@ -98,11 +104,19 @@
       .col-xs-6.pull-right
         %p{:class => I18n.locale}  آيا مي توانيد به صورت تمام وقت (صبح و عصر)در محل كار حاضر شويد:
         .form-group.clear-float
-          = f.check_box :full_time
+          = f.radio_button :full_time, 0
+          %b خیر
+          = f.radio_button :full_time, 1
+          %b بله
+          
       .col-xs-6.pull-right
         %p{:class => I18n.locale} براي سپردن ضمانت جهت حسن انجام كار مشكلي نداريد؟
         .form-group.clear-float          
-          = f.check_box :put_guaranty
+          = f.radio_button :put_guaranty, 1
+          %b خیر
+          = f.radio_button :put_guaranty, 0
+          %b بله
+          
     .col-xs-12.well
       %h4{:class => I18n.locale} دو نفر معرف با ذكر مشخصات در جدول زير وارد نمائيد:
       %table.table#employment-reagen-table

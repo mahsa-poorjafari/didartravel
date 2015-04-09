@@ -5,6 +5,7 @@ class CountriesController < ApplicationController
   # GET /countries.json
   def index
     @countries = Country.order(" created_at desc")
+    @continent = ContinentCategory.order("title_fa desc")
   end
 
   # GET /countries/1

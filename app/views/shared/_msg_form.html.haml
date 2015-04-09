@@ -7,7 +7,9 @@
           %li= msg
   -if flash[:msgsend]        
     .alert.alert-success= flash[:msgsend]
-      
+  -if flash[:errormsg]
+    .alert.alert-danger= flash[:errormsg]
+  
   .col-xs-12.contact-form{:class => I18n.locale}
     .form-group.col-xs-6
       = f.text_field :email, :placeholder => t('msg.contact-email'), :id => "contact-email", :style => "width:100%", :class => "form-msg form-control"      
@@ -17,14 +19,16 @@
     .form-group.col-xs-6       
       = f.text_area :text, :placeholder => t('msg.contact-msg'), :id => "contact-text", :style => "resize: none; width:100%", rows: 8  , :class => "form-control form-msg"
     .form-group.col-xs-6      
-      = f.text_field :phone, :placeholder => t('msg.contact-phone'), :id => "contact-phone", :style => "width:100%", :class => "form-msg form-control"
-      .col-xs-12{:style => "margin-top:20px;"} 
-        
+      = f.text_field :phone, :placeholder => t('msg.contact-phone'), :id => "contact-phone", :style => "width:100%", :class => "form-msg form-control"      
+      
+      = f.simple_captcha :label => t('captcha')
+      
+      .col-xs-12{:style => "margin-top:20px;"}
         .form-group.col-xs-6{:class => I18n.locale}
           = f.submit t('msg.contact-btn'), :id => "contact-submit", :class => "form-submit I18n.locale"
         .form-group.col-xs-6{:class => I18n.locale}
           = button_tag t('msg.contact-reset'), :type => 'reset', :id => "contact-reset"  , :class => "form-clean  I18n.locale"
-    
+      
     
     
     

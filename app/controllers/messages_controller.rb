@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /messages
   # GET /messages.json
   def index
@@ -27,13 +27,19 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-    if @message.save
+    
+    if   @message.save_with_captcha
+      p 'true'
       @customer = Customer.new(email: @message.email)
       @customer.save!
       UserMailer.send_user_msg.deliver      
       flash[:msgsend] = 'کاربر گرامی پیام شما ارسال گردید.'
+    else
+      p 'false'
+      flash[:errormsg] = 'اطلاعات شما صحیح نمی باشد ' 
+      
     end
-    redirect_to :back
+    redirect_to :back  
   end
 
   # PATCH/PUT /messages/1
@@ -68,6 +74,8 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:user_name, :email, :phone, :text)
+      params.require(:message).permit(:user_name, :email, :phone, :text, :captcha, :captcha_key)
     end
+  
+    
 end
