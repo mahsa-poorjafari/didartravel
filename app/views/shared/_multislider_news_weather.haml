@@ -45,47 +45,48 @@
                     = link_to 'ویرایش تور', edit_tour_path(iran_tour), :class => "btn btn-info"
                     = link_to 'مشاهده تور', iran_tour, :class => "btn btn-warning"                   
                     = link_to 'حذف تور', iran_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-  .col-xs-12{:style => "padding:0; margin-bottom:2%"}
-    .col-xs-4.cal-weather
-      .col-xs-12
-        .scrollable.vertical
-          #test.items
-          .navi
-    .col-xs-5#news
-      .title-tour.set-center{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
+  .col-xs-10.boxes-show
+    .col-xs-7#news
+      
       -#
+        .title-tour.set-center{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
         %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
       .col-xs-12.news
         %ul.news_and_vents{:class => I18n.locale}
           - NewsAndVent.order('created_at').each do |news|
             %li.news-item{:class => I18n.locale}= link_to news.title, news
-    .col-xs-3#time-zone
-      .col-xs-12.calendar
+      .plane-company.col-xs-12.clear-float
+        %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
+          - Plane.all.each do |plane|
+            .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
+              = link_to url_with_protocol(plane.web_site), :target => "_blank" do
+                = image_tag plane.logo(:icon)  
+    .col-xs-5#time-zone
+      .col-xs-7.calendar
         #datepicker7
-      .col-xs-12.time-zone
-        .title-time-zone= link_to 'مشاهده اختلاف ساعت سایر کشورها', time_zone_clocks_countries_path, :target => "_blank"          
-        .col-xs-12
-          .container
-            .clock.two                
-              = image_tag 'clock/clock4.png', :class => "bg"
-              = image_tag 'clock/clock4-hour.png', :class => "hour"
-              = image_tag 'clock/clock4-min.png', :class => "min"
-              = image_tag 'clock/clock4-sec.png', :class => "sec"
+      .col-xs-5        
+        .clock.two
+          = image_tag 'clock/clock4.png', :class => "bg"
+          = image_tag 'clock/clock4-hour.png', :class => "hour"
+          = image_tag 'clock/clock4-min.png', :class => "min"
+          = image_tag 'clock/clock4-sec.png', :class => "sec"
+      .col-xs-12.cal-weather        
+        .scrollable.vertical
+          #test.items
+          .navi
+      
+      -#
+        .col-xs-12.time-zone
+          .title-time-zone= link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"          
+          .col-xs-12
+            .container
+              .clock.two                
+                = image_tag 'clock/clock4.png', :class => "bg"
+                = image_tag 'clock/clock4-hour.png', :class => "hour"
+                = image_tag 'clock/clock4-min.png', :class => "min"
+                = image_tag 'clock/clock4-sec.png', :class => "sec"
   
-  .col-xs-12.clear-float
-    .plane-company
-      - @half_count = Plane.count / 2
-      %marquee.col-xs-5{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "alternate"}
-        - Plane.all.offset(@half_count).each do |plane|
-          .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-            = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-              = image_tag plane.logo(:icon)  
-      .col-xs-2.all-plane-icon= image_tag 'all-planes.png'
-      %marquee.col-xs-5{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "alternate", :style => "float:right"}
-        - Plane.all.limit(@half_count).each do |plane|
-          .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-            = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-              = image_tag plane.logo(:icon)  
+  
       -#
         #search
           = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do

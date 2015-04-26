@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
     if   @message.save_with_captcha
       p 'true'
       @customer = Customer.new(email: @message.email)
-      @customer.save!
+      @customer.save_with_captcha
       UserMailer.send_user_msg.deliver      
       flash[:msgsend] = 'کاربر گرامی پیام شما ارسال گردید.'
     else

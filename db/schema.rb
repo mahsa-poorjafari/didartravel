@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 20150409151814) do
     t.date     "birthdate"
     t.string   "id_code"
     t.string   "source_place"
-    t.boolean  "marriage_status"
+    t.boolean  "marriage_status",         default: false
     t.text     "education"
     t.text     "address"
     t.string   "phonenumber"
