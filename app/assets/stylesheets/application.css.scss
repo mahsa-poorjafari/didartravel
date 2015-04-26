@@ -652,6 +652,7 @@ line-height: 2em;}
   padding:2%;
   
   }
+.title_row {padding:1%;}
 .title_row .title-box{width:100%; height:50px;   
   border-bottom: 4px #1A1A1A solid;
   color:#1A1A1A;
@@ -659,6 +660,8 @@ line-height: 2em;}
   font-weight:bold; 
   padding:2%;
 }
+.title_row.fa, .title_row.ar{float:right}
+.title_row.en {float:left}
 .tour-source {background:#F6F660; color:#000; width:500px; height:50px;}
 .tour-description .tr .th {color:#790A0A;}
 .related-box {position:relative;  
@@ -678,7 +681,13 @@ table#employment-reagen-table tr th {text-align:right}
   background-repeat:no-repeat; 
   background-position:center;
   min-height: 500px;
-  margin-top: 10%;
+  margin-top: 7%;
   }
-.continent-group .fa.title_row {float:right}
+.continent-group .fa.title_row {float:right; text-align:center}
 .simple_captcha_field input {color:#000}
+.show-countries-list {margin-top:5%; list-style:none; text-align:center; padding:0;}
+.show-countries-list li{height:30px;
+  width:100%;
+  -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
+    transition: all .5s; }
+.show-countries-list li:hover{background:#A52A2A; color:#fff;}

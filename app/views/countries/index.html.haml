@@ -5,23 +5,32 @@
     .title-tour-line.col-xs-10
     %p.col-xs-12.set-center.title-tour#title-countries{:class => I18n.locale}=  t('country')
   .col-xs-12.continent-group
-    - @continent.each do |continent|
-      .title_row.col-xs-3{:class => I18n.locale}
-        .title-box{:class => I18n.locale}= continent.title
-  .country-tabs.country-bg
-    - if I18n.locale == :en  
-      %ul.nav.nav-tabs.pull-left#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
-        = render 'countries/country_title_tap'  
-      -#
-        .tab-content.col-xs-12.pull-left
-          = render 'countries/country_details'
-    - else
-      
-      %ul.nav.nav-tabs.pull-right#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
-        = render 'countries/country_title_tap'    
-      -#
-        .tab-content.col-xs-12.pull-right
-          = render 'countries/country_details'
+    - @cc = 100 / @continent.count    
+    - ContinentCategory.order("set_order desc").each do |continent|
+      .title_row{:class => I18n.locale, :style => "width:" + @cc.to_s + "%" }
+        .title-box{:class => I18n.locale}= continent.title 
+        %ul.show-countries-list
+          - continent.countries.each do |country|
+            %li{:role => "presentation",  :title => "آژانس_هواپیمایی_دیدار",:class => I18n.locale}
+              = link_to  country, :title => "آژانس_هواپیمایی_دیدار"+ "_" +country.title_fa, :id => 'country-'+ country.id.to_s, :class => "country-name" do
+                %span.location= image_tag country.country_flag(:small)
+                %span.country-title-tab= country.title
+    .country-tabs.country-bg
+  -#
+    
+      - if I18n.locale == :en  
+        %ul.nav.nav-tabs.pull-left#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
+          = render 'countries/country_title_tap'  
+        -#
+          .tab-content.col-xs-12.pull-left
+            = render 'countries/country_details'
+      - else
+        
+        %ul.nav.nav-tabs.pull-right#CountryTab.col-xs-12{:role => "tablist", :class => I18n.locale }
+          = render 'countries/country_title_tap'    
+        -#
+          .tab-content.col-xs-12.pull-right
+            = render 'countries/country_details'
       
   .keywords.full-width
     %p= t('Keywords.title')

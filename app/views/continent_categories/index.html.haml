@@ -1,13 +1,13 @@
 .margin3 
   %h1 لیست گروه تورها
   -if is_admin?
-    = link_to 'تعریف گروه جدید برای تورها', new_continent_category_path, :class => "btn btn-success"
+    = link_to 'افزودن نام قاره', new_continent_category_path, :class => "btn btn-success"
       
   %table.table
     %tr
       %th ردیف
-      %th عنوان گروه       
-      %th الویت
+      %th عنوان قاره   
+      %th الویت نمایش
       %th
 
     - @continent_categories.each_with_index do |continent_category, i|
