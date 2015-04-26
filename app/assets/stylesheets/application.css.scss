@@ -486,7 +486,7 @@ top: 0;
   width:100%; overflow:hidden;
   }
 .tours-index .tour-box .tour-sample-image img {height:100%; width:100%;}
-.country-title-tab {color:#000000}
+.country-title-tab {color:#000000; font-weight:bold}
 .tours-index .tour-date {position:absolute; bottom:0; width:100%; right:0; left:0;}
 .admin-btn-tour {position:absolute; top:15%; width:100%; right:0; left:0;
   z-index:20;
@@ -691,3 +691,4 @@ table#employment-reagen-table tr th {text-align:right}
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
     transition: all .5s; }
 .show-countries-list li:hover{background:#A52A2A; color:#fff;}
+.show-countries-list li .location img {width:30px}
