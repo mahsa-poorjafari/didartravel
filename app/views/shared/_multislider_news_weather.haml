@@ -8,8 +8,7 @@
           - if country.tours.present?
             - country.tours.each do |tour|
             - @first_tour = country.tours.first            
-              .item
-                
+              .item                
                 %p.tour-title{:class => I18n.locale}= tour.title
                 - if tour.photos.present?
                   = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
@@ -71,11 +70,14 @@
     .col-xs-3#time-zone      
       .col-xs-12.calendar
         #datepicker7
-    .col-xs-12
-      .col-xs-2{:style => "padding:0"}
+    .col-xs-12{:style => "padding:0"}
+      .col-xs-2
         - if current_page?('/')
-          .national-certificate        
-            %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
+          .national-certificate
+            .col-xs-2{:style => "padding:0", :class => I18n.locale}
+              = image_tag 'driving.png', :width => "50"
+            .col-xs-8{:style => "padding:0", :class => I18n.locale}
+              %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
           
       .plane-company.col-xs-8
         %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
@@ -83,9 +85,13 @@
             .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
               = link_to url_with_protocol(plane.web_site), :target => "_blank" do
                 = image_tag plane.logo(:icon)  
-      .col-xs-2{:style => "padding:0"}
+      .col-xs-2
         - if current_page?('/')
-          .title-time-zone= link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"            
+          .title-time-zone
+            .col-xs-2.pull-right{:style => "padding:0", :class => I18n.locale}
+              = image_tag 'time-zone.png', :width => "50"
+            .col-xs-8{:style => "padding:0", :class => I18n.locale}
+              = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"            
     .footer.col-xs-12 
       = render 'shared/footer'  
       
