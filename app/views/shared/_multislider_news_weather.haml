@@ -1,79 +1,93 @@
 .col-xs-12.middle-box
-  .col-xs-12{:style => "height:350px; overflow:hidden;"}
-    .col-xs-6{:style => "padding:0; overflow:hidden"}
-      .title-tour.set-center{:class => I18n.locale}= t('foreign-tour')
-      .slider4
-        - Country.all.each do |country|
-          - unless country.title_fa == 'ایران'
-            - if country.tours.present?
-              - @first_tour = country.tours.first            
-              .slide{:id => "tours_id_" + @first_tour.id.to_s}
-                %p.tour-title{:class => I18n.locale}= @first_tour.title
-                - if @first_tour.photos.present?
-                  = link_to (image_tag @first_tour.photos.first.image(:medium), :class => "img-responsive"), @first_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+  .col-xs-12.slide{ :style => " overflow:hidden"}
+    .col-xs-6.title-tour.set-center{:class => I18n.locale}= t('foreign-tour')
+    .col-xs-6.title-tour.set-center{:class => I18n.locale}= t('local-tour')
+    .slider4#owl-demo.owl-carousel.owl-theme
+      - Country.all.each do |country|
+        - unless country.title_fa == 'ایران'
+          - if country.tours.present?
+            - country.tours.each do |tour|
+            - @first_tour = country.tours.first            
+              .item
                 
-                = render "/tours/show_persian_date", :tour => @first_tour
+                %p.tour-title{:class => I18n.locale}= tour.title
+                - if tour.photos.present?
+                  = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+                
+                .date= render "/tours/show_persian_date", :tour => tour
                 
                 .more-info
-                  = link_to  @first_tour do 
-                    %i= t('more-info')
-                    %span.see-more-arrow
+                  = link_to  tour do 
+                    %i.see-more-arrow= t('more-info')
+                    
                 -if is_admin?
                   .admin-btn-tour
-                    = link_to 'ویرایش تور', edit_tour_path(@first_tour), :class => "btn btn-info"
-                    = link_to 'مشاهده تور', @first_tour, :class => "btn btn-warning"                   
-                    = link_to 'حذف تور', @first_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-    .col-xs-6{:style => "padding:0"}
-      .title-tour.set-center{:class => I18n.locale}= t('local-tour')
-      .slider4        
-        - Country.all.each do |country|
-          - if country.title_fa == 'ایران' && country.tours.present?            
-            - country.tours.each do |iran_tour|
-              .slide
-                %p.tour-title{:class => I18n.locale}= iran_tour.title
-                - if iran_tour.photos.present?
-                  = link_to (image_tag iran_tour.photos.first.image(:medium), :class => "img-responsive"), iran_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+                    = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
+                    = link_to 'مشاهده تور', tour, :class => "btn btn-warning"                   
+                    = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+      - Country.all.each do |country|
+        - if country.title_fa == 'ایران' && country.tours.present?            
+          - country.tours.each do |iran_tour|
+            .item{:id => "iran_tours_id_" + iran_tour.id.to_s}
+              %p.tour-title{:class => I18n.locale}= iran_tour.title
+              - if iran_tour.photos.present?
+                = link_to (image_tag iran_tour.photos.first.image(:medium), :class => "img-responsive"), iran_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+          
+              .date= render "/tours/show_persian_date", :tour => iran_tour
             
-                = render "/tours/show_persian_date", :tour => iran_tour
-              
-                .more-info
-                  = link_to  iran_tour do 
-                    %i= t('more-info')
-                    %span.see-more-arrow
-                -if is_admin?
-                  .admin-btn-tour
-                    = link_to 'ویرایش تور', edit_tour_path(iran_tour), :class => "btn btn-info"
-                    = link_to 'مشاهده تور', iran_tour, :class => "btn btn-warning"                   
-                    = link_to 'حذف تور', iran_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-  .col-xs-10.boxes-show
-    .col-xs-7#news
+              .more-info
+                = link_to  iran_tour do 
+                  %i= t('more-info')
+                  %span.see-more-arrow
+              -if is_admin?
+                .admin-btn-tour
+                  = link_to 'ویرایش تور', edit_tour_path(iran_tour), :class => "btn btn-info"
+                  = link_to 'مشاهده تور', iran_tour, :class => "btn btn-warning"                   
+                  = link_to 'حذف تور', iran_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+  
+      
+  
+  
+  
+  .col-xs-12.boxes-show
+    .col-xs-3.cal-weather.pull-right
+      .scrollable.vertical
+        #test.items
+        .navi
+    
+      
+      
+      
+    .col-xs-6#news.pull-right
       
       -#
         .title-tour.set-center{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
         %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
       .col-xs-12.news
         %ul.news_and_vents{:class => I18n.locale}
-          - NewsAndVent.order('created_at').each do |news|
+          - NewsAndVent.order('created_at desc').each do |news|
             %li.news-item{:class => I18n.locale}= link_to news.title, news
-      .plane-company.col-xs-12.clear-float
+      
+    .col-xs-3#time-zone      
+      .col-xs-12.calendar
+        #datepicker7
+    .col-xs-12
+      .col-xs-2{:style => "padding:0"}
+        - if current_page?('/')
+          .national-certificate        
+            %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
+          
+      .plane-company.col-xs-8
         %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
           - Plane.all.each do |plane|
             .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
               = link_to url_with_protocol(plane.web_site), :target => "_blank" do
                 = image_tag plane.logo(:icon)  
-    .col-xs-5#time-zone
-      .col-xs-7.calendar
-        #datepicker7
-      .col-xs-5        
-        .clock.two
-          = image_tag 'clock/clock4.png', :class => "bg"
-          = image_tag 'clock/clock4-hour.png', :class => "hour"
-          = image_tag 'clock/clock4-min.png', :class => "min"
-          = image_tag 'clock/clock4-sec.png', :class => "sec"
-      .col-xs-12.cal-weather        
-        .scrollable.vertical
-          #test.items
-          .navi
+      .col-xs-2{:style => "padding:0"}
+        - if current_page?('/')
+          .title-time-zone= link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"            
+    .footer.col-xs-12 
+      = render 'shared/footer'  
       
       -#
         .col-xs-12.time-zone
@@ -121,3 +135,27 @@
           = image_tag 'prev.png'
         = link_to  "#myCarousel1", :class => "right carousel-control", "data-slide" => "next", :title => "آژانس_هواپیمایی_رادان_سیر"  do           
           = image_tag 'next.png'
+
+:javascript   
+  
+  $('.carousel').carousel();
+  $('#carousel .carousel-inner :first').addClass('active');   
+
+  $('.carousel[data-type="multi"] .item').each(function(){
+    var next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=1;i<2;i++) {
+      next=next.next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      
+      next.children(':first-child').clone().appendTo($(this));
+    }
+  });
+  $('#package-tour1 :first').addClass('active');   
+  $('#package-tour2 :first').addClass('active');

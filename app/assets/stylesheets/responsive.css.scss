@@ -1,0 +1,78 @@
+/* Large desktop */
+@media (min-width: 1200px) {  }
+@media only screen and (max-width: 979px) { 
+  .main-menu .top-of-menu p.site-title.fa {font-size:1.2em}
+  .logo-side {top: -37px;background-size: 115%;} 
+  .top-of-menu .col-xs-4.pull-right {padding:0;}
+  .menu_bar ul#main-menu {width:100%}
+  .menu_bar ul#main-menu li {width:30%;}
+  
+  .menu_bar ul#main-menu li.item-menu .icon {width: 85%;right: 0;left: 0;}
+  .menu_bar ul#main-menu li.item-menu a {font-size:1em}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {width:130%}
+  .boxes-show {margin-left: 0;margin-right: 0; width:100%}
+  #time-zone {width:34%;}
+  #news {width:56%}
+  .show-social .social-icon img {width:35px}
+  .footer .title-footer-form {width:95%;right: 0;left: 0;}
+  .contact-form #button {padding:0} 
+  .contact-form #button .col-xs-12{padding:0} 
+  .footer-menu ul a li {font-size:1em}
+  .owl-carousel .owl-wrapper, .owl-carousel .owl-item {-webkit-transform: translate3d(2190px, 0, 0);
+-moz-transform: translate3d(2190px, 0, 0);
+-ms-transform: translate3d(2190px, 0, 0);}
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+ .main-menu .top-of-menu p.site-title.fa {font-size:1.2em}
+ }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .main-menu .top-of-menu p.site-title.fa {font-size:1em}
+  }
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  
+}
+/*
+@media all and (max-width: 740px) {  
+  h1 { font-size: 4.5em; color:#FF0000}  
+  .servic-descriptipn.text { font-size: 4.5em; color:#FF0000}  
+  h3 { font-size: 2.2em;color:#FF0000 }  
+  h2 { display: block; text-align: center; color:#FF0000}  
+  p { padding: 0; }  
+}
+@media all and (max-width: 570px) {  
+  .servic-descriptipn.text { color:#A020F0}  
+  h1 { color:#A020F0}  
+  h3 { color:#A020F0}  
+  h2 { display: block; text-align: center; color:#A020F0}  
+  p { padding: 0; }  
+}  
+ 
+@media all and (max-width: 480px) {  
+  .servic-descriptipn.text { color:#00FF00 }  
+  h1 { color:#00FF00 }  
+  h3 { color:#00FF00}  
+  h2 { display: block; text-align: center;color:#00FF00 }  
+  p { padding: 0; }  
+}  
+   
+@media all and (max-width: 320px) {  
+  .servic-descriptipn.text { color:#0000FF}  
+  h1 { color:#0000FF}  
+  h3 { color:#0000FF}  
+  h2 { display: block; text-align: center; color:#0000FF}  
+  p { padding: 0; }  
+}  
+*/  
+/** iPhone only **/ 
+/*
+@media all and (max-device-width: 480px) {  
+  h1 { font-size: 4.5em; }  
+  h3 { font-size: 2.2em; }  
+  h2 { display: block; text-align: center; }  
+  p { padding: 0; }  
+}
+*/

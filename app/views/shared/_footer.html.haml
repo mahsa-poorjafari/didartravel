@@ -1,53 +1,30 @@
 .col-xs-12.footer-boxes{:class => I18n.locale}
-  .col-xs-1
-  .col-xs-10.footer-rectangle-box{:class => I18n.locale} 
-    .col-xs-6.contact-box{:class => I18n.locale}
-      = render 'shared/msg_form' 
-    .col-xs-6.contact-info{:class => I18n.locale}
-      - @contact = Page.find_by_title_en('Contact us')
-      %p= raw @contact.text
-      .google-map-box
-        %iframe{:height => "100%", :src => "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kZSqNSdorgp4&z=13", :width => "100%"}
-  .col-xs-1
+  
+  
+  .col-xs-3.contact-box.pull-right{:class => I18n.locale}
+    = render 'shared/msg_form' 
+    
+  .google-map-box.col-xs-6
+    %iframe{:height => "100%", :src => "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kZSqNSdorgp4&z=13", :width => "100%"} 
+  .col-xs-3.contact-info{:class => I18n.locale}
+    - @contact = Page.find_by_title_en('Contact us')
+    %p= raw @contact.text
+    .show-social.clear-float
+      .col-xs-12.set-center          
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 'f.png'
+
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 'l.png'
+
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 'g.png'
+
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 't.png'
+    
+  
   .clear-float  
-  
-  .footer-certificate
-    - @certificates = Certificate.all
-    -@width_size = 100 / @certificates.count
-    - @certificates.each do |certificate|
-      .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:"+@width_size.to_s+"%"}
-        = image_tag certificate.image(:small)
-        %p= certificate.title
-  
-  .col-xs-12.footer-bottom
-    .col-xs-4.sitevisit
-      .col-xs-12#newsletter
-        %h4.title-footer-form.contact{:class => I18n.locale}= t('subscribe_to_newsletter')
-        = render 'shared/newsletter_subscribe'
-      .clear-float
-      .col-xs-12
-        %h4.title-footer-form.contact{:class => I18n.locale}= t('sitevisit.statistics')          
-        .col-xs-11
-          %p{:class => I18n.locale}
-            %b= t('sitevisit.total-views')
-            =  Visit.all.count
-          %p{:class => I18n.locale}
-            %b= t('sitevisit.visits-today')
-            =  @online_day
-          %p{:class => I18n.locale}
-            %b= t('sitevisit.online-number')
-            = @online_now    
-      
-    .col-xs-4
-      = render 'shared/footer_menu'
-    
-    .col-xs-4
-      %h4.title-footer-form.contact{:class => I18n.locale}= t('related-links')
-      = render 'shared/related_links'
-      
-    .copyright.col-xs-12= t('copyright')
-    
-      
     
   
     

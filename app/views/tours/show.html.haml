@@ -99,7 +99,8 @@
     = link_to related_tours_tours_path(:call_tours => @tour.country_id) , :class => I18n.locale do 
       .col-xs-2.related-tours
         %h4{:class => I18n.locale}= t('related-tours') + ' ' + @tour.country.title
-        %p{:class => I18n.locale}= t('count') + ': ' + @related_tours.count.to_s
+        - if @related_tours.present?
+          %p{:class => I18n.locale}= t('count') + ': ' + @related_tours.count.to_s
     = link_to related_hotels_tours_path(:call_hotels => @tour.country_id), :class => I18n.locale do 
       .col-xs-2.related-tours
         %h4{:class => I18n.locale}= t('related-hotels') + ' ' + @tour.country.title

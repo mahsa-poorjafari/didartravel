@@ -16,7 +16,7 @@
 	width: 100%;
 	color: #ccc;
 }
-.weatherFeed a { color: #888; }
+.weatherFeed a { color: #888; font-size:1.3em }
 .weatherFeed a:hover
 {
 	color: #eee;
@@ -55,7 +55,9 @@
 	position:relative;
 	overflow:hidden;	
 	height: 170px;	 
-	width: 100%;
+	width: 80%;
+  margin-right:10%;
+  margin-left:10%;
 	border: 4px solid #5D1111;
 	-moz-border-radius: 20px;
 	background: #ad0306; /* Old browsers */
@@ -76,7 +78,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad0306', end
 	margin: 0px;
   right:0; left:0;
 }
-.items div.weatherItem { height: 160px; }
+.items div.weatherItem { height: 160px; background-size:80%}
 
 .navi
 {

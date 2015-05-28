@@ -2,12 +2,13 @@
 / Microdata markup added by Google Structured Data Markup Helper.
 %html
   %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}
+    %meta{:charset => "utf-8"}    
     %title= 'آژانس مسافرتی، جهانگردی،زیارتی دیدار'
     = stylesheet_link_tag    'application', media: 'all'  
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag    'responsive', media: 'all'  
+    = javascript_include_tag 'application'   
     
-    %meta{:charset => "utf-8"}    
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %meta{:name => "keywords", :content =>   "آژانس هواپیمایی دیدار, دیدار, سفر, مسافرت, ویزا,  تورهای لحظه ای, تورهای خارجی"}
     %meta{:name => "robots", :content => "Index,follow"}
     %meta{:name => "googlebot", :content => "archive"}
@@ -15,7 +16,7 @@
     %meta{:name => "msnbot", :content => "Index,follow"}
     %meta{:name => "teoma", :content => "Index,follow"}        
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
-    %meta{:content => "Raush Co", :name => "author"}/
+    %meta{:content => "گروه مهندسین راش", :name => "author"}/
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "true", :name => "HandheldFriendly"}/
     %meta{:content => "width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no", :name => "viewport"}/
@@ -80,48 +81,88 @@
         = link_to '', '#', :name => "yield", :id => "yieldAnchor"
         = yield
         
-        - if current_page?('/') 
-          .keywords
-            %p= t('Keywords.title')
-            %ul.tag-cloud.full-width{:class => I18n.locale}
-              %li.tag-cloud
-                = link_to t('didartravel'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.a'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.b'), '/'              
-              %li.tag-cloud
-                = link_to t('Keywords.s'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.w'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.c'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.d'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.f'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.g'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.h'), Sight
-              %li.tag-cloud
-                = link_to t('Keywords.l'), Sight
-              %li.tag-cloud
-                = link_to t('Keywords.m'), Sight
-              %li.tag-cloud
-                = link_to t('Keywords.n'), Sight
-              %li.tag-cloud
-                = link_to t('Keywords.e'), '/' 
-              %li.tag-cloud
-                = link_to t('Keywords.p'), '/' 
+        
+      .col-xs-12.footer-bottom
+        .col-xs-12
+          .col-xs-3
+          .footer-certificate.col-xs-6
+            - @certificates = Certificate.all
+            -@width_size = 100 / @certificates.count
+            - @certificates.each do |certificate|
+              .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:"+@width_size.to_s+"%"}
+                = image_tag certificate.image(:small), :width => "90"
+                %p= certificate.title
+          .col-xs-3
+        .clear-float  
+
+        .col-xs-3.sitevisit
+          .col-xs-12#newsletter
+            %h4.title-footer-form.contact{:class => I18n.locale}= t('subscribe_to_newsletter')
+            = render 'shared/newsletter_subscribe'
+          .clear-float
+          .col-xs-12.visits
+            %h4.title-footer-form.contact{:class => I18n.locale}= t('sitevisit.statistics')          
+            .col-xs-11
+              %p{:class => I18n.locale}
+                %b= t('sitevisit.total-views')
+                =  Visit.all.count
+              %p{:class => I18n.locale}
+                %b= t('sitevisit.visits-today')
+                =  @online_day
+              %p{:class => I18n.locale}
+                %b= t('sitevisit.online-number')
+                = @online_now    
+          
+        .col-xs-6
+          = render 'shared/footer_menu'
+          - if current_page?('/') 
+            .keywords.col-xs-12
+              %p{:class => I18n.locale}= t('Keywords.title')
+              %ul{:class => I18n.locale}
+                %li
+                  = link_to t('didartravel'), '/' 
+                %li
+                  = link_to t('Keywords.a'), '/' 
+                %li
+                  = link_to t('Keywords.b'), '/'              
+                %li
+                  = link_to t('Keywords.s'), '/' 
+                %li
+                  = link_to t('Keywords.w'), '/' 
+                %li
+                  = link_to t('Keywords.c'), '/' 
+                %li
+                  = link_to t('Keywords.d'), '/' 
+                %li
+                  = link_to t('Keywords.f'), '/' 
+                %li
+                  = link_to t('Keywords.g'), '/' 
+                %li
+                  = link_to t('Keywords.h'), Sight
+                %li
+                  = link_to t('Keywords.l'), Sight
+                %li
+                  = link_to t('Keywords.m'), Sight
+                %li
+                  = link_to t('Keywords.n'), Sight
+                %li
+                  = link_to t('Keywords.e'), '/' 
+                %li
+                  = link_to t('Keywords.p'), '/' 
+                - Tour.limit(5).order(" created_at desc").each do |new_tour|
+                  %li
+                    = link_to new_tour.title, new_tour
+                - Visa.limit(5).order(" created_at desc").each do |visa|
+                  %li
+                    = link_to visa.title, visa
+        .col-xs-3.related-links
+          %h4.title-footer-form.contact{:class => I18n.locale}= t('related-links')
+          = render 'shared/related_links'
+          
+        .copyright.col-xs-12= t('copyright')
+        
       
-         
-      .footer.col-xs-12 
-        = render 'shared/footer'
-      - if current_page?('/')
-        .national-certificate        
-          %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
-        .title-time-zone= link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"            
+      
     .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog.modal-sm
         .modal-content
@@ -133,21 +174,7 @@
             = render 'send_links/form'
           .modal-footer
             %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-    .show-social      
-      .col-xs-12.set-center{:style => "left:0;position: absolute; top:5%; padding-left:4%"}
-        .social-icon
-          = link_to '#', :target => "_blank" do
-            .col-xs-4{:style => "padding:0"}= image_tag 'f.png'
-            %span.col-xs-7{:class => I18n.locale, :style => "padding:0; text-align:left"}= t('facebook')
-        .social-icon.clear-float
-          = image_tag 'l.png'
-          %span{:class => I18n.locale}= t('linkedin')
-        .social-icon
-          = image_tag 'g.png'
-          %span{:class => I18n.locale}= t('googleplus')
-        .social-icon
-          = image_tag 't.png'
-          %span{:class => I18n.locale}= t('twitter')
+    
            
     - if is_admin?
       .admin-menu
@@ -163,28 +190,7 @@
         $('html, body').animate({ scrollTop: 600 }, 'slow'); 
       });
   :javascript  
-    $('.carousel').carousel();
-    $('#carousel .carousel-inner :first').addClass('active');   
-
-
-    $('.carousel[data-type="multi"] .item').each(function(){
-      var next = $(this).next();
-      if (!next.length) {
-        next = $(this).siblings(':first');
-      }
-      next.children(':first-child').clone().appendTo($(this));
-      
-      for (var i=1;i<2;i++) {
-        next=next.next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        
-        next.children(':first-child').clone().appendTo($(this));
-      }
-    });
-    $('#package-tour1 :first').addClass('active');   
-    $('#package-tour2 :first').addClass('active');
+   
     
     $('a#go-top-page').smoothScroll();
     $('#datepicker7').datepicker();      

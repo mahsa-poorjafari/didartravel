@@ -36,11 +36,8 @@
 //= require jquery.eachStep.min
 //= require jquery.smooth-scroll
 //= require prettify
-//= require jquery.easing.1.3
-//= require jquery.fitvids
-//= require jquery.bxslider
 //= require jquery.zweatherfeed.min
-//= require clock
+//= require owl.carousel
 
 
 
@@ -48,22 +45,32 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
-
-
-$(function () {
-  var ck = jQuery('.clock');
-  var loading = jQuery('.loading');
-
-  jQuery('.demo').on('click', function(){
-    $this = $(this);
-    $this.addClass('selected').siblings('.demo').removeClass('selected');
-
-    var selected = $this.data('val');
-
-    ck.removeClass('clock').hide();
-    ck = $('.'+selected).addClass('clock').show();
-
-    clock.init();
-    
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 6,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3],
+     
+      stopOnHover : true, 
+      responsive : true
+ 
   });
+
+ 
 });
+$(document).ready(function(){
+  $('#service-image').show(1000);
+  $('#service-image').removeClass('service-sample-image');
+  $('#service-image').addClass('service-sample-image-show');
+  $('#service-text').fadeIn(1000);
+  $('#service-text').removeClass('service-sample-text');
+  $('#service-text').addClass('service-sample-text-show');
+  $('#subservice-image').fadeIn(1000);
+  $('#subservice-image').removeClass('subservice-text');
+  $('#subservice-image').addClass('subservice-text-show');
+});
+
