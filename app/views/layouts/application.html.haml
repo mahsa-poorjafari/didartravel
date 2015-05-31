@@ -84,24 +84,23 @@
         
       .col-xs-12.footer-bottom
         .col-xs-12
-          .col-xs-3
-          .footer-certificate.col-xs-6
-            - @certificates = Certificate.all
-            -@width_size = 100 / @certificates.count
+          .col-xs-2
+          .footer-certificate.col-xs-8{:style => ('background-image:none;background:#fff' unless current_page?('/')  )}
+            - @certificates = Certificate.all            
             - @certificates.each do |certificate|
-              .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:"+@width_size.to_s+"%"}
-                = image_tag certificate.image(:small), :width => "90"
-                %p= certificate.title
-          .col-xs-3
+              .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:100px"}
+                = image_tag certificate.image(:small), :width => "100"
+                
+          .col-xs-2
         .clear-float  
 
         .col-xs-3.sitevisit
           .col-xs-12#newsletter
-            %h4.title-footer-form.contact{:class => I18n.locale}= t('subscribe_to_newsletter')
+            %h4.title-footer-form.contact#newsletter-title{:class => I18n.locale}= t('subscribe_to_newsletter')
             = render 'shared/newsletter_subscribe'
           .clear-float
           .col-xs-12.visits
-            %h4.title-footer-form.contact{:class => I18n.locale}= t('sitevisit.statistics')          
+            %h4.title-footer-form.contact#visits-title{:class => I18n.locale}= t('sitevisit.statistics')          
             .col-xs-11
               %p{:class => I18n.locale}
                 %b= t('sitevisit.total-views')
@@ -156,7 +155,7 @@
                   %li
                     = link_to visa.title, visa
         .col-xs-3.related-links
-          %h4.title-footer-form.contact{:class => I18n.locale}= t('related-links')
+          %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
           = render 'shared/related_links'
           
         .copyright.col-xs-12= t('copyright')

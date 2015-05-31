@@ -19,7 +19,7 @@
 .clear-float {clear:both}
 .full-width {clear:both; width:100%}
 .set-center {margin-right:auto; margin-left:auto}
-.margin3 {margin:3%;   
+.margin3 {margin:3%; margin-bottom:150px;  
   }
 .margin-top5 {margin-top:5%;}
 .margin-bottom {margin-bottom:10%}
@@ -288,17 +288,17 @@ left: 0;}
   top:100px;
   }
 .footer-bottom .footer-certificate {
-  height: 150px;  background-image: url(image-path('sprinkles.png'));
+  height: 120px;  background-image: url(image-path('sprinkles.png'));
   background-repeat:repeat;  
-  margin-top:-90px;
+  margin-top:-80px;
+  padding-top: 10px;
   }
 
 .footer-certificate  .certificate-box {text-align:center; float:left;
   position: relative;
-  height: 150px;
-  
   
   }
+.footer-certificate  .certificate-box:hover {cursor:pointer}
 .footer .footer-boxes .footer-certificate  .certificate-box img {position: absolute;
 left: 0;
 right: 0;
@@ -314,7 +314,7 @@ bottom: 0;}
 .form-control {background-color:transparent; border:1.5px solid #1A1A1A}
 .footer .google-map-box { float:right; height:300px; }
 .footer-bottom {  background:#941e23;
-  height:285px; 
+  margin-top:150px;
 bottom: 0;}
 
 .footer .footer-bottom #newsletter {margin-bottom:5%}
@@ -328,9 +328,10 @@ bottom: 0;}
 .footer-menu#related-links ul.en a li {color:#fff; text-align:left}
 
 .copyright {color:#fff; text-align:center; margin-bottom:2%;  fon-size:1.3em}
-.title-footer-form {color:#fff; padding:0; margin:0; text-align:center; border-bottom:2px solid #fff; margin-bottom:20px}
+.title-footer-form {color:#fff; padding:0; margin:0; text-align:left; border-bottom:2px solid #fff; margin-bottom:20px}
+.title-footer-form#related-links-title {text-align:right}
 .newsletter .form-control {background:#fff; color:#000}
-.sitevisit, .related-links {margin-top:-30px}
+
 .sitevisit p b, .sitevisit p{color:#fff}
 .footer .form-submit {background-image: url(image-path('send.png'));
   background-repeat:no-repeat;
@@ -367,6 +368,7 @@ bottom: 0;}
   padding-top:2%;
   padding-right:4%;
   }
+.title-tour.title-hotels {text-align:center}
 #news .title-tour {background-image: url(image-path('news-line.png'));}
 .title-tour p{color:#620808; font-size:1.5em;}
 #title-visa.title-tour {background-image: url(image-path('visa-line.png'));}
@@ -513,7 +515,7 @@ bottom: 0;}
   height:85px;
   position:relative;
   margin-bottom:2%;
-  margin-top:74px;
+  margin-top:73px;
   }
 .plane-company::before {content: "";
   position:absolute;
@@ -559,7 +561,7 @@ line-height: 2em; color:#fff}
 ul.news_and_vents li.news-item a {color:#fff}
 ul.news_and_vents li.news-item:hover a{color:#000;}
 .national-certificate {  
-  margin-top:100px;  
+  
   color:#610505; z-index:300;
   text-align:center;
   border-radius:5px;
@@ -567,7 +569,7 @@ ul.news_and_vents li.news-item:hover a{color:#000;}
 .national-certificate .title-certificate {margin:0; font-size:1.3em}
 .national-certificate a:hover,  .title-time-zone a:hover {color:#1a1a1a}
 .title-time-zone {  
-  text-align:center; margin-top:100px; 
+  text-align:center; 
   height:35px; font-size:1.5em;
  
 }
@@ -647,7 +649,8 @@ table#employment-reagen-table tr th {text-align:right}
   }
 .continent-group .fa.title_row {float:right; text-align:center}
 .simple_captcha_field input {color:#000}
-.show-countries-list {margin-top:5%; list-style:none; text-align:center; padding:0;}
+.show-countries-list {margin-top:5%; list-style:none; text-align:right; padding:0;}
+.show-countries-list.en {text-align:left}
 .show-countries-list li{height:30px;
   width:100%;
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */

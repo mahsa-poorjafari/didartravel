@@ -9,7 +9,7 @@
     - ContinentCategory.order("set_order desc").each do |continent|
       .title_row{:class => I18n.locale, :style => "width:" + @cc.to_s + "%" }
         .title-box{:class => I18n.locale}= continent.title 
-        %ul.show-countries-list
+        %ul.show-countries-list{:class => I18n.locale}
           - continent.countries.each do |country|
             %li{:role => "presentation",  :title => "آژانس_هواپیمایی_دیدار",:class => I18n.locale}
               = link_to  country, :title => "آژانس_هواپیمایی_دیدار"+ "_" +country.title_fa, :id => 'country-'+ country.id.to_s, :class => "country-name" do
@@ -36,7 +36,7 @@
     %p= t('Keywords.title')
     %ul.tag-cloud.full-width{:class => I18n.locale}
       %li.tag-cloud
-        = link_to t('radantravel'), '/' 
+        = link_to t('didartravel'), '/' 
       %li.tag-cloud
         = link_to t('Keywords.a'), '/' 
       %li.tag-cloud

@@ -1,7 +1,8 @@
-.col-xs-12{:style => "position:absolute"}
+.col-xs-12
   .title-tour-line.col-xs-10
-  %p.title-tour.col-xs-3.set-center{:class => I18n.locale}= t('hotel')
+  %p.title-tour.set-center.title-hotels{:class => I18n.locale}= t('selected-hotel')
 - @half_count = (Hotel.count) / 2
+.col-xs-1
 .multi-slider-package.col-xs-10
   .col-md-12.col-md-offset-3
     #myCarousel1.carousel.slide{"data-ride" => "carousel", "data-type" => "multi", "data-interval" => "3000"}
@@ -22,6 +23,7 @@
         = image_tag 'prev.png'
       = link_to  "#myCarousel1", :class => "right carousel-control", "data-slide" => "next", :title => "آژانس_هواپیمایی_رادان_سیر"  do           
         = image_tag 'next.png'
+.col-xs-1
 -#
   .multi-slider-package.col-xs-10{:style => "margin-bottom:5%"}   
     .col-md-12.col-md-offset-3{:style => "height:200px;"}

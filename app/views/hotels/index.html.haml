@@ -1,6 +1,6 @@
 .margin3   
   -if is_admin?
-    = link_to 'معرفی هتل جدید', new_hotel_path, :class => "btn btn-success", :title => "آژانس_هواپیمایی_رادان_سیر"  
+    = link_to 'معرفی هتل جدید', new_hotel_path, :class => "btn btn-success" 
   .col-xs-12.margin-bottom
     .col-xs-4
     .col-xs-4
@@ -9,13 +9,13 @@
           %span= image_tag 'offer.png'
           %span=  t('best-offer')     
       .col-xs-6{:class => I18n.locale}
-        = link_to   '#world', :id => "world-hotel", :title => "آژانس هواپیمایی رادان سیر" do
+        = link_to   '#world', :id => "world-hotel"do
           %span= image_tag 'world.png'
           %span=  t('foreign-hotels')
     .col-xs-4
   - if @hotels_offer.count > 0
     .col-xs-12.margin-bottom
-      = link_to '', '#', :name => "#iran", :id => "local-hotels", :title => "آژانس هواپیمایی رادان سیر"
+      = link_to '', '#', :name => "#iran", :id => "local-hotels"
       .title-tour-line.col-xs-10
       %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('best-offer')
       
@@ -23,14 +23,14 @@
       - @hotels.each_with_index do |hotel, i| 
         - if hotel.offer?
           .tours-index.mix{:class => "iran-city-" + hotel.city.id.to_s, "data-my-order" => hotel.id}
-            = link_to hotel, :class => "tour-box", :title => "آژانس_هواپیمایی_رادان_سیر" do
+            = link_to hotel, :class => "tour-box"do
               %h5.tour-title{:id => "hotel-"+hotel.id.to_s, :class => I18n.locale}= hotel.title          
               - if hotel.photos.present?
                 .hover.panel{:id => "item-"+ (i+1).to_s}
                   .front
-                    .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+                    .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس_هواپیمایی_دیدار"
                   .back
-                    .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+                    .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس_هواپیمایی_دیدار"
               .clear-float 
               .some-info 
                 %p
@@ -40,14 +40,14 @@
                 %p= hotel.city.country.title + ' , ' + hotel.city.title
             -if is_admin?
               .admin-btn-tour
-                = link_to 'مشاهده', hotel, :class => "btn btn-warning"   , :title => "آژانس_هواپیمایی_رادان_سیر"    
-                = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info", :title => "آژانس_هواپیمایی_رادان_سیر"
-                = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :title => "آژانس_هواپیمایی_رادان_سیر"
+                = link_to 'مشاهده', hotel, :class => "btn btn-warning"  
+                = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info"
+                = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
     
   .col-xs-12
-    = link_to '', '#', :name => "#world", :id => "foreign-hotels", :title => "آژانس هواپیمایی رادان سیر"
+    = link_to '', '#', :name => "#world", :id => "foreign-hotels"
     .title-tour-line.col-xs-10
-    %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('foreign-hotels') 
+    %p.set-center.title-tour{:class => I18n.locale}= t('foreign-hotels') 
     -#
       .filter.continent-cat.set-center{"data-filter" => "all" }= t('show-all-tours')
   .col-xs-12.city-title-filter{:class => I18n.locale}    
@@ -62,14 +62,14 @@
     - @hotels.each_with_index do |hotel, i|
       - unless hotel.city.country.title_fa == 'ایران'
         .tours-index.mix{:class => "world-city-" + hotel.city.id.to_s, "data-my-order" => hotel.id}
-          = link_to hotel, :class => "tour-box", :title => "آژانس_هواپیمایی_رادان_سیر" do
+          = link_to hotel, :class => "tour-box" do
             %h5.tour-title{:id => "hotel-"+hotel.id.to_s, :class => I18n.locale}= hotel.title          
             - if hotel.photos.present?
               .hover.panel{:id => "item-"+ (i+1).to_s}
                 .front
-                  .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+                  .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس_هواپیمایی_دیدار"
                 .back
-                  .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_رادان_سیر", :alt => "آژانس_هواپیمایی_رادان_سیر"
+                  .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی دیدار", :alt => "آژانس_هواپیمایی_دیدار"
             .clear-float 
             .some-info 
               %p
@@ -79,14 +79,14 @@
               %p= hotel.city.country.title + ' , ' + hotel.city.title
           -if is_admin?
             .admin-btn-tour
-              = link_to 'مشاهده', hotel, :class => "btn btn-warning"   , :title => "آژانس_هواپیمایی_رادان_سیر"    
-              = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info", :title => "آژانس_هواپیمایی_رادان_سیر"
-              = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :title => "آژانس_هواپیمایی_رادان_سیر"
+              = link_to 'مشاهده', hotel, :class => "btn btn-warning"   
+              = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info"
+              = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
   .keywords.full-width
     %p= t('Keywords.title')
     %ul.tag-cloud.full-width{:class => I18n.locale}
       %li.tag-cloud
-        = link_to t('radantravel'), '/'           
+        = link_to t('didartravel'), '/'           
       %li.tag-cloud
         = link_to t('Keywords.a'), '/'    
       %li.tag-cloud
