@@ -85,7 +85,7 @@
       .col-xs-12.footer-bottom
         .col-xs-12
           .col-xs-2
-          .footer-certificate.col-xs-8{:style => ('background-image:none;background:#fff' unless current_page?('/')  )}
+          .footer-certificate.col-xs-8
             - @certificates = Certificate.all            
             - @certificates.each do |certificate|
               .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:100px"}
