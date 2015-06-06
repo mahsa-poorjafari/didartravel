@@ -1,12 +1,12 @@
 .col-xs-12.footer-boxes{:class => I18n.locale}
   
   
-  .col-xs-3.contact-box.pull-right{:class => I18n.locale}
+  .col-xs-3.contact-box.pull-right#contact-form-box{:class => I18n.locale}
     = render 'shared/msg_form' 
     
   .google-map-box.col-xs-6
     %iframe{:height => "100%", :src => "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kZSqNSdorgp4&z=13", :width => "100%"} 
-  .col-xs-3.contact-info{:class => I18n.locale}
+  .col-xs-3.contact-info#contact-info-box{:class => I18n.locale}
     - @contact = Page.find_by_title_en('Contact us')
     %p= raw @contact.text
     .show-social.clear-float

@@ -333,11 +333,7 @@ bottom: 0;}
 .newsletter .form-control {background:#fff; color:#000}
 
 .sitevisit p b, .sitevisit p{color:#fff}
-.footer .form-submit {background-image: url(image-path('send.png'));
-  background-repeat:no-repeat;
-  border:none;  
-  background-color:transparent;
-  background-position: 50% 0;
+.footer .form-submit {
   color:#fff;
   padding-top: 40px;
   width:60px;
@@ -515,7 +511,7 @@ bottom: 0;}
   height:85px;
   position:relative;
   margin-bottom:2%;
-  margin-top:73px;
+  margin-top:2px;
   }
 .plane-company::before {content: "";
   position:absolute;
@@ -641,9 +637,10 @@ ul.news_and_vents li.news-item:hover a{color:#000;}
 .related-box .fa .related-tours, .related-box .ar .related-tours {float:right;}
 .fit-label-height label{height:36px;}
 table#employment-reagen-table tr th {text-align:right}
-.country-bg {background-image: url(image-path('worldbg.jpg'));
+.country-bg {background-image: url(image-path('worldbg.png'));
   background-repeat:no-repeat; 
-  background-position:center;
+  background-position:0 8%;
+  background-size:100%;
   min-height: 500px;
   margin-top: 7%;
   }
@@ -687,3 +684,5 @@ table#employment-reagen-table tr th {text-align:right}
 .owl-wrapper-outer .owl-wrapper .owl-item .item:hover {background-image: url(image-path('bg-tour-boxes2.png'));}
 
 .ui-datepicker-calendar p, .ui-datepicker-calendar span {color:#fff}
+.contact-buttons .col-xs-6.form-group{padding:0}
+#responsive768show, #responsive767show-footer-links, #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:none}

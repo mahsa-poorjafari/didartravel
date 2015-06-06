@@ -35,17 +35,42 @@
 //= require jquery.mixitup
 //= require jquery.eachStep.min
 //= require jquery.smooth-scroll
+//= require owl.carousel
 //= require prettify
 //= require jquery.zweatherfeed.min
-//= require owl.carousel
+
 
 
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
+$(function() {
+  $( "#datepicker7" ).datepicker();
+});
+$(document).ready(function () {
+  
+    $('#test').weatherfeed(['IRXX0008']).ajaxStop(function() {
+  
+  
+      $("div.scrollable").scrollable({ 
+              vertical: true,  
+              size: 1
+      }).circular().navigator().autoscroll({
+        interval: 3000
+      });
+    });
+    $('#test2').weatherfeed(['IRXX0008']).ajaxStop(function() {
+  
+  
+      $("div.scrollable").scrollable({ 
+              vertical: true,  
+              size: 1
+      }).circular().navigator().autoscroll({
+        interval: 3000
+      });
+    });
 
-$(document).ready(function() {
  
   $("#owl-demo").owlCarousel({
  
@@ -60,9 +85,6 @@ $(document).ready(function() {
  
   });
 
- 
-});
-$(document).ready(function(){
   $('#service-image').show(1000);
   $('#service-image').removeClass('service-sample-image');
   $('#service-image').addClass('service-sample-image-show');

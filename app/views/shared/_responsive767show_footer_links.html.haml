@@ -1,0 +1,66 @@
+.col-xs-12
+  = render 'shared/footer_menu'
+  
+  .keywords.col-xs-12
+    %p{:class => I18n.locale}= t('Keywords.title')
+    %ul{:class => I18n.locale}
+      %li
+        = link_to t('didartravel'), '/' 
+      %li
+        = link_to t('Keywords.a'), '/' 
+      %li
+        = link_to t('Keywords.b'), '/'              
+      %li
+        = link_to t('Keywords.s'), '/' 
+      %li
+        = link_to t('Keywords.w'), '/' 
+      %li
+        = link_to t('Keywords.c'), '/' 
+      %li
+        = link_to t('Keywords.d'), '/' 
+      %li
+        = link_to t('Keywords.f'), '/' 
+      %li
+        = link_to t('Keywords.g'), '/' 
+      %li
+        = link_to t('Keywords.h'), Sight
+      %li
+        = link_to t('Keywords.l'), Sight
+      %li
+        = link_to t('Keywords.m'), Sight
+      %li
+        = link_to t('Keywords.n'), Sight
+      %li
+        = link_to t('Keywords.e'), '/' 
+      %li
+        = link_to t('Keywords.p'), '/' 
+      - Tour.limit(5).order(" created_at desc").each do |new_tour|
+        %li
+          = link_to new_tour.title, new_tour
+      - Visa.limit(5).order(" created_at desc").each do |visa|
+        %li
+          = link_to visa.title, visa
+.col-xs-6.sitevisit
+  .col-xs-12#newsletter
+    %h4.title-footer-form.contact#newsletter-title{:class => I18n.locale}= t('subscribe_to_newsletter')
+    = render 'shared/newsletter_subscribe'
+  .clear-float
+  .col-xs-12.visits
+    %h4.title-footer-form.contact#visits-title{:class => I18n.locale}= t('sitevisit.statistics')          
+    .col-xs-11
+      %p{:class => I18n.locale}
+        %b= t('sitevisit.total-views')
+        =  Visit.all.count
+      %p{:class => I18n.locale}
+        %b= t('sitevisit.visits-today')
+        =  @online_day
+      %p{:class => I18n.locale}
+        %b= t('sitevisit.online-number')
+        = @online_now    
+  
+
+.col-xs-6.related-links
+  %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
+  = render 'shared/related_links'
+
+.copyright.col-xs-12= t('copyright')

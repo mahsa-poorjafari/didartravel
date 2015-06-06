@@ -7,12 +7,13 @@
   .menu_bar ul#main-menu {width:100%}
   .menu_bar ul#main-menu li {width:30%;}
   
-  .menu_bar ul#main-menu li.item-menu .icon {width: 85%;right: 0;left: 0;}
+  .menu_bar ul#main-menu li.item-menu .icon {width: 50px;right: 0;left: 0;}
   .menu_bar ul#main-menu li.item-menu a {font-size:1em}
   .menu_bar ul#main-menu li.item-menu ul.sub-menu {width:130%}
   .boxes-show {margin-left: 0;margin-right: 0; width:100%}
-  #time-zone {width:34%;}
-  #news {width:56%}
+  #time-zone {width:30%;}
+  #news {width:400px}
+  .vertical {height:180px}
   .show-social .social-icon img {width:35px}
   .footer .title-footer-form {width:95%;right: 0;left: 0;}
   .contact-form #button {padding:0} 
@@ -23,20 +24,117 @@
 -ms-transform: translate3d(2190px, 0, 0);}
 }
 /* Portrait tablet to landscape and desktop */
+
 @media (min-width: 768px) and (max-width: 979px) { 
- .main-menu .top-of-menu p.site-title.fa {font-size:1.2em}
+ .main-menu .top-of-menu p.site-title.fa {font-size:1.6em}
+ .title-time-zone div, .national-certificate div{clear: both; width: 100%}
+ #time-zone {width:30%;}
+ #news {width:360px}
+.items div.weatherItem {height: 185px;}
+.vertical {height:195px}
+.weatherDesc, .weatherCity {padding-top: 50px;}
+.weatherTemp {margin-top: -30px;}
+.plane-company {margin-top: 10px; height:100px}
+.plane-company::before { height:100px}
+.plane-company marquee {margin-top:0}
+#time-zone-link, #driving-certificate-link {margin-top:-90px}
+.footer-menu ul {text-align:center}
+.tours-index {width:30%}
+.show-social .col-xs-12, .visits div{padding:0}
+.contact-buttons .col-xs-6 {clear:both}
+.plane-company .plane-logo {height:95px;}
+  .boxes-show {padding:0}
+  .boxes-show::before {height:240px}
+.cal-weather {width:35%;padding:2%}
+  .cal-weather .weatherLink{margin-top:10px}
+  #time-zone {margin-top:20px}
+  #responsive768hide {display:none}
+  #responsive768show {display:block}
+  .middle-box .news {height: 160px;}
+.agency-name {width:100%}
+#responsive768show  .col-xs-7 {margin-top:40px}
+#responsive768show  .col-xs-7 .national-certificate{height:80px}
+#contact-form-box {width:40%}
+#contact-info-box {width:60%}
+.footer {height:600px}
  }
+ .newsletter .col-xs-3, .newsletter .col-xs-9 {width:100%; clear:both}
+ #new_employment .control-label {padding:0}
+ 
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .main-menu .top-of-menu p.site-title.fa {font-size:1em}
+  .agency-name {width:100%}
+  .main-menu .top-of-menu p.site-title.fa {font-size:1.5em}  
+  #news {height:250px; width:350px}  
+  .title-time-zone , .national-certificate{clear: both; margin:9%;width: 100%;padding: 5%; }
+  .title-time-zone div, .national-certificate div{height:50px}
+  .boxes-show::before {height:290px}
+  .plane-company {margin-top:0px; height:120px}
+  .plane-company::before { height:120px}
+  .plane-company marquee {margin-top:5px}
+ .cal-weather {width:40%;padding:2%}
+  .cal-weather .weatherLink{margin-top:10px}
+  #time-zone {margin-top:20px ; clear:both; width:40%}
+  .boxes-show {padding:0}
+  .boxes-show::before {height:240px}
+   
+  #responsive768hide {display:none}
+  #responsive768show {display:block}
+  .middle-box .news {height: 160px;}
+.agency-name {width:100%}
+
+#responsive768show  .col-xs-7 .national-certificate{height:80px}
+#responsive768show  .col-xs-7 .national-certificate .col-xs-2,
+ #responsive768show  .col-xs-7 .national-certificate .col-xs-8,
+ #responsive768show  .col-xs-7 .title-time-zone .col-xs-8,
+ #responsive768show  .col-xs-7 .title-time-zone .col-xs-2,
+ {width:100%}
+#contact-form-box {width:40%}
+#contact-info-box {width:60%}
+.footer {height:600px}
+#responsive767show-footer-links {display:block}
+#responsive767hide-footer-links {display:none}
   }
+  
+  
+  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
+  #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
+  #responsive480showmenu .col-xs-12 {text-align:center;}
+  #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
+  .main-menu .top-of-menu {height:150px}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
+  .menu_bar .menu-side.right-side {margin-right:0}
+  .menu_bar #main-menu .menu-side {width:50%; padding:0}
+  #news {height:100%; width:100%}
+  #time-zone {clear:none; width:45%; float:right}
+  #time-zone .ui-datepicker-inline {margin-right:-5px}
+  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #responsive768show .col-xs-7 {width:100%}
+  .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
+  .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
+  .google-map-box {display:none}
+  #contact-form-box, #contact-info-box {width:50%}
+  .footer-menu {text-align:center}
+  .footer-bottom {padding:0}
+  .footer-certificate {margin-top:0; margin-bottom:5px}
+  .plane-company {overflow:hidden}
+  .scrollable.vertical {height:215px}
+  
   
 }
 /*
 @media all and (max-width: 740px) {  
+  #responsive480showmenu {display:block}
+  #responsive480hidemenu {display:none}
+  #responsive480showmenu .col-xs-8 {text-align:center}
+  #news {height:100%; width:100%}
+  
+  
   h1 { font-size: 4.5em; color:#FF0000}  
   .servic-descriptipn.text { font-size: 4.5em; color:#FF0000}  
   h3 { font-size: 2.2em;color:#FF0000 }  

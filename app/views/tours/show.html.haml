@@ -1,7 +1,12 @@
 .margin3.margin-bottom5#tour-content{:style => "background-image: url(image-path('sprinkles.png'));  background-repeat:repeat;"}
   .title-top
-    .title-box= @tour.title  
-    .title-line 
+    .col-xs-6{:style => "text-align:left"}
+      = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
+      %p
+        %i= t('package-code')
+        %b=  @tour.package_code
+    .title-box.col-xs-6= @tour.title  
+    
   .col-xs-12.clear-float{:style => "margin-top:4%"}
     .col-xs-4 
       - if I18n.locale == :fa
@@ -20,12 +25,7 @@
       - if @tour.country.present?
         - if @tour.country.title_fa == 'ایران'
           .col-xs-12
-            .col-xs-6{:style => "text-align:left"}
-              = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
-              %p
-                %i= t('package-code')
-                %b=  @tour.package_code
-            .clear-float
+            
             - if @tour.description.present?
               .title_row
                 .title-box{:class => I18n.locale}= t('tour.description')
@@ -36,11 +36,7 @@
         - else
           .col-xs-12
             .col-xs-12
-              .col-xs-6{:style => "text-align:left"}
-                = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
-                %p
-                  %i= t('package-code')
-                  %b=  @tour.package_code              
+                    
                   
               .col-xs-6{:style => "text-align:right"}
                 - if @tour.plane.present?

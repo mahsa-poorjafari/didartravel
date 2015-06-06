@@ -49,68 +49,67 @@
   
   
   .col-xs-12.boxes-show
-    .col-xs-3.cal-weather.pull-right#responsive480hideweather
-      .scrollable.vertical
-        #test.items
-        .navi
-    .col-xs-6#news.pull-right     
-      
+   
+    .col-xs-12#news.pull-right    
+    
       .title-tour.set-center{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
       %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
         .col-xs-12.news
           %ul.news_and_vents{:class => I18n.locale}
             - NewsAndVent.order('created_at desc').each do |news|
               %li.news-item{:class => I18n.locale}= link_to news.title, news
-    #responsive480showweather.col-xs-6.cal-weather.pull-right  
-      .scrollable.vertical
-        #test2.items
-        .navi
-    .col-xs-3#time-zone      
-      .col-xs-12.calendar
-        #datepicker7
-    .col-xs-12#responsive768hide{:style => "padding:0"}
-      .col-xs-2#driving-certificate-link
-        - if current_page?('/')
-          .national-certificate
-            .col-xs-2{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'driving.png', :width => "50"
-            .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
-          
-      .plane-company.col-xs-8
-        %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
-          - Plane.all.each do |plane|
-            .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-              = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-                = image_tag plane.logo(:icon)  
-      .col-xs-2#time-zone-link
-        - if current_page?('/')
-          .title-time-zone
-            .col-xs-2.pull-right{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'time-zone.png', :width => "50"
-            .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"            
-    #responsive768show
-      .col-xs-7
-        - if current_page?('/')
-          .national-certificate
-            .col-xs-2{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'driving.png', :width => "50"
-            .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
-          .title-time-zone
-            .col-xs-2.pull-right{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'time-zone.png', :width => "50"
-            .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"      
-      .plane-company.col-xs-12
-        %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
-          - Plane.all.each do |plane|
-            .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-              = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-                = image_tag plane.logo(:icon)  
+    .col-xs-4
+      - if current_page?('/')
+        .title-time-zone
+          .col-xs-12.pull-right{:style => "padding:0", :class => I18n.locale}
+            = image_tag 'time-zone.png', :width => "50"
+          .col-xs-12{:style => "padding:0", :class => I18n.locale}
+            = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"         
+      
         
-    .footer.col-xs-12 
-      = render 'shared/footer'  
+        .national-certificate
+          .col-xs-12{:style => "padding:0", :class => I18n.locale}
+            = image_tag 'driving.png', :width => "50"
+          .col-xs-12{:style => "padding:0", :class => I18n.locale}
+            %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
+    .col-xs-12
+      .col-xs-6.cal-weather.pull-right
+        .scrollable.vertical
+          #test.items
+          .navi
+        
+      .col-xs-6#time-zone      
+        .col-xs-12.calendar
+          #datepicker7
+      .col-xs-12{:style => "padding:0"}
+      
+  .plane-company.col-xs-12
+    %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
+      - Plane.all.each do |plane|
+        .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
+          = link_to url_with_protocol(plane.web_site), :target => "_blank" do
+            = image_tag plane.logo(:icon)  
   
+  .footer.col-xs-12 
+    = render 'shared/footer'  
+      
+      
+:javascript 
+  $(function() {
+    $( "#datepicker7" ).datepicker();
+  });
+  $(document).ready(function () {
+    
+      $('#test').weatherfeed(['IRXX0008','IRXX0018','IRXX0016','IRXX0003','IRXX0015']).ajaxStop(function() {
+    
+    
+        $("div.scrollable").scrollable({ 
+                vertical: true,  
+                size: 1
+        }).circular().navigator().autoscroll({
+          interval: 3000
+        });
+    });
+    
+
 
