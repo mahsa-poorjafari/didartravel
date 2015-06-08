@@ -93,7 +93,7 @@
       #responsive480showcertificate.footer-certificate.col-xs-12
         - @certificates = Certificate.all
         - @certificates.each do |certificate|
-          .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:100px"}
+          .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
             = image_tag certificate.image(:small), :width => "100"  
       .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
         

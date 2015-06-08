@@ -36,7 +36,7 @@
 .weatherTemp {margin-top: -30px;}
 .plane-company {margin-top: 10px; height:100px; }
 .plane-company::before { height:100px}
-.plane-company marquee {margin-top:0}
+.plane-company marquee {margin-top:0;}
 #time-zone-link, #driving-certificate-link {margin-top:-90px}
 .footer-menu ul {text-align:center}
 .tours-index {width:30%}
@@ -72,16 +72,21 @@
     top: 0;
     }
   .menu_bar #main-menu .menu-side {width:48%; padding:0}
+  .footer-certificate .certificate-box {width:70px}
+  .footer-certificate .certificate-box img{width:100%}
   .main-menu .top-of-menu p.site-title.fa {font-size:1em}
   .agency-name {width:100%}
+  .footer-menu {text-align:center}
   .main-menu .top-of-menu p.site-title.fa {font-size:1.5em}  
   #news {height:250px; width:270px}  
   .title-time-zone , .national-certificate{clear: both; margin:9%;width: 100%;padding: 5%; }
   .title-time-zone div, .national-certificate div{height:50px}
   .boxes-show::before {height:290px}
-  .plane-company {margin-top:0px; height:120px}
+  
+  .plane-company marquee {height:115px; float:none; margin-left:0; margin-top:0px;}
+  .plane-company {margin-top:0px; height:120px;margin-left:0}
   .plane-company::before { height:120px}
-  .plane-company marquee {margin-top:5px}
+  
  .cal-weather {width:40%;padding:2%}
   .cal-weather .weatherLink{margin-top:10px}
   #time-zone {margin-top:20px ; clear:both; width:40%; margin-left:60px}
@@ -123,8 +128,8 @@
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
   #time-zone {clear:none; width:45%; float:right}
-  #time-zone .ui-datepicker-inline {margin-right:-5px}
-  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #time-zone .ui-datepicker-inline {margin-right:50%}
+  #responsive480showweather.cal-weather {width:100%; margin-top:20px}
   #responsive768show .col-xs-7 {width:100%}
   .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
   .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
@@ -133,7 +138,8 @@
   .footer-menu {text-align:center}
   .footer-bottom {padding:0}
   .footer-certificate {margin-top:0; margin-bottom:5px}
-  .plane-company {overflow:hidden}
+  .plane-company { margin-left:0}
+  .plane-company marquee {height:115px; float:none; margin-left:0}
   .scrollable.vertical {height:215px}
   #slider1_container {display:none}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
@@ -159,8 +165,8 @@
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
   #time-zone {clear:none; width:45%; float:right}
-  #time-zone .ui-datepicker-inline {margin-right:-5px}
-  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #time-zone .ui-datepicker-inline {margin-right:50%}
+  #responsive480showweather.cal-weather {width:100%; margin-top:20px}
   #responsive768show .col-xs-7 {width:100%}
   .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
   .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
@@ -169,7 +175,8 @@
   .footer-menu {text-align:center}
   .footer-bottom {padding:0}
   .footer-certificate {margin-top:0; margin-bottom:5px}
-  .plane-company {overflow:hidden}
+  .plane-company { margin-left:0}
+  .plane-company marquee {height:115px; float:none; margin-left:0}
   .scrollable.vertical {height:215px}
   #slider1_container {display:none}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
@@ -194,8 +201,8 @@
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
   #time-zone {clear:none; width:45%; float:right}
-  #time-zone .ui-datepicker-inline {margin-right:-5px}
-  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #time-zone .ui-datepicker-inline {margin-right:50%}
+  #responsive480showweather.cal-weather {width:100%; margin-top:20px}
   #responsive768show .col-xs-7 {width:100%}
   .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
   .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
@@ -204,7 +211,8 @@
   .footer-menu {text-align:center}
   .footer-bottom {padding:0}
   .footer-certificate {margin-top:0; margin-bottom:5px}
-  .plane-company {overflow:hidden}
+  .plane-company { margin-left:0}
+  .plane-company marquee {height:115px; float:none; margin-left:0}
   .scrollable.vertical {height:215px}
   #slider1_container {display:none}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
@@ -229,8 +237,8 @@
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
   #time-zone {clear:none; width:45%; float:right}
-  #time-zone .ui-datepicker-inline {margin-right:-5px}
-  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #time-zone .ui-datepicker-inline {margin-right:50%}
+  #responsive480showweather.cal-weather {width:100%; margin-top:20px}
   #responsive768show .col-xs-7 {width:100%}
   .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
   .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
@@ -239,7 +247,8 @@
   .footer-menu {text-align:center}
   .footer-bottom {padding:0}
   .footer-certificate {margin-top:0; margin-bottom:5px}
-  .plane-company {overflow:hidden}
+  .plane-company { margin-left:0}
+  .plane-company marquee {height:115px; float:none; margin-left:0}
   .scrollable.vertical {height:215px}
   #slider1_container {display:none}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
@@ -264,8 +273,8 @@
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
   #time-zone {clear:none; width:45%; float:right}
-  #time-zone .ui-datepicker-inline {margin-right:-5px}
-  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #time-zone .ui-datepicker-inline {margin-right:50%}
+  #responsive480showweather.cal-weather {width:100%; margin-top:20px}
   #responsive768show .col-xs-7 {width:100%}
   .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
   .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
@@ -274,7 +283,8 @@
   .footer-menu {text-align:center}
   .footer-bottom {padding:0}
   .footer-certificate {margin-top:0; margin-bottom:5px}
-  .plane-company {overflow:hidden}
+  .plane-company { margin-left:0}
+  .plane-company marquee {height:115px; float:none; margin-left:0}
   .scrollable.vertical {height:215px}
   #slider1_container {display:none}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
@@ -301,8 +311,8 @@
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
   #time-zone {clear:none; width:45%; float:right}
-  #time-zone .ui-datepicker-inline {margin-right:-5px}
-  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #time-zone .ui-datepicker-inline {margin-right:50%}
+  #responsive480showweather.cal-weather {width:100%; margin-top:20px}
   #responsive768show .col-xs-7 {width:100%}
   .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
   .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
@@ -311,7 +321,8 @@
   .footer-menu {text-align:center}
   .footer-bottom {padding:0}
   .footer-certificate {margin-top:0; margin-bottom:5px}
-  .plane-company {overflow:hidden}
+  .plane-company { margin-left:0}
+  .plane-company marquee {height:115px; float:none; margin-left:0}
   .scrollable.vertical {height:215px}
   #slider1_container {display:none}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
