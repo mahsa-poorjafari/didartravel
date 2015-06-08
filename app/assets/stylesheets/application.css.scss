@@ -512,6 +512,7 @@ bottom: 0;}
   position:relative;
   margin-bottom:2%;
   margin-top:2px;
+  margin-left:15%
   }
 .plane-company::before {content: "";
   position:absolute;
@@ -567,8 +568,9 @@ ul.news_and_vents li.news-item:hover a{color:#000;}
 .title-time-zone {  
   text-align:center; 
   height:35px; font-size:1.5em;
- 
+ margin-top:-90px;
 }
+#driving-certificate-link {margin-top:-90px;}
 .national-certificate:hover, .title-time-zone:hover {cursor:pointer}
   
 .title-time-zone a:hover {color:#fff}

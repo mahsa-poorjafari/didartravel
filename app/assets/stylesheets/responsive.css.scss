@@ -34,7 +34,7 @@
 .vertical {height:195px}
 .weatherDesc, .weatherCity {padding-top: 50px;}
 .weatherTemp {margin-top: -30px;}
-.plane-company {margin-top: 10px; height:100px}
+.plane-company {margin-top: 10px; height:100px; }
 .plane-company::before { height:100px}
 .plane-company marquee {margin-top:0}
 #time-zone-link, #driving-certificate-link {margin-top:-90px}
@@ -64,10 +64,18 @@
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+  #responsive480showcertificate {display:block}
+  #responsive480hidecertificate {display:none}
+  .logo-side {background-image: url('didarlogowhite.png');
+    background-size: 69%;
+    height: 75px;
+    top: 0;
+    }
+  .menu_bar #main-menu .menu-side {width:48%; padding:0}
   .main-menu .top-of-menu p.site-title.fa {font-size:1em}
   .agency-name {width:100%}
   .main-menu .top-of-menu p.site-title.fa {font-size:1.5em}  
-  #news {height:250px; width:350px}  
+  #news {height:250px; width:270px}  
   .title-time-zone , .national-certificate{clear: both; margin:9%;width: 100%;padding: 5%; }
   .title-time-zone div, .national-certificate div{height:50px}
   .boxes-show::before {height:290px}
@@ -76,14 +84,16 @@
   .plane-company marquee {margin-top:5px}
  .cal-weather {width:40%;padding:2%}
   .cal-weather .weatherLink{margin-top:10px}
-  #time-zone {margin-top:20px ; clear:both; width:40%}
+  #time-zone {margin-top:20px ; clear:both; width:40%; margin-left:60px}
   .boxes-show {padding:0}
   .boxes-show::before {height:240px}
-   
+  .contact-buttons .form-group{width:100%}
   #responsive768hide {display:none}
   #responsive768show {display:block}
+  #responsive768show .col-xs-7 {width:40%}
   .middle-box .news {height: 160px;}
 .agency-name {width:100%}
+.main-menu .top-of-menu p.site-title.fa{font-size:1.2em}
 
 #responsive768show  .col-xs-7 .national-certificate{height:80px}
 #responsive768show  .col-xs-7 .national-certificate .col-xs-2,
@@ -106,7 +116,8 @@
   #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
   #responsive480showmenu .col-xs-12 {text-align:center;}
   #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
-  .main-menu .top-of-menu {height:150px}
+  .main-menu {height:340px}
+  .main-menu .top-of-menu {height:175px}
   .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
   .menu_bar .menu-side.right-side {margin-right:0}
   .menu_bar #main-menu .menu-side {width:50%; padding:0}
@@ -124,53 +135,192 @@
   .footer-certificate {margin-top:0; margin-bottom:5px}
   .plane-company {overflow:hidden}
   .scrollable.vertical {height:215px}
-  
+  #slider1_container {display:none}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {display:none}
+  .country-name .location{display:none}
+  .footer-bottom {margin-top:5px}
+  #responsive767show-footer-links .sitevisit, #responsive767show-footer-links .related-links {width:100%}
+  .title-footer-form, .title-footer-form#related-links-title {text-align:center; margin-top:15px}
+  .tours-index, .comment-box {width:100%}
+  #sliderFrame {display:none}
   
 }
 /*
 @media all and (max-width: 740px) {  
-  #responsive480showmenu {display:block}
-  #responsive480hidemenu {display:none}
-  #responsive480showmenu .col-xs-8 {text-align:center}
+   #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
+  #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
+  #responsive480showmenu .col-xs-12 {text-align:center;}
+  #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
+  .main-menu {height:340px}
+  .main-menu .top-of-menu {height:175px}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
+  .menu_bar .menu-side.right-side {margin-right:0}
+  .menu_bar #main-menu .menu-side {width:50%; padding:0}
   #news {height:100%; width:100%}
-  
-  
-  h1 { font-size: 4.5em; color:#FF0000}  
-  .servic-descriptipn.text { font-size: 4.5em; color:#FF0000}  
-  h3 { font-size: 2.2em;color:#FF0000 }  
-  h2 { display: block; text-align: center; color:#FF0000}  
-  p { padding: 0; }  
+  #time-zone {clear:none; width:45%; float:right}
+  #time-zone .ui-datepicker-inline {margin-right:-5px}
+  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #responsive768show .col-xs-7 {width:100%}
+  .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
+  .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
+  .google-map-box {display:none}
+  #contact-form-box, #contact-info-box {width:50%}
+  .footer-menu {text-align:center}
+  .footer-bottom {padding:0}
+  .footer-certificate {margin-top:0; margin-bottom:5px}
+  .plane-company {overflow:hidden}
+  .scrollable.vertical {height:215px}
+  #slider1_container {display:none}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {display:none}
+  .country-name .location{display:none}
+  .footer-bottom {margin-top:5px}
+  #responsive767show-footer-links .sitevisit, #responsive767show-footer-links .related-links {width:100%}
+  .title-footer-form, .title-footer-form#related-links-title {text-align:center; margin-top:15px}
+  .tours-index, .comment-box {width:100%}
+  #sliderFrame {display:none}
+
 }
 @media all and (max-width: 570px) {  
-  .servic-descriptipn.text { color:#A020F0}  
-  h1 { color:#A020F0}  
-  h3 { color:#A020F0}  
-  h2 { display: block; text-align: center; color:#A020F0}  
-  p { padding: 0; }  
+   #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
+  #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
+  #responsive480showmenu .col-xs-12 {text-align:center;}
+  #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
+  .main-menu {height:340px}
+  .main-menu .top-of-menu {height:175px}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
+  .menu_bar .menu-side.right-side {margin-right:0}
+  .menu_bar #main-menu .menu-side {width:50%; padding:0}
+  #news {height:100%; width:100%}
+  #time-zone {clear:none; width:45%; float:right}
+  #time-zone .ui-datepicker-inline {margin-right:-5px}
+  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #responsive768show .col-xs-7 {width:100%}
+  .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
+  .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
+  .google-map-box {display:none}
+  #contact-form-box, #contact-info-box {width:50%}
+  .footer-menu {text-align:center}
+  .footer-bottom {padding:0}
+  .footer-certificate {margin-top:0; margin-bottom:5px}
+  .plane-company {overflow:hidden}
+  .scrollable.vertical {height:215px}
+  #slider1_container {display:none}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {display:none}
+  .country-name .location{display:none}
+  .footer-bottom {margin-top:5px}
+  #responsive767show-footer-links .sitevisit, #responsive767show-footer-links .related-links {width:100%}
+  .title-footer-form, .title-footer-form#related-links-title {text-align:center; margin-top:15px}
+  .tours-index, .comment-box {width:100%}
+  #sliderFrame {display:none}
 }  
  
 @media all and (max-width: 480px) {  
-  .servic-descriptipn.text { color:#00FF00 }  
-  h1 { color:#00FF00 }  
-  h3 { color:#00FF00}  
-  h2 { display: block; text-align: center;color:#00FF00 }  
-  p { padding: 0; }  
+    #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
+  #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
+  #responsive480showmenu .col-xs-12 {text-align:center;}
+  #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
+  .main-menu {height:340px}
+  .main-menu .top-of-menu {height:175px}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
+  .menu_bar .menu-side.right-side {margin-right:0}
+  .menu_bar #main-menu .menu-side {width:50%; padding:0}
+  #news {height:100%; width:100%}
+  #time-zone {clear:none; width:45%; float:right}
+  #time-zone .ui-datepicker-inline {margin-right:-5px}
+  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #responsive768show .col-xs-7 {width:100%}
+  .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
+  .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
+  .google-map-box {display:none}
+  #contact-form-box, #contact-info-box {width:50%}
+  .footer-menu {text-align:center}
+  .footer-bottom {padding:0}
+  .footer-certificate {margin-top:0; margin-bottom:5px}
+  .plane-company {overflow:hidden}
+  .scrollable.vertical {height:215px}
+  #slider1_container {display:none}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {display:none}
+  .country-name .location{display:none}
+  .footer-bottom {margin-top:5px}
+  #responsive767show-footer-links .sitevisit, #responsive767show-footer-links .related-links {width:100%}
+  .title-footer-form, .title-footer-form#related-links-title {text-align:center; margin-top:15px}
+  .tours-index, .comment-box {width:100%}
+  #sliderFrame {display:none}
 }  
    
 @media all and (max-width: 320px) {  
-  .servic-descriptipn.text { color:#0000FF}  
-  h1 { color:#0000FF}  
-  h3 { color:#0000FF}  
-  h2 { display: block; text-align: center; color:#0000FF}  
-  p { padding: 0; }  
+   #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
+  #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
+  #responsive480showmenu .col-xs-12 {text-align:center;}
+  #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
+  .main-menu {height:340px}
+  .main-menu .top-of-menu {height:175px}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
+  .menu_bar .menu-side.right-side {margin-right:0}
+  .menu_bar #main-menu .menu-side {width:50%; padding:0}
+  #news {height:100%; width:100%}
+  #time-zone {clear:none; width:45%; float:right}
+  #time-zone .ui-datepicker-inline {margin-right:-5px}
+  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #responsive768show .col-xs-7 {width:100%}
+  .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
+  .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
+  .google-map-box {display:none}
+  #contact-form-box, #contact-info-box {width:50%}
+  .footer-menu {text-align:center}
+  .footer-bottom {padding:0}
+  .footer-certificate {margin-top:0; margin-bottom:5px}
+  .plane-company {overflow:hidden}
+  .scrollable.vertical {height:215px}
+  #slider1_container {display:none}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {display:none}
+  .country-name .location{display:none}
+  .footer-bottom {margin-top:5px}
+  #responsive767show-footer-links .sitevisit, #responsive767show-footer-links .related-links {width:100%}
+  .title-footer-form, .title-footer-form#related-links-title {text-align:center; margin-top:15px}
+  .tours-index, .comment-box {width:100%}
+  #sliderFrame {display:none}
 }  
 */  
 /** iPhone only **/ 
 /*
 @media all and (max-device-width: 480px) {  
-  h1 { font-size: 4.5em; }  
-  h3 { font-size: 2.2em; }  
-  h2 { display: block; text-align: center; }  
-  p { padding: 0; }  
+   #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
+  #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
+  #responsive480showmenu .col-xs-12 {text-align:center;}
+  #responsive480showmenu  p{text-align:center; line-height:1.5em; font-size:1.5em}
+  .main-menu {height:340px}
+  .main-menu .top-of-menu {height:175px}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:115px}
+  .menu_bar .menu-side.right-side {margin-right:0}
+  .menu_bar #main-menu .menu-side {width:50%; padding:0}
+  #news {height:100%; width:100%}
+  #time-zone {clear:none; width:45%; float:right}
+  #time-zone .ui-datepicker-inline {margin-right:-5px}
+  #responsive480showweather.cal-weather {width:50%; margin-top:20px}
+  #responsive768show .col-xs-7 {width:100%}
+  .title-time-zone, .national-certificate {clear:none; float:right; width:45%; margin:0; height:120px}
+  .title-time-zone .col-xs-2, .national-certificate .col-xs-2, .title-time-zone .col-xs-8, .national-certificate .col-xs-8{width:100%}
+  .google-map-box {display:none}
+  #contact-form-box, #contact-info-box {width:50%}
+  .footer-menu {text-align:center}
+  .footer-bottom {padding:0}
+  .footer-certificate {margin-top:0; margin-bottom:5px}
+  .plane-company {overflow:hidden}
+  .scrollable.vertical {height:215px}
+  #slider1_container {display:none}
+  .main-menu .logo-center.fa, .main-menu .logo-center.ar {top:145px}
+  .menu_bar ul#main-menu li.item-menu ul.sub-menu {display:none}
+  .country-name .location{display:none}
+  .footer-bottom {margin-top:5px}
+  #responsive767show-footer-links .sitevisit, #responsive767show-footer-links .related-links {width:100%}
+  .title-footer-form, .title-footer-form#related-links-title {text-align:center; margin-top:15px}
+  .tours-index, .comment-box {width:100%}
+  #sliderFrame {display:none}
 }
 */
