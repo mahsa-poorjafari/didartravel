@@ -29,25 +29,31 @@
       .main-menu.col-xs-12
         
         .top-of-menu.col-xs-12#responsive480hidemenu
-          .col-xs-4.pull-right
-            - if I18n.locale == :fa
+          
+          - if I18n.locale == :en
+            .col-xs-4.pull-left
+              .col-xs-12.pull-left{:style => "padding:0"}
+                %p.site-title{:class => I18n.locale}= t("didartravel")
+            .col-xs-4.pull-left
+              .col-xs-12.menu-side.logo-side
+            
+          - else
+            .col-xs-4.pull-right
               .col-xs-12.pull-right{:style => "padding:0"}
                 %p.site-title{:class => I18n.locale}= t("didartravel-part1")
               .clear-float
               .col-xs-7.agency-name.pull-left{:style => "padding:0"}
-                %p.site-title{:class => I18n.locale}= t("didartravel-part2")              
-            - else
-              %p.site-title{:class => I18n.locale}= t("didartravel")
-          .col-xs-4.pull-right
-            .col-xs-12.menu-side.logo-side
+                %p.site-title{:class => I18n.locale}= t("didartravel-part2")
+            .col-xs-4.pull-right
+              .col-xs-12.menu-side.logo-side
           .col-xs-4{:class => I18n.locale}
             .flag_bar
-              = link_to (image_tag 'flag/en_sm.png'), '#', {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'English'}
-              = link_to (image_tag 'flag/ir_sm.png'), '#',{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'فارسی'}
-              = link_to (image_tag 'flag/ar_sm.png'), '#', {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'العربية'}
+              = link_to (image_tag 'flag/en_sm.png'), root_path(locale: :en), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'English'}
+              = link_to (image_tag 'flag/ir_sm.png'), root_path(locale: :fa),{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'فارسی'}
+              = link_to (image_tag 'flag/ar_sm.png'), root_path(locale: :ar), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'العربية'}
         #responsive480showmenu.top-of-menu.col-xs-12
           .col-xs-12  
-            = image_tag 'didarlogowhite.png', :width => '100'            
+            = image_tag 'didarlogowhite.png', :width => '100'
             %p.site-title{:class => I18n.locale}= t("didartravel")
             .flag_bar
               = link_to (image_tag 'flag/en_sm.png'), '#', {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'English'}
@@ -58,7 +64,10 @@
 
           
         .col-xs-12.logo-center{:class => I18n.locale}
-          = render 'shared/menu_bar'
+          - if I18n.locale == :en
+            = render 'shared/menu_bar_en'
+          - else
+            = render 'shared/menu_bar'
         
         .bottom-of-menu.col-xs-12
           

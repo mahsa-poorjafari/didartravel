@@ -1,6 +1,6 @@
 .margin3.margin-bottom5#tour-content{:style => "background-image: url(image-path('sprinkles.png'));  background-repeat:repeat;"}
   .title-top
-    .col-xs-6#didar-red-logo{:style => "text-align:left"}
+    .col-xs-6#didar-red-logo{ :class => I18n.locale}
       = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
       %p
         %i= t('package-code')
@@ -52,7 +52,7 @@
       .col-xs-12     
         = render 'shared/items_images_sliders', :model => @tour      
       .col-xs-12.margin-bottom5
-        .col-xs-5.comment-box.pull-right
+        .col-xs-5.comment-box{:class => ((I18n.locale == :en) ? 'pull-left' : 'pull-right' )}
           - if flash[:SendComment].present?
             .alert.alert-success{:class => I18n.locale}= t('tour_comment.send-comment')
           .tour-comments

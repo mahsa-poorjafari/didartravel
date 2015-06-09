@@ -43,7 +43,8 @@ body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .admin-menu-title {text-align:center; color:#000000}
 .admin-menu-title:hover {cursor:pointer}
 p, span {color:#000}
-
+.related-links span {color:#fff}
+.sub-menu span {color:red}
 .admin-menu:hover {height:500px}
 .admin-menu ul li:hover a {font-size:16px;}
 .admi-menu-title {padding:1%; color:#000000}
@@ -57,7 +58,7 @@ p, span {color:#000}
   right:0; left:0; width:100%; height:160px; 
   padding:0; z-index:4;
 }
-.main-menu  .top-of-menu {position:absolute; 
+.main-menu  .top-of-menu {
   top:0; width:100%; height:80px;  z-index:20;    
   padding:1%;
   background: #440102; /* Old browsers */
@@ -72,6 +73,8 @@ p, span {color:#000}
   }
 .main-menu  .top-of-menu p.site-title {text-align:center; color:#fff}
 .main-menu  .top-of-menu p.site-title.fa {font-size: 1.7em; font-family: 'Bhoma'; text-align:right}
+.main-menu  .top-of-menu p.site-title.ar {font-size: 2em;  text-align:right}
+.main-menu  .top-of-menu p.site-title.en {font-size:1.6em;  text-align:center; line-height:1.5em}
 .main-menu .bottom-of-menu {
   display:none;
   position:absolute; bottom:0;
@@ -116,6 +119,7 @@ p, span {color:#000}
   background-position: center;
   background-size: cover;
   }
+.menu_bar.en {top:0; height:115px}
 .menu_bar .menu-side {position:relative; height:60%;  z-index:200;}
 .logo-side {
   top: -43px;    
@@ -202,9 +206,10 @@ p, span {color:#000}
   color:#510D0D; font-size:1.2em;
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
   transition: all 1s; }
-
+.menu_bar ul#main-menu li.item-menu .sub-menu li.en a {font-size:.8em}
 .menu_bar ul#main-menu li.item-menu:hover a{color:#FF0000; }
-
+#didar-red-logo.en {float:right; text-align:right }
+#didar-red-logo {text-align:left}
 #slider1_container {
   position: relative;
   width: 100%;

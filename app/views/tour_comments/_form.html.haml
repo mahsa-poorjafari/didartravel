@@ -6,8 +6,8 @@
         - tour_comment.full_messages.each do |attr, msg|
           %li= msg
   .col-xs-12
-    .col-xs-4
-    .col-xs-8
+    
+    .col-xs-8{:class => ((I18n.locale == :en) ? 'pull-left' : 'pull-right' )}
       .form-group        
         = f.text_field :user_name, :class => "form-control", :id => "comment-name", :placeholder => t('tour_comment.user-name')
       .form-group        

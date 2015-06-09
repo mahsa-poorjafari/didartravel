@@ -89,7 +89,7 @@
             .col-xs-2.pull-right{:style => "padding:0", :class => I18n.locale}
               = image_tag 'time-zone.png', :width => "50"
             .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"            
+              = link_to t('time-zone-title'), time_zone_clocks_countries_path, :target => "_blank"            
     #responsive768show
       .col-xs-7
         - if current_page?('/')
