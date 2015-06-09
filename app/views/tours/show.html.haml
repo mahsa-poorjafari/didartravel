@@ -1,6 +1,6 @@
 .margin3.margin-bottom5#tour-content{:style => "background-image: url(image-path('sprinkles.png'));  background-repeat:repeat;"}
   .title-top
-    .col-xs-6{:style => "text-align:left"}
+    .col-xs-6#didar-red-logo{:style => "text-align:left"}
       = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
       %p
         %i= t('package-code')
@@ -90,7 +90,7 @@
           = link_to t('tour.tours') + ' ' + continent.title, Tour , :title => 'تور '+ continent.title
       %li.tag-cloud
         = link_to @tour.title, @tour, :title => @tour.title
-.col-xs-12.clear-float.margin-bottom5
+.col-xs-12.clear-float.margin-bottom5#related-link-to-tour
   .col-xs-12.related-box
     = link_to related_tours_tours_path(:call_tours => @tour.country_id) , :class => I18n.locale do 
       .col-xs-2.related-tours
