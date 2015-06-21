@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409151814) do
+ActiveRecord::Schema.define(version: 20150621072909) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 20150409151814) do
     t.date     "birthdate"
     t.string   "id_code"
     t.string   "source_place"
-    t.boolean  "marriage_status",         default: false
+    t.boolean  "marriage_status"
     t.text     "education"
     t.text     "address"
     t.string   "phonenumber"
@@ -255,6 +255,7 @@ ActiveRecord::Schema.define(version: 20150409151814) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "web_link"
   end
 
   create_table "pages", force: true do |t|

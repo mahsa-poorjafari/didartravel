@@ -5,11 +5,14 @@
   .col-xs-12.margin-bottom#news
     .title-tour-line.col-xs-10
     %p.col-xs-12.set-center.title-tour#title-news{:class => I18n.locale}= t('news_and_vents')
-  %table.table.city
-    %tr
+  %table.table.city#event
+    %tr{:class => I18n.locale}
       %th ردیف
       %th عنوان خبر 
       %th منبا
+      %th لینک به سایت منبا
+      %th تاریخ نشر خبر
+      
       - if is_admin?
         %th عملیات
 
@@ -20,6 +23,12 @@
         %td
           = link_to news_and_vent.title,news_and_vent
         %td= news_and_vent.source
+        %td
+          - if news_and_vent.web_link.present?
+            = link_to news_and_vent.web_link, url_with_protocol(news_and_vent.web_link), :target => "_blank"
+          
+        %td= JalaliDate.new(news_and_vent.created_at).strftime("%A %e %b %Y")          
+        
         - if is_admin?
           %td        
             = link_to 'مشاهده', news_and_vent, :class => "btn btn-warning"

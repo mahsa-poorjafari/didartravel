@@ -12,6 +12,9 @@
           = image_tag @news_and_vent.image(:small)
         = f.file_field :image, :class => "form-control"
       .form-group
+        = f.label 'لینک سایت منبا', :class => "control-label"
+        = f.text_field :web_link, :class => "form-control", :placeholder => 'www.example.com'
+      .form-group
         = f.label 'منبا خبر', :class => "control-label"
         = f.text_field :source, :class => "form-control"
     .col-xs-6

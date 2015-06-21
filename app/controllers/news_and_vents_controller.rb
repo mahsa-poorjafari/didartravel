@@ -70,6 +70,6 @@ class NewsAndVentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_and_vent_params
-      params.require(:news_and_vent).permit(:title_fa, :title_en, :title_ar, :text_fa, :text_en, :text_ar, :source, :image)
+      params.require(:news_and_vent).permit(:title_fa, :title_en, :title_ar, :text_fa, :text_en, :text_ar, :source, :image, :web_link)
     end
 end

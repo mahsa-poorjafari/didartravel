@@ -56,11 +56,15 @@
     .col-xs-6#news.pull-right     
       
       .title-tour.set-center{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
-      %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
+      .col-xs-12.news
         .col-xs-12.news
           %ul.news_and_vents{:class => I18n.locale}
             - NewsAndVent.order('created_at desc').each do |news|
-              %li.news-item{:class => I18n.locale}= link_to news.title, news
+              %li.news-item{:class => I18n.locale}
+                - if news.web_link.present?
+                  = link_to news.title, url_with_protocol(news.web_link), :target => "_blank"
+                - else
+                  = link_to news.title, news
     #responsive480showweather.col-xs-6.cal-weather.pull-right  
       .scrollable.vertical
         #test2.items

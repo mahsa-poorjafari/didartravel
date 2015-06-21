@@ -185,7 +185,20 @@
           
           .copyright.col-xs-12= t('copyright')
         
-      
+    .show-social.clear-float
+      %h3{:class => I18n.locale}= t('social-find-us')
+      .col-xs-12.set-center          
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 'f.png'
+
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 'l.png'
+
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 'g.png'
+
+        = link_to '#', :target => "_blank", :class => 'social-icon' do
+          = image_tag 't.png'  
       
     .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog.modal-sm

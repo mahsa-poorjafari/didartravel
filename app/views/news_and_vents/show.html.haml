@@ -11,3 +11,5 @@
         = @news_and_vent.title
     .col-xs-8.news-text= raw @news_and_vent.text
     .col-xs-4.news-img= image_tag @news_and_vent.image(:medium)
+    - if @news_and_vent.web_link
+      .col-xs-4= link_to @news_and_vent.web_link, url_with_protocol(@news_and_vent.web_link), :target => "_blank"

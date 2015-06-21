@@ -53,7 +53,7 @@
     .col-xs-12#news.pull-right    
     
       .title-tour.set-center{:class => I18n.locale}= link_to t('news_and_vents'), NewsAndVent
-      %marquee.col-xs-12.news{:onmouseout => "this.start();", :onmouseover => "this.stop();", :direction => "up"}
+      .col-xs-12.news
         .col-xs-12.news
           %ul.news_and_vents{:class => I18n.locale}
             - NewsAndVent.order('created_at desc').each do |news|
