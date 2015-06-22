@@ -525,7 +525,7 @@ font-weight: normal;}
   height:85px;
   position:relative;
   margin-bottom:2%;
-  margin-top:2px;
+  margin-top:3px;
   margin-left:15%
   }
 .plane-company::before {content: "";
@@ -535,7 +535,7 @@ font-weight: normal;}
   width:100%; height:70px;
   top:0; right:0; left:0;}
 .plane-company.ar{margin-left:0}
-.plane-company marquee {margin-top:-30px}
+.plane-company marquee {margin-top:-30px; height:80px; overflow-x:hidden}
 .plane-company .col-xs-2, .plane-company .col-xs-5 {padding:0;}
 .plane-company .all-plane-icon {text-align:center; position: absolute;
 width: 10%;
