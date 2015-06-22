@@ -73,7 +73,7 @@
       .col-xs-12.calendar
         #datepicker7
     .col-xs-12#responsive768hide{:style => "padding:0"}
-      .col-xs-2#driving-certificate-link
+      .col-xs-2#driving-certificate-link{:class => I18n.locale}
         - if current_page?('/')
           .national-certificate
             .col-xs-2{:style => "padding:0", :class => I18n.locale}
@@ -81,7 +81,7 @@
             .col-xs-8{:style => "padding:0", :class => I18n.locale}
               %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
           
-      .plane-company.col-xs-8
+      .plane-company.col-xs-8{:class => I18n.locale}
         %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
           - Plane.all.each do |plane|
             .plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}

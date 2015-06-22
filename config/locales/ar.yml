@@ -1,5 +1,7 @@
 ar:
   didartravel: 'شركة السفر الجوي والخدمات السياحية دیدار الثوم'
+  didartravel-part1: 'خدمات السفر الجوي الشركة،'
+  didartravel-part2: 'السياحة والحج زيارة'
   home: 'الصفحة الرئيسية'
   
   sight: 'زيارة إيران'
@@ -197,3 +199,8 @@ ar:
   news_and_vents: 'الأخبار والأحداث'
   time-zone-title: 'مناطق زمنية مختلفة'
   social-find-us: 'اعثر علينا'
+  national-certificate: 'الشهادات الدولية'
+  local-tour: 'جولات'
+  foreign-tour: 'الجولات الخارجية'
+  hire-form: 'نموذج العمل'
+  didar-boigraphy: 'ديدار مقدمة'

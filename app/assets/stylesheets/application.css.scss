@@ -299,12 +299,14 @@ left: 0;}
   height: 120px;  background-image: url(image-path('sprinkles.png'));
   background-repeat:repeat;  
   margin-top:-80px;
-  padding-top: 10px;
+  
+  padding-top: 0px;
   }
 
 .footer-certificate  .certificate-box {text-align:center; float:left;
   position: relative;
   width:100px;
+  margin:8px;
   }
 .footer-certificate  .certificate-box:hover {cursor:pointer}
 .footer .footer-boxes .footer-certificate  .certificate-box img {position: absolute;
@@ -332,8 +334,9 @@ bottom: 0;}
 .footer-menu ul li a{color:#fff; text-align:center; font-size:1.2em; line-height:2em}
 .footer-menu ul li:hover a{color:#000}
 .footer-menu ul a li {color:#fff; text-align:center; font-size:1.2em; line-height:2em}
-.footer-menu#related-links ul.fa a li, .footer-menu#related-links ul.ar a li {color:#fff; text-align:right}
-.footer-menu#related-links ul.en a li {color:#fff; text-align:left}
+.footer-menu#related-links ul li {display:block}
+.footer-menu#related-links ul.fa li, .footer-menu#related-links ul.ar li {color:#fff; text-align:right}
+.footer-menu#related-links ul.en li {color:#fff; text-align:left}
 
 .copyright {color:#fff; text-align:center; margin-bottom:2%;  fon-size:1.3em}
 .title-footer-form {color:#fff; padding:0; margin:0; text-align:left; border-bottom:2px solid #fff; margin-bottom:20px}
@@ -476,12 +479,15 @@ bottom: 0;}
   }
 .tours-index .tour-box .tour-sample-image img {height:100%; width:100%;}
 .country-title-tab {color:#000000; font-weight:bold}
+.country-title-tab.ar {font-size: .7em;
+font-weight: normal;}
 .tours-index .tour-date {position:absolute; bottom:0; width:100%; right:0; left:0;}
 .admin-btn-tour {position:absolute; top:15%; width:100%; right:0; left:0;
   z-index:20;
   }
 .admin-btn-tour a {font-size:12px}
-.carousel-inner>.item {height:100%}
+.carousel-inner>.item {height:500px}
+
 .middle-box {  
   padding-top:1%;
   padding-right:0;
@@ -528,6 +534,7 @@ bottom: 0;}
   opacity:.9;
   width:100%; height:70px;
   top:0; right:0; left:0;}
+.plane-company.ar{margin-left:0}
 .plane-company marquee {margin-top:-30px}
 .plane-company .col-xs-2, .plane-company .col-xs-5 {padding:0;}
 .plane-company .all-plane-icon {text-align:center; position: absolute;
@@ -579,6 +586,7 @@ ul.news_and_vents li.news-item:hover a{color:#000;}
  margin-top:-50px;
 }
 #driving-certificate-link {margin-top:-50px;margin-left: 20px;}
+#driving-certificate-link.ar {margin-left:0}
 .national-certificate:hover, .title-time-zone:hover {cursor:pointer}
   
 .title-time-zone a:hover {color:#fff}

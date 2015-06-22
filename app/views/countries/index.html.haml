@@ -14,7 +14,7 @@
             %li{:role => "presentation",  :title => "آژانس_هواپیمایی_دیدار",:class => I18n.locale}
               = link_to  country, :title => "آژانس_هواپیمایی_دیدار"+ "_" +country.title_fa, :id => 'country-'+ country.id.to_s, :class => "country-name" do
                 %span.location= image_tag country.country_flag(:small)
-                %span.country-title-tab= country.title
+                %span.country-title-tab{:class => I18n.locale}= country.title
     .country-tabs.country-bg
   -#
     

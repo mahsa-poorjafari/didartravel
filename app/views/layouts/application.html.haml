@@ -48,9 +48,13 @@
               .col-xs-12.menu-side.logo-side
           .col-xs-4{:class => I18n.locale}
             .flag_bar
-              = link_to (image_tag 'flag/en_sm.png'), root_path(locale: :en), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'English'}
-              = link_to (image_tag 'flag/ir_sm.png'), root_path(locale: :fa),{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'فارسی'}
-              = link_to (image_tag 'flag/ar_sm.png'), root_path(locale: :ar), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'العربية'}
+              .col-xs-4{:class => ('pull-right' if I18n.locale == :en)}
+                = image_tag 'iata.png', :width => "100"
+              .col-xs-7
+                = link_to (image_tag 'flag/en_sm.png'), root_path(locale: :en), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'English'}
+                = link_to (image_tag 'flag/ir_sm.png'), root_path(locale: :fa),{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'فارسی'}
+                = link_to (image_tag 'flag/ar_sm.png'), root_path(locale: :ar), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'العربية'}
+              
         #responsive480showmenu.top-of-menu.col-xs-12
           .col-xs-12  
             = image_tag 'didarlogowhite.png', :width => '100'
