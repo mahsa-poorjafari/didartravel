@@ -535,7 +535,7 @@ font-weight: normal;}
   width:100%; height:70px;
   top:0; right:0; left:0;}
 .plane-company.ar{margin-left:0}
-.plane-company marquee {margin-top:-30px; height:80px; overflow-x:hidden}
+.plane-company marquee {margin-top:-30px; height:80px; }
 .plane-company .col-xs-2, .plane-company .col-xs-5 {padding:0;}
 .plane-company .all-plane-icon {text-align:center; position: absolute;
 width: 10%;
@@ -704,3 +704,9 @@ table#employment-reagen-table tr th {text-align:right}
 .ui-datepicker-calendar p, .ui-datepicker-calendar span {color:#fff}
 .contact-buttons .col-xs-6.form-group{padding:0}
 #responsive768show, #responsive767show-footer-links, #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:none}
+#owl-demo-plane.owl-carousel {margin-top:-20px}
+#owl-demo-plane.owl-carousel .owl-wrapper-outer {height:80px}
+#owl-demo-plane.owl-carousel .owl-wrapper-outer .owl-wrapper .owl-item .item{height:80px; background:transparent;
+border:0px; box-shadow:none;
+  }
+#owl-demo-plane.owl-carousel .owl-controls {display:none}

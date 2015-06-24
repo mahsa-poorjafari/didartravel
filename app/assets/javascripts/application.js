@@ -42,6 +42,8 @@
 
 
 
+
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
@@ -79,8 +81,24 @@ $(document).ready(function () {
       items : 6,
       itemsDesktop : [1199,3],
       itemsDesktopSmall : [979,3],
-     
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : false ,
       stopOnHover : true, 
+      responsive : true
+ 
+  });
+  $("#owl-demo-plane").owlCarousel({
+      rtl:true,
+      loop:true,
+      autoPlay: 2000, //Set AutoPlay to 3 seconds      
+      items : 9,
+      itemsDesktop : [1199,5],
+      itemsDesktopSmall : [979,3],
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : false ,
+      stopOnHover : true, 
+      
+      navigation : true,
       responsive : true
  
   });
@@ -94,5 +112,8 @@ $(document).ready(function () {
   $('#subservice-image').fadeIn(1000);
   $('#subservice-image').removeClass('subservice-text');
   $('#subservice-image').addClass('subservice-text-show');
+  $("#owl-demo-plane.owl-carousel .owl-controls").css('display', 'none');
+  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1210px');
+  
 });
 
