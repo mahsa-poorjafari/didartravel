@@ -305,8 +305,8 @@ left: 0;}
 
 .footer-certificate  .certificate-box {text-align:center; float:left;
   position: relative;
-  width:100px;
-  margin:8px;
+  width:14%px;
+  
   }
 .footer-certificate  .certificate-box:hover {cursor:pointer}
 .footer .footer-boxes .footer-certificate  .certificate-box img {position: absolute;
@@ -469,6 +469,17 @@ bottom: 0;}
   -moz-box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
   }
+.tours-index#city-sight {width:47%; 
+  background:#fff;
+  background-image: url(image-path('bg-tour-boxes1.png'));
+  background-repeat:no-repeat;  
+  background-position: 100% 95%;
+}
+.tours-index#city-sight:hover{background-image: url(image-path('bg-tour-boxes2.png'));}
+.tours-index#city-sight .some-info {position: absolute;
+bottom: 8px;
+text-align: center;
+width: 100%;}
 .tours-index .tour-box {height:250px; width:100%}
 .tours-index .tour-box .tour-title{position:absolute;
   width:100%; height:40px; padding:2%; text-align:center;
@@ -481,6 +492,10 @@ bottom: 0;}
 .country-title-tab {color:#000000; font-weight:bold}
 .country-title-tab.ar {font-size: .7em;
 font-weight: normal;}
+.country-text.fa,.country-text.ar {float:right}
+.country-text.fa , .country-text.fa p, .country-text.fa span{direction:rtl;  font-family: 'open_sansregular'; text-align:justify}
+.country-text.ar , .country-text.ar p, .country-text.ar span{direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em ; text-align:justify}
+.country-text.en, .country-text.en p, .country-text.en span {direction:ltr; font-family:Arial}
 .tours-index .tour-date {position:absolute; bottom:0; width:100%; right:0; left:0;}
 .admin-btn-tour {position:absolute; top:15%; width:100%; right:0; left:0;
   z-index:20;

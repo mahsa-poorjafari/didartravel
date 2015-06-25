@@ -115,7 +115,7 @@
           .footer-certificate.col-xs-8#responsive480hidecertificate
             - @certificates = Certificate.all            
             - @certificates.each do |certificate|
-              .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title, :style =>  "width:100px"}
+              .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
                 = image_tag certificate.image(:small), :width => "100"
                 
           .col-xs-2

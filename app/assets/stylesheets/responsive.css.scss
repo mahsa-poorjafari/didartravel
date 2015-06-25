@@ -66,7 +66,7 @@
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  #responsive480showcertificate {display:block}
+  #responsive480showcertificate {display:block; margin-top:140px}
   #responsive480hidecertificate {display:none}
   .logo-side {background-image: url('didarlogowhite.png');
     background-size: 69%;
@@ -74,7 +74,7 @@
     top: 0;
     }
   .menu_bar #main-menu .menu-side {width:48%; padding:0}
-  .footer-certificate .certificate-box {width:70px}
+  .footer-certificate .certificate-box {width:14%}
   .footer-certificate .certificate-box img{width:100%}
   .main-menu .top-of-menu p.site-title.fa {font-size:1em}
   .agency-name {width:100%}
@@ -109,7 +109,7 @@
  #responsive768show  .col-xs-7 .title-time-zone .col-xs-2,
  {width:100%}
 #contact-form-box {width:40%}
-#contact-info-box {width:60%}
+#contact-info-box {width:100%}
 .footer {height:600px}
 #responsive767show-footer-links {display:block}
 #responsive767hide-footer-links {display:none}
@@ -122,7 +122,7 @@
   .related-box .related-tours {width:180px}
   #related-link-to-tour {padding:0}
   #didar-red-logo img {width:35%}
-  .footer-certificate .certificate-box {width:50px}
+  .footer-certificate .certificate-box {width:14%}
   .footer-certificate .certificate-box img{width:100%}
   #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
   #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
@@ -241,7 +241,7 @@
   #didar-red-logo img {width:35%}
   .related-box .related-tours {width:180px}
   #related-link-to-tour {padding:0}
-  .footer-certificate .certificate-box {width:50px}
+  .footer-certificate .certificate-box {width:14%}
   .footer-certificate .certificate-box img{width:100%}
     #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
   #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
@@ -284,7 +284,7 @@
   .related-box .related-tours {width:180px}
   #didar-red-logo img {width:35%}
   #related-link-to-tour {padding:0}
-  .footer-certificate .certificate-box {width:50px}
+  .footer-certificate .certificate-box {width:14%}
   .footer-certificate .certificate-box img{width:100%}
    #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
   #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
@@ -329,7 +329,7 @@
   .related-box .related-tours {width:180px}
   #didar-red-logo img {width:35%}
   #related-link-to-tour {padding:0}
-  .footer-certificate .certificate-box {width:50px}
+  .footer-certificate .certificate-box {width:14%}
   .footer-certificate .certificate-box img{width:100%}
    #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:block}
   #responsive480hidemenu,#responsive480hideweather, #responsive480hidecertificate {display:none}
