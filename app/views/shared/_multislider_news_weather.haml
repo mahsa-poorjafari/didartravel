@@ -76,10 +76,11 @@
       .col-xs-2#driving-certificate-link{:class => I18n.locale}
         - if current_page?('/')
           .national-certificate
-            .col-xs-12{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'driving.png', :width => "50"
-            .col-xs-12{:style => "padding:0", :class => I18n.locale}
-              %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
+            = link_to diriving_licenses_path  do
+              .col-xs-12{:style => "padding:0", :class => I18n.locale}
+                = image_tag 'driving.png', :width => "50"
+              .col-xs-12{:style => "padding:0", :class => I18n.locale}                
+                = t('national-certificate')   
           
       .plane-company.col-xs-8{:class => I18n.locale}
         #owl-demo-plane.owl-carousel.owl-theme

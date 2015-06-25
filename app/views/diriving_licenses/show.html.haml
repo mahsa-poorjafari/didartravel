@@ -1,0 +1,9 @@
+.margin3.margin-bottom
+  -if is_admin?
+    = link_to 'ویرایش آیتم', edit_diriving_license_path(@diriving_license), :class => "btn btn-info"
+  .col-xs-12.margin-bottom
+    .title-tour-line.col-xs-10
+    %p.col-xs-12.set-center.title-tour#title-certificate{:class => I18n.locale}= @diriving_license.title
+  .col-xs-12 
+    =raw  @diriving_license.text
+

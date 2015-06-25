@@ -480,6 +480,12 @@ bottom: 0;}
 bottom: 8px;
 text-align: center;
 width: 100%;}
+.tours-index#diriving_license {height:100px; background:#fff;
+  background-image: url(image-path('bg-tour-boxes1.png'));
+  background-repeat:no-repeat;  
+  background-position: 100% 95%;}
+.tours-index#diriving_license:hover{background-image: url(image-path('bg-tour-boxes2.png'));}
+.tours-index#diriving_license .admin-btn-tour{bottom:0; top:auto}
 .tours-index .tour-box {height:250px; width:100%}
 .tours-index .tour-box .tour-title{position:absolute;
   width:100%; height:40px; padding:2%; text-align:center;
@@ -588,16 +594,16 @@ line-height: 2em; color:#fff}
 ul.news_and_vents li.news-item a {color:#fff}
 ul.news_and_vents li.news-item:hover a{color:#000;}
 .national-certificate {  
-  
+  font-size: 1.3em;
   color:#610505; z-index:300;
   text-align:center;
-  border-radius:5px;
+  border-radius:5px;margin-top:5px;
   }
 .national-certificate .title-certificate {margin:0; font-size:1.3em}
-.national-certificate a:hover,  .title-time-zone a:hover {color:#1a1a1a}
+.national-certificate a:hover,  .title-time-zone a:hover {color:#fff}
 .title-time-zone {  
   text-align:center; 
-  height:35px; font-size:1.5em;
+  height:35px; font-size:1.3em;
  margin-top:-80px;
 }
 #driving-certificate-link {margin-top:-80px;}

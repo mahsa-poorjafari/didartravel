@@ -1,0 +1,5 @@
+.margin3
+  %h1{:class => I18n.locale}  ویرایش آیتم
+  = render 'form'
+  -if is_admin?
+    = link_to 'مشاهده', @diriving_license, :class => "btn btn-warning"    

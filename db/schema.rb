@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621072909) do
+ActiveRecord::Schema.define(version: 20150625090317) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -122,6 +122,17 @@ ActiveRecord::Schema.define(version: 20150621072909) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "diriving_licenses", force: true do |t|
+    t.string   "title_fa"
+    t.string   "title_en"
+    t.string   "title_ar"
+    t.text     "text_fa"
+    t.text     "text_ar"
+    t.text     "text_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "employments", force: true do |t|
