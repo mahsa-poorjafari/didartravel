@@ -45,6 +45,7 @@ body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 p, span {color:#000}
 .related-links span {color:#fff}
 .sub-menu span {color:red}
+
 .admin-menu:hover {height:500px}
 .admin-menu ul li:hover a {font-size:16px;}
 .admi-menu-title {padding:1%; color:#000000}
@@ -168,6 +169,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
 .menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 100%;}
 .menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 27%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 7%;}
+.menu_bar ul#main-menu li.item-menu:hover .sub-menu.visa {height:160px}
 .menu_bar ul#main-menu li.item-menu:hover .icon#country,.menu_bar ul#main-menu li.item-menu.active .icon#country{background-position: 50% 0%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 3%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 73%;}

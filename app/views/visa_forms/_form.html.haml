@@ -57,7 +57,7 @@
       2. In the case that I do not travel according to the itinerary I have submitted and do not abide by the details of this contract, I myself am responsible for any problem that arises and will not file any complaint against Pars Tourist Agency. 
       3. Finally, I confirm the correctness of all the information I have given in the itinerary form.
     .form-group.col-xs-12.well   
-      = f.check_box :I_agree
+      = f.check_box :I_agree, :id => "check_box_iagree"
       = f.label :I_agree, :class => "control-label" 
   .col-xs-12.form-group 
     %h2    Important Notes: 
@@ -76,4 +76,15 @@
       3. We will do our best to secure your visa and take care of all the necessary details; however the final decision rests with the government of Iran therefore we cannot guarantee when and if a visa will be granted. 
       4. Your passport should be valid for at least 6 months.
   .form-group.col-xs-12 
-    = f.submit t('passenger.save-visa-form'), :class => "btn btn-primary"
+    = f.submit t('passenger.save-visa-form'), :class => "btn btn-primary", :id => "save-visa-form"
+:javascript
+  $(function() { 
+    $(':submit#save-visa-form').click(function(e) {
+      $('#check_box_iagree').each(function() {
+        if ($(this).val().length == 0) {
+          $(this).css('border', '2px solid red');
+          e.preventDefault();
+        }
+      });
+    });
+  });

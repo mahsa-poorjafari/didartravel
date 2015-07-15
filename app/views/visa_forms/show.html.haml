@@ -2,16 +2,17 @@
   .col-xs-12.margin-bottom
     .title-tour-line.col-xs-10
     %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('visa-app')
-  -if flash[:CodeSend]
-    .alert.alert-success{:style => "font-size:16px; text-align:center"}  
-      = flash[:CodeSend]
+  .clear-float
+  
   .col-xs-12
     .col-xs-6
       .pull-left.col-xs-3= image_tag 'menu_logo.png'
     .col-xs-6
       .pull-right.col-xs-3= image_tag 'visa.png'
   .col-xs-12
-
+    -if flash[:CodeSend]
+      .alert.alert-success{:style => "font-size:16px; text-align:center"}  
+        = flash[:CodeSend]
     .alert.alert-info{:class => I18n.locale, :style => "font-size:20px; text-align:center;"}
       %b= t('passenger.request-code')
       .en= @visa_form.request_code

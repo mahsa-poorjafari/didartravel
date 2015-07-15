@@ -31,7 +31,7 @@
     
   .form-group
     = f.label :Date_of_Birth, :class => "control-label" 
-    = f.text_field :Date_of_Birth, :class => "form-control"
+    = f.text_field :Date_of_Birth, :class => "show-calender", as: :datepicker, required: false,   :placeholder => 'Select date'
   .form-group
     = f.label :Birth_Place, :class => "control-label" , :class => "control-label" 
     = f.text_field :Birth_Place, :class => "form-control"
@@ -96,3 +96,5 @@
     = f.label :date_of_Your_Last_Visit_To_Iran, :class => "control-label" 
     = f.text_field :date_of_Your_Last_Visit_To_Iran, :class => "form-control"
   
+:javascript  
+  $('.show-calender').datepicker();  
