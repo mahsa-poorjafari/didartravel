@@ -166,7 +166,7 @@ en:
     description: 'More Info'
   Keywords:
     title: 'Keywords'
-    a: 'Radan travel agency'
+    a: 'Didar travel agency'
     b: 'Agency'
     r: 'Agency'
     s: 'Office of Aircraft Services'
@@ -184,8 +184,9 @@ en:
     ir-package: 'Iran Tour Packages'
     hotel: 'Hotel '
   visa: 'Visa'
+  other-visa: 'Other Visas'
   show-all-visas: 'All Visas'
-  visa-app: 'Visa Application Form'
+  visa-app: 'Iran Visa'
   passenger:
     First_Name: ''
     Last_Name: ''
@@ -220,3 +221,6 @@ en:
   captcha: 'Enter captcha....'
   time-zone-title: 'Different time zones'
   social-find-us: 'Find us'
+  iran-visa-put-info: 'Press The Add Person Button and fill the form'
+  iran-visa-limit-persons: 'You can add 10 person in each visa application'
+  visa-delete: 'Remove '

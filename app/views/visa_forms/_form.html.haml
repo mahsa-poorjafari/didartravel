@@ -8,8 +8,8 @@
 
   .col-xs-12 
     .form-group
-      %p{:class => I18n.locale}="برای افزودن اطلاعات خود دکمه افزودن فرد را فشار دهید و فرم را پرنمایید. :"
-      %p{ :style=> "color:#ec523f", :class => I18n.locale}= "می توانید در هر فرم درخواست ویزا اطلاعات تا ۱۰ نفر را وارد کنید."
+      %p{:class => I18n.locale}= t('iran-visa-put-info')
+      %p{ :style=> "color:#ec523f", :class => I18n.locale}= t('iran-visa-limit-persons')
       = f.link_to_add content_tag(:span, t('passenger.add-person'), :class => "btn btn-info btn-lg" ), :passengers, :id => "add_new_picture"
     .col-xs-12 
       = f.fields_for :passengers do |passenger|  

@@ -145,7 +145,7 @@ ar:
     description: 'مزيد من المعلومات'
   Keywords:
     title: 'کلمات'
-    a: 'وكالة سفر رادان'
+    a: 'وكالة سفر الدیدار'
     b: 'وكالة'
     r: 'وكالة'
     s: 'مكتب خدمات الطائرات'
@@ -165,7 +165,8 @@ ar:
     
   visa: 'تأشيرة'    
   show-all-visas: 'جميع التأشيرات'
-  visa-app: 'استمارة طلب التأشيرة بالنسبة لإيران'
+  visa-app: 'تأشيرة إيران'
+  other-visa: 'تأشيرات أخرى' 
   passenger:
     First_Name: ''
     Last_Name: ''
@@ -204,3 +205,6 @@ ar:
   foreign-tour: 'الجولات الخارجية'
   hire-form: 'نموذج العمل'
   didar-boigraphy: 'ديدار مقدمة'
+  iran-visa-put-info: 'Press The Add Person Button and fill the form'
+  iran-visa-limit-persons: 'You can add 10 person in each visa application'
+  visa-delete: 'Remove '

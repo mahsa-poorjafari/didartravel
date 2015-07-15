@@ -55,6 +55,8 @@
           - VisaType.order("title_fa asc").each do |visatype|
             %li{:class => I18n.locale}
               = link_to visatype.title, visatype
+          %li{:class => I18n.locale}    
+            = link_to t('other-visa'), Visa
               
       
         
