@@ -10,7 +10,9 @@
       .form-group{:style => "background:#F6F656"}
         = f.label 'گروه ویزا مربوط را انتخاب کنید'   , :class => "control-label"       
         = f.select :visa_type_id, options_for_select(VisaType.order("title_fa asc").collect{ |u| [u.title_fa, u.id] }, :selected =>@visa.visa_type_id), prompt: "گروه ویزا را انتخاب کنید"
-      
+      .form-group  
+        = f.label 'کشور مربوط را انتخاب کنید'   , :class => "control-label"       
+        = f.select :country_id, options_for_select(Country.all.collect{ |u| [u.title_fa, u.id] }, :selected =>@visa.country_id), prompt: "کشور را انتخاب کنید"
     .col-xs-6
       .form-group
         = f.label 'عنوان فارسی', :class => "control-label"

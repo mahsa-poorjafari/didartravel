@@ -30,6 +30,7 @@ html {padding:0; margin:0;  height:100%}
 body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .fa {direction:rtl;  font-family: 'open_sansregular';}
 .fa input, .fa select, .fa textarea, .fa label, .admin-menu ul.fa  {direction:rtl; font-family: 'open_sansregular';}
+.visa-text.fa p, .visa-text.fa span, .visa-text.fa ul li  {direction:rtl; font-family: 'open_sansregular';}
 .ar, p.ar {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
 .en, p.en, span.en, h1.en, h2.en, h3.en, h4.en {direction:ltr; font-family:Arial}
 .admin-menu {position:absolute; top:45px;height: 37px;
@@ -398,8 +399,7 @@ bottom: 0;}
   height:340px; margin-bottom:5px;  
   
   }
- .slider4 .owl-wrapper-outer {background-image: url(image-path('AjaxLoader.gif'));
-  background-repeat:no-repeat;  background-position:80% 50%}
+ .slider4 .owl-wrapper-outer {}
 .slider4 .slide {position:relative; ; height:97%; float:left; margin:.5%;
   background:#fff;
   background-image: url(image-path('logo-bg.png'));
@@ -733,3 +733,18 @@ table#employment-reagen-table tr th {text-align:right}
 border:0px; box-shadow:none;
   }
 #owl-demo-plane.owl-carousel .owl-controls {display:none}
+.title-tour-red-line {height:5px; background-color:#440102;}
+.title-visa {font-size:1.5em; color:#440102;}
+.title-visa.en, .title-tour-red-line.en {float:right}
+.continent.tour-group:hover h4.country-title-tab, .continent.tour-group.active h4.country-title-tab{color:#440102}
+.continent.tour-group:hover h4.country-title-tab.fa, .continent.tour-group:hover h4.country-title-tab.ar, .continent.tour-group.active h4.country-title-tab, .continent.tour-group.active h4.country-title-tab.fa, .continent.tour-group.active h4.country-title-tab.ar{text-align:left}
+.continent.tour-group:hover h4.country-title-tab, .continent.tour-group.active h4.country-title-tab{text-align:right; color:#440102}
+.continent.tour-group {height:50px; padding-top:10px}
+.continent.tour-group span.location{display:none}
+.continent.tour-group:hover span.location, .continent.tour-group.active span.location{display:block; margin-top:10px}
+.visas-index {height:50px; padding:1%}
+.admin-btn-tour#visa-admin {top:50px}
+h4.en.country-title-tab {font-size:1.2em;}
+h4.en.country-title-tab a{color:#000}
+h4.en.country-title-tab a:hover, .active.continent.tour-group h4.en.country-title-tab a{color:#440102}
+

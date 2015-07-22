@@ -113,8 +113,8 @@ $(document).ready(function () {
   $('#subservice-image').removeClass('subservice-text');
   $('#subservice-image').addClass('subservice-text-show');
   $("#owl-demo-plane.owl-carousel .owl-controls").css('display', 'none');
-  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1210px');
-  
+  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1680px');
+  $("#owl-demo.slider4.owl-carousel .owl-wrapper").css('width', '2160px');
   
   
 });

@@ -5,49 +5,48 @@
   .clear-float
   - if I18n.locale == :en
     .col-xs-2.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     
-      .continent{:class => ('active' if current_page?(Visa))+ ' '+ I18n.locale.to_s}
+      .continent{:class =>  I18n.locale.to_s}
         %span.location= image_tag 'v.png'
         %span.country-title-tab= t('show-all-visas')
     
-      - VisaType.order("title_fa asc").each do |vistatype| 
-        .continent.tour-group
-          %span.location= image_tag 'arrow-bullet-left.png'
-          %h4.en.country-title-tab
+      - VisaType.order("id desc").each do |vistatype| 
+        .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
+          %span.location.col-xs-1.pull-right= image_tag 'arrow-bullet-left.png'
+          %h4.en.country-title-tab.col-xs-9
             = link_to vistatype.title, vistatype
   - else
     .col-xs-2.pull-right{:style => "text-align:center; margin-bottom:4%"} 
-      .continent{:class => ('active' if current_page?(Visa))+ ' '+ I18n.locale.to_s}
+      .continent{:class =>  I18n.locale.to_s}
         %span.location= image_tag 'v.png'
         %span.country-title-tab= t('show-all-visas')
     
-      - VisaType.order("title_fa asc").each do |vistatype| 
+      - VisaType.order("title_fa desc").each do |vistatype| 
         = link_to vistatype do
-          .continent.tour-group
-            %span.location= image_tag 'arrow-bullet-right.png'
-            %h4.fa.country-title-tab= vistatype.title
+          .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
+            %span.location.col-xs-1= image_tag 'arrow-bullet-right.png'
+            %h4.fa.country-title-tab.col-xs-9= vistatype.title
   
   .show-tours.col-xs-10.set-center#Container
     - VisaType.all.each do |visatype|
       
       - if visatype.visas.present?
-        - @visatype_visa = visatype.visas.last          
-        .visas-index{ "data-my-order" => @visatype_visa.id}        
-          -#
-            - if @country_tour.coming_soon?
-              .coming_soon= image_tag 'coming.png'
-          = link_to @visatype_visa, :class => "visa-box" do 
-            %h5.visa-title{:class => I18n.locale}= @visatype_visa.title
-            -#
-              - if @country_tour.photos.present?
-                .tour-sample-image{:class => ('set-coming-soon' if @country_tour.coming_soon?)}= image_tag @country_tour.photos.first.image(:medium), :id => "tour-sample-image-" + @country_tour.photos.first.id.to_s
-            .clear-float
-          
-          -if is_admin?
-            .admin-btn-tour
-              = link_to 'ویرایش تور', edit_visa_path(@visatype_visa), :class => "btn btn-info"
-              = link_to 'مشاهده جزئیات', @visatype_visa, :class => "btn btn-warning"                   
-              = link_to 'حذف تور', @visatype_visa, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-              
+        - visatype.visas.each do |visatype_visa|
+          .visas-index.well.col-xs-4.pull-right{ "data-my-order" => visatype_visa.id}        
+            
+            = link_to visatype_visa, :class => "visa-box" do 
+              %span.col-xs-3.pull-right=  image_tag visatype_visa.country.country_flag(:small)
+              %h5.visa-title{:class => I18n.locale}= visatype_visa.title
+              -#
+                - if @country_tour.photos.present?
+                  .tour-sample-image{:class => ('set-coming-soon' if @country_tour.coming_soon?)}= image_tag @country_tour.photos.first.image(:medium), :id => "tour-sample-image-" + @country_tour.photos.first.id.to_s
+              .clear-float
+            
+            -if is_admin?
+              .admin-btn-tour#visa-admin
+                = link_to 'ویرایش تور', edit_visa_path(visatype_visa), :class => "btn btn-info"
+                = link_to 'مشاهده جزئیات', visatype_visa, :class => "btn btn-warning"                   
+                = link_to 'حذف تور', visatype_visa, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+                
                     
   .keywords
     %p= t('Keywords.title')

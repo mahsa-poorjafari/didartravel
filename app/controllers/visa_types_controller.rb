@@ -29,7 +29,7 @@ class VisaTypesController < ApplicationController
 
     respond_to do |format|
       if @visa_type.save
-        format.html { redirect_to visa_types_path, notice: 'Visa type was successfully created.' }
+        format.html { redirect_to visas_path, notice: 'Visa type was successfully created.' }
         format.json { render :index, status: :created, location: @visa_type }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class VisaTypesController < ApplicationController
   def update
     respond_to do |format|
       if @visa_type.update(visa_type_params)
-        format.html { redirect_to visa_types_path, notice: 'Visa type was successfully updated.' }
+        format.html { redirect_to visas_path, notice: 'Visa type was successfully updated.' }
         format.json { render :show, status: :ok, location: @visa_type }
       else
         format.html { render :edit }

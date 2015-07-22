@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625090317) do
+ActiveRecord::Schema.define(version: 20150722064940) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -536,6 +536,7 @@ ActiveRecord::Schema.define(version: 20150625090317) do
     t.integer  "visa_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "country_id"
   end
 
   create_table "visits", force: true do |t|

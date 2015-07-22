@@ -7,6 +7,7 @@ class Country < ActiveRecord::Base
   extend FriendlyId  
   friendly_id :title_en
   has_many :cities, dependent: :destroy
+  has_many :visas, dependent: :destroy
   has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
   belongs_to :continent_category
