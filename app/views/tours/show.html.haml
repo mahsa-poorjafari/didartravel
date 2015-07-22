@@ -1,18 +1,18 @@
 .margin3.margin-bottom5#tour-content{:style => "background-image: url(image-path('sprinkles.png'));  background-repeat:repeat;"}
   .title-top
     .col-xs-6#didar-red-logo{ :class => I18n.locale}
-      = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
+      = image_tag 'menu_logo.png', :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار', :width => "80", :height => "80"
       %p
         %i= t('package-code')
         %b=  @tour.package_code
+    .col-xs-6{:style => "text-align:right"}
+      - if @tour.plane.present?
+        = image_tag @tour.plane.logo(:icon), :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
+            
     .title-box.col-xs-6= @tour.title  
     
   .col-xs-12.clear-float{:style => "margin-top:4%"}
-    .col-xs-4 
-      - if I18n.locale == :fa
-        = render "/tours/show_persian_date", :tour => @tour
-      - else  
-        = render "/tours/show_english_date", :tour => @tour  
+    
     - if is_admin?
       = link_to 'ویرایش', edit_tour_path(@tour), :class => "btn btn-info" 
       = link_to 'افزودن جزئیات محل تور', new_locationtour_path(tour_id: @tour.id), :class => "btn btn-warning", :title => 'شرکت خدمات مسافرت هوایی و جهانگردی رادان سیر'
@@ -36,12 +36,7 @@
         - else
           .col-xs-12
             .col-xs-12
-                    
-                  
-              .col-xs-6{:style => "text-align:right"}
-                - if @tour.plane.present?
-                  = image_tag @tour.plane.logo(:small), :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
-            
+              
             .col-xs-12.hotels-table.margin-bottom
               
               - if I18n.locale == :en

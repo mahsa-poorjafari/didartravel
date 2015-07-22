@@ -1,0 +1,41 @@
+.margin3  
+  %p.col-xs-12.set-center.title-tour#title-tours{:class => I18n.locale}= t('local-tour')
+  -if is_admin?
+    = link_to 'معرفی تور جدید', new_tour_path, :class => "btn btn-success"
+  .clear-float
+  
+      
+  
+  .show-tours.col-xs-10.set-center#Container
+    - Country.all.each do |country|
+      - if country.title_fa == 'ایران'
+        - if country.tours.present?
+          - country.tours.each do |iran_tour|
+            .tours-index{ "data-my-order" => iran_tour.id}
+              - if iran_tour.coming_soon?
+                .coming_soon= image_tag 'coming.png'
+              = link_to iran_tour, :class => "tour-box" do 
+                %h5.tour-title{:class => I18n.locale}= iran_tour.title
+                - if iran_tour.photos.present?
+                  .tour-sample-image{:class => ('set-coming-soon' if iran_tour.coming_soon?)}= image_tag iran_tour.photos.first.image(:medium), :id => "tour-sample-image-" + iran_tour.photos.first.id.to_s
+                .clear-float
+              .tour-date
+                - if I18n.locale == :fa
+                  = render "/tours/show_persian_date", :tour => iran_tour
+                - else  
+                  = render "/tours/show_english_date", :tour => iran_tour      
+              
+              -if is_admin?
+                .admin-btn-tour
+                  = link_to 'ویرایش تور', edit_tour_path(iran_tour), :class => "btn btn-info"
+                  = link_to 'مشاهده جزئیات', iran_tour, :class => "btn btn-warning"                   
+                  = link_to 'حذف تور', iran_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+                  = link_to 'ارسال به اعضا خبرنامه', sendtonewsletter_tour_path(iran_tour), :class => "btn btn-default"       
+                  - @send_tour = @send_tour.to_i            
+                  - if @send_tour.present? && @send_tour == iran_tour.id
+                    .alert.alert-success='اطلاعات این تور برای اعضا خبرنامه ارسال شد.'
+                      
+
+  
+
+

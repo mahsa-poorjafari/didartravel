@@ -496,6 +496,7 @@ width: 100%;}
 .tours-index .tour-box .tour-sample-image {position: absolute; top:40px; right:0; left:0; height:150px;
   width:100%; overflow:hidden;
   }
+.tours-index .tour-box .tour-sample-image.set-coming-soon {opacity:.6}
 .tours-index .tour-box .tour-sample-image img {height:100%; width:100%;}
 .country-title-tab {color:#000000; font-weight:bold}
 .country-title-tab.ar {font-size: .7em;
@@ -635,7 +636,7 @@ ul.news_and_vents li.news-item:hover a{color:#000;}
   color:#A52A2A;
   font-size:2em;
   font-weight:bold; 
- 
+  text-align:center;
 }
 .title-box-employment {width:100%; height:50px;   
   border-bottom: 4px #1A1A1A solid;
@@ -748,3 +749,6 @@ h4.en.country-title-tab {font-size:1.2em;}
 h4.en.country-title-tab a{color:#000}
 h4.en.country-title-tab a:hover, .active.continent.tour-group h4.en.country-title-tab a{color:#440102}
 
+.tours-index .coming_soon {position: absolute;
+top: 50px; right:5px; left:5px;
+z-index: 10;}

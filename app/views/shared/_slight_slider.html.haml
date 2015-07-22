@@ -11,9 +11,9 @@
         = image_tag item.image(:medium), :alt => item.image_file_name
         
   / Left and right controls
-  = link_to  '#myCarousel'+ sight.id.to_s , :class => "left carousel-control", "data-slide" => "prev", :title => "آژانس_هواپیمایی_رادان_سیر"  do  
+  = link_to  '#myCarousel'+ sight.id.to_s , :class => "left carousel-control", "data-slide" => "prev", :title => "آژانس_هواپیمایی_دیدار"  do  
     = image_tag 'prev.png'
-  = link_to  '#myCarousel'+ sight.id.to_s, :class => "right carousel-control", "data-slide" => "next", :title => "آژانس_هواپیمایی_رادان_سیر"  do           
+  = link_to  '#myCarousel'+ sight.id.to_s, :class => "right carousel-control", "data-slide" => "next", :title => "آژانس_هواپیمایی_دیدار"  do           
     = image_tag 'next.png'
 :javascript  
   $('.carousel').carousel()

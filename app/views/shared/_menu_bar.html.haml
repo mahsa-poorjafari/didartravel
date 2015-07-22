@@ -20,9 +20,9 @@
         
         %ul.sub-menu.tour          
           %li{:class => I18n.locale}
-            = link_to t('local-tour')
+            = link_to t('local-tour'), iran_tour_tours_path
           %li{:class => I18n.locale}
-            = link_to t('foreign-tour')
+            = link_to t('foreign-tour'), Tour
           
           
       %li#hotel.item-menu{:class => ('active' if current_page?(Hotel))}

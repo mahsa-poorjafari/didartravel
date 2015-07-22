@@ -27,7 +27,7 @@
 //= require farsiDatePicker/calendar
 //= require farsiDatePicker/jquery.ui.core
 //= require farsiDatePicker/jquery.ui.datepicker
-//= require farsiDatePicker/jquery.ui.datepicker-cc-fa
+
 //= require farsiDatePicker/jquery.ui.widget
 //= require farsiDatePicker/zextension
 

@@ -18,6 +18,8 @@ class ToursController < ApplicationController
   def tours_moment
     @imp_tours = Tour.where(validate_date_from:  2.days.ago..Date.today)
   end
+  def iran_tour
+  end
   
   def to_pdf_tour_show
     @tour = Tour.friendly.find(params[:tour_id])
@@ -33,18 +35,7 @@ class ToursController < ApplicationController
   def show
     @related_tours = Tour.where( country_id: @tour.country.id)    
     
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render :pdf => "Tour_info",
-          :layout => 'pdf.html',
-          template: 'tours/show.pdf.haml',
-          disposition: 'attachment',
-          :page_size => 'A4',
-          :footer => { :left => '[page] of [topage]' },
-          :toc => { :depth => 2, :header_text => 'TEXT', disable_links: false }   
-      end
-    end
+    
   end
   def related_tours
     @country_id = params[:call_tours]
@@ -91,6 +82,7 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
+    @tour.validate_date_from_fa
   end
 
   # GET /tours/1/edit
@@ -102,7 +94,7 @@ class ToursController < ApplicationController
   def create
     @tour = Tour.new(tour_params)   
     p '--------Date from-------'
-    p @tour.validate_date_from
+    p @tour.validate_date_from_fa
     if @tour.save      
       render :show  
          
@@ -114,7 +106,7 @@ class ToursController < ApplicationController
   # PATCH/PUT /tours/1.json
   def update
     p '--------Date from-------'
-    p @tour.validate_date_from
+    p @tour.validate_date_from_fa
     respond_to do |format|
       if @tour.update(tour_params)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
@@ -141,9 +133,9 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:title_fa, :title_en, :title_ar, :description_fa, :description_en, :description_ar,
+      params.require(:tour).permit(:title_fa, :title_en, :title_ar, :description_fa, :description_en, :description_ar, :tour_group_id,
       :plane_id, :hotel_id, :country_id, :city_id, :continent_category_id, :special, :source, :travel_type, :travel_type_en, :travel_type_ar,
-      :price, :validate_date_from_fa, :validate_date_until_fa, :coming_soon, :itinerary_fa, :itinerary_en, :itinerary_ar, :source_ar, :source_en,
+      :price, :validate_date_from, :validate_date_until, :coming_soon, :itinerary_fa, :itinerary_en, :itinerary_ar, :source_ar, :source_en,
       :documents_fa, :documents_en, :documents_ar, :decription_image, :info,  :delete_image, :package_code, :tour_source,
       photos_attributes: [:id, :image, :description_fa, :description_en, :description_ar, :tour_id, :_destroy, :_update] )
     end

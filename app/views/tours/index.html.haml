@@ -9,10 +9,10 @@
         %span.location= image_tag 'w.png'
         %span.country-title-tab= t('show-all-tours')
     
-      - ContinentCategory.offset(5).order(" created_at desc").each do |continent| 
+      - TourGroup.order(" created_at desc").each do |continent| 
         .continent.tour-group
-          %span.location= image_tag 'arrow-bullet-left.png'
-          %h4.en.country-title-tab{:class => ('white blink' if continent.title_fa == 'نوروز 94')}
+          %span.location.col-xs-1.pull-right= image_tag 'arrow-bullet-left.png'
+          %h4.en.country-title-tab.col-xs-9
             = link_to continent.title, continent.title
   - else
     .col-xs-2.pull-right{:style => "text-align:center; margin-bottom:4%"} 
@@ -20,11 +20,11 @@
         %span.location= image_tag 'w.png'
         %span.country-title-tab= t('show-all-tours')
     
-      - ContinentCategory.offset(5).order("set_order asc").each do |continent| 
+      - TourGroup.order("set_order asc").each do |continent| 
         = link_to continent do
           .continent.tour-group
-            %span.location= image_tag 'arrow-bullet-right.png'
-            %h4.fa.country-title-tab{ :class => ('white blink' if continent.title_fa == 'نوروز 94')}= continent.title
+            %span.location.col-xs-1= image_tag 'arrow-bullet-right.png'
+            %h4.fa.country-title-tab.col-xs-9= continent.title
   
       
   
@@ -46,6 +46,7 @@
                 = render "/tours/show_persian_date", :tour => @country_tour
               - else  
                 = render "/tours/show_english_date", :tour => @country_tour      
+            
             -if is_admin?
               .admin-btn-tour
                 = link_to 'ویرایش تور', edit_tour_path(@country_tour), :class => "btn btn-info"

@@ -2,6 +2,7 @@
 class TourGroup < ActiveRecord::Base
   extend FriendlyId  
   friendly_id :title_fa
+  has_many :tours, dependent: :destroy
   def title
     if I18n.locale == :ar
       self.read_attribute("title_ar")

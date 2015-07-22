@@ -56,6 +56,7 @@ Rails.application.routes.draw do
         post :search 
         get :tours_moment
         get :related_tours
+        get :iran_tour
         get :related_hotels
       end
       member do

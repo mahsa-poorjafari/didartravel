@@ -6,9 +6,9 @@
       - Country.all.each do |country|
         - unless country.title_fa == 'ایران'
           - if country.tours.present?
-            - country.tours.each do |tour|
+            - country.tours.limit(2).order("id asc").each do |tour|
             - @first_tour = country.tours.first            
-              .item                
+              .item{:id => "foriegn_tours_id_" + tour.id.to_s}                
                 %p.tour-title{:class => I18n.locale}= tour.title
                 - if tour.photos.present?
                   = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
@@ -26,7 +26,7 @@
                     = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
       - Country.all.each do |country|
         - if country.title_fa == 'ایران' && country.tours.present?            
-          - country.tours.each do |iran_tour|
+          - country.tours.limit(2).order("id asc").each do |iran_tour|
             .item{:id => "iran_tours_id_" + iran_tour.id.to_s}
               %p.tour-title{:class => I18n.locale}= iran_tour.title
               - if iran_tour.photos.present?

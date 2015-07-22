@@ -4,7 +4,7 @@
     = link_to 'تعریف ویزا جدید', new_visa_path, :class => "btn btn-success"
   .clear-float
   - if I18n.locale == :en
-    .col-xs-2.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     
+    .col-xs-3.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     
       .continent{:class =>  I18n.locale.to_s}
         %span.location= image_tag 'v.png'
         %span.country-title-tab= t('show-all-visas')
@@ -15,7 +15,7 @@
           %h4.en.country-title-tab.col-xs-9
             = link_to vistatype.title, vistatype
   - else
-    .col-xs-2.pull-right{:style => "text-align:center; margin-bottom:4%"} 
+    .col-xs-3.pull-right{:style => "text-align:center; margin-bottom:4%"} 
       .continent{:class =>  I18n.locale.to_s}
         %span.location= image_tag 'v.png'
         %span.country-title-tab= t('show-all-visas')
@@ -26,7 +26,7 @@
             %span.location.col-xs-1= image_tag 'arrow-bullet-right.png'
             %h4.fa.country-title-tab.col-xs-9= vistatype.title
   
-  .show-tours.col-xs-10.set-center#Container
+  .show-tours.col-xs-9.set-center#Container
     - VisaType.all.each do |visatype|
       
       - if visatype.visas.present?

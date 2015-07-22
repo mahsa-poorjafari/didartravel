@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722064940) do
+ActiveRecord::Schema.define(version: 20150722084137) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -475,6 +475,7 @@ ActiveRecord::Schema.define(version: 20150722064940) do
     t.string   "travel_type_ar"
     t.string   "package_code"
     t.text     "tour_source"
+    t.integer  "tour_group_id"
   end
 
   create_table "users", force: true do |t|

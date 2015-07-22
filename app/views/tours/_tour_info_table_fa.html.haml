@@ -38,25 +38,23 @@
         .col-xs-8.td= location.description
     - if is_admin?
       .col-xs-12.other-rows
-        =link_to 'ویرایش', edit_locationtour_path(location, :tour_id => @tour.id), :class => "btn btn-info", :title => "شرکت_خدمات_مسافرتی_هوایی_جهانگردی_رادان_سیر"
+        =link_to 'ویرایش', edit_locationtour_path(location, :tour_id => @tour.id), :class => "btn btn-info", :title => "شرکت_خدمات_مسافرتی_هوایی_جهانگردی_دیدار"
         = link_to 'حذف', location, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
     
 .tour-description.clear-float
-  .title_row
-    .title-box{:class => I18n.locale}= t('tour.description')
-    .title-line
+  
   .col-xs-6#show-tour-source
     - if tour.source.present?
-      .full-width.tr.well
-        .col-xs-3.th.pull-right= t('tour.source')
-        .col-xs-9.td= tour.source
-      .clear-float
+      .col-xs-6.tr.well
+        .col-xs-4.th.pull-right= t('tour.source')
+        .col-xs-8.td= tour.source
+      
       
     
     - if tour.travel_type.present?
-      .full-width.tr.well
-        .col-xs-3.th.pull-right= t('tour.travel_type')
-        .col-xs-9.td= tour.travel_type
+      .col-xs-6.tr.well
+        .col-xs-4.th.pull-right= t('tour.travel_type')
+        .col-xs-8.td= tour.travel_type
   .col-xs-6#show-tour-date    
     .full-width.tr.well
       .col-xs-3.th.pull-right= t('tour.date')
@@ -70,16 +68,16 @@
             = image_tag 'get-pdf.png', :width => "50", :height=>"50"
             %i= 'دریافت فایل '
             
-  
+  .clear-float
   - if tour.itinerary.present?
-    .full-width.tr
-      .col-xs-3.th.pull-right= t('tour.itinerary')
-      .col-xs-9.td= raw tour.itinerary
+    .col-xs-6.tr
+      %p.th= t('tour.itinerary')
+      = raw tour.itinerary
     
   - if tour.documents.present?
-    .full-width.tr
-      .col-xs-3.th.pull-right= t('tour.documents')
-      .col-xs-9.td= raw tour.documents
+    .col-xs-6.tr
+      %p.th= t('tour.documents')
+      = raw tour.documents
     
         
   .clear-float
