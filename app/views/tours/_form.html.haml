@@ -42,6 +42,9 @@
        
         .form-group
           = f.label 'فایل ضمیمه برای دانلود', :class => "control-label"  
+          %p
+            %b= 'فایل توضیحات پکیج'
+            %i= 'فرمت فایل برای این بخش عکس یا فایل متنی PDF می باشد'
           = f.file_field :info, :class => "form-control"
         .form-group
           = f.label 'بزودی', :class => "control-label"
@@ -124,7 +127,9 @@
         
         %i= 'اگر به توضیحات در قالب تصویر می باشد. از کادر زیر تصویر موردنظر را بارگذاری نمایید.'
         = f.label 'تصویر توضیحات', :class => "control-label"
-        
+        %p
+          %b= 'فایل توضیحات '
+          %i= 'فرمت فایل برای این بخش فایل تصویر می باشد'
         = f.file_field :decription_image, :class => "form-control" 
       
       .form-group.editor

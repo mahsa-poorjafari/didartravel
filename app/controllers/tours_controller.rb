@@ -107,6 +107,10 @@ class ToursController < ApplicationController
   def update
     p '--------Date from-------'
     p @tour.validate_date_from_fa
+    if @tour.decription_image
+      "----------"
+      " decription_image"
+    end
     respond_to do |format|
       if @tour.update(tour_params)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }

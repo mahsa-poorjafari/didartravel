@@ -18,7 +18,7 @@ class Tour < ActiveRecord::Base
  
   
   has_attached_file :decription_image, :styles => {  :medium => "450x450>", :small => "300x350>" }
-  validates_attachment_content_type :decription_image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :decription_image, :content_type => ["image/jpg", "image/jpeg", "image/png"], :message => "نوع فایل نامعتبر است. "
   
   has_attached_file :info,
                     :url  => "/assets/circulars/:id/:style/:basename.:extension",
