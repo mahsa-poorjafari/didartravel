@@ -1,11 +1,20 @@
 .margin3
-  %h1.title-tours{:class => I18n.locale}=  @sight.title  
+  %h3.title-tours{:class => I18n.locale}
+    =link_to @sight.city.country.title , @sight.city.country
+    , 
+    =link_to @sight.city.title , @sight.city
+    , 
+    =link_to  @sight.title , @sight
+    
   - if is_admin?
     = link_to 'ویرایش', edit_sight_path(@sight), :class => "btn btn-info" 
   .tour-details
-    .col-xs-12.sight-des{:class => I18n.locale}=raw @sight.text        
-    .col-xs-12       
-      = render 'shared/items_images_sliders', :model => @sight
+    .col-xs-7.sight-des{:class => I18n.locale}=raw @sight.text        
+    .col-xs-5
+      -if @sight.photos.present?
+        - @sight.photos.each do |pic|
+          = link_to pic.image(:original), :data => { :colorbox => true }, :class => "show-product" do         
+            = image_tag pic.image(:medium)
     
       
   

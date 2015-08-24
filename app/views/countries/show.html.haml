@@ -4,15 +4,13 @@
       = link_to 'ویرایش کشور', edit_country_path(@country), :class => "btn btn-info" 
     
     = link_to 'معرفی جاذبه دیدنی جدید', new_sight_path, :class => "btn btn-success"
-  .col-xs-12.margin-bottom5
-    
-    %p.col-xs-12.set-center.title-tour#title-countries{:class => I18n.locale}= @country.title
-  %p  
-    - if @country.country_flag.present?
-      = image_tag @country.country_flag(:original), :width => "200"
-    
+  .col-xs-12    
+    %p.col-xs-12.set-center.title-tour#title-countries{:class => I18n.locale}= @country.title    
     
   .col-xs-8.margin-bottom5.country-text{:class => I18n.locale}
+    %p  
+    - if @country.country_flag.present?
+      = image_tag @country.country_flag(:original), :width => "200"
     = raw @country.text
     .col-xs-12.margin-bottom5    
       %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('city')
@@ -28,7 +26,7 @@
       - if city.sights.present?
         .col-xs-12.margin-bottom5
           
-          %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('sights') 
+          %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('sights') + ' ' + @country.title
         .show-tours.col-xs-12.set-center
           - city.sights.order('title_fa asc').each_with_index do |hotel, i|
             .tours-index#city-sight{:class => "iran-city-" + hotel.city.id.to_s, "data-my-order" => hotel.id}

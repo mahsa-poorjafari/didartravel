@@ -30,6 +30,9 @@ html {padding:0; margin:0;  height:100%}
 body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .fa {direction:rtl;  font-family: 'open_sansregular';}
 .fa input, .fa select, .fa textarea, .fa label, .admin-menu ul.fa  {direction:rtl; font-family: 'open_sansregular';}
+.sight-des.fa, .sight-des.fa p, .sight-des.fa span, .sight-des.fa ul, .sight-des.fa ol{direction:rtl; font-family: 'open_sansregular';}
+.sight-des.ar, .sight-des.ar p, .sight-des.ar span, .sight-des.ar ul, .sight-des.ar ol{direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
+.sight-des.en, .sight-des.en p, .sight-des.en span, .sight-des.en ul, .sight-des.en ol{direction:ltr; font-family:Arial}
 .visa-text.fa p, .visa-text.fa span, .visa-text.fa ul li  {direction:rtl; font-family: 'open_sansregular';}
 .ar, p.ar {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
 .en, p.en, span.en, h1.en, h2.en, h3.en, h4.en {direction:ltr; font-family:Arial}
