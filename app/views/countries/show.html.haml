@@ -25,7 +25,6 @@
     - @country.cities.order('title_fa asc').each do |city|    
       - if city.sights.present?
         .col-xs-12.margin-bottom5
-          
           %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('sights') + ' ' + @country.title
         .show-tours.col-xs-12.set-center
           - city.sights.order('title_fa asc').each_with_index do |hotel, i|

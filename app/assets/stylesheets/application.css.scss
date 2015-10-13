@@ -157,7 +157,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
   background-image: url(image-path('menu-icons.png'));
   background-repeat: no-repeat;
   position: absolute;
-  width: 50%;
+  width: 48px;
   height: 45px;  
   right: 20%;
   left: 20%;
@@ -169,7 +169,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
 .menu_bar ul#main-menu li.item-menu .icon#country{background-position: 50% 35%; }
 .menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 33%; }
 .menu_bar ul#main-menu li.item-menu .icon#hotels{background-position: 57% 100%;}
-.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 111% 98%;}
+.menu_bar ul#main-menu li.item-menu .icon#visa{background-position: 100% 98%;}
 .menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 100%;}
 .menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 27%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 7%;}
@@ -177,7 +177,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
 .menu_bar ul#main-menu li.item-menu:hover .icon#country,.menu_bar ul#main-menu li.item-menu.active .icon#country{background-position: 50% 0%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 3%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 73%;}
-.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 111% 70%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 100% 70%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 0 75%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% 0;}
 .menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
