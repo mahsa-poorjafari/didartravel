@@ -24,30 +24,30 @@
   .col-xs-4.margin-bottom5#sights-box  
     .col-xs-12.margin-bottom5
       %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('sights') + ' ' + @country.title
-    - @country.cities.order('title_fa asc').each do |city|    
-      - if city.sights.present?
+    .col-xs-12
+      - @country.cities.order('title_fa asc').each do |city|    
+        - if city.sights.present?        
+          .show-tours.set-center
+            - city.sights.order('title_fa asc').each_with_index do |hotel, i|
+              .tours-index#city-sight{:class => "iran-city-" + hotel.city.id.to_s, "data-my-order" => hotel.id}
+                = link_to hotel, :class => "tour-box" do
+                  %h5.tour-title{:id => "hotel-"+hotel.id.to_s, :class => I18n.locale}= hotel.title          
+                  - if hotel.photos.present?
+                    .hover.panel{:id => "item-"+ (i+1).to_s}
+                      .front
+                        .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس هواپیمایی دیدار"
+                      .back
+                        .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس هواپیمایی دیدار"
+                  .clear-float 
+                  .some-info 
+                    %p= hotel.city.country.title + ' , ' + hotel.city.title
+                
+                -if is_admin?
+                  .admin-btn-tour
+                    = link_to 'مشاهده', hotel, :class => "btn btn-warning"  
+                    = link_to 'ویرایش', edit_sight_path(hotel), :class => "btn btn-info"
+                    = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
         
-        .show-tours.col-xs-12.set-center
-          - city.sights.order('title_fa asc').each_with_index do |hotel, i|
-            .tours-index#city-sight{:class => "iran-city-" + hotel.city.id.to_s, "data-my-order" => hotel.id}
-              = link_to hotel, :class => "tour-box" do
-                %h5.tour-title{:id => "hotel-"+hotel.id.to_s, :class => I18n.locale}= hotel.title          
-                - if hotel.photos.present?
-                  .hover.panel{:id => "item-"+ (i+1).to_s}
-                    .front
-                      .pad.tour-sample-image= image_tag hotel.photos.first.image(:medium), :id => "tour-sample-image-" + hotel.photos.first.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس هواپیمایی دیدار"
-                    .back
-                      .pad.tour-sample-image= image_tag hotel.photos.last.image(:medium), :id => "tour-sample-image-" + hotel.photos.last.id.to_s, :title => "آژانس_هواپیمایی_دیدار", :alt => "آژانس هواپیمایی دیدار"
-                .clear-float 
-                .some-info 
-                  %p= hotel.city.country.title + ' , ' + hotel.city.title
-              
-              -if is_admin?
-                .admin-btn-tour
-                  = link_to 'مشاهده', hotel, :class => "btn btn-warning"  
-                  = link_to 'ویرایش', edit_hotel_path(hotel), :class => "btn btn-info"
-                  = link_to 'حذف', hotel, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
-      
 
   
   
