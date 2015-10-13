@@ -474,7 +474,7 @@ bottom: 0;}
   -moz-box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
   }
-.tours-index#city-sight {width:47%; 
+.tours-index#city-sight {width:150px; 
   background:#fff;
   background-image: url(image-path('bg-tour-boxes1.png'));
   background-repeat:no-repeat;  
@@ -492,7 +492,7 @@ width: 100%;}
 .tours-index#diriving_license:hover{background-image: url(image-path('bg-tour-boxes2.png'));}
 .tours-index#diriving_license .admin-btn-tour{bottom:0; top:auto}
 .tours-index .tour-box {height:250px; width:100%}
-.tours-index .tour-box .tour-title{position:absolute;
+.tours-index .tour-box .tour-title{position:absolute; margin:0;
   width:100%; height:40px; padding:2%; text-align:center;
   top:0; right:0; left:0;
   }
