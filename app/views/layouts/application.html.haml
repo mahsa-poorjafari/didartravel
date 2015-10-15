@@ -88,15 +88,13 @@
      
       
       - if current_page?('/') 
-        = render 'shared/multislider_news_weather', :tours => Tour.all
-        
+        = render 'shared/multislider_news_weather', :tours => Tour.all      
         
       - if current_page?(Sight) 
         = render 'sights/five_sight_icon'
       - if params[:controller] == 'hotels'
         = render 'shared/multi_slider_hotel'
-      - elsif params[:controller] == 'sights'
-        = render 'shared/multi_slider_visit_iran'
+      
       
       = link_to '', '#', :name => "#top", :id => "page-top"
       .yield.clear-float{:class => I18n.locale}
