@@ -4,7 +4,7 @@ class Visa < ActiveRecord::Base
   friendly_id :title_fa
   belongs_to :visa_type
   belongs_to :country
-  validates :title_en, :title_fa, :title_ar, :visa_type_id, :presence => {:message => 'فیلدهای ضروری را پر کنید'}
+  validates :title_en, :title_fa, :title_ar, :visa_type_id, :country_id, :presence => {:message => 'فیلدهای ضروری را پر کنید'}
   validates :title_fa, :title_en, :title_ar, :uniqueness => {:message => 'عنوان تکراری است'}
   def title
     if I18n.locale == :ar
