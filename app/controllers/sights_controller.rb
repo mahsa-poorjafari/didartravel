@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class SightsController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_sight, only: [:show, :edit, :update, :destroy]
 
   # GET /sights

@@ -1,4 +1,5 @@
 class ContinentCategoriesController < ApplicationController
+  
   before_action :set_continent_category, only: [:show, :edit, :update, :destroy]
 
   # GET /continent_categories

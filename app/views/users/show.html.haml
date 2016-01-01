@@ -12,7 +12,9 @@
     = @user.email
   %p
     %b نقش کاربری
-    - if @user.role_id.present?
-      = @user.role.title
+    - if @user.role_id.present? && @user.role_id == 1
+      %span Admin
+    - else
+      %span User
 
   = link_to 'ویرایش', edit_user_path(@user), :class => "btn btn-info" 

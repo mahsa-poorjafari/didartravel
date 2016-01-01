@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class HotelsController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_hotel, only: [:show, :edit, :update, :destroy]
 
   # GET /hotels

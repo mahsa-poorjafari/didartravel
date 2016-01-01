@@ -1,9 +1,9 @@
-%h5.admin-menu-title
+.admin-menu-title
   - if current_user.present?
     %p
       %b منوی کاربر عادی
       = current_user.email
 %ul{:class => I18n.locale}  
-  %li= link_to 'پروفایل کاربر', edit_user_path(current_user)
+  
   %li= link_to 'خروج', destroy_user_session_path, :method => :delete
 

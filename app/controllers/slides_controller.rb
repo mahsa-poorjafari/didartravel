@@ -1,4 +1,5 @@
 class SlidesController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
 
   # GET /slides

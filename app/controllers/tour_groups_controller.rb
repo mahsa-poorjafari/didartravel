@@ -1,4 +1,5 @@
 class TourGroupsController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_tour_group, only: [:show, :edit, :update, :destroy]
 
   # GET /tour_groups

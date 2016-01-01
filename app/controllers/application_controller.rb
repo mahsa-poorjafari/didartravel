@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
   protected
     def check_autentication
-      redirect_to :root unless current_user.role_id == 1
+      redirect_to :root if current_user.blank? || current_user.role_id != 1
     end
     def default_url_options
       { :locale => I18n.locale }

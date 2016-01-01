@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class CitiesController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_city, only: [:show, :edit, :update, :destroy]
 
   # GET /cities

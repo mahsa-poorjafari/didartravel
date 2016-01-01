@@ -1,4 +1,8 @@
 # encoding: UTF-8
 class Role < ActiveRecord::Base
-  has_many :users
+  
+  validates :title, :uniqueness => {:message => 'عنوان تکراری است'}
+  validates :title, :presence => {:message => 'عنوان را بنویسید'}
+  has_and_belongs_to_many :users
+  
 end

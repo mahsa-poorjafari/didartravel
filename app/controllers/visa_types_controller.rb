@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class VisaTypesController < ApplicationController
+  before_filter :check_autentication
   before_action :set_visa_type, only: [:show, :edit, :update, :destroy]
 
   # GET /visa_types

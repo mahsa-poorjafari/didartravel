@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class UsersController < ApplicationController
+  before_filter :check_autentication
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -27,18 +28,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.role_id = 2
-    
-    respond_to do |format|
-      if @user.save
-        p '--------'
-        p @user.role_id
-        format.html { redirect_to @user, notice: 'کاربر جدید اضافه شد.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      p '--------'
+      p @user.role_id
+        redirect_to :root
+    else
+      render :new 
     end
+    
   end
 
   # PATCH/PUT /users/1

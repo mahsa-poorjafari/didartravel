@@ -1,4 +1,5 @@
 class PdfInvestmentsController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_pdf_investment, only: [:show, :edit, :update, :destroy]
 
   # GET /pdf_investments

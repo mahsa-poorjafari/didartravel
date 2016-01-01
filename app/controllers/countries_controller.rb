@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_country, only: [:show, :edit, :update, :destroy]
 
   # GET /countries

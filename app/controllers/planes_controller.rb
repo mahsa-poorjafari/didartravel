@@ -1,4 +1,5 @@
 class PlanesController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_plane, only: [:show, :edit, :update, :destroy]
 
   # GET /planes

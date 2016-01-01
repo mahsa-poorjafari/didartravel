@@ -1,4 +1,5 @@
 class CertificatesController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_certificate, only: [:show, :edit, :update, :destroy]
 
   # GET /certificates

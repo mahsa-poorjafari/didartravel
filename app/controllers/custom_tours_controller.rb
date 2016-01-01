@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class CustomToursController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_custom_tour, only: [:show, :edit, :update, :destroy]
 
   # GET /custom_tours

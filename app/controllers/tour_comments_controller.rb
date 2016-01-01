@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class TourCommentsController < ApplicationController
+  before_filter :check_autentication
   before_action :set_tour_comment, only: [:show, :edit, :update, :destroy, :confirm]
 
   # GET /tour_comments

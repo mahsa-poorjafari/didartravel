@@ -1,4 +1,5 @@
 class PassengersController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_passenger, only: [:show, :edit, :update, :destroy]
 
   # GET /passengers

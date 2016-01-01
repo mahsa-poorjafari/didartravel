@@ -1,4 +1,5 @@
 class InvestmentInIransController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_investment_in_iran, only: [:show, :edit, :update, :destroy]
 
   # GET /investment_in_irans

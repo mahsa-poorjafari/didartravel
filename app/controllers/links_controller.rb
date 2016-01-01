@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # GET /links

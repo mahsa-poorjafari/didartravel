@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class MessagesController < ApplicationController
+  before_filter :check_autentication
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   
   # GET /messages

@@ -1,4 +1,5 @@
 class ClassHotelsController < ApplicationController
+  
   before_action :set_class_hotel, only: [:show, :edit, :update, :destroy]
 
   # GET /class_hotels

@@ -208,7 +208,7 @@
           .modal-header
             %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
             %h4#myModalLabel.modal-title 
-              = t ('send-mail')          
+              = t ('send-mail') 
           .modal-body
             = render 'send_links/form'
           .modal-footer
@@ -218,6 +218,9 @@
     - if is_admin?
       .admin-menu
         = render 'shared/admin_menu'
+    - elsif is_user?
+      .admin-menu
+        = render 'shared/user_menu'
     
     = link_to '#top', :id => "go-top-page", :class => "anchorLink"do
       = image_tag 'gotop.png', :title => "بازگشت به بالای صفحه"

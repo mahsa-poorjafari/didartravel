@@ -1,4 +1,5 @@
 class EmploymentsController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_employment, only: [:show, :edit, :update, :destroy]
 
   # GET /employments

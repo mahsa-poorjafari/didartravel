@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class ToursController < ApplicationController
+  before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_tour, only: [:show, :edit, :update, :destroy, :sendtonewsletter]
   
   # GET /tours

@@ -1,4 +1,5 @@
 class StaticController < ApplicationController  
+  
   before_filter :set_locale
   def home
   end
