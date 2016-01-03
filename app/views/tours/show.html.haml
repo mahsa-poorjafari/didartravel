@@ -10,91 +10,91 @@
         = image_tag @tour.plane.logo(:icon), :alt => 'شرکت خدمات مسافرت هوایی و جهانگردی و زیارتی دیدار'
             
     .title-box.col-xs-6= @tour.title  
-    
-  .col-xs-12.clear-float{:style => "margin-top:4%"}
-    
-    - if is_admin?
-      = link_to 'ویرایش', edit_tour_path(@tour), :class => "btn btn-info" 
-      = link_to 'افزودن جزئیات محل تور', new_locationtour_path(tour_id: @tour.id), :class => "btn btn-warning", :title => 'شرکت خدمات مسافرت هوایی و جهانگردی رادان سیر'
-    .tour-details    
+  -#  
+    .col-xs-12.clear-float{:style => "margin-top:4%"}
+      
       - if is_admin?
-        .col-xs-12 
-          .tour-source
-            %b= 'مشخصات مبدا پکیج تور'
-            %div{:style => "margin-top:3%"}= @tour.tour_source 
-      - if @tour.country.present?
-        - if @tour.country.title_fa == 'ایران'
-          .col-xs-12
-            
-            - if @tour.description.present?
-              .title_row
-                .title-box{:class => I18n.locale}= t('tour.description')
-                .title-line
-              .col-xs-12      
-                = raw @tour.description
-          .clear-float
-        - else
-          .col-xs-12
+        = link_to 'ویرایش', edit_tour_path(@tour), :class => "btn btn-info" 
+        = link_to 'افزودن جزئیات محل تور', new_locationtour_path(tour_id: @tour.id), :class => "btn btn-warning", :title => 'شرکت خدمات مسافرت هوایی و جهانگردی رادان سیر'
+      .tour-details    
+        - if is_admin?
+          .col-xs-12 
+            .tour-source
+              %b= 'مشخصات مبدا پکیج تور'
+              %div{:style => "margin-top:3%"}= @tour.tour_source 
+        - if @tour.country.present?
+          - if @tour.country.title_fa == 'ایران'
             .col-xs-12
               
-            .col-xs-12.hotels-table.margin-bottom
-              
-              - if I18n.locale == :en
-                = render 'tours/tour_info_table_en', :tour => @tour
-              - else
-                = render 'tours/tour_info_table_fa', :tour => @tour
-      
-      .col-xs-12      
-        - if @tour.decription_image.present?
-          .col-xs-2
-          .col-xs-8= image_tag @tour.decription_image
-          .col-xs-2
-      .col-xs-12     
-        = render 'shared/items_images_sliders', :model => @tour      
-      .col-xs-12.margin-bottom5
-        .col-xs-5.comment-box{:class => ((I18n.locale == :en) ? 'pull-left' : 'pull-right' )}
-          - if flash[:SendComment].present?
-            .alert.alert-success{:class => I18n.locale}= t('tour_comment.send-comment')
-          .tour-comments
-            %h3{:class => I18n.locale}= t('tour_comment.your-comment')          
-            = render 'tour_comments/form', :tour_comment => TourComment.new
+              - if @tour.description.present?
+                .title_row
+                  .title-box{:class => I18n.locale}= t('tour.description')
+                  .title-line
+                .col-xs-12      
+                  = raw @tour.description
+            .clear-float
+          - else
+            .col-xs-12
+              .col-xs-12
+                
+              .col-xs-12.hotels-table.margin-bottom
+                
+                - if I18n.locale == :en
+                  = render 'tours/tour_info_table_en', :tour => @tour
+                - else
+                  = render 'tours/tour_info_table_fa', :tour => @tour
         
-          .show_comments          
-            - @tour.tour_comments.each do |comment|
-              - if comment.confirm_comment
-                .well
-                  %b= comment.user_name
-                  %i= JalaliDate.new(comment.created_at).strftime("%A %e %b %Y")
-                  %p= comment.text
-      .clear-float
+        .col-xs-12      
+          - if @tour.decription_image.present?
+            .col-xs-2
+            .col-xs-8= image_tag @tour.decription_image
+            .col-xs-2
+        .col-xs-12     
+          = render 'shared/items_images_sliders', :model => @tour      
+        .col-xs-12.margin-bottom5
+          .col-xs-5.comment-box{:class => ((I18n.locale == :en) ? 'pull-left' : 'pull-right' )}
+            - if flash[:SendComment].present?
+              .alert.alert-success{:class => I18n.locale}= t('tour_comment.send-comment')
+            .tour-comments
+              %h3{:class => I18n.locale}= t('tour_comment.your-comment')          
+              = render 'tour_comments/form', :tour_comment => TourComment.new
+          
+            .show_comments          
+              - @tour.tour_comments.each do |comment|
+                - if comment.confirm_comment
+                  .well
+                    %b= comment.user_name
+                    %i= JalaliDate.new(comment.created_at).strftime("%A %e %b %Y")
+                    %p= comment.text
+        .clear-float
 
       
-      
+-#      
   
-.col-xs-12.clear-float.margin-bottom5#related-link-to-tour
-  .col-xs-12.related-box
-    = link_to related_tours_tours_path(:call_tours => @tour.country_id) , :class => I18n.locale do 
-      .col-xs-2.related-tours
-        %h4{:class => I18n.locale}= t('related-tours') + ' ' + @tour.country.title
-        - if @related_tours.present?
-          %p{:class => I18n.locale}= t('count') + ': ' + @related_tours.count.to_s
-    = link_to related_hotels_tours_path(:call_hotels => @tour.country_id), :class => I18n.locale do 
-      .col-xs-2.related-tours
-        %h4{:class => I18n.locale}= t('related-hotels') + ' ' + @tour.country.title
-        - @hotels_count = 0;
-        - Hotel.all.each do |hotel|
-          - if hotel.city.country_id == @tour.country_id
-            - @hotels_count = @hotels_count + 1
-        %p{:class => I18n.locale}= t('count') + ': ' + @hotels_count.to_s
-    = link_to country_path(@tour.country.title_en) , :class => I18n.locale do 
-      .col-xs-2.related-tours
-        %h4{:class => I18n.locale}= t('related-about') + ' ' + @tour.country.title
-        
-    = link_to '#', :class => I18n.locale do 
-      .col-xs-2.related-tours
-        %h4{:class => I18n.locale}= t('related-sights') + ' ' + @tour.country.title
-        - @sights_count = 0;
-        - Sight.all.each do |sight|
-          - if sight.city.country_id == @tour.country_id
-            - @sights_count = @sights_count + 1
-        %p{:class => I18n.locale}= t('count') + ': ' + @sights_count.to_s
+  .col-xs-12.clear-float.margin-bottom5#related-link-to-tour
+    .col-xs-12.related-box
+      = link_to related_tours_tours_path(:call_tours => @tour.country_id) , :class => I18n.locale do 
+        .col-xs-2.related-tours
+          %h4{:class => I18n.locale}= t('related-tours') + ' ' + @tour.country.title
+          - if @related_tours.present?
+            %p{:class => I18n.locale}= t('count') + ': ' + @related_tours.count.to_s
+      = link_to related_hotels_tours_path(:call_hotels => @tour.country_id), :class => I18n.locale do 
+        .col-xs-2.related-tours
+          %h4{:class => I18n.locale}= t('related-hotels') + ' ' + @tour.country.title
+          - @hotels_count = 0;
+          - Hotel.all.each do |hotel|
+            - if hotel.city.country_id == @tour.country_id
+              - @hotels_count = @hotels_count + 1
+          %p{:class => I18n.locale}= t('count') + ': ' + @hotels_count.to_s
+      = link_to country_path(@tour.country.title_en) , :class => I18n.locale do 
+        .col-xs-2.related-tours
+          %h4{:class => I18n.locale}= t('related-about') + ' ' + @tour.country.title
+          
+      = link_to '#', :class => I18n.locale do 
+        .col-xs-2.related-tours
+          %h4{:class => I18n.locale}= t('related-sights') + ' ' + @tour.country.title
+          - @sights_count = 0;
+          - Sight.all.each do |sight|
+            - if sight.city.country_id == @tour.country_id
+              - @sights_count = @sights_count + 1
+          %p{:class => I18n.locale}= t('count') + ': ' + @sights_count.to_s
