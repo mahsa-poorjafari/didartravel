@@ -1,5 +1,5 @@
 .margin3.margin-bottom
-  .col-xs-12.margin-bottom
+  .col-xs-12
     .title-tour-line.col-xs-10
     %p.col-xs-12.set-center.title-tour#visa-form{:class => I18n.locale}= t('visa-app')
       
@@ -7,6 +7,8 @@
     .col-xs-6
       .pull-left.col-xs-3= image_tag 'menu_logo.png'
     .col-xs-6
-      .pull-right.col-xs-3= image_tag 'visa.png'
+      .pull-right.col-xs-3= image_tag 'v.png'
+      %span
+        %h3= t('Commitment')
   .col-xs-12.en
     = render 'form'

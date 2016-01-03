@@ -1,100 +1,80 @@
-.col-xs-12.well
-  .form-group.alert.alert-danger
-    = f.label t('visa-delete'), :class => "control-label" 
-    = f.link_to_remove (image_tag ("Delete_Icon.png"), :class => "recyclebin-icon"), :class => "remove-task col-sm-3", :title => "آژانس_هواپیمایی_رادان_سیر"
-  
-  .form-group
-    = f.label :First_Name, :class => "control-label" 
+.col-xs-12#passenger_form{:class => I18n.locale}
+  -#
+    .form-group.alert.alert-danger
+      = f.label t('visa-delete'), :class => "control-label" 
+      = f.link_to_remove (image_tag ("Delete_Icon.png"), :class => "recyclebin-icon"), :class => "remove-task col-sm-3", :title => "آژانس_هواپیمایی_رادان_سیر"
+  .form-group.col-xs-3
+    = f.label 'نام:', :class => "control-label" 
     = f.text_field :First_Name, :class => "form-control"
-  .form-group
-    = f.label :Last_Name, :class => "control-label" 
+  .form-group.col-xs-3
+    = f.label 'نام خانوادگی:', :class => "control-label" 
     = f.text_field :Last_Name, :class => "form-control"
-  .form-group
-    .col-xs-12= f.label :gender, :class => "control-label" 
+  .form-group.col-xs-3
+    .col-xs-12= f.label 'جنسیت', :class => "control-label" 
     .col-xs-12
       .col-xs-6{:style => "padding:0"}
-        .col-xs-6= f.label :male, :class => "control-label" 
+        .col-xs-6= f.label 'مذکر', :class => "control-label" 
         .col-xs-6= f.radio_button :gender, 'male'
       .col-xs-6{:style => "padding:0"}
-        .col-xs-6= f.label :female, :class => "control-label" 
-        .col-xs-6= f.radio_button :gender, 'female'
-  %hr.col-xs-10
-  .form-group
-    .col-xs-12= f.label :Marital_status, :class => "control-label" 
+        .col-xs-6= f.label 'مونث', :class => "control-label" 
+        .col-xs-6= f.radio_button :gender, 'female'  
+  .form-group.col-xs-3
+    = f.label 'نام پدر:', :class => "control-label" 
+    = f.text_field :Fathers_Name, :class => "form-control"
+  .form-group.col-xs-3
+    = f.label 'محل تولد:', :class => "control-label" , :class => "control-label" 
+    = f.text_field :Birth_Place, :class => "form-control"
+  .form-group.col-xs-3
+    = f.label 'تاریخ تولد:', :class => "control-label" 
+    = f.text_field :Date_of_Birth, :class => "show-calender form-control", as: :datepicker, required: false,   :placeholder => 'Select date'
+  
+  
+  .form-group.col-xs-3
+    .col-xs-12= f.label 'وضعیت تاهل:', :class => "control-label" 
     .col-xs-12
       .col-xs-6{:style => "padding:0"}
-        .col-xs-6= f.label :single, :class => "control-label" 
+        .col-xs-6= f.label 'مجرد:', :class => "control-label" 
         .col-xs-6= f.radio_button :Marital_status, 'single'
       .col-xs-6{:style => "padding:0"}
-        .col-xs-6= f.label :Married, :class => "control-label" 
+        .col-xs-6= f.label 'متاهل:', :class => "control-label" 
         .col-xs-6= f.radio_button :Marital_status, 'Married'
-    
-  .form-group
-    = f.label :Date_of_Birth, :class => "control-label" 
-    = f.text_field :Date_of_Birth, :class => "show-calender", as: :datepicker, required: false,   :placeholder => 'Select date'
-  .form-group
-    = f.label :Birth_Place, :class => "control-label" , :class => "control-label" 
-    = f.text_field :Birth_Place, :class => "form-control"
-  .form-group
-    = f.label :Birth_other_Place, :class => "control-label" 
-    = f.text_field :Birth_other_Place, :class => "form-control"
-  .form-group
-    = f.label :Fathers_Name, :class => "control-label" 
-    = f.text_field :Fathers_Name, :class => "form-control"
-  .form-group
-    = f.label :Grand_Fathers_Name, :class => "control-label" 
-    = f.text_field :Grand_Fathers_Name, :class => "form-control"
-  .form-group
-    = f.label :Occupation, :class => "control-label" 
-    = f.text_field :Occupation, :class => "form-control"
-  .form-group
-    = f.label :Job_title, :class => "control-label" 
-    = f.text_field :Job_title, :class => "form-control"
-  .form-group
-    = f.label :Your_Company, :class => "control-label" 
-    = f.text_field :Your_Company, :class => "form-control"
-  .form-group
-    = f.label :Nationality, :class => "control-label" 
+  .form-group.col-xs-3
+    = f.label 'تابعیت:', :class => "control-label" 
     = f.text_field :Nationality, :class => "form-control"
-  .form-group
-    = f.label :Previous_Nationality, :class => "control-label" 
-    = f.text_field :Previous_Nationality, :class => "form-control"
-  .form-group
-    = f.label :Passport_No, :class => "control-label" 
+  .form-group.col-xs-3
+    = f.label 'شماره گذرنامه:', :class => "control-label" 
     = f.text_field :Passport_No, :class => "form-control"
-  .form-group
-    = f.label :Passport_type, :class => "control-label" 
-    = f.text_field :Passport_type, :class => "form-control"
-  .form-group
-    = f.label :Date_Of_Passport_Issue, :class => "control-label" 
-    = f.text_field :Date_Of_Passport_Issue, :class => "form-control"
-  .form-group
-    = f.label :Place_Of_Passport_Issue, :class => "control-label" 
-    = f.text_field :Place_Of_Passport_Issue, :class => "form-control"
-  .form-group
-    = f.label :Date_Of_Passport_Expiry, :class => "control-label" 
-    = f.text_field :Date_Of_Passport_Expiry, :class => "form-control"
-  .form-group
-    = f.label :Where_collect_your_visa, :class => "control-label" 
-    = f.text_field :Where_collect_your_visa, :class => "form-control"
-  .form-group
-    = f.label :Phone_No, :class => "control-label" 
-    = f.text_field :Phone_No, :class => "form-control"
-  .form-group
-    = f.label :Email, :class => "control-label" 
-    = f.text_field :Email, :class => "form-control"
-  .form-group
-    = f.label :Duration_Of_Stay_In_Iran, :class => "control-label" 
-    = f.text_field :Duration_Of_Stay_In_Iran, :class => "form-control"
-  .form-group
-    = f.label :Travel_Entrance_To_Iran, :class => "control-label" 
-    = f.text_field :Travel_Entrance_To_Iran, :class => "form-control"
-  .form-group
-    = f.label :Times_Have_You_Been_To_Iran, :class => "control-label" 
-    = f.text_field :Times_Have_You_Been_To_Iran, :class => "form-control"
-  .form-group
-    = f.label :date_of_Your_Last_Visit_To_Iran, :class => "control-label" 
-    = f.text_field :date_of_Your_Last_Visit_To_Iran, :class => "form-control"
+  .form-group.col-xs-3
+    = f.label 'شغل:', :class => "control-label" 
+    %i= 'از نوشتن شغل آزاد خودداري شود'
+    = f.text_field :Job_title, :class => "form-control"
+  .form-group.col-xs-3
+    = f.label 'ایمیل:', :class => "control-label" 
+    = f.text_field :Email, :class => "form-control"  
+  .form-group.col-xs-3
+    = f.label 'نسبت دعوت شونده يا ميزبان:', :class => "control-label" 
+    = f.text_field :relationship, :class => "form-control"  
+  .clear-float  
+  .form-group.col-xs-6
+    = f.label 'علت دعوت را توضيح دهيد . ', :class => "control-label" 
+    = f.text_area :Where_collect_your_visa, :class => "form-control"  
+  
+  .form-group.col-xs-3
+    = f.label 'تاريخ ورود به ايران :', :class => "control-label" 
+    = f.text_field :Travel_Entrance_To_Iran, :class => "form-control show-calender", as: :datepicker, required: false,   :placeholder => 'Select date'
+  .form-group.col-xs-3
+    = f.label 'تاريخ خروج از ايران:', :class => "control-label" 
+    = f.text_field :Times_Have_You_Been_To_Iran, :class => "form-control show-calender", as: :datepicker, required: false,   :placeholder => 'Select date'
+  .form-group.col-xs-3
+    = f.label 'تاريخ آخرين سفر به ايران:', :class => "control-label" 
+    = f.text_field :date_of_Your_Last_Visit_To_Iran, :class => "form-control show-calender", as: :datepicker, required: false,   :placeholder => 'Select date'
+  .form-group.col-xs-3
+    = f.label 'محل اخذ رواديد ميهمان:', :class => "control-label" 
+    = f.text_field :obtain_visa_place, :class => "form-control"  
+  .form-group.col-xs-8
+    = f.label 'آدرس و تلفن مكانهاي اقامتي ميهمان در ايران:', :class => "control-label" 
+    .editor
+      = f.text_area :Address_phone_Guest_accommodations, :class => "ckeditor"
   
 :javascript  
   $('.show-calender').datepicker();  

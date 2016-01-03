@@ -1,0 +1,41 @@
+%h1 Listing hosts
+
+%table
+  %tr
+    %th Name
+    %th Last name
+    %th Father name
+    %th Id shenasname
+    %th Id nationality card
+    %th Birth date
+    %th Birth place
+    %th Job
+    %th Residence address
+    %th Residence phone
+    %th Work address
+    %th Work phone
+    %th
+    %th
+    %th
+
+  - @hosts.each do |host|
+    %tr
+      %td= host.name
+      %td= host.last_name
+      %td= host.father_name
+      %td= host.id_shenasname
+      %td= host.id_nationality_card
+      %td= host.birth_date
+      %td= host.birth_place
+      %td= host.job
+      %td= host.residence_address
+      %td= host.residence_phone
+      %td= host.work_address
+      %td= host.work_phone
+      %td= link_to 'Show', host
+      %td= link_to 'Edit', edit_host_path(host)
+      %td= link_to 'Destroy', host, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Host', new_host_path

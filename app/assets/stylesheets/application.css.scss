@@ -173,7 +173,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
 .menu_bar ul#main-menu li.item-menu .icon#page1{background-position: 0 100%;}
 .menu_bar ul#main-menu li.item-menu .icon#page2{background-position: 53% 27%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#home,.menu_bar ul#main-menu li.item-menu.active .icon#home{background-position: 100% 7%;}
-.menu_bar ul#main-menu li.item-menu:hover .sub-menu.visa {height:160px}
+.menu_bar ul#main-menu li.item-menu:hover .sub-menu.visa {height:200px}
 .menu_bar ul#main-menu li.item-menu:hover .icon#country,.menu_bar ul#main-menu li.item-menu.active .icon#country{background-position: 50% 0%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#tours,.menu_bar ul#main-menu li.item-menu.active .icon#tours{background-position: 0 3%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#hotels,.menu_bar ul#main-menu li.item-menu.active .icon#hotels{background-position: 57% 73%;}
@@ -756,3 +756,6 @@ h4.en.country-title-tab a:hover, .active.continent.tour-group h4.en.country-titl
 top: 50px; right:5px; left:5px;
 z-index: 10;}
 table thead tr th {text-align:right}
+#host_form.fa .col-xs-3,#host_form.fa .col-xs-6, #passenger_form.fa .col-xs-3,#passenger_form.fa .col-xs-6 ,
+#agree_text.fa .col-xs-3, #agree_text.fa .col-xs-9, .fa #agree #check_box_iagree, .fa #agree label {float:right}
+

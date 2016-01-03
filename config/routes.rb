@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :hosts
+
   resources :diriving_licenses
 
   resources :employments

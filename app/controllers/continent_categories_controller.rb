@@ -5,7 +5,7 @@ class ContinentCategoriesController < ApplicationController
   # GET /continent_categories
   # GET /continent_categories.json
   def index
-    @continent_categories = ContinentCategory.order('set_order')
+    @continent_categories = ContinentCategory.order('set_order desc')
   end
 
   # GET /continent_categories/1

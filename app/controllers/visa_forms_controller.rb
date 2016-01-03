@@ -6,7 +6,7 @@ class VisaFormsController < ApplicationController
   # GET /visa_forms
   # GET /visa_forms.json
   def index
-    @visa_forms = VisaForm.all
+    @visa_forms = VisaForm.order('created_at desc')
   end
 
   # GET /visa_forms/1
@@ -18,6 +18,8 @@ class VisaFormsController < ApplicationController
   # GET /visa_forms/new
   def new
     @visa_form = VisaForm.new
+    @visa_form.hosts.build
+    @visa_form.passengers.build
   end
 
   # GET /visa_forms/1/edit
@@ -83,6 +85,12 @@ class VisaFormsController < ApplicationController
           :Your_Company, :Nationality, :Previous_Nationality, :Passport_No, :Passport_type, :Date_Of_Passport_Issue,
           :Place_Of_Passport_Issue, :Date_Of_Passport_Expiry, :Where_collect_your_visa, :Phone_No, :Email, 
           :Duration_Of_Stay_In_Iran, :Travel_Entrance_To_Iran, :Times_Have_You_Been_To_Iran, 
-          :date_of_Your_Last_Visit_To_Iran, :visa_form_id ])
+          :date_of_Your_Last_Visit_To_Iran, :visa_form_id, :relationship, :travel_before, 
+          :Address_phone_Guest_accommodations, :obtain_visa_place ],
+        hosts_attributes: [:id, :_destroy, :_update,
+          :name, :last_name, :father_name, :id_shenasname, :id_nationality_card, 
+          :birth_date, :birth_place, :job, :residence_address, :residence_phone, :work_address, :work_phone,
+          :visa_form_id, :email])
+        
     end
 end
