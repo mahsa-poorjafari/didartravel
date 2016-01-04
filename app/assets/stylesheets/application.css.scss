@@ -757,5 +757,9 @@ top: 50px; right:5px; left:5px;
 z-index: 10;}
 table thead tr th {text-align:right}
 #host_form.fa .col-xs-3,#host_form.fa .col-xs-6, #passenger_form.fa .col-xs-3,#passenger_form.fa .col-xs-6 ,
-#agree_text.fa .col-xs-3, #agree_text.fa .col-xs-9, .fa #agree #check_box_iagree, .fa #agree label {float:right}
+#agree_text.fa .col-xs-3, #agree_text.fa .col-xs-9, .fa #agree #check_box_iagree, .fa #agree label,
+ .fa#Commitment_form .col-xs-3, .fa#Commitment_form .col-xs-1, .fa#Commitment_form .col-xs-2,
+ .fa#Commitment_form .col-xs-4, .fa#Commitment_form .col-xs-8 {float:right}
+ 
 
+#Commitment {text-align:center; color:#620808}

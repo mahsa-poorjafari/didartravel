@@ -79,6 +79,8 @@ class VisaFormsController < ApplicationController
       params.require(:visa_form).permit(:request_code, :visa_agreement, :important_notes, :I_agree,  
         :Incoming_Flight_Departure_Airport, :Incoming_Flight_No, :Arrival_date, :Arrival_City, 
         :Outgoing_Fligh_Destination, :Outgoing_Flight_No, :Departure_date, :Departure_City, :admin_visited,
+        :einjaneb_form, :commitment_full_name, :commitment_gender, :commitment_father_name, :commitment_id_shenasname,
+        :commitment_residence_add, :guest_names,
         passengers_attributes: [:id, :_destroy, :_update,
           :First_Name, :Last_Name, :gender, :Marital_status, :Date_of_Birth, 
           :Birth_Place, :Birth_other_Place, :Fathers_Name, :Grand_Fathers_Name, :Occupation, :Job_title, 

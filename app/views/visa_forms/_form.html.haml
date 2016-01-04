@@ -59,24 +59,44 @@
     #agree_text{:class => I18n.locale}
       .form-group.col-xs-3
         = f.label 'اینجانب', :class => "control-label col-xs-3" 
-        = f.text_field :Departure_City, :class => "form-control col-xs-3"
+        = f.text_field :einjaneb_form, :class => "form-control col-xs-3"
       .col-xs-9{:class => I18n.locale}= 'متقاضي درخواست رواديد متعهد مي شوم نامبرده در طول مدت اقامت در ايران مسائل اخلاقي و شئونات اسلامي و قوانين و مقررات جمهوري اسلامي را رعايت نموده و مطالب فوق را به دقت و صداقت تكميل شده و مسئوليت هرگونه اشتباه به عهده اينجانب مي باشد . '
         
 
     .form-group.col-xs-12.well#agree
       = f.check_box :I_agree, :id => "check_box_iagree"
       = f.label 'می پذیرم', :class => "control-label" 
-  
+  .col-xs-12{:class => I18n.locale}
+    %h3#Commitment= t('Commitment')
+    #Commitment_form{:class => I18n.locale}
+      %span.col-xs-1 بدينوسيله
+      .form-group.col-xs-2
+        = f.label ' اینجانب', :class => "control-label col-xs-3"
+        = f.text_field :commitment_full_name, :class => "form-control col-xs-3"
+      .col-xs-2
+        = f.label ' جنسیت', :class => "control-label col-xs-12" 
+        .col-xs-3{:style => "padding:0"}
+          .col-xs-6= f.label 'مذکر', :class => "control-label" 
+          .col-xs-6= f.radio_button :commitment_gender, 'male'
+        .col-xs-3{:style => "padding:0"}
+          .col-xs-6= f.label 'مونث', :class => "control-label" 
+          .col-xs-6= f.radio_button :commitment_gender, 'female'
+      .form-group.col-xs-2
+        = f.label ' فرزند', :class => "control-label col-xs-3" 
+        = f.text_field :commitment_father_name, :class => "form-control col-xs-3"
+      .form-group.col-xs-2
+        = f.label ' شماره شناسنامه', :class => "control-label "
+        = f.text_field :commitment_id_shenasname, :class => "form-control col-xs-3"
+      .form-group.col-xs-3
+        = f.label ' ساکن', :class => "control-label col-xs-3"
+        = f.text_area :commitment_residence_add, :class => "form-control col-xs-3"
+      %p{:class => I18n.locale}
+        گواهي مي دهم نامبردگان ذيل كه به دعوت دفتر خدمات مسافرتي ديدار به ايران سفر خواهند كرد به درخواست اينجانب دعوت مي شوند و متعهد مي شوم دعوت شدگان پس از پايان مدت ويزاي خود در زمان مقرر از ايران خارج شوند و هيچگونه مشكلي براي دفتر خدماتي مسافرتي ديدار بوجود نياورد و اينجانب مسئوليت برگشت آنها را قبول مي كنم و در صورت بروز مشكل جوابگوي خسارت احتمالي به اين دفتر مي باشم. ضمناً متعهد مي شوم كه پس از خروج مسافر از ايران كپي مهر خروج مسافر را در اولين فرصت به دفتر خدمات مسافرتي ديدار تحويل نمايم.
+      .form-group.col-xs-8
+        = f.label 'لیست افراد دعوت شده را وارد کنید', :class => "control-label" 
+        .editor
+          = f.text_area :guest_names, :class => "ckeditor"
   .form-group.col-xs-12 
     = f.submit t('passenger.save-visa-form'), :class => "btn btn-primary", :id => "save-visa-form"
-:javascript
-  $(function() { 
-    $(':submit#save-visa-form').click(function(e) {
-      $('#check_box_iagree').each(function() {
-        if ($(this).val().length == 0) {
-          $(this).css('border', '2px solid red');
-          e.preventDefault();
-        }
-      });
-    });
-  });
+
+  

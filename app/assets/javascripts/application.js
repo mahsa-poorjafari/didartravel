@@ -116,6 +116,15 @@ $(document).ready(function () {
   $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1680px');
   $("#owl-demo.slider4.owl-carousel .owl-wrapper").css('width', '2160px');
   
-  
+  $(function() { 
+    $(':submit#save-visa-form').click(function(e) {
+      $(':input').each(function() {
+        if ($(this).val().length == 0) {
+          $(this).css('border', '2px solid red');
+          e.preventDefault();
+        }
+      });
+    });
+  });
 });
 
