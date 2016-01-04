@@ -44,7 +44,7 @@
         = link_to  t('visa'),Visa        
         %ul.sub-menu.visa{:style => "width:200px;"}
           %li{:class => I18n.locale}= link_to t('visa-app'), new_visa_form_path
-          - VisaType.order("title_fa desc").limit(4).each do |visatype|
+          - VisaType.order("title_fa desc").each do |visatype|
             %li{:class => I18n.locale}
               = link_to visatype.title, visatype
           

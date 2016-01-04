@@ -32,6 +32,7 @@
     .col-xs-4.pull-right.menu-side.right-side 
       - @about_us = Page.find_by_title_fa('درباره ما')
       - @contact_us = Page.find_by_title_fa('تماس با ما')
+      - @rezume = Page.find_by_title_fa('رزومه کاری')
       - if @about_us.present?
         %li.item-menu.about-didar{:class => ('active' if current_page?(@about_us))} 
           .icon{:id => 'page'+ @about_us.id.to_s}
@@ -41,6 +42,8 @@
               = link_to t('didar-boigraphy'), @about_us
             %li{:class => I18n.locale}
               = link_to t('contact-us'), @contact_us
+            %li{:class => I18n.locale}
+              = link_to t('rezume'), @rezume
             %li{:class => I18n.locale}
               = link_to t('hire-form'), new_employment_path
               
