@@ -77,7 +77,7 @@
       - if tour.description.present?
         .tour-description.margin-bottom5.clear-float{:class => I18n.locale}
           .title_row.full-width
-            %h4{:class => I18n.locale}= t('tour.about-tour')
+            %p.th{:class => I18n.locale}= t('tour.about-tour')
           .full-width
             = raw tour.description
     .col-xs-6#tour_decription_image
