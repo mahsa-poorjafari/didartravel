@@ -99,7 +99,7 @@ fa:
     itinerary: 'برنامه سفر'
     show: 'برای مشاهده کلیک کنید.'
     tours: 'تورها'
-    about-tour: 'درباره تور'
+    about-tour: 'نکات مهم'
     validate_date_until: 'تاریخ اعتبار تا'
     validate_date_from: 'تاریخ فروش از'
     search: 'نتیجه جستجو تور'

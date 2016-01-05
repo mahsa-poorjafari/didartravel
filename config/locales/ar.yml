@@ -92,7 +92,7 @@ ar:
     description: 'وصف'
     show: 'إضغط للمزيد'
     tours: 'سياحة'
-    about-tour: 'حول الجولة'
+    about-tour: 'النقاط الهامة'
     validate_date_until: 'إكسب التاريخ وحتى'
     validate_date_from: 'تاريخ النشر من بدء'
     search: 'نتيجة جولة'

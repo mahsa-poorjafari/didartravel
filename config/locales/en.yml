@@ -115,7 +115,7 @@ en:
     description: 'Description'
     show: 'Click To show'
     tours: 'Tour'
-    about-tour: 'About tour'
+    about-tour: 'important points'
     validate_date_until: 'Exp Date Until'
     validate_date_from: 'Start Date From'
     search: 'Tour Result'
