@@ -41,7 +41,7 @@
         =link_to 'ویرایش', edit_locationtour_path(location, :tour_id => @tour.id), :class => "btn btn-info", :title => "شرکت_خدمات_مسافرتی_هوایی_جهانگردی_دیدار"
         = link_to 'حذف', location, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
     
-.tour-description.clear-float
+.tour-description.clear-float{:class => I18n.locale}
   
   .col-xs-6#show-tour-source
     - if tour.source.present?
@@ -75,7 +75,7 @@
   
 
       - if tour.description.present?
-        .tour-description.margin-bottom5.clear-float
+        .tour-description.margin-bottom5.clear-float{:class => I18n.locale}
           .title_row.full-width
             %h4{:class => I18n.locale}= t('tour.about-tour')
           .full-width
