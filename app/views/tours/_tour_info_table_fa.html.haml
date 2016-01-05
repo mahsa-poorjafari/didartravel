@@ -60,32 +60,35 @@
       .col-xs-3.th.pull-right= t('tour.date')
       .col-xs-9.td 
         = render "/tours/show_persian_date", :tour => tour
-    - if @tour.info.present?
-      .col-xs-12.tr.well
-        .col-xs-3.th.pull-right= t('tour.get-file')
-        .col-xs-9.td
-          = link_to @tour.info.url, :target => "blank" do
-            = image_tag 'get-pdf.png', :width => "50", :height=>"50"
-            %i= 'دریافت فایل '
+    
             
-  .clear-float
-  - if tour.itinerary.present?
-    .col-xs-6.tr
-      %p.th= t('tour.itinerary')
-      = raw tour.itinerary
+  .col-xs-12
+    .col-xs-6
+      - if tour.itinerary.present?    
+        %p.th= t('tour.itinerary')
+        = raw tour.itinerary
     
-  - if tour.documents.present?
-    .col-xs-6.tr
-      %p.th= t('tour.documents')
-      = raw tour.documents
-    
+      - if tour.documents.present?
         
-  .clear-float
+        %p.th= t('tour.documents')
+        = raw tour.documents        
+  
 
-- if tour.description.present?
-  .tour-description.margin-bottom5.clear-float
-    .title_row.full-width
-      %h4{:class => I18n.locale}= t('tour.about-tour')
-    .full-width
-      = raw tour.description
+      - if tour.description.present?
+        .tour-description.margin-bottom5.clear-float
+          .title_row.full-width
+            %h4{:class => I18n.locale}= t('tour.about-tour')
+          .full-width
+            = raw tour.description
+    .col-xs-6
+      - if @tour.decription_image.present?        
+        = image_tag @tour.decription_image
 .clear-float
+.col-xs-6
+  - if @tour.info.present?
+    .col-xs-12.tr.well
+      .col-xs-3.th.pull-right= t('tour.get-file')
+      .col-xs-9.td
+        = link_to @tour.info.url, :target => "blank" do
+          = image_tag 'get-pdf.png', :width => "50", :height=>"50"
+          %i= 'دریافت فایل '  

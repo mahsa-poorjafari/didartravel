@@ -55,3 +55,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'simple_captcha2', '~> 0.3.4'
+gem 'colorbox-rails'

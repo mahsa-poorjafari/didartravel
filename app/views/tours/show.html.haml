@@ -46,18 +46,25 @@
                 = render 'tours/tour_info_table_fa', :tour => @tour
       
       .col-xs-12      
-        - if @tour.decription_image.present?
-          .col-xs-2
-          .col-xs-8= image_tag @tour.decription_image
-          .col-xs-2
-      .col-xs-12     
-        = render 'shared/items_images_sliders', :model => @tour      
+        -#
+          - if @tour.decription_image.present?
+            .col-xs-2
+            .col-xs-8= image_tag @tour.decription_image
+            .col-xs-2
+      .col-xs-12
+        - @tour.photos.each do |pic| 
+          .col-xs-3#tour_photos
+            = link_to pic.image(:original), :data => { :colorbox => true } do 
+              = image_tag pic.image(:toursize) , :title => "آژانس_هواپیمایی_دیدار", :alt =>  "آژانس_هواپیمایی_رادان_دیدار "
+      -#
+        .col-xs-12
+          = render 'shared/items_images_sliders', :model => @tour      
       .col-xs-12.margin-bottom5
         .col-xs-5.comment-box{:class => ((I18n.locale == :en) ? 'pull-left' : 'pull-right' )}
           - if flash[:SendComment].present?
             .alert.alert-success{:class => I18n.locale}= t('tour_comment.send-comment')
           .tour-comments
-            %h3{:class => I18n.locale}= t('tour_comment.your-comment')          
+            %h5{:class => I18n.locale}= t('tour_comment.your-comment')          
             = render 'tour_comments/form', :tour_comment => TourComment.new
         
           .show_comments          
