@@ -23,27 +23,16 @@
           .tour-source
             %b= 'مشخصات مبدا پکیج تور'
             %div{:style => "margin-top:3%"}= @tour.tour_source 
-      - if @tour.country.present?
-        - if @tour.country.title_fa == 'ایران'
-          .col-xs-12
-            
-            - if @tour.description.present?
-              .title_row
-                .title-box{:class => I18n.locale}= t('tour.description')
-                .title-line
-              .col-xs-12      
-                = raw @tour.description
-          .clear-float
-        - else
-          .col-xs-12
-            .col-xs-12
-              
-            .col-xs-12.hotels-table.margin-bottom
-              
-              - if I18n.locale == :en
-                = render 'tours/tour_info_table_en', :tour => @tour
-              - else
-                = render 'tours/tour_info_table_fa', :tour => @tour
+      
+      .col-xs-12
+        .col-xs-12
+          
+        .col-xs-12.hotels-table.margin-bottom
+          
+          - if I18n.locale == :en
+            = render 'tours/tour_info_table_en', :tour => @tour
+          - else
+            = render 'tours/tour_info_table_fa', :tour => @tour
       
       .col-xs-12      
         -#
