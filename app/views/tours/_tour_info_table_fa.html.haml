@@ -80,7 +80,7 @@
             %h4{:class => I18n.locale}= t('tour.about-tour')
           .full-width
             = raw tour.description
-    .col-xs-6
+    .col-xs-6#tour_decription_image
       - if @tour.decription_image.present?        
         = image_tag @tour.decription_image
 .clear-float
