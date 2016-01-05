@@ -62,7 +62,7 @@
         = render "/tours/show_persian_date", :tour => tour
     
             
-  .col-xs-12
+  .col-xs-12#tour_details{:class => I18n.locale}
     .col-xs-6
       - if tour.itinerary.present?    
         %p.th= t('tour.itinerary')
