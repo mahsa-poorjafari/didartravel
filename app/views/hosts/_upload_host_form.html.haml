@@ -13,7 +13,7 @@
     = f.text_field :id_shenasname, :class => "form-control"  
   .form-group.col-xs-3
     = f.label 'شماره کارت ملی:', :class => "control-label" 
-    = f.text_field :id_nationality_card, :class => "form-control"  
+    = f.number_field :id_nationality_card, :class => "form-control"  
   .form-group.col-xs-3
     = f.label 'تاریخ تولد:', :class => "control-label"     
     = f.text_field :birth_date, :class => "show-calender form-control", as: :datepicker, required: false,   :placeholder => 'تاریخ تولد'
@@ -32,7 +32,7 @@
     = f.text_field :residence_phone, :class => "form-control"
   .form-group.col-xs-3
     = f.label 'ایمیل:', :class => "control-label" 
-    = f.text_field :email, :class => "form-control"
+    = f.email_field :email, :class => "form-control"
   .clear-float 
   .form-group.col-xs-6
     = f.label 'آدرس محل کار‍:', :class => "control-label"    

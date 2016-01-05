@@ -21,6 +21,7 @@
 .set-center {margin-right:auto; margin-left:auto}
 .margin3 {margin:3%; margin-bottom:150px;  
   }
+table tr th {text-align:right}
 .margin-top5 {margin-top:5%;}
 .margin-bottom {margin-bottom:10%}
 .margin-bottom5 {margin-bottom:5%}
@@ -760,7 +761,13 @@ table thead tr th {text-align:right}
 #host_form.fa .col-xs-3,#host_form.fa .col-xs-6, #passenger_form.fa .col-xs-3,#passenger_form.fa .col-xs-6 ,
 #agree_text.fa .col-xs-3, #agree_text.fa .col-xs-9, .fa #agree #check_box_iagree, .fa #agree label,
  .fa#Commitment_form .col-xs-3, .fa#Commitment_form .col-xs-1, .fa#Commitment_form .col-xs-2,
- .fa#Commitment_form .col-xs-4, .fa#Commitment_form .col-xs-8 {float:right}
+ .fa#Commitment_form .col-xs-4, .fa#Commitment_form .col-xs-8, #host_info.fa .col-xs-3, #host_info.fa .col-xs-2,
+#passenger_info.fa .col-xs-3 , #passenger_info.fa .col-xs-2, #agreement_show.fa .col-xs-2, 
+#agreement_show.fa .col-xs-1, #agreement_show.fa .col-xs-9, #commitment_show.fa .col-xs-1,#commitment_show.fa .col-xs-3,
+ #commitment_show.fa .col-xs-2 {float:right}
+#commitment_show {line-height:2.5em}
+#host_info.fa .col-xs-3, #host_info.fa .col-xs-2, #passenger_info.fa .col-xs-2, #passenger_info.fa .col-xs-3 {border: 1px solid #fff}
+#host_info .b, #passenger_info .b, #agreement_show .b, #commitment_show .b {font-weight:bold}
  
 
 #Commitment {text-align:center; color:#620808}

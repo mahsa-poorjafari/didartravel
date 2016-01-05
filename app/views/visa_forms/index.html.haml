@@ -4,13 +4,13 @@
     %p.col-xs-12.set-center.title-tour#visa-form{:class => I18n.locale}= t('visa-request')
 
 
-  %table.table{:class => I18n.locale, "data-toggle"=>"table"}
+  %table.table#visa_form{:class => I18n.locale, "data-toggle"=>"table"}
     %tr.first-row
       %th= t('passenger.row')
       %th= t('passenger.request-code')
-      %th= t('passenger.number')
+      %th= 'نام و نام خانوادگی میزبان'
+      %th= 'تاریخ ثبت درخواست'
       
-      %th
       %th
       - if is_admin?
         %th
@@ -19,10 +19,11 @@
       %tr.visa-forms-list{:class => ('visited' if visa_form.admin_visited)}
         %td= (i+1)
         %td.en{:style => "text-align:center"}= visa_form.request_code
-        - if visa_form.passengers.present?
-          %td= visa_form.passengers.count
-        - else 
-          %td 0
+        %td
+          - visa_form.hosts.each do |host|
+            = host.name + ' ' + host.last_name
+        %td= JalaliDate.new(visa_form.created_at).strftime("%A %e %b %Y")          
+        
       
         - if is_admin?
           %td            

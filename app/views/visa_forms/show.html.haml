@@ -1,6 +1,6 @@
 .margin3.margin-bottom
-  .col-xs-12.margin-bottom
-    .title-tour-line.col-xs-10
+  .col-xs-12
+    .title-tour-line.col-xs-5
     %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('visa-app')
   .clear-float
   
@@ -9,6 +9,7 @@
       .pull-left.col-xs-3= image_tag 'menu_logo.png'
     .col-xs-6
       .pull-right.col-xs-3= image_tag 'visa.png'
+
   .col-xs-12
     -if flash[:CodeSend]
       .alert.alert-success{:style => "font-size:16px; text-align:center"}  
@@ -16,63 +17,129 @@
     .alert.alert-info{:class => I18n.locale, :style => "font-size:20px; text-align:center;"}
       %b= t('passenger.request-code')
       .en= @visa_form.request_code
-    
-    - if @visa_form.passengers.present?
-      %table.table{:class => I18n.locale, "data-toggle"=>"table"}
-        %tr.first-row
-          %th= t('passenger.row')
-          %th= t('passenger.First_Name') + ' ' + t('passenger.Last_Name')
-          %th= t('passenger.gender')
-          %th= t('passenger.Marital_status')
-          %th= t('passenger.Date_of_Birth')
-          %th= t('passenger.Passport_No')
-          %th= t('passenger.Passport_type')
-        - @visa_form.passengers.each_with_index do |passenger, i|
-          %tr
-            %td= (i+1)
-            %td= passenger.First_Name + ' ' + passenger.Last_Name
-            %td= passenger.gender
-            %td= passenger.Marital_status
-            %td= passenger.Date_of_Birth
-            %td= passenger.Passport_No
-            %td= passenger.Passport_type
-            - if is_admin?
-              %td
-                = link_to 'مشاهده', passenger, :class => "btn btn-warning"
-                = link_to 'ویرایش', edit_passenger_path(passenger), :class => "btn btn-info"
-                = link_to 'حذف', passenger, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :class => "btn btn-danger"
-
-  .col-xs-12.margin-bottom5
-    .title-line.col-xs-10
-    %p.col-xs-2.set-center.title{:class => I18n.locale}= t('visa-more-info')
-  .col-xs-12.margin-bottom5{:class => I18n.locale}
-    .col-xs-6
-      %h4 Incoming Flight to Tehran from International Location:
-      %p
-        %b Departure airport:
-        = @visa_form.Incoming_Flight_Departure_Airport
-      %p
-        %b Flight no
-        = @visa_form.Incoming_Flight_No
-      %p
-        %b Arrival date
-        = @visa_form.Arrival_date
-      %p
-        %b Arrival city
-        = @visa_form.Arrival_City
-    .col-xs-6  
-      %h4 Outgoing Flight to International Destination:
-      %p
-        %b Destination
-        = @visa_form.Outgoing_Fligh_Destination
-      %p
-        %b Flight no
-        = @visa_form.Outgoing_Flight_No
-      %p
-        %b Departure date
-        = @visa_form.Departure_date
-      %p
-        %b Departure city
-        = @visa_form.Departure_City
+  .col-xs-12#host_info{:class => I18n.locale}
+    %h4= t('host.info')
+    - if @visa_form.hosts.present?
+      - @visa_form.hosts.each do |host|
+        .col-xs-2= t('host.name') + ' و ' + t('host.last_name')
+        .col-xs-2.b= host.name + ' ' + host.last_name
+        .col-xs-2= t('host.father_name')
+        .col-xs-2.b= host.father_name
+        .col-xs-2= t('host.id_shenasname')
+        .col-xs-2.b= host.id_shenasname
+        .col-xs-2= t('host.birth_date')
+        .col-xs-2.b= host.birth_date
+        .col-xs-2= t('host.birth_place')
+        .col-xs-2.b= host.birth_place
+        .col-xs-2= t('host.id_nationality_card')
+        .col-xs-2.b= host.id_nationality_card
+        .col-xs-2= t('host.job')
+        .col-xs-2.b= host.job
+        .col-xs-2= t('host.email')
+        .col-xs-3.b= host.email
+        .clear-float
+        .col-xs-2= t('host.residence_address')
+        .col-xs-3.b= host.residence_address
+        .col-xs-2= t('host.residence_phone')
+        .col-xs-3.b= host.residence_phone
+        .clear-float
+        .col-xs-2= t('host.work_address')
+        .col-xs-3.b= host.work_address
+        .col-xs-2= t('host.work_phone')
+        .col-xs-3.b= host.work_phone       
           
-
+        -#
+          - if is_admin?
+            
+              = link_to 'مشاهده', passenger, :class => "btn btn-warning"
+              = link_to 'ویرایش', edit_passenger_path(passenger), :class => "btn btn-info"
+              = link_to 'حذف', passenger, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :class => "btn btn-danger"
+  .col-xs-12#passenger_info.margin-bottom{:class => I18n.locale}
+    %h4= t('passenger.info')
+    - if @visa_form.passengers.present?
+      - @visa_form.passengers.each do |passenger|
+        .col-xs-2= t('passenger.First_Name') + ' و ' + t('passenger.Last_Name')
+        .col-xs-2.b= passenger.First_Name + ' ' + passenger.Last_Name
+        .col-xs-2= t('passenger.gender')
+        .col-xs-2.b
+          - if I18n.locale == :fa || I18n.locale == :ar
+            - if passenger.gender == 'female'
+              مونث
+            - elsif passenger.gender == 'male'
+              مذکر
+          - else            
+            = passenger.gender
+        .col-xs-2= t('passenger.Fathers_Name')
+        .col-xs-2.b= passenger.Fathers_Name
+        .col-xs-2= t('passenger.Marital_status')
+        .col-xs-2.b= passenger.Marital_status
+        .col-xs-2= t('passenger.Date_of_Birth')
+        .col-xs-2.b= passenger.Date_of_Birth
+        .col-xs-2= t('passenger.Birth_Place')
+        .col-xs-2.b= passenger.Birth_Place
+        .col-xs-2= t('passenger.Nationality')
+        .col-xs-2.b= passenger.Nationality
+        .col-xs-2= t('passenger.Nationality')
+        .col-xs-2.b= passenger.Nationality        
+        .col-xs-2= t('passenger.Passport_No')
+        .col-xs-2.b= passenger.Passport_No
+        .col-xs-2= t('passenger.relationship')
+        .col-xs-2.b= passenger.relationship
+        .col-xs-2= t('passenger.Email')
+        .col-xs-2.b= passenger.Email
+        .col-xs-2= t('passenger.obtain_visa_place')
+        .col-xs-2.b= passenger.obtain_visa_place
+        .col-xs-2= t('passenger.Where_collect_your_visa')
+        .col-xs-2.b= passenger.Where_collect_your_visa
+        .col-xs-2= t('passenger.Travel_Entrance_To_Iran')
+        .col-xs-2.b= passenger.Travel_Entrance_To_Iran
+        .col-xs-2= t('passenger.Times_Have_You_Been_To_Iran')
+        .col-xs-2.b= passenger.Times_Have_You_Been_To_Iran
+        .col-xs-2= t('passenger.date_of_Your_Last_Visit_To_Iran')
+        .col-xs-2.b= passenger.date_of_Your_Last_Visit_To_Iran
+        .clear-float
+        .col-xs-2= t('passenger.Address_phone_Guest_accommodations')
+        .col-xs-3.b= raw passenger.Address_phone_Guest_accommodations
+  
+  .col-xs-12.margin-bottom5#agreement_show{:class => I18n.locale}  
+    .col-xs-1= 'اینجانب'
+    .col-xs-2.b= @visa_form.einjaneb_form
+    .col-xs-9= 'متقاضي درخواست رواديد متعهد مي شوم نامبرده در طول مدت اقامت در ايران مسائل اخلاقي و شئونات اسلامي و قوانين و مقررات جمهوري اسلامي را رعايت نموده و مطالب فوق را به دقت و صداقت تكميل شده و مسئوليت هرگونه اشتباه به عهده اينجانب مي باشد .'
+  
+  .col-xs-12.margin-bottom5
+    .col-xs-1  
+    .col-xs-4  
+      %b= 'تاریخ و امضا میزبان'
+    .col-xs-4    
+      %b= 'امضاء و مهر خدمات مسافرتي و جهانگردي '
+    .col-xs-1  
+  %hr 
+  .col-xs-12.margin-bottom5#commitment_show{:class => I18n.locale}
+    %h4= t('Commitment')    
+    .col-xs-2= 'بدینوسیله اینجانب'
+    .col-xs-2.b= @visa_form.commitment_full_name
+    .col-xs-1= 'جنسیت'
+    .col-xs-1.b
+      - if I18n.locale == :fa || I18n.locale == :ar
+        - if @visa_form.commitment_gender == 'female'
+          مونث
+        - elsif @visa_form.commitment_gender == 'male'
+          مذکر
+      - else
+        = @visa_form.commitment_gender
+    .col-xs-1= 'فرزند'
+    .col-xs-1.b= @visa_form.commitment_father_name
+    .col-xs-2= 'به شماره شناسنامه'
+    .col-xs-2.b= @visa_form.commitment_id_shenasname
+    .col-xs-1= 'ساکن'
+    .col-xs-2.b= @visa_form.commitment_residence_add
+    .col-xs-10
+      %p{:style => "line-height:2.5em", :class => I18n.locale}= 'گواهي مي دهم نامبردگان ذيل كه به دعوت دفتر خدمات مسافرتي ديدار به ايران سفر خواهند كرد به درخواست اينجانب دعوت مي شوند و متعهد مي شوم دعوت شدگان پس از پايان مدت ويزاي خود در زمان مقرر از ايران خارج شوند و هيچگونه مشكلي براي دفتر خدماتي مسافرتي ديدار بوجود نياورد و اينجانب مسئوليت برگشت آنها را قبول مي كنم و در صورت بروز مشكل جوابگوي خسارت احتمالي به اين دفتر مي باشم. ضمناً متعهد مي شوم كه پس از خروج مسافر از ايران كپي مهر خروج مسافر را در اولين فرصت به دفتر خدمات مسافرتي ديدار تحويل نمايم.'
+    .clear-float
+    .col-xs-3.b= 'لیست دعوت شدگان'
+    .clear-float
+    .col-xs-10= raw @visa_form.guest_names
+    .clear-float
+  .col-xs-12
+    .col-xs-4
+      %b= 'نام و امضای متعهد'

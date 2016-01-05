@@ -166,8 +166,22 @@ ar:
     
   visa: 'تأشيرة'    
   show-all-visas: 'جميع التأشيرات'
-  visa-app: 'تأشيرة إيران'
+  visa-app:  'تأشيرة إيران'
   other-visa: 'تأشيرات أخرى' 
+  host:
+    info: 'مشخصات میزبان'
+    name: 'اسم'
+    last_name: 'اسم العائلة'
+    birth_date: 'عيد ميلاد'
+    id_shenasname: 'ID Number'
+    father_name: 'الأب'
+    id_nationality_card: 'ID Nationality Card'
+    birth_place: 'مهد'
+    job: 'الاحتلال'
+    residence_address: 'Residence Address'
+    residence_phone: 'Residence Phone'
+    work_address: 'Work Address'
+    work_phone: 'Work Phone'
   passenger:
     First_Name: ''
     Last_Name: ''
