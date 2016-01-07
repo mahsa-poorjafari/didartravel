@@ -42,11 +42,11 @@
       %li.item-menu{:class => ('active' if current_page?(Visa))}
         .icon#visa
         = link_to  t('visa'),Visa        
-        %ul.sub-menu.visa{:style => "width:200px;"}
-          %li{:class => I18n.locale}= link_to t('visa-app'), new_visa_form_path
-          - VisaType.order("title_fa desc").each do |visatype|
+        %ul.sub-menu.visa{:style => "width:200px;"}          
+          - VisaType.order("order_set asc").each do |visatype|
             %li{:class => I18n.locale}
               = link_to visatype.title, visatype
+          %li{:class => I18n.locale}= link_to t('visa-app'), new_visa_form_path
           
       - @about_us = Page.find_by_title_fa('درباره ما')
       - @contact_us = Page.find_by_title_fa('تماس با ما')

@@ -7,7 +7,7 @@ class VisaTypesController < ApplicationController
   # GET /visa_types
   # GET /visa_types.json
   def index
-    @visa_types = VisaType.all
+    @visa_types = VisaType.order('order_set asc')
   end
 
   # GET /visa_types/1
@@ -72,6 +72,6 @@ class VisaTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visa_type_params
-      params.require(:visa_type).permit(:title_en, :title_fa, :title_ar, :text_en, :text_fa, :text_ar)
+      params.require(:visa_type).permit(:title_en, :title_fa, :title_ar, :text_en, :text_fa, :text_ar, :order_set)
     end
 end

@@ -7,6 +7,11 @@
           %li= msg
   .col-xs-12
     .col-xs-6
+      .form-group
+        = f.label 'ترتیب قرار گیری در منو اصلی', :class => "control-label"
+        %i= 'ترتیب قرار گیری از کوچک به بزرگ می باشد.'
+        %b= 'لطفا برای وارد کردن شماره زبان صفحه کلید را به انگلیسی تغییر دهید.'
+        = f.number_field :order_set, :class => "form-control"
     .col-xs-6
       .form-group
         = f.label 'عنوان فارسی', :class => "control-label"

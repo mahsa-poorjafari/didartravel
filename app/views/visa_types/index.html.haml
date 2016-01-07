@@ -8,12 +8,14 @@
     %tr
       %th ردیف    
       %th عنوان گروه      
+      %th ترتیب قرار گیری در منو
       %th
 
     - @visa_types.each_with_index do |visa_type, i|
       %tr
         %td= (i+1)
         %td= visa_type.title        
+        %td= visa_type.order_set        
         %td
           -if is_admin?
             = link_to 'مشاهده', visa_type, :class => "btn btn-warning"

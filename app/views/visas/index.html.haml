@@ -9,7 +9,7 @@
         %span.location= image_tag 'v.png'
         %span.country-title-tab= t('show-all-visas')
     
-      - VisaType.order("id desc").each do |vistatype| 
+      - VisaType.order("order_set asc").each do |vistatype| 
         .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
           %span.location.col-xs-1.pull-right= image_tag 'arrow-bullet-left.png'
           %h4.en.country-title-tab.col-xs-9
@@ -20,7 +20,7 @@
         %span.location= image_tag 'v.png'
         %span.country-title-tab= t('show-all-visas')
     
-      - VisaType.order("title_fa desc").each do |vistatype| 
+      - VisaType.order("order_set asc").each do |vistatype| 
         = link_to vistatype do
           .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
             %span.location.col-xs-1= image_tag 'arrow-bullet-right.png'
