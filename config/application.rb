@@ -31,6 +31,7 @@ module RadanTravel
     Rails.application.config.assets.precompile += %w( responsive.css )
     Rails.application.config.assets.precompile += %w( lightbox.js )
     Rails.application.config.assets.precompile += %w( hamyar_slider.js )
+    Rails.application.config.assets.precompile += %w( owl.carousel.js )
     
   end
 end

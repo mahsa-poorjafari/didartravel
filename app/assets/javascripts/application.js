@@ -34,8 +34,6 @@
 //= require jquery.mixitup
 //= require jquery.eachStep.min
 //= require jquery.smooth-scroll
-//= require owl.carousel
-
 //= require prettify
 //= require jquery.zweatherfeed.min
 
@@ -101,7 +99,7 @@ $(document).ready(function () {
   $('#subservice-image').removeClass('subservice-text');
   $('#subservice-image').addClass('subservice-text-show');
   $("#owl-demo-plane.owl-carousel .owl-controls").css('display', 'none');
-  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1680px');
+  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1150px');
   
   
     
