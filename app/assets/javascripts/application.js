@@ -34,6 +34,7 @@
 //= require jquery.mixitup
 //= require jquery.eachStep.min
 //= require jquery.smooth-scroll
+//= require owl.carousel
 
 //= require prettify
 //= require jquery.zweatherfeed.min
@@ -73,7 +74,22 @@ $(document).ready(function () {
     });
 
  
-
+ 
+  $("#owl-demo-plane").owlCarousel({
+      rtl:true,
+      loop:true,
+      autoPlay: 2000, //Set AutoPlay to 3 seconds      
+      items : 9,
+      itemsDesktop : [1199,5],
+      itemsDesktopSmall : [979,3],
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : false ,
+      stopOnHover : true, 
+      
+      navigation : true,
+      responsive : true
+ 
+  });
 
   $('#service-image').show(1000);
   $('#service-image').removeClass('service-sample-image');
@@ -84,8 +100,11 @@ $(document).ready(function () {
   $('#subservice-image').fadeIn(1000);
   $('#subservice-image').removeClass('subservice-text');
   $('#subservice-image').addClass('subservice-text-show');
+  $("#owl-demo-plane.owl-carousel .owl-controls").css('display', 'none');
+  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1680px');
   
   
+    
   $('.hamyar_slider').hamyar_slider({
     show:5,
     btnprev:'.icon-arrow-right',
@@ -106,6 +125,7 @@ $(document).ready(function () {
     auto_time: 2500,
     slide:1
   });   
+  
   
   
 });
