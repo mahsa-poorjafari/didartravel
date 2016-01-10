@@ -96,7 +96,7 @@ fa:
   tour:
     description: 'توضیحات تکمیلی'
     documents: 'مدارک مورد نیاز'
-    itinerary: 'برنامه سفر'
+    itinerary: 'خدمات سفر'
     show: 'برای مشاهده کلیک کنید.'
     tours: 'تورها'
     about-tour: 'نکات مهم'

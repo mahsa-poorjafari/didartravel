@@ -7,7 +7,7 @@
   .col-xs-12    
     %p.col-xs-12.set-center.title-tour#title-countries{:class => I18n.locale}= @country.title    
     
-  .col-xs-8.margin-bottom5.country-text{:class => I18n.locale}
+  .col-xs-6.margin-bottom5.country-text{:class => I18n.locale}
     %p  
     - if @country.country_flag.present?
       = image_tag @country.country_flag(:original), :width => "200"
@@ -21,7 +21,7 @@
             %li.col-xs-3.city-title.pull-left= link_to city.title, city
           - else
             %li.col-xs-3.city-title.pull-right= link_to city.title, city
-  .col-xs-4.margin-bottom5#sights-box  
+  .col-xs-6.margin-bottom5#sights-box  
     .col-xs-12.margin-bottom5
       %p.col-xs-12.set-center.sub-title{:class => I18n.locale}= t('sights') + ' ' + @country.title
     .col-xs-12

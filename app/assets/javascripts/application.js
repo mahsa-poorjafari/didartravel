@@ -117,7 +117,8 @@ $(document).ready(function () {
   $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1680px');
   $("#owl-demo.slider4.owl-carousel .owl-wrapper").css('width', '2160px');
   
-  $('#tour_photos a').colorbox();
+    
+  $('.colorbox a').colorbox();
   
 });
 

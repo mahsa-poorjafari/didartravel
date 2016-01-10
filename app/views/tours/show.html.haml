@@ -42,9 +42,10 @@
             .col-xs-2
       .col-xs-12
         - @tour.photos.each do |pic| 
-          .col-xs-3#tour_photos
+          .col-xs-3.colorbox
             = link_to pic.image(:original), :data => { :colorbox => true } do 
               = image_tag pic.image(:toursize) , :title => "آژانس_هواپیمایی_دیدار", :alt =>  "آژانس_هواپیمایی_رادان_دیدار "
+          
       -#
         .col-xs-12
           = render 'shared/items_images_sliders', :model => @tour      

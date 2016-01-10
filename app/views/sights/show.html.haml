@@ -10,7 +10,7 @@
     = link_to 'ویرایش', edit_sight_path(@sight), :class => "btn btn-info" 
   .tour-details
     .col-xs-7.sight-des{:class => I18n.locale}=raw @sight.text        
-    .col-xs-5
+    .col-xs-5.colorbox
       -if @sight.photos.present?
         - @sight.photos.each do |pic|
           = link_to pic.image(:original), :data => { :colorbox => true }, :class => "show-product" do         
