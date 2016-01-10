@@ -32,7 +32,8 @@ body {padding:0; margin:0;  height:100%; width:100%; position:relative;}
 .fa {direction:rtl;  font-family: 'open_sansregular';}
 .fa input, .fa select, .fa textarea, .fa label, .admin-menu ul.fa  {direction:rtl; font-family: 'open_sansregular';}
 .sight-des.fa, .sight-des.fa p, .sight-des.fa span, .sight-des.fa ul, .sight-des.fa ol{direction:rtl; font-family: 'open_sansregular';}
-#tour_details.fa .col-xs-6 p{direction:rtl; font-family: 'open_sansregular';}
+#tour_details.fa .col-xs-6 p, #tour_details.fa .col-xs-6 p ol li, #tour_details.fa .col-xs-6 p span, #tour_details.fa .col-xs-6 p ul li {direction:rtl; font-family: 'open_sansregular';}
+#tour_details.ar .col-xs-6 p, #tour_details.ar .col-xs-6 p ol li, #tour_details.ar .col-xs-6 p span, #tour_details.ar .col-xs-6 p ul li{direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
 .sight-des.ar, .sight-des.ar p, .sight-des.ar span, .sight-des.ar ul, .sight-des.ar ol, #tour_details.ar .col-xs-6 p{direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:1.2em }
 .sight-des.en, .sight-des.en p, .sight-des.en span, .sight-des.en ul, .sight-des.en ol, #tour_details.en .col-xs-6{direction:ltr; font-family:Arial}
 .visa-text.fa p, .visa-text.fa span, .visa-text.fa ul li  {direction:rtl; font-family: 'open_sansregular';}
@@ -325,7 +326,7 @@ bottom: 0;}
 .footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#000; font-size:1.2em; line-height:1.5em}
 .footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#000}
 .footer  .contact-info.en p { color:#000}
-.yield {position:relative; margin-top:-75px;  width:100%;   }
+.yield {position:relative; margin-top:-190px;  width:100%;   }
 .anchorLink {position:fixed; bottom:0; left:0; z-index:10}
 .footer .form-control, #message_captcha {border:2px solid #880808; color:#000}
 .footer .form-control:focus {}
