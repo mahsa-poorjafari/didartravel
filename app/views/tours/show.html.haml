@@ -42,9 +42,9 @@
             .col-xs-2
       .col-xs-12
         - @tour.photos.each do |pic| 
-          .col-xs-3.colorbox
-            = link_to pic.image(:original), :data => { :colorbox => true } do 
-              = image_tag pic.image(:toursize) , :title => "آژانس_هواپیمایی_دیدار", :alt =>  "آژانس_هواپیمایی_رادان_دیدار "
+          .col-xs-3
+            = link_to pic.image(:original), :class => "example-image-link", "data-lightbox" => "example-1", "data-title" => @tour.title do 
+              = image_tag pic.image(:toursize) , :title => "آژانس_هواپیمایی_دیدار", :alt =>  "آژانس_هواپیمایی_رادان_دیدار ", :class => "example-image"
           
       -#
         .col-xs-12

@@ -1,28 +1,15 @@
--#
-  - if tour.validate_date_from.present? && tour.validate_date_until.present?
-    %p{:class => I18n.locale}= JalaliDate.new(tour.validate_date_from).strftime("%A %e %b %Y") + 'تا' + JalaliDate.new(tour.validate_date_until).strftime("%A %e %b %Y")
-  - elsif tour.validate_date_from.present?
-    
-    %p.col-xs-7{:class => I18n.locale}= JalaliDate.new(tour.validate_date_from).strftime("%A %e %b %Y")            
-    %span.col-xs-5{:class => I18n.locale, :style => "font-size:15px;font-family: 'open_sansregular';"}= t('tour.validate_date_from')
-    .clear-float
-  - elsif   tour.validate_date_until.present?
-    
-    %p.col-xs-7{:class => I18n.locale}= JalaliDate.new(tour.validate_date_until).strftime("%A %e %b %Y")  
-    %span.col-xs-5{:class => I18n.locale}= t('tour.validate_date_until')
-  .clear-float
 - if tour.validate_date_from.present? && tour.validate_date_until.present?
   %p{:class => I18n.locale}
     %span= tour.validate_date_from.to_s
     %span= ' تا '
     %span= tour.validate_date_until.to_s
-- elsif tour.validate_date_from.present?
+- elsif tour.validate_date_from.present?  
+  %span= ' از '
+  %span{:class => I18n.locale}= tour.validate_date_from 
   
-  %p.col-xs-7{:class => I18n.locale}= tour.validate_date_from
-  %span.col-xs-5{:class => I18n.locale, :style => "font-size:15px;font-family: 'open_sansregular';"}= t('tour.validate_date_from')
-  .clear-float
 - elsif   tour.validate_date_until.present?
+  %span= ' تا '
+  %span{:class => I18n.locale}= tour.validate_date_until
   
-  %p.col-xs-7{:class => I18n.locale}= tour.validate_date_until
-  %span.col-xs-5{:class => I18n.locale}= t('tour.validate_date_until')
+  
 .clear-float

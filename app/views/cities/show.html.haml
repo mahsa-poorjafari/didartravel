@@ -10,10 +10,10 @@
       
   .col-xs-12.margin-bottom5.country-text{:class => I18n.locale}
     - if @city.photos.present?      
-      .col-xs-6.colorbox
+      .col-xs-6
         -@city.photos.all.each do |pic|
-          = link_to pic.image(:original), :data => { :colorbox => true } do 
-            = image_tag pic.image(:medium), :title => "آژانس_هواپیمایی_دیدار", :alt =>  "آژانس_هواپیمایی_رادان_دیدار "
+          = link_to pic.image(:original), :class => "example-image-link", "data-lightbox" => "example-1", "data-title" => @city.title do 
+            = image_tag pic.image(:medium), :title => "آژانس_هواپیمایی_دیدار", :alt =>  "آژانس_هواپیمایی_رادان_دیدار ", :class => "example-image"
       .col-xs-6= raw @city.text
         
     - else

@@ -59,9 +59,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    colorbox-rails (0.1.2)
-      jquery-rails
-      rails (>= 3.1.1)
     colorize (0.5.8)
     daemons (1.1.9)
     devise (3.2.2)
@@ -223,7 +220,6 @@ DEPENDENCIES
   checker
   ckeditor
   coffee-rails (~> 4.0.0)
-  colorbox-rails
   devise
   erb2haml
   farsifu

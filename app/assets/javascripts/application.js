@@ -31,12 +31,10 @@
 //= require farsiDatePicker/jquery.ui.widget
 //= require farsiDatePicker/zextension
 
-//= require lightbox-2.6.min
 //= require jquery.mixitup
-//= require jquery.colorbox
 //= require jquery.eachStep.min
 //= require jquery.smooth-scroll
-//= require owl.carousel
+
 //= require prettify
 //= require jquery.zweatherfeed.min
 
@@ -75,34 +73,7 @@ $(document).ready(function () {
     });
 
  
-  $("#owl-demo").owlCarousel({
- 
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
- 
-      items : 6,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3],
-      itemsTablet: [600,2], //2 items between 600 and 0
-      itemsMobile : false ,
-      stopOnHover : true, 
-      responsive : true
- 
-  });
-  $("#owl-demo-plane").owlCarousel({
-      rtl:true,
-      loop:true,
-      autoPlay: 2000, //Set AutoPlay to 3 seconds      
-      items : 9,
-      itemsDesktop : [1199,5],
-      itemsDesktopSmall : [979,3],
-      itemsTablet: [600,2], //2 items between 600 and 0
-      itemsMobile : false ,
-      stopOnHover : true, 
-      
-      navigation : true,
-      responsive : true
- 
-  });
+
 
   $('#service-image').show(1000);
   $('#service-image').removeClass('service-sample-image');
@@ -113,12 +84,29 @@ $(document).ready(function () {
   $('#subservice-image').fadeIn(1000);
   $('#subservice-image').removeClass('subservice-text');
   $('#subservice-image').addClass('subservice-text-show');
-  $("#owl-demo-plane.owl-carousel .owl-controls").css('display', 'none');
-  $("#owl-demo-plane.owl-carousel .owl-wrapper").css('width', '1680px');
-  $("#owl-demo.slider4.owl-carousel .owl-wrapper").css('width', '2160px');
   
-    
-  $('.colorbox a').colorbox();
+  
+  $('.hamyar_slider').hamyar_slider({
+    show:5,
+    btnprev:'.icon-arrow-right',
+    btnext:'.icon-arrow-left',
+    speed:500,
+    disable_class: 'disable',
+    auto :true,
+    auto_time: 2500,
+    slide:1
+  });   
+ $('.hamyar_slider2').hamyar_slider({
+    show:3,
+    btnprev:'.icon-arrow-right2',
+    btnext:'.icon-arrow-left2',
+    speed:500,
+    disable_class: 'disable',
+    auto :true,
+    auto_time: 2500,
+    slide:1
+  });   
+  
   
 });
 
