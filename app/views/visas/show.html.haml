@@ -6,7 +6,10 @@
     
     %p.col-xs-8.set-center.title-visa{:class => I18n.locale}
       = @visa.title
-      %span= image_tag @visa.country.country_flag(:small)
+      - if @visa.flag_image.present?
+        %span= image_tag @visa.flag_image(:small)
+      - else
+        %span= image_tag @visa.country.country_flag(:small)
     .title-tour-red-line.col-xs-10
   - if I18n.locale == :en
     .col-xs-3.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     

@@ -71,6 +71,7 @@ class VisasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visa_params
-      params.require(:visa).permit(:title_en, :title_fa, :title_ar, :text_en, :text_fa, :text_ar, :visa_type_id, :country_id)
+      params.require(:visa).permit(:title_en, :title_fa, :title_ar, :text_en, :text_fa, :text_ar, 
+      :visa_type_id, :country_id, :flag_image)
     end
 end

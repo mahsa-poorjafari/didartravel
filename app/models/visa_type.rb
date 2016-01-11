@@ -5,6 +5,7 @@ class VisaType < ActiveRecord::Base
   has_many :visas
   validates :title_en, :title_fa, :title_ar, :presence => {:message => 'فیلدهای ضروری را پر کنید'}
   validates :title_fa, :title_en, :title_ar, :uniqueness => {:message => 'عنوان تکراری است'}
+  
   def title
     if I18n.locale == :ar
       self.read_attribute("title_ar")

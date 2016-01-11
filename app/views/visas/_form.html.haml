@@ -13,6 +13,12 @@
       .form-group  
         = f.label 'کشور مربوط را انتخاب کنید'   , :class => "control-label"       
         = f.select :country_id, options_for_select(Country.all.collect{ |u| [u.title_fa, u.id] }, :selected =>@visa.country_id), prompt: "کشور را انتخاب کنید"
+      .form-group
+        = f.label 'پرچم اختصاصی', :class => "control-label"
+        %i= 'درصورتی که نمیخواهید پرچم کشور برای این وایزا نمایش داده شود.'
+        - if @visa.flag_image.present?
+          = image_tag @visa.flag_image(:small)        
+        = f.file_field :flag_image, :class => "form-control"
     .col-xs-6
       .form-group
         = f.label 'عنوان فارسی', :class => "control-label"

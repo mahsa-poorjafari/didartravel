@@ -2,7 +2,7 @@
   - if is_admin?
     = link_to 'ویرایش', edit_page_path(@page), :class => "btn btn-info"
   %h2{ :class => I18n.locale }= t('didartravel')    
-  .col-xs-12= raw @page.text
+  .col-xs-12{ :class => I18n.locale }= raw @page.text
   .col-xs-12
     - if @page.image.present?
       .col-xs-7= image_tag @page.image(:medium)

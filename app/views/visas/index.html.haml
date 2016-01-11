@@ -34,7 +34,10 @@
           .visas-index.well.col-xs-4.pull-right{ "data-my-order" => visatype_visa.id}        
             
             = link_to visatype_visa, :class => "visa-box" do 
-              %span.col-xs-3.pull-right=  image_tag visatype_visa.country.country_flag(:small)
+              - if visatype_visa.flag_image.present?
+                %span.col-xs-3.pull-right= image_tag visatype_visa.flag_image(:icon)
+              - else
+                %span.col-xs-3.pull-right=  image_tag visatype_visa.country.country_flag(:small)
               %h5.visa-title{:class => I18n.locale}= visatype_visa.title
               -#
                 - if @country_tour.photos.present?
