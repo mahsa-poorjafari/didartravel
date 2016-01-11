@@ -15,16 +15,14 @@
           %h4.en.country-title-tab.col-xs-9
             = link_to vistatype.title, vistatype
   - else
-    .col-xs-3.pull-right{:style => "text-align:center; margin-bottom:4%"} 
-      .continent{:class =>  I18n.locale.to_s}
-        %span.location= image_tag 'v.png'
-        %span.country-title-tab= t('show-all-visas')
-    
-      - VisaType.order("order_set asc").each do |vistatype| 
-        = link_to vistatype do
-          .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
-            %span.location.col-xs-1= image_tag 'arrow-bullet-right.png'
-            %h4.fa.country-title-tab.col-xs-9= vistatype.title
+    .col-xs-3.pull-right{:style => "text-align:center; margin-bottom:4%; position:relative"}
+      #visa_bg_image= image_tag 'visa_bg.jpg'    
+      #visa_type_lists  
+        - VisaType.order("order_set asc").each do |vistatype| 
+          = link_to vistatype do
+            .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
+              %span.location.col-xs-1= image_tag 'arrow-bullet-right.png'
+              %h4.fa.country-title-tab.col-xs-9= vistatype.title
   
   .show-tours.col-xs-9.set-center#Container
     - VisaType.all.each do |visatype|
