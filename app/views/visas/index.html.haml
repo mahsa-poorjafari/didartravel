@@ -34,7 +34,7 @@
                 %span.col-xs-3.pull-right= image_tag visatype_visa.flag_image(:icon)
               - else
                 %span.col-xs-3.pull-right=  image_tag visatype_visa.country.country_flag(:small)
-              %h5.visa-title{:class => I18n.locale}= visatype_visa.title
+              %h4.visa-title{:class => I18n.locale}= visatype_visa.title
               -#
                 - if @country_tour.photos.present?
                   .tour-sample-image{:class => ('set-coming-soon' if @country_tour.coming_soon?)}= image_tag @country_tour.photos.first.image(:medium), :id => "tour-sample-image-" + @country_tour.photos.first.id.to_s

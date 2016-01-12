@@ -3,14 +3,15 @@
     .col-xs-12
       = link_to 'ویرایش گروه ویزا', edit_visa_type_path(@visa_type), :class => "btn btn-info" 
       = link_to 'تعریف ویزا جدید', new_visa_path, :class => "btn btn-success"
-  .col-xs-12.margin-bottom5
-    
-    %p.col-xs-10.set-center.title-visa{:class => I18n.locale}= @visa_type.title
-    .title-tour-red-line.col-xs-10{:class => I18n.locale}
+  .col-xs-12.margin-bottom5    
+    .col-xs-9.set-center.title-visa{:class => I18n.locale}= @visa_type.title
+    .title-tour-red-line.col-xs-9{:class => I18n.locale}
+    .col-xs-3{:class => I18n.locale, :style => " position:relative"}
+      #visa_bg_image= image_tag 'visa_bg.jpg' , :style => "top:-135px"
   - if I18n.locale == :en
     .col-xs-3.pull-left{:style => "text-align:center; margin-bottom:4%; position:relative", "data-option-key" => "filter"}     
-      #visa_bg_image= image_tag 'visa_bg.jpg'    
-      #visa_type_lists  
+        
+      #visa_type_lists{:style => "top:-20px"}  
     
         - VisaType.order("id asc").each do |vistatype| 
           .continent.tour-group{:class => ('active' if vistatype.id == @visa_type.id)}
@@ -45,8 +46,8 @@
               
   - else
     .col-xs-3.pull-right{:style => "text-align:center; margin-bottom:4%; position:relative"} 
-      #visa_bg_image= image_tag 'visa_bg.jpg'    
-      #visa_type_lists    
+      
+      #visa_type_lists{:style => "top:-20px"}      
         - VisaType.order("id asc").each do |vistatype| 
           = link_to vistatype do
             .continent.tour-group{:class => ('active' if vistatype.id == @visa_type.id)}
@@ -76,3 +77,4 @@
               
     - else
       %p= image_tag 'coming.png'
+.clear-float
