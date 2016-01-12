@@ -751,7 +751,8 @@ border:0px; box-shadow:none;
 .continent.tour-group span.location{display:none}
 .continent.tour-group:hover span.location, .continent.tour-group.active span.location{display:block; margin-top:10px}
 .visas-index {height:50px; padding:1%}
-.admin-btn-tour#visa-admin {top:50px}
+.admin-btn-tour#visa-admin {top:-10px; }
+.admin-btn-tour#visa-admin a{font-size: 9px;}
 h4.en.country-title-tab {font-size:1.2em;}
 h4.en.country-title-tab a{color:#000}
 h4.en.country-title-tab a:hover, .active.continent.tour-group h4.en.country-title-tab a{color:#440102}
