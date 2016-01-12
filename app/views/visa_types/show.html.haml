@@ -21,7 +21,7 @@
     - if @visa_type.text.present?
       .col-xs-9.visa-text.well{:class => I18n.locale}= raw @visa_type.text
     - if @visa_type.visas.present?
-      .show-tours.col-xs-9.set-center#Container
+      .show-tours.col-xs-9.set-center#Container.margin-bottom
         - @visa_type.visas.each do |visa| 
           .visas-index.col-xs-4{ "data-my-order" => visa.id}        
             
@@ -56,7 +56,7 @@
     - if @visa_type.text.present?
       .col-xs-9.visa-text.well{:class => I18n.locale}= raw @visa_type.text
     - if @visa_type.visas.present? || @visa_type.text.present?
-      .show-tours.col-xs-9.set-center#Container
+      .show-tours.col-xs-9.set-center#Container.margin-bottom
         - @visa_type.visas.each do |visa| 
           .visas-index.col-xs-4.pull-right{ "data-my-order" => visa.id} 
             
