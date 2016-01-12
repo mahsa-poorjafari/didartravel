@@ -4,16 +4,14 @@
     = link_to 'تعریف ویزا جدید', new_visa_path, :class => "btn btn-success"
   .clear-float
   - if I18n.locale == :en
-    .col-xs-3.pull-left{:style => "text-align:center; margin-bottom:4%", "data-option-key" => "filter"}     
-      .continent{:class =>  I18n.locale.to_s}
-        %span.location= image_tag 'v.png'
-        %span.country-title-tab= t('show-all-visas')
-    
-      - VisaType.order("order_set asc").each do |vistatype| 
-        .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
-          %span.location.col-xs-1.pull-right= image_tag 'arrow-bullet-left.png'
-          %h4.en.country-title-tab.col-xs-9
-            = link_to vistatype.title, vistatype
+    .col-xs-3.pull-left{:style => "text-align:center; margin-bottom:4%; position:relative", "data-option-key" => "filter"}     
+      #visa_bg_image= image_tag 'visa_bg.jpg'    
+      #visa_type_lists    
+        - VisaType.order("order_set asc").each do |vistatype| 
+          .continent.tour-group{:class => ('active' if vistatype.title_fa == 'سایر ویزاها')}
+            %span.location.col-xs-1.pull-right= image_tag 'arrow-bullet-left.png'
+            %h4.en.country-title-tab.col-xs-9
+              = link_to vistatype.title, vistatype
   - else
     .col-xs-3.pull-right{:style => "text-align:center; margin-bottom:4%; position:relative"}
       #visa_bg_image= image_tag 'visa_bg.jpg'    
