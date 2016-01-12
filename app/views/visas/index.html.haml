@@ -29,7 +29,7 @@
       
       - if visatype.visas.present?
         - visatype.visas.each do |visatype_visa|
-          .visas-index.well.col-xs-4.pull-right{ "data-my-order" => visatype_visa.id}        
+          .visas-index.col-xs-3.pull-right{ "data-my-order" => visatype_visa.id}     
             
             = link_to visatype_visa, :class => "visa-box" do 
               - if visatype_visa.flag_image.present?
