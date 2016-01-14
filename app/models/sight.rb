@@ -5,6 +5,7 @@ class Sight < ActiveRecord::Base
   has_many :photos
   belongs_to :city
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
+  validates :city, :title_fa, :title_ar, :title_en, :presence => {:message => 'فیلدهای ضروری را پر کنید'}
   has_many :slides
   def title
     if I18n.locale == :ar
