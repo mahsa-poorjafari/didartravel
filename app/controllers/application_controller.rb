@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception  
   before_filter :set_locale, :online_info
   before_filter :load_slides
-  #test
+  before_filter :authenticate
   include SimpleCaptcha::ControllerHelpers
   protected
     def check_autentication
@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
     def default_url_options
       { :locale => I18n.locale }
     end
-    
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "didar" && password == "travel"
+      end
+    end
   private
     def set_locale     
       if params[:locale] == "en" 
