@@ -107,21 +107,21 @@ $(document).ready(function () {
     show:5,
     btnprev:'.icon-arrow-right',
     btnext:'.icon-arrow-left',
-    speed:500,
+    speed:400,
     disable_class: 'disable',
     auto :true,
-    auto_time: 2500,
-    slide:1
+    auto_time: 2000,
+    slide:2
   });   
  $('.hamyar_slider2').hamyar_slider({
     show:3,
     btnprev:'.icon-arrow-right2',
     btnext:'.icon-arrow-left2',
-    speed:500,
+    speed:400,
     disable_class: 'disable',
     auto :true,
-    auto_time: 2500,
-    slide:1
+    auto_time: 2000,
+    slide:2
   });   
   
   
