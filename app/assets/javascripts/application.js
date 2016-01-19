@@ -49,6 +49,7 @@ $(function() {
   $( "#datepicker7" ).datepicker();
 });
 $(document).ready(function () {
+    $('#newsletterModal').modal('show');
   
     $('#test').weatherfeed(['IRXX0008']).ajaxStop(function() {
   

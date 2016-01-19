@@ -208,13 +208,29 @@
 
         = link_to '#', :target => "_blank", :class => 'social-icon' do
           = image_tag 't.png'  
-      
-    .modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
+    - if current_page?('/')
+      .modal.fade.bs-example-modal-sm#newsletterModal{ "aria-labelledby" => "mySmallModalLabel", role: "dialog"}
+        .modal-dialog.modal-sm
+          .modal-content
+            .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+              %h4#myModalLabel2.modal-title{:class => I18n.locale} 
+                = t('subscribe_to_newsletter')
+            .modal-body
+              - if flash[:Ncustomer].present?
+                %b.alert.alert-success{:class => I18n.locale}= flash[:Ncustomer]
+              - else
+                = render 'customers/form'
+            .modal-footer
+              %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+     
+  
+    .modal.fade.bs-example-modal-sm#send_email{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", role: "dialog", tabindex: "-1"}
       .modal-dialog.modal-sm
         .modal-content
           .modal-header
             %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title 
+            %h4#myModalLabel.modal-title{:class => I18n.locale}
               = t ('send-mail') 
           .modal-body
             = render 'send_links/form'
@@ -241,7 +257,7 @@
   :javascript
     $('a#go-top-page').smoothScroll();
    
-    
+  
   = javascript_include_tag "lightbox"
   = javascript_include_tag "hamyar_slider"
   = javascript_include_tag "owl.carousel"

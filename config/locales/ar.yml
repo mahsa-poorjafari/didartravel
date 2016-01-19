@@ -55,7 +55,11 @@ ar:
   subscribe_to_newsletter : 'اشترك في النشرة الإخبارية'
   newsletter_email : 'فقط أدخل بريدك الإلكتروني'
   newsletter_set: 'مجموعة البريد الإلكتروني'
-  
+  newsletter: 
+    name: 'اسم'
+    phone: 'رقم الهاتف'
+    email: 'البريد الإلكتروني'
+    submit: 'الاشتراك'
   customer_clube: 'بحث في كلوب العملاء'
   customer_name: 'أدخل اسم العميل'
   search_customer: 'بحث'

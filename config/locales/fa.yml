@@ -59,6 +59,11 @@ fa:
   subscribe_to_newsletter: 'عضویت در خبرنامه'
   newsletter_email: 'ایمیل خود را وارد نمایید.'
   newsletter_set: 'ثبت ایمیل'
+  newsletter: 
+    name: 'نام '
+    phone: 'تلفن'
+    email: 'ایمیل'
+    submit: 'عضویت در خبرنامه'
   
   customer_clube: 'جستجو در باشگاه مشتریان'
   customer_name: 'نام مشتری را وارد کنید.'

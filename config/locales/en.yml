@@ -76,7 +76,11 @@ en:
   subscribe_to_newsletter : 'Subscribe To Newsletter'
   newsletter_email : 'Just Enter Your Email'
   newsletter_set: 'Set Email'
-  
+  newsletter: 
+    name: 'Name '
+    phone: 'PhoneNumber'
+    email: 'Email'
+    submit: 'Subscribe'
   customer_clube: 'Search In Customer Clube'
   customer_name: 'Enter The Customer Name'
   search_customer: 'Search'
