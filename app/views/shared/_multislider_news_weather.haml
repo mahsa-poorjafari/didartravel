@@ -9,7 +9,7 @@
             - Country.all.each do |country|
               - unless country.title_fa == 'ایران'
                 - if country.tours.present?
-                  - country.tours.limit(9).order("created_at asc").each do |tour|
+                  - country.tours.limit(5).order("created_at asc").each do |tour|
                   - @first_tour = country.tours.first
                     %li.slide{:id => "foriegn_tours_id_" + tour.id.to_s}                
                       %p.tour-title{:class => I18n.locale}= tour.title
@@ -35,7 +35,7 @@
             - Country.all.each do |country|
               - if country.title_fa == 'ایران'
                 - if country.tours.present?
-                  - country.tours.limit(9).order("created_at asc").each do |tour|
+                  - country.tours.limit(5).order("created_at asc").each do |tour|
                   - @first_tour = country.tours.first
                     %li.slide{:id => "foriegn_tours_id_" + tour.id.to_s}                
                       %p.tour-title{:class => I18n.locale}= tour.title
