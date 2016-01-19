@@ -3,10 +3,11 @@
     .col-xs-12
       = link_to 'ویرایش شهر', edit_city_path(@city), :class => "btn btn-info" 
   .col-xs-12.margin-bottom5
-    
-    %p.col-xs-12.set-center.title-tour#title-countries{:class => I18n.locale}
+    .col-xs-3
+    %p.col-xs-6.set-center.title-tour#title-countries{:class => I18n.locale}
       =  link_to @city.country.title, @city.country
       %span{:style => "color:#550000"}= ',' + @city.title
+    .col-xs-3
       
   .col-xs-12.margin-bottom5.country-text{:class => I18n.locale}
     - if @city.photos.present?      
