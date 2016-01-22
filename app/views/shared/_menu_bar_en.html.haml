@@ -30,7 +30,7 @@
           
         
     .col-xs-4.pull-right.menu-side.right-side 
-      - @about_us = Page.find_by_title_fa('درباره ما')
+      - @about_us = Page.find(1)
       - @contact_us = Page.find_by_title_fa('تماس با ما')
       - @rezume = Page.find_by_title_fa('رزومه کاری')
       - if @about_us.present?

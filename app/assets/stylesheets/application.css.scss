@@ -81,8 +81,8 @@ p, span {color:#000}
 
   }
 .main-menu  .top-of-menu p.site-title, .main-menu  .top-of-menu h1.site-title {text-align:center; color:#fff}
-.top-of-menu h1.site-title {margin:0; padding:0; font-family: 'Bhoma';}
-.main-menu  .top-of-menu p.site-title.fa {font-size: 1.2em; font-family: 'Bhoma'; text-align:center}
+.top-of-menu h1.site-title {margin:0; padding:0; font-family: 'IranNastaliq';}
+.main-menu  .top-of-menu p.site-title.fa, .main-menu  .top-of-menu p.site-title.en {font-size: 1.2em; font-family: 'IranNastaliq'; text-align:center}
 .main-menu  .top-of-menu p.site-title.ar{font-size: 1.5em;  text-align:center}
 .main-menu  .top-of-menu h1.site-title.ar {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:2em; text-align:center }
 .main-menu  .top-of-menu p.site-title.en {font-size:1.2em;  text-align:center; }
@@ -187,7 +187,9 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
 .menu_bar ul#main-menu li.item-menu:hover .icon#visa,.menu_bar ul#main-menu li.item-menu.active .icon#visa{background-position: 100% 70%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#page1,.menu_bar ul#main-menu li.item-menu.active .icon#page1{background-position: 0 75%;}
 .menu_bar ul#main-menu li.item-menu:hover .icon#page2,.menu_bar ul#main-menu li.item-menu.active .icon#page2{background-position: 52% 0;}
-.menu_bar ul#main-menu.fa li.item-menu {font-family: 'Bhoma';}
+.menu_bar ul#main-menu.fa li.item-menu, ul.sub-menu li a {font-family: 'IranNastaliq';}
+ .menu_bar ul#main-menu.en li.item-menu, ul.sub-menu li a{font-family: 'IranNastaliq'; font-size:1em}
+.menu_bar ul#main-menu.fa li.item-menu ul.sub-menu li {padding-top:10px; height: 35px;}
 .menu_bar ul#main-menu li.item-menu ul.sub-menu{
   list-style:none;
   position: absolute;
@@ -205,7 +207,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
   overflow:hidden;  
   }
 .menu_bar ul#main-menu li.item-menu:hover ul.sub-menu {height:80px; padding-top:10px;}
-.menu_bar ul#main-menu li.item-menu.about-didar:hover ul.sub-menu {height:120px; padding-top:5px; margin-top:-5px}
+.menu_bar ul#main-menu li.item-menu.about-didar:hover ul.sub-menu {height:140px; padding-top:5px; margin-top:-5px}
 .menu_bar ul#main-menu li.item-menu ul.sub-menu li {width:100%; clear:both; height:30px;
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
   transition: all .5s; 
@@ -583,7 +585,7 @@ background:#fff; border-radius:50%;}
 .plane-company .plane-logo img{position:absolute; bottom:1%;}
 
 .plane-company .plane-logo:hover a img{opacity:.6}
-.show-news-and-event {margin-bottom:5%}
+.show-news-and-event {margin-bottom:5%; background-image: url(image-path('worldbg.png'));}
 
 .show-news-and-event.fa .news-title, .show-news-and-event.ar .news-title {text-align:right}
 .show-news-and-event.en .news-title{text-align:left}

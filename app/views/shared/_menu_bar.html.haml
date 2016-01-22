@@ -48,7 +48,7 @@
               = link_to visatype.title, visatype
           %li{:class => I18n.locale}= link_to t('visa-app'), new_visa_form_path
           
-      - @about_us = Page.find_by_title_fa('درباره ما')
+      - @about_us = Page.find(1)
       - @contact_us = Page.find_by_title_fa('تماس با ما')
       - @rezume = Page.find_by_title_fa('رزومه کاری')
       - if @about_us.present?

@@ -1,11 +1,11 @@
 fa:  
   didartravel: 'شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی دیدار'
-  didar_name: 'دیــــــــــدار'
+  didar_name: 'دیدار'
   didartravel-part1: 'شرکت خدمات مسافرت هوایی،'
   didartravel-part2: 'شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی '
   contact-us: 'ارتباط با ما '
   rezume: 'رزومه کاری '
-  about-us: 'درباره ما'
+  about-us: 'معرفی و خدمات'
   phone: '۰۵۱-۳۲۲۱۱۱۴۴ (۲۰ خط)'
   Commitment: 'تعهد نامه'
   email: 'پست الکترونیکی'
@@ -56,14 +56,15 @@ fa:
   city: 'شهرها'
   close: 'بستن پنجره'
   send-to-friend: 'ارسال این لینک برای دوستان'
-  subscribe_to_newsletter: 'عضویت در خبرنامه'
+  subscribe_to_newsletter: 'عضویت در باشگاه مشتریان'
   newsletter_email: 'ایمیل خود را وارد نمایید.'
   newsletter_set: 'ثبت ایمیل'
   newsletter: 
     name: 'نام '
     phone: 'تلفن'
     email: 'ایمیل'
-    submit: 'عضویت در خبرنامه'
+    submit: 'عضویت در باشگاه مشتریان'
+    
   
   customer_clube: 'جستجو در باشگاه مشتریان'
   customer_name: 'نام مشتری را وارد کنید.'

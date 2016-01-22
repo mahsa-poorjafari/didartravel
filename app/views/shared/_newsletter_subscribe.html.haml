@@ -13,19 +13,10 @@
         = flash[:Ncustomer]
     - elsif flash[:emailexist].present?
       .alert.alert-danger= flash[:emailexist]
-    .col-xs-3{:style => "text-align:center", :class => I18n.locale}
-      = f.submit t('newsletter_set') , :id => "newsletter-submit" , :class => "form-submit"
-    .col-xs-9.form-group
-      = f.text_field :email, :placeholder => t('newsletter_email'),   :id => "newsletter_email", :class => " form-msg form-control"
-    
-:javascript 
-  $(function() { 
-    $(':submit#newsletter-submit').click(function(e) {
-      $(':text#newsletter_email, textarea#newsletter_email').each(function() {
-        if ($(this).val().length == 0) {
-          $(this).css('border', '2px solid red');
-          e.preventDefault();
-        }
-      });
-    });
-  });
+    .col-xs-4= image_tag 'travel.png', :width => "40", :height => "40"
+    .col-xs-8{:style => "text-align:center", :class => I18n.locale}
+      = f.submit t('newsletter.submit') , :id => "newsletter-submit" , :class => "form-submit"
+    .col-xs-12.form-group      
+      = f.text_field :name, :placeholder => t('newsletter.name'),   :id => "newsletter_name", :class => " form-msg form-control", :required => ""
+      = f.text_field :phone, :placeholder => t('newsletter.phone'),   :id => "newsletter_phone", :class => " form-msg form-control", :required => ""
+      = f.email_field :email, :placeholder => t('newsletter_email'),   :id => "newsletter_email", :class => " form-msg form-control", :required => ""
