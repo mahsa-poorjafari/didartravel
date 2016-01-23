@@ -41,7 +41,8 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-   
+    p '----@customer client_ip'
+    p @customer.client_ip
     @emailexist = Customer.where(email: @customer.email)  
     if @customer.save
       UserMailer.customer_register_done.deliver

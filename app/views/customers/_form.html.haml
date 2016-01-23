@@ -5,6 +5,7 @@
         %ul
           - @customer.errors.each do |attr, msg|
             %li= msg
+  
     .col-xs-12
       .form-group
         = f.label t('newsletter.name'), :class => "control-label"

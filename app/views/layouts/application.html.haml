@@ -210,7 +210,8 @@
           = image_tag 't.png'  
         = link_to '#', :target => "_blank", :class => 'social-icon' do
           = image_tag 'telegram.png' 
-    - unless is_admin?
+    
+    - unless is_admin? 
       - if current_page?('/')
         .modal.fade.bs-example-modal-sm#newsletterModal{ "aria-labelledby" => "mySmallModalLabel", role: "dialog"}
           .modal-dialog.modal-sm
@@ -224,7 +225,7 @@
               .modal-body
                 - if flash[:Ncustomer].present?
                   %b.alert.alert-success{:class => I18n.locale}= flash[:Ncustomer]
-                - else
+                - else   
                   = render 'customers/form'
               .modal-footer
                 %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close

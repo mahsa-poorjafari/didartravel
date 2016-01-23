@@ -27,10 +27,9 @@
 //= require farsiDatePicker/calendar
 //= require farsiDatePicker/jquery.ui.core
 //= require farsiDatePicker/jquery.ui.datepicker
-
 //= require farsiDatePicker/jquery.ui.widget
 //= require farsiDatePicker/zextension
-
+//= require js.cookie
 //= require jquery.mixitup
 //= require jquery.eachStep.min
 //= require jquery.smooth-scroll
@@ -48,9 +47,14 @@ $(function () {
 $(function() {
   $( "#datepicker7" ).datepicker();
 });
-$(document).ready(function () {
-    $('#newsletterModal').modal('show');
-  
+
+
+$(document).ready(function () {      
+    if (Cookies.get('memberuser')== null) {
+      $('#newsletterModal').modal('show');
+      Cookies.set('memberuser', 'member', { expires: 1 });
+    } 
+    
     $('#test').weatherfeed(['IRXX0008']).ajaxStop(function() {
   
   
