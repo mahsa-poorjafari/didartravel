@@ -28,14 +28,13 @@
     .main{:class => I18n.locale}
       .main-menu.col-xs-12
         
-        .top-of-menu.col-xs-12#responsive480hidemenu
-          
+        .top-of-menu.col-xs-12#responsive480hidemenu          
           - if I18n.locale == :en
             .col-xs-4.pull-left
-              .col-xs-12.pull-left{:style => "padding:0"}
+              .col-xs-3.pull-left{:style => "padding:0"}
                 %h1.site-title{:class => I18n.locale}= t("didar_name")
-              .clear-float
-              .col-xs-12.agency-name.pull-left{:style => "padding:0"}
+              
+              .col-xs-9.agency-name.pull-left{:style => "padding:0", :class => I18n.locale}
                 %p.site-title{:class => I18n.locale}= t("didartravel-part2")
             -#
               .col-xs-4.pull-left
@@ -46,10 +45,10 @@
             
           - else
             .col-xs-4.pull-right{:style => "margin-top:-5px"}
-              .col-xs-12.pull-right{:style => "padding:0"}
+              .col-xs-4.pull-right{:style => "padding:0"}
                 %h1.site-title{:class => I18n.locale}= t("didar_name")
-              .clear-float
-              .col-xs-12.agency-name.pull-left{:style => "padding:0"}
+              
+              .col-xs-8.agency-name.pull-left{:style => "padding:0"}
                 %p.site-title{:class => I18n.locale}= t("didartravel-part2")
             .col-xs-4.pull-right
               .col-xs-12.menu-side.logo-side

@@ -80,13 +80,13 @@ p, span {color:#000}
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#440102', endColorstr='#560001',GradientType=0 ); /* IE6-9 */
 
   }
-.main-menu  .top-of-menu p.site-title, .main-menu  .top-of-menu h1.site-title {text-align:center; color:#fff}
+.main-menu  .top-of-menu p.site-title, .main-menu  .top-of-menu h1.site-title {text-align:center; color:#fff; font-size: 60px;}
 .top-of-menu h1.site-title {margin:0; padding:0; font-family: 'IranNastaliq';}
 .main-menu  .top-of-menu p.site-title.fa, .main-menu  .top-of-menu p.site-title.en {font-size: 1.2em; font-family: 'IranNastaliq'; text-align:center}
 .main-menu  .top-of-menu p.site-title.ar{font-size: 1.5em;  text-align:center}
-.main-menu  .top-of-menu h1.site-title.ar {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:2em; text-align:center }
+.main-menu  .top-of-menu h1.site-title.ar {direction:rtl; font-family:'ASpiritOfDohaMedium'; font-size:3em; text-align:center; font-weight:bold }
 .main-menu  .top-of-menu p.site-title.en {font-size:1.2em;  text-align:center; }
-.main-menu  .top-of-menu h1.site-title.en {font-size:2em;  text-align:center; }
+.main-menu  .top-of-menu h1.site-title.en {font-size:3em;  text-align:center; }
 .main-menu .bottom-of-menu {
   display:none;
   position:absolute; bottom:0;
@@ -799,5 +799,6 @@ right: 0;
 text-align: right;}
 #visa_bg_image img{position:absolute; right:-20px; width:100%; top:-70px}
 .new_form_general_class {margin-top:100px}
-.agency-name {margin-top:10px}
+.agency-name {margin-top:40px}
+.agency-name.en {margin-top:25px}
 .tour-details .col-xs-5 {overflow:hidden}
