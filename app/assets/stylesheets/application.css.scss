@@ -154,7 +154,7 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
   padding: 0;
   }
 .menu_bar ul#main-menu li{position:relative;
-  width:30%; float:right;
+  width:25%; float:right;
   height:100%; 
   color:#811717;
   font-size:15px;  
@@ -172,6 +172,15 @@ table#event tr.fa th, table#event tr.ar th{text-align:right}
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
   transition: all .5s; 
   }
+.menu_bar ul#main-menu li.item-menu  .icon.new {background-image: url(image-path('new-menu-icons.png'));
+  background-position: 0 100%;
+  width: 42px;
+  height: 31px;
+top: 7px;}
+
+.menu_bar ul#main-menu li.item-menu:hover .icon.new#driving-licence {background-position: 0 0;}
+.menu_bar ul#main-menu li.item-menu .icon.new#transit {background-position: 100% 100%;}
+.menu_bar ul#main-menu li.item-menu:hover .icon.new#transit {background-position: 100% 0;}
 .menu_bar ul#main-menu li.item-menu .icon#home{background-position: 100% 35%; }
 .menu_bar ul#main-menu li.item-menu .icon#country{background-position: 50% 35%; }
 .menu_bar ul#main-menu li.item-menu .icon#tours{background-position: 0 33%; }
