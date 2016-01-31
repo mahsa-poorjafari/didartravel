@@ -113,11 +113,13 @@
       .col-xs-12.news
         .col-xs-12.news
           %ul.news_and_vents{:class => I18n.locale}
-            - NewsAndVent.order('created_at desc').each do |news|
+            - NewsAndVent.order('created_at desc').each do |news|              
               %li.news-item{:class => I18n.locale}
                 - if news.web_link.present?
+                  
                   = link_to news.title, url_with_protocol(news.web_link), :target => "_blank"
                 - else
+                  
                   = link_to news.title, news
     #responsive480showweather.col-xs-6.cal-weather.pull-right  
       .scrollable.vertical
@@ -130,7 +132,7 @@
       .col-xs-2#driving-certificate-link{:class => I18n.locale}
         - if current_page?('/')
           .national-certificate
-            = link_to diriving_licenses_path  do
+            = link_to DirivingLicense.first  do
               .col-xs-12{:style => "padding:0", :class => I18n.locale}
                 = image_tag 'driving.png', :width => "50"
               .col-xs-12{:style => "padding:0", :class => I18n.locale}                

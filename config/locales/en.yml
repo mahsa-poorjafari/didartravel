@@ -80,9 +80,10 @@ en:
   newsletter_set: 'Set Email'
   newsletter: 
     name: 'Name '
-    phone: 'PhoneNumber'
+    phone: 'Mobile Number'
     email: 'Email'
     submit: 'Subscribe'
+    contact-phone: 'Phone Number'
   customer_clube: 'Search In Customer Clube'
   customer_name: 'Enter The Customer Name'
   search_customer: 'Search'

@@ -48,10 +48,10 @@
               
       %li.item-menu
         .icon.new#driving-licence
-        = link_to  t('driving-licence'), '#'
+        = link_to  t('driving-licence'), DirivingLicense.first
       %li.item-menu
         .icon.new#transit
-        = link_to  t('transit'), '#'
+        = link_to  t('transit'), DirivingLicense.last
       %li.item-menu{:class => ('active' if current_page?(Visa))}
         .icon#visa
         = link_to  t('visa'),Visa        

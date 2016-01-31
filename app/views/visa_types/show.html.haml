@@ -71,9 +71,9 @@
             
             -if is_admin?
               .admin-btn-tour#visa-admin
-                = link_to 'ویرایش تور', edit_visa_path(visa), :class => "btn btn-info"
-                = link_to 'مشاهده جزئیات', visa, :class => "btn btn-warning"                   
-                = link_to 'حذف تور', visa, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+                = link_to 'ویرایش', edit_visa_path(visa), :class => "btn btn-info"
+                = link_to 'مشاهده ', visa, :class => "btn btn-warning"                   
+                = link_to 'حذف ', visa, :method => :delete, :data => { :confirm => 'آیا می خواهید این آیتم را حذف کنید؟' }, :class => "btn btn-danger"
               
     - else
       %p= image_tag 'coming.png'

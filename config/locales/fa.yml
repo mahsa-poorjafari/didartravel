@@ -63,10 +63,10 @@ fa:
   newsletter_set: 'ثبت ایمیل'
   newsletter: 
     name: 'نام '
-    phone: 'تلفن'
+    phone: 'تلفن همراه'
     email: 'ایمیل'
     submit: 'عضویت در باشگاه مشتریان'
-    
+    contact-phone: 'تلفن ثابت'
   
   customer_clube: 'جستجو در باشگاه مشتریان'
   customer_name: 'نام مشتری را وارد کنید.'

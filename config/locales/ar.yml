@@ -62,6 +62,7 @@ ar:
     phone: 'رقم الهاتف'
     email: 'البريد الإلكتروني'
     submit: 'الاشتراك'
+    contact-phone: 'الهاتف الثابت'
   customer_clube: 'بحث في كلوب العملاء'
   customer_name: 'أدخل اسم العميل'
   search_customer: 'بحث'

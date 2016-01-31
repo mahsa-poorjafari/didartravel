@@ -49,10 +49,10 @@
           %li{:class => I18n.locale}= link_to t('visa-app'), new_visa_form_path
       %li.item-menu
         .icon.new#driving-licence
-        = link_to  t('driving-licence'), '#'
+        = link_to  t('driving-licence'), DirivingLicense.first
       %li.item-menu
         .icon.new#transit
-        = link_to  t('transit'), '#'
+        = link_to  t('transit'), DirivingLicense.last
       
       - @about_us = Page.find(1)
       - @contact_us = Page.find_by_title_fa('تماس با ما')
