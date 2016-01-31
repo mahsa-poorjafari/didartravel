@@ -76,6 +76,6 @@ class PassengersController < ApplicationController
         :Place_Of_Passport_Issue, :Date_Of_Passport_Expiry, :Where_collect_your_visa, :Phone_No, :Email, 
         :Duration_Of_Stay_In_Iran, :Travel_Entrance_To_Iran, :Times_Have_You_Been_To_Iran, 
         :date_of_Your_Last_Visit_To_Iran, :visa_form_id, :relationship, :travel_before, 
-        :Address_phone_Guest_accommodations, :obtain_visa_place)
+        :Address_phone_Guest_accommodations, :obtain_visa_place, :passport_copy)
     end
 end

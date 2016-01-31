@@ -25,10 +25,11 @@ module RadanTravel
     config.assets.initialize_on_precompile = false
     config.serve_static_assets = true
     config.assets.enabled = true    
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')    
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')        
     config.assets.precompile += %w( .svg .eot .woff .ttf )
     
     Rails.application.config.assets.precompile += %w( responsive.css )
+    Rails.application.config.assets.precompile += %w( print.css )
     Rails.application.config.assets.precompile += %w( lightbox.js )
     Rails.application.config.assets.precompile += %w( hamyar_slider.js )
     Rails.application.config.assets.precompile += %w( owl.carousel.js )

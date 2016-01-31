@@ -21,7 +21,12 @@ Rails.application.routes.draw do
 
     resources :passengers
 
-    resources :visa_forms
+    resources :visa_forms do
+      collection do        
+        get :printa4
+      end
+    end
+      
     resources :visa_types
 
     resources :class_hotels

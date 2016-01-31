@@ -71,6 +71,6 @@ class HostsController < ApplicationController
     def host_params
       params.require(:host).permit(:name, :last_name, :father_name, :id_shenasname, :id_nationality_card, 
       :birth_date, :birth_place, :job, :residence_address, :residence_phone, :work_address, :work_phone,
-      :visa_form_id, :email)
+      :visa_form_id, :email, :id_card_copy)
     end
 end

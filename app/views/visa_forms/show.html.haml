@@ -8,7 +8,7 @@
     .col-xs-6
       .pull-left.col-xs-3= image_tag 'menu_logo.png'
     .col-xs-6
-      .pull-right.col-xs-3= image_tag 'visa.png'
+      .pull-right.col-xs-3= image_tag 'visa-flag-iran.png'
 
   .col-xs-12
     -if flash[:CodeSend]
@@ -17,37 +17,47 @@
     .alert.alert-info{:class => I18n.locale, :style => "font-size:20px; text-align:center;"}
       %b= t('passenger.request-code')
       .en= @visa_form.request_code
+  .col-xs-2.avoid-this.pull-right
+    #go-printa4
+      = image_tag 'print-icon.png'
+      %h4= link_to 'پرینت A4', 'printa4_visa_forms_path' , :remote => 'true'
   .col-xs-12#host_info{:class => I18n.locale}
     %h4= t('host.info')
     - if @visa_form.hosts.present?
       - @visa_form.hosts.each do |host|
-        .col-xs-2= t('host.name') + ' و ' + t('host.last_name')
-        .col-xs-2.b= host.name + ' ' + host.last_name
-        .col-xs-2= t('host.father_name')
-        .col-xs-2.b= host.father_name
-        .col-xs-2= t('host.id_shenasname')
-        .col-xs-2.b= host.id_shenasname
-        .col-xs-2= t('host.birth_date')
-        .col-xs-2.b= host.birth_date
-        .col-xs-2= t('host.birth_place')
-        .col-xs-2.b= host.birth_place
-        .col-xs-2= t('host.id_nationality_card')
-        .col-xs-2.b= host.id_nationality_card
-        .col-xs-2= t('host.job')
-        .col-xs-2.b= host.job
-        .col-xs-2= t('host.email')
-        .col-xs-3.b= host.email
-        .clear-float
-        .col-xs-2= t('host.residence_address')
-        .col-xs-3.b= host.residence_address
-        .col-xs-2= t('host.residence_phone')
-        .col-xs-3.b= host.residence_phone
-        .clear-float
-        .col-xs-2= t('host.work_address')
-        .col-xs-3.b= host.work_address
-        .col-xs-2= t('host.work_phone')
-        .col-xs-3.b= host.work_phone       
-          
+        .col-xs-7
+          .col-xs-3= t('host.name') + ' و ' + t('host.last_name')
+          .col-xs-3.b= host.name + ' ' + host.last_name
+          .col-xs-3= t('host.father_name')
+          .col-xs-3.b= host.father_name
+          .col-xs-3= t('host.id_shenasname')
+          .col-xs-3.b= host.id_shenasname
+          .col-xs-3= t('host.birth_date')
+          .col-xs-3.b= host.birth_date
+          .col-xs-3= t('host.birth_place')
+          .col-xs-3.b= host.birth_place
+          .col-xs-3= t('host.id_nationality_card')
+          .col-xs-3.b= host.id_nationality_card        
+          .col-xs-3= t('host.job')
+          .col-xs-3.b= host.job
+          .clear-float
+          .col-xs-3= t('host.email')
+          .col-xs-4.b= host.email
+          .clear-float
+          .col-xs-3= t('host.residence_address')
+          .col-xs-4.b= host.residence_address
+          .clear-float
+          .col-xs-3= t('host.residence_phone')
+          .col-xs-4.b= host.residence_phone
+          .clear-float
+          .col-xs-3= t('host.work_address')
+          .col-xs-4.b= host.work_address
+          .clear-float
+          .col-xs-3= t('host.work_phone')
+          .col-xs-4.b= host.work_phone       
+        .col-xs-5.margin-bottom  
+          - if host.id_card_copy.present?
+            = image_tag host.id_card_copy(:medium)
         -#
           - if is_admin?
             
@@ -58,49 +68,55 @@
     %h4= t('passenger.info')
     - if @visa_form.passengers.present?
       - @visa_form.passengers.each do |passenger|
-        .col-xs-2= t('passenger.First_Name') + ' و ' + t('passenger.Last_Name')
-        .col-xs-2.b= passenger.First_Name + ' ' + passenger.Last_Name
-        .col-xs-2= t('passenger.gender')
-        .col-xs-2.b
-          - if I18n.locale == :fa || I18n.locale == :ar
-            - if passenger.gender == 'female'
-              مونث
-            - elsif passenger.gender == 'male'
-              مذکر
-          - else            
-            = passenger.gender
-        .col-xs-2= t('passenger.Fathers_Name')
-        .col-xs-2.b= passenger.Fathers_Name
-        .col-xs-2= t('passenger.Marital_status')
-        .col-xs-2.b= passenger.Marital_status
-        .col-xs-2= t('passenger.Date_of_Birth')
-        .col-xs-2.b= passenger.Date_of_Birth
-        .col-xs-2= t('passenger.Birth_Place')
-        .col-xs-2.b= passenger.Birth_Place
-        .col-xs-2= t('passenger.Nationality')
-        .col-xs-2.b= passenger.Nationality
-        .col-xs-2= t('passenger.Nationality')
-        .col-xs-2.b= passenger.Nationality        
-        .col-xs-2= t('passenger.Passport_No')
-        .col-xs-2.b= passenger.Passport_No
-        .col-xs-2= t('passenger.relationship')
-        .col-xs-2.b= passenger.relationship
-        .col-xs-2= t('passenger.Email')
-        .col-xs-2.b= passenger.Email
-        .col-xs-2= t('passenger.obtain_visa_place')
-        .col-xs-2.b= passenger.obtain_visa_place
-        .col-xs-2= t('passenger.Where_collect_your_visa')
-        .col-xs-2.b= passenger.Where_collect_your_visa
-        .col-xs-2= t('passenger.Travel_Entrance_To_Iran')
-        .col-xs-2.b= passenger.Travel_Entrance_To_Iran
-        .col-xs-2= t('passenger.Times_Have_You_Been_To_Iran')
-        .col-xs-2.b= passenger.Times_Have_You_Been_To_Iran
-        .col-xs-2= t('passenger.date_of_Your_Last_Visit_To_Iran')
-        .col-xs-2.b= passenger.date_of_Your_Last_Visit_To_Iran
-        .clear-float
-        .col-xs-2= t('passenger.Address_phone_Guest_accommodations')
-        .col-xs-3.b= raw passenger.Address_phone_Guest_accommodations
-  
+        .col-xs-7
+          .col-xs-3= t('passenger.First_Name') + ' و ' + t('passenger.Last_Name')
+          .col-xs-3.b= passenger.First_Name + ' ' + passenger.Last_Name
+          .col-xs-3= t('passenger.gender')
+          .col-xs-3.b
+            - if I18n.locale == :fa || I18n.locale == :ar
+              - if passenger.gender == 'female'
+                مونث
+              - elsif passenger.gender == 'male'
+                مذکر
+            - else            
+              = passenger.gender
+          .col-xs-3= t('passenger.Fathers_Name')
+          .col-xs-3.b= passenger.Fathers_Name
+          .col-xs-3= t('passenger.Marital_status')
+          .col-xs-3.b= passenger.Marital_status
+          .col-xs-3= t('passenger.Date_of_Birth')
+          .col-xs-3.b= passenger.Date_of_Birth
+          .col-xs-3= t('passenger.Birth_Place')
+          .col-xs-3.b= passenger.Birth_Place
+          .col-xs-3= t('passenger.Nationality')
+          .col-xs-3.b= passenger.Nationality
+          .col-xs-3= t('passenger.Nationality')
+          .col-xs-3.b= passenger.Nationality        
+          .col-xs-3= t('passenger.Passport_No')
+          .col-xs-3.b= passenger.Passport_No
+          .col-xs-3= t('passenger.relationship')
+          .col-xs-3.b= passenger.relationship
+          .col-xs-3= t('passenger.Email')
+          .col-xs-4.b= passenger.Email
+          .clear-float
+          .col-xs-3= t('passenger.obtain_visa_place')
+          .col-xs-3.b= passenger.obtain_visa_place
+          .col-xs-3= t('passenger.Where_collect_your_visa')
+          .col-xs-3.b= passenger.Where_collect_your_visa
+          .col-xs-3= t('passenger.Travel_Entrance_To_Iran')
+          .col-xs-3.b= passenger.Travel_Entrance_To_Iran
+          .col-xs-3= t('passenger.Times_Have_You_Been_To_Iran')
+          .col-xs-3.b= passenger.Times_Have_You_Been_To_Iran
+          .col-xs-3= t('passenger.date_of_Your_Last_Visit_To_Iran')
+          .col-xs-3.b= passenger.date_of_Your_Last_Visit_To_Iran
+          .clear-float
+          .col-xs-4= t('passenger.Address_phone_Guest_accommodations')
+          .col-xs-4.b{:class => I18n.locale}= raw passenger.Address_phone_Guest_accommodations
+        .col-xs-5
+          - if passenger.passport_copy.present?
+            = image_tag passenger.passport_copy(:medium)
+            
+            
   .col-xs-12.margin-bottom5#agreement_show{:class => I18n.locale}  
     .col-xs-1= 'اینجانب'
     .col-xs-2.b= @visa_form.einjaneb_form
@@ -138,8 +154,13 @@
     .clear-float
     .col-xs-3.b= 'لیست دعوت شدگان'
     .clear-float
-    .col-xs-10= raw @visa_form.guest_names
+    .col-xs-10{:class => I18n.locale}= raw @visa_form.guest_names
     .clear-float
   .col-xs-12
     .col-xs-4
       %b= 'نام و امضای متعهد'
+
+:javascript 
+  $('#go-printa4').click(function(){
+    window.print();
+  });

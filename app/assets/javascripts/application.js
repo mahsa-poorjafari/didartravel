@@ -23,7 +23,6 @@
 //= require md5
 //= require bootstrap
 //= require bootstrap-multiselect
-
 //= require farsiDatePicker/calendar
 //= require farsiDatePicker/jquery.ui.core
 //= require farsiDatePicker/jquery.ui.datepicker

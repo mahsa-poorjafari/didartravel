@@ -7,6 +7,7 @@
     %title= 'آژانس مسافرتی، جهانگردی،زیارتی دیدار'
     = stylesheet_link_tag    'application', media: 'all'  
     = stylesheet_link_tag    'responsive', media: 'all'  
+    = stylesheet_link_tag    'print', media: 'print', type: "text/css"  
     = javascript_include_tag 'application'   
     
     %meta{:name => "keywords", :content =>   "آژانس هواپیمایی دیدار, دیدار, سفر, مسافرت, ویزا,  تورهای لحظه ای, تورهای خارجی"}
@@ -26,9 +27,9 @@
 
   %body
     .main{:class => I18n.locale}
-      .main-menu.col-xs-12
+      .main-menu.col-xs-12.avoid-this
         
-        .top-of-menu.col-xs-12#responsive480hidemenu          
+        .top-of-menu.col-xs-12#responsive480hidemenu.avoid-this
           - if I18n.locale == :en
             .col-xs-4.pull-left
               .col-xs-3.pull-left{:style => "padding:0"}
@@ -61,7 +62,7 @@
                 = link_to (image_tag 'flag/ir_sm.png'), root_path(locale: :fa),{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'فارسی'}
                 = link_to (image_tag 'flag/ar_sm.png'), root_path(locale: :ar), {"data-toggle" => "tooltip", "data-placement" => "bottom", :title => 'العربية'}
               
-        #responsive480showmenu.top-of-menu.col-xs-12
+        #responsive480showmenu.top-of-menu.col-xs-12.avoid-this
           .col-xs-12  
             = image_tag 'didarlogowhite.png', :width => '100'
             %p.site-title{:class => I18n.locale}= t("didartravel")
@@ -73,13 +74,13 @@
           
 
           
-        .col-xs-12.logo-center{:class => I18n.locale}
+        .col-xs-12.logo-center.avoid-this{:class => I18n.locale}
           - if I18n.locale == :en
             = render 'shared/menu_bar_en'
           - else
             = render 'shared/menu_bar'
         
-        .bottom-of-menu.col-xs-12
+        .bottom-of-menu.col-xs-12.avoid-this
           
         
       - if @page_slides.present?
@@ -89,7 +90,7 @@
       - else
         = render "slides/slider", :slides => Slide.all      
       
-      .col-xs-12.bottom-slider
+      .col-xs-12.bottom-slider.avoid-this
         
      
       
@@ -107,7 +108,7 @@
         = link_to '', '#', :name => "yield", :id => "yieldAnchor"
         = yield
         
-      #responsive480showcertificate.footer-certificate.col-xs-12
+      #responsive480showcertificate.footer-certificate.col-xs-12.avoid-this
         - @certificates = Certificate.all
         - @certificates.each do |certificate|
           .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
@@ -116,7 +117,7 @@
         
         .col-xs-12
           .col-xs-2
-          .footer-certificate.col-xs-8#responsive480hidecertificate
+          .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
             - @certificates = Certificate.all            
             - @certificates.each do |certificate|
               .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
@@ -145,7 +146,7 @@
                   %b= t('sitevisit.online-number')
                   = @online_now    
             
-          .col-xs-6
+          .col-xs-6.avoid-this
             = render 'shared/footer_menu'
             
             .keywords.col-xs-12
@@ -193,7 +194,7 @@
           
           .copyright.col-xs-12= t('copyright')
         
-    .show-social.clear-float
+    .show-social.clear-float.avoid-this
       %h3{:class => I18n.locale}= t('social-find-us')
       .col-xs-12.set-center          
         = link_to '#', :target => "_blank", :class => 'social-icon' do
