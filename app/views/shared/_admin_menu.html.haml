@@ -38,6 +38,7 @@
     = link_to 'مشاهده نظرات کاربران', TourComment
     - if @unread_tour_comment != 0
       %span.unread= @unread_tour_comment
+  %li= link_to 'مشاهده درخواستهای استخدامی', Employment
   %li
     = link_to 'مشاهده پیام های ارسالی', Message
     - if @unread_msg != 0

@@ -1,108 +1,167 @@
-%p#notice= notice
+.margin3  
+  %h1.page-title.margin3{:class => I18n.locale}=' استخدام در شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی'
+  
+  - if notice
+    .alert.alert-success= notice
+  .col-xs-2.avoid-this.pull-right
+    #go-printa4
+      = image_tag 'print-icon.png'
+      %h4= link_to 'پرینت A4', '#' 
+  .col-xs-12{:class => I18n.locale}
+    
+    .col-xs-4
+      - if @employment.person_image.present?
+        = image_tag @employment.person_image(:small)
+    .col-xs-12
+      .title-box-employment     اطلاعات شخصی  
+      %p.col-xs-3
+        %b نام و نام خانواگی:
+        = @employment.first_name + ' , ' + @employment.last_name      
+      %p.col-xs-3
+        %b نام پدر:
+        = @employment.father_name
+      %p.col-xs-3
+        %b شغل پدر:
+        = @employment.father_job
+      %p.col-xs-3
+        %b تاریخ تولد
+        = @employment.birthdate
+      %p.col-xs-3
+        %b شماره شناسنامه:
+        = @employment.id_code
+      %p.col-xs-3
+        %b صادره:
+        = @employment.source_place
+      %p.col-xs-3
+        %b وضعیت تاهل
+        = @employment.marriage_status
+      %p.col-xs-3
+        %b میزان تحصیلات
+        = @employment.education
+      .margin3 
+      .col-xs-12
+        .title-box-employment اطلاعات تماس 
+        %p.col-xs-3
+          %b پست الکترونیکی
+          = @employment.email
+        %p.col-xs-3
+          %b آدرس:
+          = @employment.address
+        %p.col-xs-3
+          %b شماره تماس ثابت:
+          = @employment.phonenumber
+        %p.col-xs-3
+          %b شماره همراه:
+          = @employment.mobile
+    .margin3
+    .col-xs-12
+      .title-box-employment سوابق شغلی و تحصیلی
+      %p.col-xs-3
+        %p{:class => I18n.locale} اشتغال به كار قبلي
+        %b از تاریخ 
+        = @employment.ex_job_start_date
+      
+        %b تا تاریخ
+        = @employment.ex_job_ended_date
+      %p.col-xs-3
+        %b مسئوليت در شغل قبلي :
+        = @employment.ex_job_carrer
+      %p.col-xs-3
+        %b آدرس محل كار؛
+        = @employment.ex_job_address
+      %p.col-xs-3
+        %b تلفن محل کار:
+        = @employment.ex_job_phone
+      %p.col-xs-3
+        %b علت ترك كار قبل:
+        = @employment.left_ex_job_reason
+      %p.col-xs-3
+        %b دوره هاي تخصصي  گذرانده شده:
+        = raw @employment.any_course
+      %p.col-xs-3
+        %b ميزان آشنايي به زبان انگليسي
+        %span
+          -case @employment.your_En_level 
+          -when 1    
+            'عالی'
+          -when 2    
+            'خوب'
+          -when 2    
+            'متوسط'
+          -when 2    
+            'ضعیف'
+          -else
+            'ذکر نشده است'
+          
+      .col-xs-12    
+        %p
+          %i با توجه به شناختي كه از تواناييهاي خود داريد فكر مي كنيد در كدام قسمت فعاليتهاي شركت موفق تر خواهيد بود؟
+          %b= @employment.tender_task
+        %p.col-xs-6
+          %b علت انتخاب اين شغل 
+          = @employment.choose_job_reason
+        %p.col-xs-6
+          %b توانايي هاي خود را در ارتباط با اين شغل توضيح دهيد:
+          = @employment.Your_abilities
+        %p.col-xs-4
+          %b ميزان حقوق درخواستي:
+          = @employment.salary_amount
+        %p.col-xs-4
+          %b آيا مي توانيد به صورت تمام وقت (صبح و عصر)در محل كار حاضر شويد:
+          - if @employment.full_time
+            %span= 'بله'
+          -else
+            %span= 'خیر'
+        %p.col-xs-4
+          %b براي سپردن ضمانت جهت حسن انجام كار مشكلي نداريد؟
+          - if @employment.put_guaranty
+            %span= 'بله'
+          -else
+            %span= 'خیر'  
+    .col-xs-12
+      .title-box-employment دو نفر معرف با ذكر مشخصات
+      .col-xs-12
+        %p.col-xs-3
+          %b نام و نام خانوادگي
+          
+        %p.col-xs-3
+          %b شغل
+          
+        %p.col-xs-3
+          %b شماره تماس
+          
+        %p.col-xs-3
+          %b آدرس
+          
+      .col-xs-12
+        %p.col-xs-3
+          
+          = @employment.first_reagent_fullname
+        %p.col-xs-3
+          
+          = @employment.fg_job
+        %p.col-xs-3
+          
+          = @employment.fg_phone
+        %p.col-xs-3
+          
+          = @employment.fg_address
+      .col-xs-12
+        %p.col-xs-3
+          
+          = @employment.Second_reagent_fullname
+        %p.col-xs-3
+          
+          = @employment.sg_job
+        %p.col-xs-3
+          
+          = @employment.sg_phone
+        %p.col-xs-3
+          
+          = @employment.sg_address
+       
 
-%p
-  %b First name:
-  = @employment.first_name
-%p
-  %b Last name:
-  = @employment.last_name
-%p
-  %b Father name:
-  = @employment.father_name
-%p
-  %b Father job:
-  = @employment.father_job
-%p
-  %b Birthdate:
-  = @employment.birthdate
-%p
-  %b Id code:
-  = @employment.id_code
-%p
-  %b Source place:
-  = @employment.source_place
-%p
-  %b Marriage status:
-  = @employment.marriage_status
-%p
-  %b Education:
-  = @employment.education
-%p
-  %b Address:
-  = @employment.address
-%p
-  %b Phonenumber:
-  = @employment.phonenumber
-%p
-  %b Mobile:
-  = @employment.mobile
-%p
-  %b Ex job start date:
-  = @employment.ex_job_start_date
-%p
-  %b Ex job ended date:
-  = @employment.ex_job_ended_date
-%p
-  %b Ex job carrer:
-  = @employment.ex_job_carrer
-%p
-  %b Ex job address:
-  = @employment.ex_job_address
-%p
-  %b Ex job phone:
-  = @employment.ex_job_phone
-%p
-  %b Left ex job reason:
-  = @employment.left_ex_job_reason
-%p
-  %b Any course:
-  = @employment.any_course
-%p
-  %b Your en level:
-  = @employment.your_En_level
-%p
-  %b Tender task:
-  = @employment.tender_task
-%p
-  %b Choose job reason:
-  = @employment.choose_job_reason
-%p
-  %b Your abilities:
-  = @employment.Your_abilities
-%p
-  %b Salary amount:
-  = @employment.salary_amount
-%p
-  %b First reagent fullname:
-  = @employment.first_reagent_fullname
-%p
-  %b Fg job:
-  = @employment.fg_job
-%p
-  %b Fg phone:
-  = @employment.fg_phone
-%p
-  %b Fg address:
-  = @employment.fg_address
-%p
-  %b Second reagent fullname:
-  = @employment.Second_reagent_fullname
-%p
-  %b Sg job:
-  = @employment.sg_job
-%p
-  %b Sg phone:
-  = @employment.sg_phone
-%p
-  %b Sg address:
-  = @employment.sg_address
-%p
-  %b Full time:
-  = @employment.full_time
-%p
-  %b Put guaranty:
-  = @employment.put_guaranty
-
-= link_to 'Edit', edit_employment_path(@employment)
-\|
-= link_to 'Back', employments_path
+:javascript 
+  $('#go-printa4').click(function(){
+    window.print();
+  });

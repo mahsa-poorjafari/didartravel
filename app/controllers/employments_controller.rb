@@ -5,12 +5,13 @@ class EmploymentsController < ApplicationController
   # GET /employments
   # GET /employments.json
   def index
-    @employments = Employment.all
+    @employments = Employment.order(" created_at desc")
   end
 
   # GET /employments/1
   # GET /employments/1.json
   def show
+    
   end
 
   # GET /employments/new
@@ -75,6 +76,6 @@ class EmploymentsController < ApplicationController
        :mobile, :ex_job_start_date, :ex_job_ended_date, :ex_job_carrer, :ex_job_address, :ex_job_phone, 
        :left_ex_job_reason, :any_course, :your_En_level, :tender_task, :choose_job_reason, :Your_abilities,
        :salary_amount, :first_reagent_fullname, :fg_job, :fg_phone, :fg_address, :Second_reagent_fullname,
-       :sg_job, :sg_phone, :sg_address, :full_time, :put_guaranty, :email)
+       :sg_job, :sg_phone, :sg_address, :full_time, :put_guaranty, :email, :person_image)
     end
 end
