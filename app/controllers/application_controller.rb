@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception  
   before_filter :set_locale, :online_info
   before_filter :load_slides
-  before_filter :authenticate
+  #before_filter :authenticate
   include SimpleCaptcha::ControllerHelpers
   protected
     def check_autentication
