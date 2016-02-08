@@ -110,18 +110,20 @@
         
       #responsive480showcertificate.footer-certificate.col-xs-12.avoid-this
         - @certificates = Certificate.all
-        - @certificates.each do |certificate|
-          .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-            = image_tag certificate.image(:small), :width => "100"  
+        %marquee{:scrollamount => "1", :scrolldelay => "50"}
+          - @certificates.each do |certificate|
+            .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
+              = image_tag certificate.image(:small), :width => "100"  
       .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
         
         .col-xs-12
           .col-xs-2
           .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
             - @certificates = Certificate.all            
-            - @certificates.each do |certificate|
-              .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-                = image_tag certificate.image(:small), :width => "100"
+            %marquee{:scrollamount => "1", :scrolldelay => "50"}
+              - @certificates.each do |certificate|
+                .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
+                  = image_tag certificate.image(:small), :width => "100"
                 
           .col-xs-2
         .clear-float  
@@ -192,7 +194,7 @@
             %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
             = render 'shared/related_links'
           
-          .copyright.col-xs-12= t('copyright')
+          .copyright.col-xs-12{:class => I18n.locale}= t('copyright')
         
     .show-social.clear-float.avoid-this
       %h3{:class => I18n.locale}= t('social-find-us')

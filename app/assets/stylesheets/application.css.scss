@@ -84,6 +84,7 @@ p, span {color:#000}
 
   }
 .main-menu  .top-of-menu p.site-title, .main-menu  .top-of-menu h1.site-title {text-align:center; color:#fff; font-size: 60px;}
+.title-tour.fa {padding-top:20px; font-family: 'IranNastaliq';}
 .top-of-menu h1.site-title {margin:0; padding:0; font-family: 'IranNastaliq';}
 .main-menu  .top-of-menu p.site-title.fa, .main-menu  .top-of-menu p.site-title.en {font-size: 1.2em; font-family: 'IranNastaliq'; text-align:center}
 .main-menu  .top-of-menu p.site-title.ar{font-size: 1.5em;  text-align:center}
@@ -113,6 +114,8 @@ p, span {color:#000}
 .main-menu .logo-center.fa,.main-menu .logo-center.ar  {position:absolute; top:45px; width:100%; height:112px}
 .show-social  {position:absolute; top:450px; z-index:100}
 .show-social h3 {text-align:center; color:#F90; text-shadow: 2px 2px #1A1A1A; text-weight:bold}
+.show-social h3.fa {font-family: 'IranNastaliq'; font-size:2.5em}
+ul.news_and_vents li.news-item.fa {font-family: 'IranNastaliq'; font-size:1.7em}
 .show-social .social-icon img {-webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
     transition: all .5s; width:50px }
 .show-social .social-icon:hover img{-webkit-transform: rotate(270deg);
@@ -314,6 +317,7 @@ left: 0;}
 .footer .footer-rectangle-box {top:10%; color:#fff}
 .footer  .contact-box{margin-bottom:1%; margin-left:0}
 .footer .contact-box h4.contact{color:#000}
+.footer .contact-box h4.contact.fa{font-family: 'IranNastaliq';}
 .footer .footer-rectangle-box .contact-box.fa ,.footer .footer-rectangle-box .contact-box.ar{float:left}
 .footer .footer-rectangle-box .contact-box.en{float:right}
 .footer .footer-rectangle-box .contact-box .contact{text-align:center; margin-bottom:20px}
@@ -341,7 +345,7 @@ left: 0;
 right: 0;
 bottom: 0;}
 
-.footer  .contact-info.fa p {direction:rtl; font-family: 'open_sansregular';color:#000; font-size:1.2em; line-height:1.5em}
+.footer  .contact-info.fa p {direction:rtl; font-family: 'IranNastaliq';color:#000; font-size:1.7em; line-height:1.5em}
 .footer  .contact-info.ar p {direction:ltr; font-family:'ASpiritOfDohaMedium'; font-size:1em; color:#000}
 .footer  .contact-info.en p { color:#000}
 .yield {position:relative; margin-top:-115px;  width:100%;   }
@@ -356,20 +360,22 @@ bottom: 0;}
 
 .footer .footer-bottom #newsletter {margin-bottom:5%}
 .footer-menu ul{list-style:none; padding:0;}
-
+.footer-menu {margin-top:10px}
 .footer-menu ul li{list-style:none; display:inline; color:#fff; margin:3px;}
-.footer-menu ul li a{color:#fff; text-align:center; font-size:1.2em; line-height:2em}
+.footer-menu ul li a{color:#fff; text-align:center; font-size:1.5em; line-height:2em}
+.footer-menu ul.fa li a, .footer-menu#related-links ul.fa li{font-family: 'IranNastaliq';}
 .footer-menu ul li:hover a{color:#000}
 .footer-menu ul a li {color:#fff; text-align:center; font-size:1.2em; line-height:2em}
 .footer-menu#related-links ul li {display:block}
 .footer-menu#related-links ul.fa li, .footer-menu#related-links ul.ar li {color:#fff; text-align:right}
+.visits p.fa b {font-family: 'IranNastaliq'; font-size:1.2em;}
 .footer-menu#related-links ul.en li {color:#fff; text-align:left}
-
+.copyright.fa {font-family: 'IranNastaliq'; font-size:1.5em;}
 .copyright {color:#fff; text-align:center; margin-bottom:2%;  fon-size:1.3em}
 .title-footer-form {color:#fff; padding:0; margin:0; text-align:left; border-bottom:2px solid #fff; margin-bottom:20px}
 .title-footer-form#related-links-title {text-align:right}
 .newsletter .form-control {background:#fff; color:#000}
-
+.title-footer-form.fa {font-family: 'IranNastaliq';}
 .sitevisit p b, .sitevisit p{color:#fff}
 .footer .form-submit {
   color:#fff;
