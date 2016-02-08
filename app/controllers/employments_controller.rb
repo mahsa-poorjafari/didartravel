@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class EmploymentsController < ApplicationController
   before_filter :check_autentication, only: [:edit, :update, :destroy]
   before_action :set_employment, only: [:show, :edit, :update, :destroy]
@@ -58,7 +59,7 @@ class EmploymentsController < ApplicationController
   def destroy
     @employment.destroy
     respond_to do |format|
-      format.html { redirect_to employments_url, notice: 'Employment was successfully destroyed.' }
+      format.html { redirect_to employments_url, notice: 'درخواست شما با موفقیت ثبت گردید.' }
       format.json { head :no_content }
     end
   end
