@@ -118,7 +118,7 @@
         -#
           .col-xs-12
             .col-xs-2
-            .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
+            .footer-certificate#responsive480hidecertificate.avoid-this
               - @certificates = Certificate.all
               - @certificates.each do |certificate|
                 .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
@@ -193,7 +193,7 @@
               %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
               = render 'shared/related_links'
             .col-xs-12
-              .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
+              .footer-certificate#responsive480hidecertificate.avoid-this
                 - @certificates = Certificate.all
                 - @certificates.each do |certificate|
                   .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
