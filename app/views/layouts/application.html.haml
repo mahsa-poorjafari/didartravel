@@ -109,18 +109,17 @@
         = yield
         
       #responsive480showcertificate.footer-certificate.col-xs-12.avoid-this
-        - @certificates = Certificate.all
-        %marquee{:scrollamount => "1", :scrolldelay => "50"}
-          - @certificates.each do |certificate|
-            .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-              = image_tag certificate.image(:small), :width => "100"  
+        - @certificates = Certificate.all        
+        - @certificates.each do |certificate|
+          .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
+            = image_tag certificate.image(:small), :width => "100"  
+      
       .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
-        
-        .col-xs-12
-          .col-xs-2
-          .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
-            - @certificates = Certificate.all            
-            %marquee{:scrollamount => "1", :scrolldelay => "50"}
+        -#
+          .col-xs-12
+            .col-xs-2
+            .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
+              - @certificates = Certificate.all
               - @certificates.each do |certificate|
                 .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
                   = image_tag certificate.image(:small), :width => "100"
@@ -148,52 +147,58 @@
                   %b= t('sitevisit.online-number')
                   = @online_now    
             
-          .col-xs-6.avoid-this
-            = render 'shared/footer_menu'
-            
-            .keywords.col-xs-12
-              %p{:class => I18n.locale}= t('Keywords.title')
-              %ul{:class => I18n.locale}
-                %li
-                  = link_to t('didartravel'), '/' 
-                %li
-                  = link_to t('Keywords.a'), '/' 
-                %li
-                  = link_to t('Keywords.b'), '/'              
-                %li
-                  = link_to t('Keywords.s'), '/' 
-                %li
-                  = link_to t('Keywords.w'), '/' 
-                %li
-                  = link_to t('Keywords.c'), '/' 
-                %li
-                  = link_to t('Keywords.d'), '/' 
-                %li
-                  = link_to t('Keywords.f'), '/' 
-                %li
-                  = link_to t('Keywords.g'), '/' 
-                %li
-                  = link_to t('Keywords.h'), Sight
-                %li
-                  = link_to t('Keywords.l'), Sight
-                %li
-                  = link_to t('Keywords.m'), Sight
-                %li
-                  = link_to t('Keywords.n'), Sight
-                %li
-                  = link_to t('Keywords.e'), '/' 
-                %li
-                  = link_to t('Keywords.p'), '/' 
-                - Tour.limit(5).order(" created_at desc").each do |new_tour|
+          .col-xs-9
+            .col-xs-8.avoid-this
+              = render 'shared/footer_menu'              
+              .keywords.col-xs-12
+                %p{:class => I18n.locale}= t('Keywords.title')
+                %ul{:class => I18n.locale}
                   %li
-                    = link_to new_tour.title, new_tour
-                - Visa.limit(5).order(" created_at desc").each do |visa|
+                    = link_to t('didartravel'), '/' 
                   %li
-                    = link_to visa.title, visa
-          .col-xs-3.related-links
-            %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
-            = render 'shared/related_links'
-          
+                    = link_to t('Keywords.a'), '/' 
+                  %li
+                    = link_to t('Keywords.b'), '/'              
+                  %li
+                    = link_to t('Keywords.s'), '/' 
+                  %li
+                    = link_to t('Keywords.w'), '/' 
+                  %li
+                    = link_to t('Keywords.c'), '/' 
+                  %li
+                    = link_to t('Keywords.d'), '/' 
+                  %li
+                    = link_to t('Keywords.f'), '/' 
+                  %li
+                    = link_to t('Keywords.g'), '/' 
+                  %li
+                    = link_to t('Keywords.h'), Sight
+                  %li
+                    = link_to t('Keywords.l'), Sight
+                  %li
+                    = link_to t('Keywords.m'), Sight
+                  %li
+                    = link_to t('Keywords.n'), Sight
+                  %li
+                    = link_to t('Keywords.e'), '/' 
+                  %li
+                    = link_to t('Keywords.p'), '/' 
+                  - Tour.limit(5).order(" created_at desc").each do |new_tour|
+                    %li
+                      = link_to new_tour.title, new_tour
+                  - Visa.limit(5).order(" created_at desc").each do |visa|
+                    %li
+                      = link_to visa.title, visa
+            .col-xs-4.related-links
+              %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
+              = render 'shared/related_links'
+            .col-xs-12
+              .footer-certificate.col-xs-8#responsive480hidecertificate.avoid-this
+                - @certificates = Certificate.all
+                - @certificates.each do |certificate|
+                  .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
+                    = image_tag certificate.image(:small), :width => "100"
+                    
           .copyright.col-xs-12{:class => I18n.locale}= t('copyright')
         
     .show-social.clear-float.avoid-this

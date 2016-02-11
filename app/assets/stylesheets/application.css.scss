@@ -327,10 +327,7 @@ left: 0;}
   top:100px;
   }
 .footer-bottom .footer-certificate {
-  height: 120px;  background-image: url(image-path('sprinkles.png'));
-  background-repeat:repeat;  
-  margin-top:-80px;
-  
+  height: 120px;  background-image:white; 
   padding: 0px;
   }
 
@@ -409,7 +406,15 @@ bottom: 0;}
   padding-right:4%;
   }
 .title-tour.title-hotels {text-align:center}
-#news .title-tour {background-image: url(image-path('news-line.png'));}
+#news {background-image: url(image-path('worldbg.png'));
+  background-size:contain; background-repeat: no-repeat;
+  background-position: 0 55%;
+  height: 310px;
+  }
+.calendar .ui-datepicker{width:12em; height:14em; margin-right:3%}
+.calendar .ui-datepicker th span {font-size:12px}
+.calendar .ui-datepicker td span,.calendar .ui-datepicker td a {font-size: 0.8em;}
+#news .title-tour {background-image: url(image-path('news-line.png')); width:100%}
 .title-tour p{color:#620808; font-size:1.5em;}
 #title-visa.title-tour {background-image: url(image-path('visa-line.png'));}
 .title-tour#title-tours {background-image: url(image-path('tours-line.png'));}
@@ -483,6 +488,9 @@ bottom: 0;}
     left: 20%;
   }
 .cal-weather {position:relative;   padding:0;  }
+.cal-weather .vertical {width: 100%; height:200px;
+margin-right: 0;
+margin-left: 0;}
 .cal-weather .col-xs-6{ padding:0;  }
 .cal-weather::before {  
   padding:0;
@@ -550,29 +558,22 @@ font-weight: normal;}
   margin-left:0;
   margin-right:0;
   margin-top:-75px;
-  background-image: url(image-path('sprinkles.png'));
-  background-repeat:repeat;  
+  background-color:white;
   }
 .boxes-show {
   position:relative;
   padding:2%; margin-bottom:2%;  
-  background-image: url(image-path('world-map.png'));
-  background-size:100%;
-  background-repeat:no-repeat; 
-   
   }
 .boxes-show::before {
   content: "";
-  position:absolute;
-  background:#992a2d;
-  opacity:.9;
+  position:absolute;    
   width:100%; height:350px;
   top:0; right:0; left:0;
   }
 .middle-box .news {    
   color:#fff;  
   position:relative;  
-  width:100%; height:250px; overflow:hidden;
+  width:100%; height:250px; overflow-y:scroll;
   }
 
 .plane-company {      
@@ -580,7 +581,7 @@ font-weight: normal;}
   position:relative;
   margin-bottom:2%;
   margin-top:30px;
-  margin-left:15%
+  
   }
 .plane-company::before {content: "";
   position:absolute;  
@@ -619,11 +620,11 @@ h1.page-title#news_and_vent {
   text-align:center;
   }
     
-ul.news_and_vents { padding:2%}
+ul.news_and_vents { padding:5%}
 ul.news_and_vents li.news-item{font-size:1.2em; text-align: justify;
-line-height: 2em; color:#fff}
-ul.news_and_vents li.news-item a {color:#fff}
-ul.news_and_vents li.news-item:hover a{color:#000;}
+line-height: 2em; color:#000000}
+ul.news_and_vents li.news-item a {color:#000000}
+ul.news_and_vents li.news-item:hover a{color:#7F0006;}
 .national-certificate {  
   font-size: 1.3em;
   color:#610505; z-index:300;
@@ -643,6 +644,8 @@ ul.news_and_vents li.news-item:hover a{color:#000;}
   
 .title-time-zone a:hover {color:#fff}
 .contact-form .form-control {color:#000}
+.contact-form .form-group.col-xs-4 {padding:1px}
+.contact-form.fa .form-group.col-xs-4, .contact-form.ar .form-group.col-xs-4 {float:right}
 .contact-form.fa .col-xs-6, .contact-form.ar .col-xs-6{float:right}
 #title-countries {background-image: url(image-path('earth-line.png'));
   background-repeat:no-repeat;  
@@ -752,7 +755,7 @@ table#employment-reagen-table tr th {text-align:right}
   -moz-box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 35px -2px rgba(0,0,0,0.75);}
 .owl-wrapper-outer .owl-wrapper .owl-item .item:hover {background-image: url(image-path('bg-tour-boxes2.png'));}
-
+.calendar {padding:0}
 .ui-datepicker-calendar p, .ui-datepicker-calendar span {color:#fff}
 .contact-buttons .col-xs-6.form-group{padding:0}
 #responsive768show, #responsive767show-footer-links, #responsive480showmenu, #responsive480showweather, #responsive480showcertificate {display:none}
@@ -762,6 +765,7 @@ table#employment-reagen-table tr th {text-align:right}
 border:0px; box-shadow:none;
   }
 #owl-demo-plane.owl-carousel .owl-controls {display:none}
+.title-tour.fa, .title-tour.ar {float:right}
 .title-tour-red-line {height:5px; background-color:#440102;}
 .title-visa {font-size:1.5em; color:#440102;}
 .title-visa.en, .title-tour-red-line.en {float:right}
