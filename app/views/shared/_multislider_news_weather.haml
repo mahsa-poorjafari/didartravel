@@ -135,23 +135,25 @@
     .col-xs-12#responsive768hide{:style => "padding:0"}
       .col-xs-2#driving-certificate-link{:class => I18n.locale}
         - if current_page?('/')
-          .national-certificate
-            = link_to DirivingLicense.first  do
-              .col-xs-12{:style => "padding:0", :class => I18n.locale}
-                = image_tag 'driving.png', :width => "50"
-              .col-xs-12{:style => "padding:0", :class => I18n.locale}                
-                = t('national-certificate')   
+          -#
+            .national-certificate
+              = link_to DirivingLicense.first  do
+                .col-xs-12{:style => "padding:0", :class => I18n.locale}
+                  = image_tag 'driving.png', :width => "50"
+                .col-xs-12{:style => "padding:0", :class => I18n.locale}                
+                  = t('national-certificate')   
           
       
         
       .col-xs-2#time-zone-link
         - if current_page?('/')
-          .title-time-zone
-            = link_to time_zone_clocks_countries_path, :target => "_blank"  do
-              .col-xs-12.pull-right{:style => "padding:0", :class => I18n.locale}
-                = image_tag 'time-zone.png', :width => "50"
-              .col-xs-12{:style => "padding:0", :class => I18n.locale}
-                =  t('time-zone-title')
+          -#
+            .title-time-zone
+              = link_to time_zone_clocks_countries_path, :target => "_blank"  do
+                .col-xs-12.pull-right{:style => "padding:0", :class => I18n.locale}
+                  = image_tag 'time-zone.png', :width => "50"
+                .col-xs-12{:style => "padding:0", :class => I18n.locale}
+                  =  t('time-zone-title')
       .plane-company.col-xs-12{:class => I18n.locale}
         #owl-demo-plane.owl-carousel.owl-theme
           - Plane.all.each do |plane|
@@ -161,16 +163,18 @@
     #responsive768show
       .col-xs-7
         - if current_page?('/')
-          .national-certificate
-            .col-xs-2{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'driving.png', :width => "50"
-            .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
-          .title-time-zone
-            .col-xs-2.pull-right{:style => "padding:0", :class => I18n.locale}
-              = image_tag 'time-zone.png', :width => "50"
-            .col-xs-8{:style => "padding:0", :class => I18n.locale}
-              = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"      
+          -#
+            .national-certificate
+              .col-xs-2{:style => "padding:0", :class => I18n.locale}
+                = image_tag 'driving.png', :width => "50"
+              .col-xs-8{:style => "padding:0", :class => I18n.locale}
+                %h4.title-certificate{:class => I18n.locale}= t('national-certificate')   
+          -#
+            .title-time-zone
+              .col-xs-2.pull-right{:style => "padding:0", :class => I18n.locale}
+                = image_tag 'time-zone.png', :width => "50"
+              .col-xs-8{:style => "padding:0", :class => I18n.locale}
+                = link_to 'اختلاف ساعت کشورها', time_zone_clocks_countries_path, :target => "_blank"      
       .plane-company.col-xs-12
         %marquee.col-xs-12{:onmouseout => "this.start();", :onmouseover => "this.stop();",  :behavior => "slide", :style => "float:right"}
           - Plane.all.each do |plane|
