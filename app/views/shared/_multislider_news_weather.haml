@@ -88,12 +88,10 @@
                   = image_tag 'time-zone.png', :width => "50"
                 .col-xs-12{:style => "padding:0", :class => I18n.locale}
                   =  t('time-zone-title')
+                  
       .plane-company.col-xs-12{:class => I18n.locale}
-        #owl-demo-plane.owl-carousel.owl-theme
-          - Plane.all.each do |plane|
-            .item.plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-              = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-                = image_tag plane.logo(:icon)
+        = render "shared/plane_scroll"
+        
     #responsive768show
       .col-xs-7
         - if current_page?('/')

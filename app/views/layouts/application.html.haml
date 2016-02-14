@@ -107,13 +107,8 @@
       .yield.clear-float{:class => I18n.locale}
         = link_to '', '#', :name => "yield", :id => "yieldAnchor"
         = yield
-        
-      #responsive480showcertificate.footer-certificate.col-xs-12.avoid-this
-        - @certificates = Certificate.all        
-        - @certificates.each do |certificate|
-          .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-            = image_tag certificate.image(:small), :width => "100"  
-      
+      = render "shared/footer_certificate"  
+     
       .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
         -#
           .col-xs-12
@@ -193,6 +188,7 @@
               %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
               = render 'shared/related_links'
             .col-xs-12
+              = render "shared/footer_certificate" 
               .footer-certificate#responsive480hidecertificate.avoid-this
                 - @certificates = Certificate.all
                 - @certificates.each do |certificate|

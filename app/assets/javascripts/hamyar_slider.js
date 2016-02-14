@@ -9,7 +9,7 @@
 	$.fn.hamyar_slider = function(option) {
 		//get option
 		var def = {
-			show : 3,
+			show : 8,
 			btnext : null,
 			btnprev : null,
 			speed : 300,

@@ -576,10 +576,15 @@ font-weight: normal;}
   }
 
 .plane-company {      
-  height:85px;
+  height:150px;
   position:relative;
   margin-bottom:2%;
-  margin-top:30px;
+  
+  background-image: url(image-path('planes-scroll.png'));
+  background-size:100%;
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: 0 100%;
   
   }
 .plane-company::before {content: "";

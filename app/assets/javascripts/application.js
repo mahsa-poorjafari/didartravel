@@ -34,9 +34,7 @@
 //= require jquery.smooth-scroll
 //= require prettify
 //= require jquery.zweatherfeed.min
-
-
-
+//= require jssor.slider.mini
 
 
 
@@ -108,25 +106,17 @@ $(document).ready(function () {
   
     
   $('.hamyar_slider').hamyar_slider({
-    show:5,
+    show:10,
     btnprev:'.icon-arrow-right',
     btnext:'.icon-arrow-left',
     speed:400,
     disable_class: 'disable',
     auto :true,
     auto_time: 2000,
-    slide:2
+    slide:1
   });   
- $('.hamyar_slider2').hamyar_slider({
-    show:3,
-    btnprev:'.icon-arrow-right2',
-    btnext:'.icon-arrow-left2',
-    speed:400,
-    disable_class: 'disable',
-    auto :true,
-    auto_time: 2000,
-    slide:2
-  });   
+  
+ 
   
   $('.carousel[data-type="multi"] .item').each(function(){
     var next = $(this).next();
@@ -147,3 +137,37 @@ $(document).ready(function () {
   
 });
 
+jQuery(document).ready(function ($) {
+            
+    var jssor_1_options = {
+      $AutoPlay: true,
+      $Idle: 0,      
+      $AutoPlaySteps: 4,
+      $SlideDuration: 1000,
+      $SlideEasing: $Jease$.$Linear,
+      $PauseOnHover: 4,
+      $SlideWidth: 90,
+      $SlideHeight: 80,
+      $Cols: 13
+    };
+    
+    var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+    
+    //responsive code begin
+    //you can remove responsive code if you don't want the slider scales while window resizing
+    function ScaleSlider() {
+        var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+        if (refSize) {
+            refSize = Math.min(refSize, 1235);
+            jssor_1_slider.$ScaleWidth(refSize);
+        }
+        else {
+            window.setTimeout(ScaleSlider, 30);
+        }
+    }
+    ScaleSlider();
+    $(window).bind("load", ScaleSlider);
+    $(window).bind("resize", ScaleSlider);
+    $(window).bind("orientationchange", ScaleSlider);
+    //responsive code end
+});
