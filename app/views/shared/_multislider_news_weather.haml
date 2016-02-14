@@ -1,5 +1,5 @@
 .col-xs-12.middle-box.avoid-this
-  .col-xs-12.slide{ :style => " overflow:hidden"}    
+  .col-xs-12.tour-slide{ :style => " overflow:hidden; padding:0"}    
     
     .slider4{:class => I18n.locale}
       .col-xs-4
@@ -23,106 +23,40 @@
         
       .col-xs-6      
         .col-xs-4.title-tour.set-center{:class => I18n.locale}= t('foreign-tour')
-        .col-xs-12
-          .hamyar_slider
-            %ul
-              - Country.all.each do |country|
-                - unless country.title_fa == 'ایران'
-                  - if country.tours.present?
-                    - country.tours.limit(5).order("created_at asc").each do |tour|
-                    - @first_tour = country.tours.first
-                      %li.slide{:id => "foriegn_tours_id_" + tour.id.to_s}                
-                        %p.tour-title{:class => I18n.locale}= tour.title
-                        - if tour.photos.present?
-                          = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
-                        
-                        .date{:class => I18n.locale}= render "/tours/show_persian_date", :tour => tour
-                        
-                        .more-info{:class => I18n.locale}
-                          = link_to  tour do 
-                            %i.see-more-arrow= t('more-info')
-                            
-                        -if is_admin?
-                          .admin-btn-tour
-                            = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
-                            = link_to 'مشاهده تور', tour, :class => "btn btn-warning"                   
-                            = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-          .icon-arrow-left
-          .icon-arrow-right
+        = render 'shared/multi_tour_slider'
+        
+         
         .col-xs-12
           .col-xs-4.title-tour.set-center{:class => I18n.locale}= t('local-tour')
-          .hamyar_slider2
-            %ul
-              - Country.all.each do |country|
-                - if country.title_fa == 'ایران'
-                  - if country.tours.present?
-                    - country.tours.limit(5).order("created_at asc").each do |tour|
-                    - @first_tour = country.tours.first
-                      %li.slide{:id => "foriegn_tours_id_" + tour.id.to_s}                
-                        %p.tour-title{:class => I18n.locale}= tour.title
-                        - if tour.photos.present?
-                          = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
-                        
-                        .date{:class => I18n.locale}= render "/tours/show_persian_date", :tour => tour
-                        
-                        .more-info{:class => I18n.locale}
-                          = link_to  tour do 
-                            %i.see-more-arrow= t('more-info')
-                            
-                        -if is_admin?
-                          .admin-btn-tour
-                            = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
-                            = link_to 'مشاهده تور', tour, :class => "btn btn-warning"                   
-                            = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-          .icon-arrow-left2
-          .icon-arrow-right2 
+          = render 'shared/multi_iran_tour_slider'
+          -#
+            .hamyar_slider2
+              %ul
+                - Country.all.each do |country|
+                  - if country.title_fa == 'ایران'
+                    - if country.tours.present?
+                      - country.tours.limit(5).order("created_at asc").each do |tour|
+                      - @first_tour = country.tours.first
+                        %li.slide{:id => "foriegn_tours_id_" + tour.id.to_s}                
+                          %p.tour-title{:class => I18n.locale}= tour.title
+                          - if tour.photos.present?
+                            = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+                          
+                          .date{:class => I18n.locale}= render "/tours/show_persian_date", :tour => tour
+                          
+                          .more-info{:class => I18n.locale}
+                            = link_to  tour do 
+                              %i.see-more-arrow= t('more-info')
+                              
+                          -if is_admin?
+                            .admin-btn-tour
+                              = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
+                              = link_to 'مشاهده تور', tour, :class => "btn btn-warning"                   
+                              = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
+            .icon-arrow-left2
+            .icon-arrow-right2 
       .col-xs-2#hyper-icons
-    -#
-      .slider4#owl-demo.owl-carousel.owl-theme
-        - Country.all.each do |country|
-          - unless country.title_fa == 'ایران'
-            - if country.tours.present?
-              - country.tours.limit(2).order("id asc").each do |tour|
-              - @first_tour = country.tours.first            
-                .item{:id => "foriegn_tours_id_" + tour.id.to_s}
-                  %p.tour-title{:class => I18n.locale}= tour.title
-                  - if tour.photos.present?
-                    = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
-                  
-                  .date= render "/tours/show_persian_date", :tour => tour
-                  
-                  .more-info
-                    = link_to  tour do 
-                      %i.see-more-arrow= t('more-info')
-                      
-                  -if is_admin?
-                    .admin-btn-tour
-                      = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
-                      = link_to 'مشاهده تور', tour, :class => "btn btn-warning"                   
-                      = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-        - Country.all.each do |country|
-          - if country.title_fa == 'ایران' && country.tours.present?            
-            - country.tours.limit(2).order("id asc").each do |iran_tour|
-              .item{:id => "iran_tours_id_" + iran_tour.id.to_s}
-                %p.tour-title{:class => I18n.locale}= iran_tour.title
-                - if iran_tour.photos.present?
-                  = link_to (image_tag iran_tour.photos.first.image(:medium), :class => "img-responsive"), iran_tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
-            
-                .date= render "/tours/show_persian_date", :tour => iran_tour
-              
-                .more-info
-                  = link_to  iran_tour do 
-                    %i= t('more-info')
-                    %span.see-more-arrow
-                -if is_admin?
-                  .admin-btn-tour
-                    = link_to 'ویرایش تور', edit_tour_path(iran_tour), :class => "btn btn-info"
-                    = link_to 'مشاهده تور', iran_tour, :class => "btn btn-warning"                   
-                    = link_to 'حذف تور', iran_tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-    
-      
-  
-  
+   
   
   .col-xs-12.boxes-show
     

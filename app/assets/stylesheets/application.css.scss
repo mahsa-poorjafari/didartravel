@@ -115,7 +115,7 @@ p, span {color:#000}
 .show-social  {position:absolute; top:450px; z-index:100}
 .show-social h3 {text-align:center; color:#F90; text-shadow: 2px 2px #1A1A1A; text-weight:bold}
 .show-social h3.fa {font-family: 'IranNastaliq'; font-size:2.5em}
-ul.news_and_vents li.news-item.fa {font-family: 'IranNastaliq'; font-size:1.7em}
+ul.news_and_vents li.news-item.fa {font-family: 'IranNastaliq'; font-size:1.5em}
 .show-social .social-icon img {-webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
     transition: all .5s; width:50px }
 .show-social .social-icon:hover img{-webkit-transform: rotate(270deg);
@@ -408,6 +408,7 @@ bottom: 0;}
   background-size:contain; background-repeat: no-repeat;
   background-position: 0 55%;
   height: 310px;
+  margin-top:25px;
   }
 .calendar .ui-datepicker{width:12em; height:14em; margin-right:3%}
 .calendar .ui-datepicker th span {font-size:12px}
@@ -432,7 +433,7 @@ bottom: 0;}
   height:340px; margin-bottom:5px;  
   }
  .slider4 .col-xs-6 {margin-top: 15px;}
-.slider4 .slide {position:relative; ; height:93%; float:left; 
+.slider4 .tour-slide {position:relative; ; height:93%; float:left; 
   background:#fff;
   background-image: url(image-path('logo-bg.png'));
   background-repeat:no-repeat;  
@@ -454,9 +455,9 @@ bottom: 0;}
   -moz-transform: rotate(270deg);
   -o-transform: rotate(270deg);  
   }
-.slide {height:560px; padding:0}
-  .slider4 .slide:hover {background-image: url(image-path('bg-tour-boxes2.png'));}
-.slider4 .slide p.tour-title {position:absolute; top:0; font-weight:bold;
+
+  .slider4 .tour-slide:hover {background-image: url(image-path('bg-tour-boxes2.png'));}
+.slider4 .tour-slide p.tour-title {position:absolute; top:0; font-weight:bold;
   right:0; left:0; height:40px; color:#000000; background:#fff;
   text-align:center;  
   padding:2%;
@@ -465,21 +466,21 @@ bottom: 0;}
 .item-package {position:absolute; top:50px; 
   right:0; left:0; height:150px; overflow:hidden;
   }
-.slider4 .slide .date {position:absolute; width:100%; text-align:center; top:28px}
+.slider4 .tour-slide .date {position:absolute; width:100%; text-align:center; top:28px}
 
 .item-package img {height:135px}
-.slider4 .slide .more-info {
+.slider4 .tour-slide .more-info {
     position: absolute;
     top: 200px;
     left: -5px;
     width: 100%;
 }
-.slider4 .slide .more-info:hover a .see-more-arrow{background-position: 100% 0;}
-.slider4 .slide .more-info a .see-more-arrow{
+.slider4 .tour-slide .more-info:hover a .see-more-arrow{background-position: 100% 0;}
+.slider4 .tour-slide .more-info a .see-more-arrow{
   position:absolute; left:0; height:40px; width:100%;
   
   }
-.slider4 .slide .more-info a i{
+.slider4 .tour-slide .more-info a i{
     position: absolute;
     right: 5%;
     width: 100px;
@@ -817,4 +818,23 @@ text-align: right;}
 .agency-name.en {margin-top:25px}
 .tour-details .col-xs-5 {overflow:hidden}
 #go-printa4:hover {cursor:pointer}
-#hyper-icons {height:535px; overflow:hidden; background-color:#F90; margin:0}
+#hyper-icons {height:655px; overflow:hidden; background-color:#F90; margin:0}
+#foreign_tour {height:250px; position:relative; padding:0}
+#foreign_tour .left.carousel-control{text-align:left; margin-top: 100px;}
+#foreign_tour .right.carousel-control{text-align:right; margin-top: 100px;}
+#foreign_tour .item, #foreign_tour .item .tour-item, #foreign_tour .carousel-inner{height:250px; }
+#foreign_tour .item  {padding-left: 20px;}
+#foreign_tour .item .tours-index {position:relative; width:30%; height:210px; padding:0; 
+background-image: url("/assets/logo-bg-a4ceae7c547fbdf7a9a3c78618fc3927.png");
+background-repeat: no-repeat;
+background-position: 100% 100%;
+ -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
+    transition: all .5s;
+}
+#foreign_tour .item .tours-index:hover {background-image: url(image-path('bg-tour-boxes2.png'));border: solid 2px #521010;}
+
+#foreign_tour .item .tours-index .tour-hover{position:absolute; width:100%; top:1px; 
+text-align:center; color:#521010;}
+#foreign_tour .item .tours-index .more-info{position:absolute; width:100%; bottom:1px; text-align:left}
+#foreign_tour .item .tours-index .item-package {top:35px}
+#foreign_tour .item .date {position:absolute; bottom:5px; width:100%;}

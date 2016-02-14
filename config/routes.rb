@@ -109,6 +109,7 @@ Rails.application.routes.draw do
   get "google46bde3a8d7d48d7d" => 'static#google46bde3a8d7d48d7d'
   get "sitemap.xml" => "static#sitemap", :format => "xml", :as => :sitemap
   get "BingSiteAuth.xml" => "static#BingSiteAuth", :format => "xml", :as => :BingSiteAuth
+  get "thing" => "static#thing"
   
   get '/html_with_images', :to => 'tours#html_with_images'
   get '/html_with_table', :to => 'tours#html_with_table'

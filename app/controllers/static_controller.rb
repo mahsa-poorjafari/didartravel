@@ -19,4 +19,6 @@ class StaticController < ApplicationController
       format.xml
     end
   end
+  def thing
+  end
 end

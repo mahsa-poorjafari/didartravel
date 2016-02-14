@@ -1,0 +1,26 @@
+- @iran = Country.find_by_title_fa( 'ایران')
+- @foreign_tour = Tour.where.not("country_id" => @iran.id)
+
+.col-md-12.col-md-offset-3#foreign_tour
+  #myCarousel1.carousel.slide{"data-interval" => "3000", "data-ride" => "carousel", "data-type" => "multi"}
+    .carousel-inner
+      - @foreign_tour.all.each do |tour|        
+        .item
+          .col-md-4.col-sm-6.col-xs-12.tours-index{:id => tour.id.to_s}                
+            .tour-hover
+              %h4.tour-title{:class => I18n.locale}= tour.title
+            - if I18n.locale == :fa
+              .date= render "/tours/show_persian_date", :tour => tour
+            - else  
+              .date= render "/tours/show_english_date", :tour => tour
+            - if tour.photos.present?
+              = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
+            .more-info= link_to t('more-info'), tour
+   
+    = link_to  "#myCarousel1" , :class => "left carousel-control", "data-slide" => "prev", :title => "آژانس_هواپیمایی_دیدار"  do  
+      = image_tag 'multi-prev.png'
+    = link_to  "#myCarousel1", :class => "right carousel-control", "data-slide" => "next", :title => "آژانس_هواپیمایی_دیدار"  do           
+      = image_tag 'multi-next.png'
+:javascript 
+  $('.carousel').carousel();
+  $('#myCarousel1 .carousel-inner :first').addClass('active');  
