@@ -107,7 +107,7 @@
       .yield.clear-float{:class => I18n.locale}
         = link_to '', '#', :name => "yield", :id => "yieldAnchor"
         = yield
-      = render "shared/footer_certificate"  
+      
      
       .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
         -#
@@ -188,7 +188,7 @@
               %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
               = render 'shared/related_links'
             .col-xs-12
-              = render "shared/footer_certificate" 
+              
               .footer-certificate#responsive480hidecertificate.avoid-this
                 - @certificates = Certificate.all
                 - @certificates.each do |certificate|
@@ -263,5 +263,6 @@
   
   = javascript_include_tag "lightbox"
   = javascript_include_tag "hamyar_slider"
+  = javascript_include_tag "slick"
   = javascript_include_tag "owl.carousel"
   

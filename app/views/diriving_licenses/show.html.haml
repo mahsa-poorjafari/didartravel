@@ -4,6 +4,9 @@
   .col-xs-12.margin-bottom
     .title-tour-line.col-xs-10
     %p.col-xs-12.set-center.title-tour#title-certificate{:class => I18n.locale}= @diriving_license.title
-  .col-xs-12 
+  .col-xs-5
+    - if @diriving_license.image.present?
+      = image_tag @diriving_license.image(:medium), :alt => @diriving_license.image_file_name, :title => " آژانس مسافرتی دیدار"
+  .col-xs-7 
     =raw  @diriving_license.text
 

@@ -70,6 +70,6 @@ class DirivingLicensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def diriving_license_params
-      params.require(:diriving_license).permit(:title_fa, :title_en, :title_ar, :text_fa, :text_ar, :text_en)
+      params.require(:diriving_license).permit(:title_fa, :title_en, :title_ar, :text_fa, :text_ar, :text_en, :image)
     end
 end
