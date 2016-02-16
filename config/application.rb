@@ -26,13 +26,17 @@ module RadanTravel
     config.serve_static_assets = true
     config.assets.enabled = true    
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')        
+    
     config.assets.precompile += %w( .svg .eot .woff .ttf )
     
     Rails.application.config.assets.precompile += %w( responsive.css )
     Rails.application.config.assets.precompile += %w( print.css )
     Rails.application.config.assets.precompile += %w( lightbox.js )
-    Rails.application.config.assets.precompile += %w( hamyar_slider.js )
-    Rails.application.config.assets.precompile += %w( owl.carousel.js )
+    
+    Rails.application.config.assets.precompile += %w( jquery.kinetic.min.js )
+    Rails.application.config.assets.precompile += %w( jquery.mousewheel.min.js )
+    Rails.application.config.assets.precompile += %w( jquery.smoothdivscroll-1.3-min.js )
+    
     
   end
 end

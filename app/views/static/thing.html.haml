@@ -1,0 +1,52 @@
+
+.plane-item
+  - Plane.all.each do |plane|
+    .plane_logo{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => plane.title}
+      = link_to url_with_protocol(plane.web_site), :target => "_blank" do
+        = image_tag plane.logo(:icon)
+
+:javascript
+  $(document).ready(function() {
+    $(".plane-item").smoothDivScroll({ 
+      autoScrollingMode: "always", 
+      autoScrollingDirection: "endlessLoopRight", 
+      autoScrollingStep: 1, 
+      autoScrollingInterval: 25 
+    });
+
+    // Logo parade event handlers
+    $(".plane-item").bind("mouseover", function() {
+      $(this).smoothDivScroll("stopAutoScrolling");
+    }).bind("mouseout", function() {
+      $(this).smoothDivScroll("startAutoScrolling");
+    });
+
+  });
+
+-#
+  <!-- Started code by itwebsite.ir ---- YahooID: niaz_iran  --><br />
+  <script type="text/JavaScript" language="javascript">
+  msg = "عنوان صفحه "; msg = "..." + msg;pos = 0;
+  function scrollMSG() {
+  document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+  pos++;
+  if (pos > msg.length) pos = 0
+  window.setTimeout("scrollMSG()",200);
+  }
+  scrollMSG();
+  </script><br />
+  <a target="_blank" href="http://itwebsite.ir/2883-2">کد متحرک سازی عنوان وب </a></p>
+  <p><!-- Ended code by itwebsite.ir ---- YahooID: niaz_iran  --></p>
+  <div style="display:none;">
+  <li><a href="http://lasersabz.33shop.ir">لیزر</a>
+  </li>
+  </div>
+  <div style="display:none;">
+  <li><a href="http://lasersabz.33shop.ir">لیزر حرارتی</a>
+  </li>
+  </div>
+  <div style="display:none;">
+  <li><a href="http://1000niaz.com">تبلیغات اینترنتی</a>
+  </li>
+  </div>
+  <p>

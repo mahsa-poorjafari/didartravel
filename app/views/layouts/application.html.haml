@@ -110,16 +110,7 @@
       
      
       .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
-        -#
-          .col-xs-12
-            .col-xs-2
-            .footer-certificate#responsive480hidecertificate.avoid-this
-              - @certificates = Certificate.all
-              - @certificates.each do |certificate|
-                .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-                  = image_tag certificate.image(:small), :width => "100"
-                
-          .col-xs-2
+        
         .clear-float  
         #responsive767show-footer-links
           =render 'shared/responsive767show_footer_links'
@@ -184,16 +175,13 @@
                   - Visa.limit(5).order(" created_at desc").each do |visa|
                     %li
                       = link_to visa.title, visa
+              .col-xs-12
+                .footer-certificate#responsive480hidecertificate.avoid-this
+                  = render 'shared/footer_certificate'
             .col-xs-4.related-links
               %h4.title-footer-form.contact#related-links-title{:class => I18n.locale}= t('related-links')
               = render 'shared/related_links'
-            .col-xs-12
-              
-              .footer-certificate#responsive480hidecertificate.avoid-this
-                - @certificates = Certificate.all
-                - @certificates.each do |certificate|
-                  .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-                    = image_tag certificate.image(:small), :width => "100"
+            
                     
           .copyright.col-xs-12{:class => I18n.locale}= t('copyright')
         
@@ -262,7 +250,8 @@
    
   
   = javascript_include_tag "lightbox"
-  = javascript_include_tag "hamyar_slider"
-  = javascript_include_tag "slick"
-  = javascript_include_tag "owl.carousel"
+  
+  = javascript_include_tag "jquery.kinetic.min"
+  = javascript_include_tag "jquery.mousewheel.min"
+  = javascript_include_tag "jquery.smoothdivscroll-1.3-min"
   

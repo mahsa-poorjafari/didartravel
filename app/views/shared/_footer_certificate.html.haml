@@ -1,8 +1,25 @@
--#
-  #responsive480showcertificate.footer-certificate.col-xs-12.avoid-this
-    - @certificates = Certificate.all        
-    - @certificates.each do |certificate|
-      .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
-        = image_tag certificate.image(:small), :width => "100"  
       
- 
+
+- @certificates = Certificate.all
+.didar-certificates
+  - @certificates.each do |certificate|
+    .certificate-box{"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => certificate.title}
+      = image_tag certificate.image(:small), :width => "100"
+
+:javascript
+  $(document).ready(function() {
+    $(".didar-certificates").smoothDivScroll({ 
+      autoScrollingMode: "always", 
+      autoScrollingDirection: "endlessLoopRight", 
+      autoScrollingStep: 1, 
+      autoScrollingInterval: 25 
+    });
+
+    // Logo parade event handlers
+    $(".didar-certificates").bind("mouseover", function() {
+      $(this).smoothDivScroll("stopAutoScrolling");
+    }).bind("mouseout", function() {
+      $(this).smoothDivScroll("startAutoScrolling");
+    });
+
+  });

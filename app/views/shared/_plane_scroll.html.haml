@@ -1,28 +1,22 @@
--#
-  #owl-demo-plane.owl-carousel.owl-theme
-    - Plane.all.each do |plane|
-      .item.plane-logo{"data-toggle" => "tooltip", "data-placement" => "bottom", :title => plane.title}
-        = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-          = image_tag plane.logo(:icon)
 
-  .hamyar_slider
-    %ul
-      - Plane.all.each do |plane|
-        %li.slide
-          = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-            = image_tag plane.logo(:icon)
-          
 
- 
-#jssor_1{:style => "position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1235px; height: 100px; overflow: hidden; visibility: hidden;"}
-  / Loading Screen
-  %div{"data-u" => "loading", :style => "position: absolute; top: 0px; left: 0px;"}
-    %div{:style => "filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 25px; width: 100%; height: 100%;"}
-    %div{:style => "position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"}
-  %div{"data-u" => "slides", :style => "cursor: default; position: relative; top: 0px; left: 0px; right:0; width: 1235px; height: 100px; overflow: hidden;"}
-    - Plane.all.each do |plane|
-      %div{:style => "display: none; margin:10px;"}
-        = link_to url_with_protocol(plane.web_site), :target => "_blank" do
-          = image_tag plane.logo(:icon), :"data-u" => "image"
-        
-    
+- Plane.all.each do |plane|  
+  = link_to url_with_protocol(plane.web_site), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => plane.title do
+    = image_tag plane.logo(:icon)
+:javascript
+  $(document).ready(function() {
+    $(".plane-company").smoothDivScroll({ 
+      autoScrollingMode: "always", 
+      autoScrollingDirection: "endlessLoopRight", 
+      autoScrollingStep: 1, 
+      autoScrollingInterval: 50
+    });
+
+    // Logo parade event handlers
+    $(".plane-company").bind("mouseover", function() {
+      $(this).smoothDivScroll("stopAutoScrolling");
+    }).bind("mouseout", function() {
+      $(this).smoothDivScroll("startAutoScrolling");
+    });
+
+  });

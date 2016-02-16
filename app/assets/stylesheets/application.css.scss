@@ -330,7 +330,7 @@ left: 0;}
 
 .footer-certificate  .certificate-box {text-align:center; float:left;
   position: relative;
-  width:14%;
+  width:100px;
   
   }
 .footer-certificate  .certificate-box:hover {cursor:pointer}
@@ -575,7 +575,8 @@ font-weight: normal;}
   width:100%; height:250px; overflow-y:scroll;
   }
 
-.plane-company {      
+.plane-company {
+  width:1200px;
   height:150px;
   position:relative;
   margin-bottom:2%;
@@ -587,25 +588,14 @@ background-repeat: no-repeat;
 background-position: 0 100%;
   
   }
-.plane-company::before {content: "";
-  position:absolute;  
-  width:100%; height:70px;
-  top:0; right:0; left:0;}
-.plane-company.ar{margin-left:0}
-.plane-company marquee {margin-top:-30px; height:80px; }
-.plane-company .col-xs-2, .plane-company .col-xs-5 {padding:0;}
-.plane-company .all-plane-icon {text-align:center; position: absolute;
-width: 10%;
-height: 142%;
-left: 45%;
-right: 45%;
-top:-23%;
-background:#fff; border-radius:50%;}
-.plane-company .all-plane-icon img {width:100%}
-.plane-company .plane-logo{width:80px; height:80px; float:right; position:relative}
-.plane-company .plane-logo img{position:absolute; bottom:1%;}
+.plane-company div.scrollableArea a
+  {
+    display: block;
+    float: left;
+    padding-left: 10px;
+  }
 
-.plane-company .plane-logo:hover a img{opacity:.6}
+
 .show-news-and-event {margin-bottom:5%; background-image: url(image-path('worldbg.png'));}
 
 .show-news-and-event.fa .news-title, .show-news-and-event.ar .news-title {text-align:right}
@@ -843,3 +833,17 @@ text-align:center; color:#521010;}
 #foreign_tour .item .tours-index .more-info{position:absolute; width:100%; bottom:1px; text-align:left}
 #foreign_tour .item .tours-index .item-package {top:35px}
 #foreign_tour .item .date {position:absolute; bottom:5px; width:100%;}
+
+.didar-certificates{
+	
+	height: 100px;
+	position: relative;
+  
+}
+
+.didar-certificates div.scrollableArea a
+{
+	display: block;
+	float: left;
+	padding-left: 10px;
+}
