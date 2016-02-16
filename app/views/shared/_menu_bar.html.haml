@@ -52,7 +52,7 @@
         = link_to  t('driving-licence'), DirivingLicense.first
       %li.item-menu
         .icon.new#transit
-        = link_to  t('transit'), DirivingLicense.last
+        = link_to  t('transit'), DirivingLicense.find(3)
       
       - @about_us = Page.find(1)
       - @contact_us = Page.find_by_title_fa('تماس با ما')
