@@ -29,34 +29,30 @@
         .col-xs-12
           .col-xs-4.title-tour.set-center{:class => I18n.locale}= t('local-tour')
           = render 'shared/multi_iran_tour_slider'
-          -#
-            .hamyar_slider2
-              %ul
-                - Country.all.each do |country|
-                  - if country.title_fa == 'ایران'
-                    - if country.tours.present?
-                      - country.tours.limit(5).order("created_at asc").each do |tour|
-                      - @first_tour = country.tours.first
-                        %li.slide{:id => "foriegn_tours_id_" + tour.id.to_s}                
-                          %p.tour-title{:class => I18n.locale}= tour.title
-                          - if tour.photos.present?
-                            = link_to (image_tag tour.photos.first.image(:medium), :class => "img-responsive"), tour, :class => 'item-package', :title => "آژانس_هواپیمایی_دیدار"
-                          
-                          .date{:class => I18n.locale}= render "/tours/show_persian_date", :tour => tour
-                          
-                          .more-info{:class => I18n.locale}
-                            = link_to  tour do 
-                              %i.see-more-arrow= t('more-info')
-                              
-                          -if is_admin?
-                            .admin-btn-tour
-                              = link_to 'ویرایش تور', edit_tour_path(tour), :class => "btn btn-info"
-                              = link_to 'مشاهده تور', tour, :class => "btn btn-warning"                   
-                              = link_to 'حذف تور', tour, :method => :delete, :data => { :confirm => 'آیا می خواهید این تور را حذف کنید؟' }, :class => "btn btn-danger"
-            .icon-arrow-left2
-            .icon-arrow-right2 
+         
       .col-xs-2#hyper-icons
+        .col-xs-12
+          = link_to DirivingLicense.find(4), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => t('transit') do
+            = image_tag 'international-train.png', :alt => t('transit'), :width => "210"
+        .col-xs-12
+          = link_to url_with_protocol('mashhad.airport.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Mashhad Airport" do
+            = image_tag 'mashhad-airplane.png', :alt => "mashhad airport", :width => "210"
+        .col-xs-12
+          = link_to url_with_protocol('mehrabad.airport.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Mehrabad Airport" do
+            = image_tag 'mehrabad-airport.png', :alt => "mehrabad airport", :width => "210"
    
+        .col-xs-12
+          = link_to url_with_protocol('www.rai.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Iran Railway" do
+            = image_tag 'iran-rail.png', :alt => "Iran Railway", :width => "210"
+   
+        .col-xs-12
+          = link_to url_with_protocol('www.raja.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Raja Rail" do
+            = image_tag 'raja.png', :alt => "Raja Rail", :width => "210"
+        .col-xs-12{:style => "text-align:center"}
+          = link_to time_zone_clocks_countries_path, :target => "_blank"  do            
+            = image_tag 'time-zone.png', :width => "80", :style => "width:80px"
+            .col-xs-12{:style => "padding:0", :class => I18n.locale}
+              =  t('time-zone-title')
   
   .col-xs-12.boxes-show
     
@@ -82,12 +78,7 @@
       .col-xs-2#time-zone-link
         - if current_page?('/')
           -#
-            .title-time-zone
-              = link_to time_zone_clocks_countries_path, :target => "_blank"  do
-                .col-xs-12.pull-right{:style => "padding:0", :class => I18n.locale}
-                  = image_tag 'time-zone.png', :width => "50"
-                .col-xs-12{:style => "padding:0", :class => I18n.locale}
-                  =  t('time-zone-title')
+            
                   
       .plane-company{:class => I18n.locale}
         = render "shared/plane_scroll"
