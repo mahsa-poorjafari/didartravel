@@ -813,7 +813,7 @@ text-align: right;}
 .agency-name.en {margin-top:25px}
 .tour-details .col-xs-5 {overflow:hidden}
 #go-printa4:hover {cursor:pointer}
-#hyper-icons {height:655px; overflow:hidden; background-color:#F90; margin:0; padding:0; padding-top:10px}
+#hyper-icons {height:640px; overflow:hidden; background-color:#F90; margin:0; padding:0; padding-top:10px}
 #hyper-icons .col-xs-12 {height:70px;}
 #hyper-icons img {width:100%}
 #foreign_tour {height:250px; position:relative; padding:0}
@@ -849,3 +849,14 @@ text-align:center; color:#521010;}
 	float: left;
 	padding-left: 10px;
 }
+#international-train {margin-top:10px; text-align:center;
+  height:70px;
+ background-image: url(image-path('planes-scroll.png'));
+  
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: 0 100%;
+}
+#international-train span.fa{font-size:1.7em;font-family: 'IranNastaliq'; color:#620808; margin:5px}
+#international-train span {color:#620808; margin:5px;}
+#international-train span:hover {color:#254C71; }

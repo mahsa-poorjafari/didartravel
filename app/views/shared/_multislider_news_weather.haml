@@ -13,6 +13,10 @@
                     = link_to news.title, url_with_protocol(news.web_link), :target => "_blank"
                   - else
                     = link_to news.title, news
+        .col-xs-12#international-train{:style => "background-size: 100%;"}
+          = link_to DirivingLicense.find(4), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => t('transit') do
+            = image_tag 'driving.png', :alt => t('transit'), :width => "60"
+            %span{:class => I18n.locale}= t('inter-train')
         .col-xs-6#time-zone      
           .col-xs-12.calendar
             #datepicker7
@@ -20,6 +24,7 @@
           .scrollable.vertical
             #test.items
             .navi
+        
         
       .col-xs-6      
         .col-xs-4.title-tour.set-center{:class => I18n.locale}= t('foreign-tour')
@@ -31,9 +36,7 @@
           = render 'shared/multi_iran_tour_slider'
          
       .col-xs-2#hyper-icons
-        .col-xs-12
-          = link_to DirivingLicense.find(4), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => t('transit') do
-            = image_tag 'international-train.png', :alt => t('transit'), :width => "210"
+        
         .col-xs-12
           = link_to url_with_protocol('mashhad.airport.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Mashhad Airport" do
             = image_tag 'mashhad-airplane.png', :alt => "mashhad airport", :width => "210"
