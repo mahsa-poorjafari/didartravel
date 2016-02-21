@@ -14,8 +14,8 @@
                   - else
                     = link_to news.title, news
         .col-xs-12#international-train{:style => "background-size: 100%;"}
-          = link_to DirivingLicense.find(4), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => t('transit') do
-            = image_tag 'driving.png', :alt => t('transit'), :width => "60"
+          = link_to DirivingLicense.find(4), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => t('inter-train') do
+            = image_tag 'logo33.png', :alt => t('inter-train'), :width => "90"
             %span{:class => I18n.locale}= t('inter-train')
         .col-xs-6#time-zone      
           .col-xs-12.calendar
