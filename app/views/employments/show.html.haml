@@ -1,44 +1,57 @@
 .margin3  
-  %h1.page-title.margin3{:class => I18n.locale}=' استخدام در شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی'
-  
-  - if notice
-    .alert.alert-success= notice
-  .col-xs-2.avoid-this.pull-right
-    #go-printa4
-      = image_tag 'print-icon.png'
-      %h4= link_to 'پرینت A4', '#' 
-  .col-xs-12{:class => I18n.locale}
+  .avoid-this
+    %h1.page-title.margin3{:class => I18n.locale}=' استخدام در شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی'
     
-    .col-xs-4
-      - if @employment.person_image.present?
-        = image_tag @employment.person_image(:small)
+    - if notice
+      .alert.alert-success= notice
+    .col-xs-2.avoid-this.pull-right
+      #go-printa4
+        = image_tag 'print-icon.png'
+        %h4= link_to 'پرینت A4', '#' 
+  .col-xs-12#employment-date-logo
+    .pull-left.col-xs-2= image_tag 'menu_logo.png', :width => "120", :height => "80"
+    .pull-right.col-xs-4  
+      %p
+        %b='تاریخ:'
+        %span{:class => I18n.locale}= JalaliDate.new(@employment.created_at)
+      %p
+        %b='شماره:'
+  .col-xs-12#employment{:class => I18n.locale}    
+    %p{:class => I18n.locale, :style => "text-align:center"}=' استخدام در شرکت خدمات مسافرت هوایی، جهانگردی و زیارتی'
+    
+    
     .col-xs-12
       .title-box-employment     اطلاعات شخصی  
-      %p.col-xs-3
-        %b نام و نام خانواگی:
-        = @employment.first_name + ' , ' + @employment.last_name      
-      %p.col-xs-3
-        %b نام پدر:
-        = @employment.father_name
-      %p.col-xs-3
-        %b شغل پدر:
-        = @employment.father_job
-      %p.col-xs-3
-        %b تاریخ تولد
-        = @employment.birthdate
-      %p.col-xs-3
-        %b شماره شناسنامه:
-        = @employment.id_code
-      %p.col-xs-3
-        %b صادره:
-        = @employment.source_place
-      %p.col-xs-3
-        %b وضعیت تاهل
-        = @employment.marriage_status
-      %p.col-xs-3
-        %b میزان تحصیلات
-        = @employment.education
-      .margin3 
+      .col-xs-3
+        - if @employment.person_image.present?
+          = image_tag @employment.person_image(:small)
+      .col-xs-9
+        
+        %p.col-xs-3
+          %b نام و نام خانواگی:
+          = @employment.first_name + ' , ' + @employment.last_name      
+        %p.col-xs-3
+          %b نام پدر:
+          = @employment.father_name
+        %p.col-xs-3
+          %b شغل پدر:
+          = @employment.father_job
+        %p.col-xs-3
+          %b تاریخ تولد
+          = @employment.birthdate
+        %p.col-xs-3
+          %b شماره شناسنامه:
+          = @employment.id_code
+        %p.col-xs-3
+          %b صادره:
+          = @employment.source_place
+        %p.col-xs-3
+          %b وضعیت تاهل
+          = @employment.marriage_status
+        %p.col-xs-3
+          %b میزان تحصیلات
+          = @employment.education
+      
       .col-xs-12
         .title-box-employment اطلاعات تماس 
         %p.col-xs-3
@@ -53,7 +66,7 @@
         %p.col-xs-3
           %b شماره همراه:
           = @employment.mobile
-    .margin3
+    
     .col-xs-12
       .title-box-employment سوابق شغلی و تحصیلی
       %p.col-xs-3

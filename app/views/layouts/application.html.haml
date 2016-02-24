@@ -84,11 +84,11 @@
           
         
       - if @page_slides.present?
-        = render "slides/slider", :slides => @page_slides
+        .avoid-this= render "slides/slider", :slides => @page_slides
       - elsif @other_slides.present?
-        = render "slides/slider", :slides => @other_slides
+        .avoid-this= render "slides/slider", :slides => @other_slides
       - else
-        = render "slides/slider", :slides => Slide.all      
+        .avoid-this= render "slides/slider", :slides => Slide.all      
       
       .col-xs-12.bottom-slider.avoid-this
         
@@ -109,7 +109,7 @@
         = yield
       
      
-      .col-xs-12.footer-bottom{:style => ('margin-top: 0;' if current_page?('/') )}
+      .col-xs-12.footer-bottom.avoid-this{:style => ('margin-top: 0;' if current_page?('/') )}
         
         .clear-float  
         #responsive767show-footer-links
@@ -230,13 +230,13 @@
     
     %script{:defer => "defer", :src => "https://mylivechat.com/chatinline.aspx?hccid=69859983", :type => "text/javascript"}       
     - if is_admin?
-      .admin-menu
+      .admin-menu.avoid-this
         = render 'shared/admin_menu'
     - elsif is_user?
       .admin-menu
         = render 'shared/user_menu'
     
-    = link_to '#top', :id => "go-top-page", :class => "anchorLink"do
+    = link_to '#top', :id => "go-top-page", :class => "anchorLink avoid-this" do
       = image_tag 'gotop.png', :title => "بازگشت به بالای صفحه"
        
   - unless current_page?('/') 

@@ -1,13 +1,11 @@
 .margin3.margin-bottom.new_form_general_class
-  .col-xs-12
-    .title-tour-line.col-xs-10
-    %p.col-xs-12.set-center.title-tour#visa-form{:class => I18n.locale}= t('visa-app')
+  .col-xs-12    
+    .pull-left.col-xs-3= image_tag 'menu_logo.png'
+    %p.col-xs-6.set-center.title-tour#visa-form.pull-left{:class => I18n.locale}= t('visa-app')
       
-  .col-xs-12
-    .col-xs-6
-      .pull-left.col-xs-3= image_tag 'menu_logo.png'
-    .col-xs-6
-      .pull-right.col-xs-3= image_tag 'visa-flag-iran.png'
+      
+  .col-xs-12{:style => "text-align:center"}    
+    = image_tag 'Iran.jpg'
       
   .col-xs-12.en
     = render 'form'

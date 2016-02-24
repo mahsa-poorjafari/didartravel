@@ -1,31 +1,39 @@
 .margin3.margin-bottom
-  .col-xs-12
-    .title-tour-line.col-xs-5
-    %p.col-xs-3.set-center.title-tour{:class => I18n.locale}= t('visa-app')
-  .clear-float
-  
-  .col-xs-12
-    .col-xs-6
-      .pull-left.col-xs-3= image_tag 'menu_logo.png'
-    .col-xs-6
-      .pull-right.col-xs-3= image_tag 'visa-flag-iran.png'
+  .col-xs-12        
+    %p.col-xs-12.set-center.title-tour#visa-form.pull-left{:class => I18n.locale}= t('visa-app')
+      
+      
+  .avoid-this.col-xs-12{:style => "text-align:center"}    
+    = image_tag 'Iran.jpg'
 
+  
+  .col-xs-12#date-logo
+    .pull-left.col-xs-2= image_tag 'menu_logo.png', :width => "120", :height => "80"
+    .pull-right.col-xs-4  
+      %p
+        %b='تاریخ:'
+        %span{:class => I18n.locale}= JalaliDate.new(@visa_form.created_at)
+      %p
+        %b='کدرهگیری:'
+        %span= @visa_form.request_code
+  .col-xs-12.margin-bottom{:style => "text-align:center"}
+    %b='درخواست ویزای ایران'
   .col-xs-12
     -if flash[:CodeSend]
-      .alert.alert-success{:style => "font-size:16px; text-align:center"}  
+      .avoid-this.alert.alert-success{:style => "font-size:16px; text-align:center"}  
         = flash[:CodeSend]
-    .alert.alert-info{:class => I18n.locale, :style => "font-size:20px; text-align:center;"}
+    .avoid-this.alert.alert-info{:class => I18n.locale, :style => "font-size:20px; text-align:center;"}
       %b= t('passenger.request-code')
       .en= @visa_form.request_code
   .col-xs-2.avoid-this.pull-right
     #go-printa4
       = image_tag 'print-icon.png'
       %h4= link_to 'پرینت A4', 'printa4_visa_forms_path' , :remote => 'true'
-  .col-xs-12#host_info{:class => I18n.locale}
+  .col-xs-12#host_info.margin-bottom5{:class => I18n.locale}
     %h4= t('host.info')
     - if @visa_form.hosts.present?
       - @visa_form.hosts.each do |host|
-        .col-xs-7
+        .col-xs-8.pull-right
           .col-xs-3= t('host.name') + ' و ' + t('host.last_name')
           .col-xs-3.b= host.name + ' ' + host.last_name
           .col-xs-3= t('host.father_name')
@@ -55,9 +63,9 @@
           .clear-float
           .col-xs-3= t('host.work_phone')
           .col-xs-4.b= host.work_phone       
-        .col-xs-5.margin-bottom  
+        .col-xs-4
           - if host.id_card_copy.present?
-            = image_tag host.id_card_copy(:medium)
+            = image_tag host.id_card_copy(:small)
         -#
           - if is_admin?
             
@@ -68,7 +76,7 @@
     %h4= t('passenger.info')
     - if @visa_form.passengers.present?
       - @visa_form.passengers.each do |passenger|
-        .col-xs-7
+        .col-xs-8.pull-right
           .col-xs-3= t('passenger.First_Name') + ' و ' + t('passenger.Last_Name')
           .col-xs-3.b= passenger.First_Name + ' ' + passenger.Last_Name
           .col-xs-3= t('passenger.gender')
@@ -98,7 +106,11 @@
           .col-xs-3.b= passenger.relationship
           .col-xs-3= t('passenger.Email')
           .col-xs-4.b= passenger.Email
-          .clear-float
+        .col-xs-4
+          - if passenger.passport_copy.present?
+            = image_tag passenger.passport_copy(:small)  
+          
+        .col-xs-12
           .col-xs-3= t('passenger.obtain_visa_place')
           .col-xs-3.b= passenger.obtain_visa_place
           .col-xs-3= t('passenger.Where_collect_your_visa')
@@ -112,9 +124,7 @@
           .clear-float
           .col-xs-4= t('passenger.Address_phone_Guest_accommodations')
           .col-xs-4.b{:class => I18n.locale}= raw passenger.Address_phone_Guest_accommodations
-        .col-xs-5
-          - if passenger.passport_copy.present?
-            = image_tag passenger.passport_copy(:medium)
+        
             
             
   .col-xs-12.margin-bottom5#agreement_show{:class => I18n.locale}  
@@ -122,14 +132,14 @@
     .col-xs-2.b= @visa_form.einjaneb_form
     .col-xs-9= 'متقاضي درخواست رواديد متعهد مي شوم نامبرده در طول مدت اقامت در ايران مسائل اخلاقي و شئونات اسلامي و قوانين و مقررات جمهوري اسلامي را رعايت نموده و مطالب فوق را به دقت و صداقت تكميل شده و مسئوليت هرگونه اشتباه به عهده اينجانب مي باشد .'
   
-  .col-xs-12.margin-bottom5
+  .col-xs-12.margin-bottom5#signture
     .col-xs-1  
     .col-xs-4  
       %b= 'تاریخ و امضا میزبان'
     .col-xs-4    
       %b= 'امضاء و مهر خدمات مسافرتي و جهانگردي '
     .col-xs-1  
-  %hr 
+  %hr.margin-bottom5
   .col-xs-12.margin-bottom5#commitment_show{:class => I18n.locale}
     %h4= t('Commitment')    
     .col-xs-2= 'بدینوسیله اینجانب'
