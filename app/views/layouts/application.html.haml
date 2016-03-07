@@ -188,10 +188,10 @@
     .show-social.clear-float.avoid-this
       %h3{:class => I18n.locale}= t('social-find-us')
       .col-xs-12.set-center          
-        = link_to '#', :target => "_blank", :class => 'social-icon' do
+        = link_to url_with_protocol('www.facebook.com/travelagency.didar'), :target => "_blank", :class => 'social-icon' do
           = image_tag 'f.png'
 
-        = link_to '#', :target => "_blank", :class => 'social-icon' do
+        = link_to url_with_protocol('www.instagram.com/didaragency'), :target => "_blank", :class => 'social-icon' do
           = image_tag 't.png'  
         = link_to url_with_protocol('www.telegram.me/DidarTravelAgency'), :target => "_blank", :class => 'social-icon' do
           = image_tag 'telegram.png' 
