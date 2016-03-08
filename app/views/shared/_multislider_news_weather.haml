@@ -44,13 +44,13 @@
           = link_to url_with_protocol('mehrabad.airport.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Mehrabad Airport" do
             = image_tag 'mehrabad-airport.png', :alt => "mehrabad airport", :width => "210"
    
-        .col-xs-12
+        .col-xs-12{:style => "height:135px"}
           = link_to url_with_protocol('www.rai.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Iran Railway" do
             = image_tag 'iran-rail.png', :alt => "Iran Railway", :width => "210"
    
         .col-xs-12
-          = link_to url_with_protocol('www.raja.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Raja Rail" do
-            = image_tag 'raja.png', :alt => "Raja Rail", :width => "210"
+          = link_to url_with_protocol('www.raja.ir'), :target => "_blank" ,"data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Raja Rail"  do
+            = image_tag 'raja.png', :alt => "Raja Rail", :width => "210", :style => "margin-top:35px"
         .col-xs-12{:style => "text-align:center"}
           = link_to time_zone_clocks_countries_path, :target => "_blank"  do            
             = image_tag 'time-zone.png', :width => "80", :style => "width:80px"
