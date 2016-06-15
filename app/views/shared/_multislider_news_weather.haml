@@ -20,15 +20,20 @@
         .col-xs-6#time-zone      
           .col-xs-12.calendar
             #datepicker7
-        .col-xs-6.cal-weather.pull-right#responsive480hideweather
-          .scrollable.vertical
-            #test.items
-            .navi
+        .col-xs-6.cal-weather.pull-right#responsive480hideweather		  
+          %div
+            #showing_weather.items
+              / Weather by www.1abzar.com -
+              %script{:src => "http://1abzaar.ir/abzar/tools/weather/hava.php?color=FCC40A&shahr=008&bg=800501&kc=000000&kadr=2", :type => "text/javascript"}
+              / Weather by www.1abzar.com -
+            
+		
+			
         
         
       .col-xs-6      
         .col-xs-4.title-tour.set-center{:class => I18n.locale}= t('foreign-tour')
-        = render 'shared/multi_tour_slider'
+        = render 'shared/multi_tour_slider'        
         
          
         .col-xs-12
@@ -62,8 +67,10 @@
     
     #responsive480showweather.col-xs-6.cal-weather.pull-right  
       .scrollable.vertical
-        #test2.items
-        .navi
+        #showing_weather2.items
+          / Weather by www.1abzar.com -
+          %script{:src => "http://1abzaar.ir/abzar/tools/weather/hava.php?color=FCC40A&shahr=008&bg=800501&kc=000000&kadr=2", :type => "text/javascript"}
+          / Weather by www.1abzar.com -
     
     .col-xs-12#responsive768hide{:style => "padding:0"}
       .col-xs-2#driving-certificate-link{:class => I18n.locale}

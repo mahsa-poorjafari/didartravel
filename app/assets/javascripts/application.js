@@ -54,27 +54,7 @@ $(document).ready(function () {
       Cookies.set('memberuser', 'member', { expires: 1 });
     } 
     
-    $('#test').weatherfeed(['IRXX0008']).ajaxStop(function() {
-  
-  
-      $("div.scrollable").scrollable({ 
-              vertical: true,  
-              size: 1
-      }).circular().navigator().autoscroll({
-        interval: 3000
-      });
-    });
-    $('#test2').weatherfeed(['IRXX0008']).ajaxStop(function() {
-  
-  
-      $("div.scrollable").scrollable({ 
-              vertical: true,  
-              size: 1
-      }).circular().navigator().autoscroll({
-        interval: 3000
-      });
-    });
-
+  $('.items#showing_weather iframe').attr({'height':'200', 'width':'199'});
  
 
 
