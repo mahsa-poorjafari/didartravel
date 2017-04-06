@@ -28,8 +28,10 @@
         .form-group.col-xs-6{:class => I18n.locale}
           = button_tag t('msg.contact-reset'), :type => 'reset', :id => "contact-reset"  , :class => "btn btn-warning  I18n.locale"
       
-    .col-xs-6
-      = f.simple_captcha :label => t('captcha')
+    .col-xs-6    
+      
+      
+      .g-recaptcha{"data-sitekey" => "6LcS3hsUAAAAAACn8jqwKcu1aKzQaJCPKB5Y2KCi"}
       
       
 
